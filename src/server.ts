@@ -22,7 +22,8 @@ function authorized(req: IncomingMessage): boolean {
 }
 
 createServer(async (req, res) => {
-  if (req.method === "GET" && (req.url === "/" || req.url === "/index.html")) {
+  // HEAD too: uptime monitors ping with it.
+  if ((req.method === "GET" || req.method === "HEAD") && (req.url === "/" || req.url === "/index.html")) {
     res.writeHead(200, { "content-type": "text/html; charset=utf-8" });
     return res.end(await readFile("web/index.html"));
   }
