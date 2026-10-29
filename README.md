@@ -100,6 +100,20 @@ Main takeaways:
 - In two time-sensitive cases (Python, Node.js LTS), the answer is contradicted by a source it cites.
 - Checking the entity's own site first, then 3 more sources only for facts the first 3 don't support, raises overall support from 67.9% to 75.7%: people/roles from 41.2% to 76.5%, and company facts from 50.0% to 69.2%. The extra checks cost about 15% more scrapes. See [FINDINGS.md](FINDINGS.md#follow-up-checking-the-right-links-first).
 
+## Deploy
+
+The demo is one long-running Node server (`pnpm start`) that streams results and reads its `.cache/`. Any host that runs a Node web service works without code changes, and it reads `PORT` from the environment.
+
+1. On [Render](https://render.com), choose **New → Web Service** and connect this GitHub repo. On [Railway](https://railway.com), choose **New Project → Deploy from GitHub repo** instead. Both work the same way here.
+2. Set the build command to `pnpm install --frozen-lockfile` and the start command to `pnpm start`. Railway detects both on its own.
+3. Add these environment variables:
+   - `CONTEXT_DEV_API_KEY`
+   - `ANTHROPIC_API_KEY`
+   - **`DEMO_PASSCODE`**: always set this on a public URL. Without it, anyone could run questions on your keys. With it, visitors can replay the cached example questions for free and instantly, and new questions ask for the passcode.
+4. Deploy, then open the URL and click an example.
+
+Render's free tier sleeps after about 15 minutes idle, so the first visit takes about a minute to wake. Railway, or a paid Render instance, stays up. Vercel would need the server rewritten as a serverless function, with the cache bundled in and writes moved to `/tmp`.
+
 ## How this could ship inside Answers
 
 Answers already has what it needs. The research agent has read the pages, so the citation map could be produced during research instead of reconstructed afterwards, as Groundcheck has to do. A `verify: true` option could return:

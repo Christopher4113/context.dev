@@ -168,6 +168,8 @@ const $ = (id) => document.getElementById(id);
 const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
 
 let state = null;
+const passcode = () => { try { return localStorage.getItem("groundcheck-passcode") || ""; } catch { return ""; } };
+const savePasscode = (v) => { try { localStorage.setItem("groundcheck-passcode", v); } catch {} };
 
 for (const ex of EXAMPLES) {
   const b = document.createElement("button");
@@ -189,8 +191,14 @@ $("run").onclick = async () => {
   state = { question: $("q").value, citations: {}, fields: [], json: null, view: "text", done: null, error: null, status: schema ? "Asking Context.dev Answers (fast mode)…" : "Planning which facts to look up…", sourceReport: [] };
   render();
   try {
-    const res = await fetch("/api/check", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ question: $("q").value, schema }) });
-    if (!res.ok) throw new Error(await res.text());
+    const ask = () => fetch("/api/check", { method: "POST", headers: { "content-type": "application/json", "x-demo-passcode": passcode() }, body: JSON.stringify({ question: $("q").value, schema }) });
+    let res = await ask();
+    // Public deployments gate new questions behind a passcode; the example questions replay from cache without one.
+    if (res.status === 401) {
+      const code = prompt(`${await res.text()}\n\nPasscode:`);
+      if (code) { savePasscode(code); res = await ask(); }
+    }
+    if (!res.ok) throw new Error(res.status === 401 ? "That passcode didn't work. The example questions run without one." : await res.text());
     const reader = res.body.getReader(); const dec = new TextDecoder(); let buf = "";
     for (;;) {
       const { value, done } = await reader.read();

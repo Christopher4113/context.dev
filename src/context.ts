@@ -1,5 +1,5 @@
 import { createHash } from "node:crypto";
-import { mkdir, readFile, writeFile } from "node:fs/promises";
+import { access, mkdir, readFile, writeFile } from "node:fs/promises";
 import ContextDev from "context.dev";
 
 const CACHE_DIR = process.env.GROUNDCHECK_CACHE_DIR ?? ".cache";
@@ -16,10 +16,11 @@ export class Credits {
   }
 }
 
+const cacheFile = (kind: string, request: unknown) => `${CACHE_DIR}/${kind}-${createHash("sha1").update(JSON.stringify(request)).digest("hex")}.json`;
+
 // ponytail: one JSON file per request, no eviction; delete .cache/ to refresh.
 export async function cached<T>(kind: string, request: unknown, fetcher: () => Promise<T>): Promise<{ data: T; hit: boolean }> {
-  const key = createHash("sha1").update(JSON.stringify(request)).digest("hex");
-  const file = `${CACHE_DIR}/${kind}-${key}.json`;
+  const file = cacheFile(kind, request);
   try {
     return { data: JSON.parse(await readFile(file, "utf8")).response, hit: true };
   } catch {}
@@ -60,6 +61,13 @@ export type AnswersResult = {
   partial?: boolean;
   request_id: string;
 };
+
+/** True when this exact Answers request is already on disk, so replaying it costs nothing. */
+export const answersCached = (task: string, json_format: Record<string, unknown>, mode: "fast" | "ultra" = "fast") =>
+  access(cacheFile("answers", { task, json_format, mode })).then(
+    () => true,
+    () => false,
+  );
 
 export async function answers(task: string, json_format: Record<string, unknown>, credits: Credits, mode: "fast" | "ultra" = "fast") {
   const request = { task, json_format, mode };
