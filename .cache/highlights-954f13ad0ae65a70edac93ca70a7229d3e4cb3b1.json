@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://news.adobe.com/news/news-details/2023/adobe-and-figma-mutually-agree-to-terminate-merger-agreement",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "Adobe and Figma mutually terminated Adobe's proposed acquisition of Figma on December 18, 2023, because regulatory approval had no clear path, and Adobe paid Figma the agreed termination fee.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://news.adobe.com/news/news-details/2023/adobe-and-figma-mutually-agree-to-terminate-merger-agreement",
+    "passages": [
+      "[Adobe and Figma Mutually Agree to Terminate Merger Agreement]\n\n**SAN JOSE, Calif. & SAN FRANCISCO**--(BUSINESS WIRE)-- Today, Adobe (Nasdaq:ADBE) and Figma announced that they have entered into a mutual agreement to terminate their previously announced merger agreement, originally announced on September 15, 2022, under which Adobe would have acquired Figma for a mix of cash and stock consideration.\n\nAlthough both companies continue to believe in the merits and procompetitive benefits of the combination, Adobe and Figma mutually agreed to terminate the transaction based on a joint assessment that there is no clear path to receive necessary regulatory approvals from the European Commission and the UK Competition and Markets Authority.\n\n…\n\nThe companies have signed a termination agreement that resolves all outstanding matters from the transaction, including Adobe paying Figma the previously agreed upon termination fee."
+    ]
+  }
+}

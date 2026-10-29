@@ -1,0 +1,44 @@
+{
+  "request": {
+    "model": "anthropic:claude-opus-5-5",
+    "system": "You verify one claim against evidence passages scraped from the cited sources. Judge only from the passages, never from your own knowledge.\nVerdicts:\n- supported: a passage states the claim's value, so a reader could confirm it from the quote alone. Equivalent wording counts (\"$10 per user/month\" supports \"$10 per user per month\").\n- partial: a passage supports part of the claim, or gives a materially different qualification (a different number, a range, an older date, a different plan or product).\n- unsupported: the passages are on topic but do not state the value, or they contradict it.\n- no_evidence: the passages are irrelevant or empty.\nA passage that only mentions a word in another sense (e.g. a product name in a feature list) does not support a claim about it.\nevidence_quote MUST be copied character-for-character from one passage: the shortest span that shows the value (under 300 characters). Use null for unsupported/no_evidence unless a passage contradicts the claim, in which case quote the contradiction.\nreason: one sentence. If the passage contradicts the claim, say what it actually says.",
+    "user": "Research question: Company facts about Context.dev (context.dev), the web data API for AI agents: founders, accelerator batch, and latest funding round.\nClaim: Yahia Bakour is a founder of Context.dev.\nValue being checked: \"Yahia Bakour\"\n\n<passage source=\"https://context.dev\">\n[Give your agents the internet > Powering agents and products with the world's data.]\n\nCo-founder @ Zero\n\n…\n\n“My agent understood it perfectly. Setup was very easy. I was looking for a nice datapoint for my agents, and Context.dev was the best one in the marketplace.”\n\n…\n\n“We use Context.dev for our internal enrichment system to verify companies. The integration was straightforward. We set it up once and never had to touch it again. It just works.”\n\n…\n\n“Just used Context.dev to help Codex build an on-brand sales deck generator for us. Came out really well!”\n\n…\n\n“It was great. Took 5 mins to integrate. We use Context.dev to give AI agents ability to scrape webpages, take screenshots, and also extract specific content from webpages.”\n</passage>\n\n<passage source=\"https://www.context.dev/blog/were-now-backed-by-ycombinator\">\n[We're now backed by YCombinator]\n\nYahia Bakour\n\n…\n\n- Yahia Bakour, Founder of Context.dev\n\n[We're now backed by YCombinator > Related articles.]\n\n- Oct 19, 2026 **We raised $9M to give agents the internet** Context.dev has raised a $9M seed round led by General Catalyst. A note from Yahia on why he started the company and what changed along the way.\n\n- Apr 19, 2026 **We are Context.dev, not Context.ai** A quick note to our customers: Context.dev has no affiliation with Context.ai, the AI platform named in the recent Vercel security incident.\n\n- Oct 20, 2026 **Introducing news search** Search over 200 million articles for company announcements, press releases, and news. Give your agents current sources to work with.\n</passage>\n\n<passage source=\"https://www.context.dev/blog/context-dev-raises-9m-seed-led-by-general-catalyst\">\n[We raised $9M to give agents the internet]\n\nYahia Bakour\n\n…\n\n[We raised $9M to give agents the internet > Why I started this]\n\nI started Brand.dev, the company that became Context.dev, with one simple, stubborn idea: **any developer, anywhere in the world, should be able to build software that understands the world it's serving.** An app should know who it's talking to. A product should greet a new customer with their own logo and colors instead of a blank form.\n\n…\n\n[We raised $9M to give agents the internet > Thank you]\n\n- Yahia Bakour, Founder of Context.dev\n</passage>",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "verdict": {
+          "type": "string",
+          "enum": [
+            "supported",
+            "partial",
+            "unsupported",
+            "no_evidence"
+          ]
+        },
+        "best_source_url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "evidence_quote": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "reason": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "verdict",
+        "best_source_url",
+        "evidence_quote",
+        "reason"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "response": "{\"verdict\":\"supported\",\"best_source_url\":\"https://www.context.dev/blog/context-dev-raises-9m-seed-led-by-general-catalyst\",\"evidence_quote\":\"- Yahia Bakour, Founder of Context.dev\",\"reason\":\"The company's blog post is signed by Yahia Bakour as \\\"Founder of Context.dev,\\\" and in it he says he started the company, then called Brand.dev.\"}"
+}

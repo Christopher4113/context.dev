@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://wisprflow.ai/pricing",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "Wispr Flow offers a pricing tier named Enterprise.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://wisprflow.ai/pricing",
+    "passages": [
+      "[Pricing]\n\nEnterprise\n\n…\n\n[Pricing > You might be wondering. > Questions]\n\nYes. Flow is free and includes dictation and the Notetaker, with generous weekly usage. You never need a credit card to start. Flow Pro removes the limits and keeps more meetings for longer. Teams with advanced security and support needs can reach out to our Sales team about Enterprise.\n\n…\n\nFor bulk pricing discounts, advanced IT controls and compliance (SSO/SAML, SOC 2 Type II and ISO 27001 compliance, enforced HIPAA compliance), or advanced usage dashboards, reach out to our Sales team to upgrade to Enterprise."
+    ]
+  }
+}

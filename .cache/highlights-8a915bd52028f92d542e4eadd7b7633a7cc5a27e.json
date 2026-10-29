@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://vercel.com",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "The company is Vercel.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://vercel.com",
+    "passages": [
+      "[Agentic Infrastructure > Build agents on infrastructure that thinks like them]\n\nNotion powers millions of agent conversations daily on Vercel.\n\n…\n\n[Agentic Infrastructure > Ship apps that scale from zero to millions instantly]\n\nZapier serves over 100 million monthly website visits on Vercel.\n\n…\n\n[Agentic Infrastructure > Host platforms that serve every customer]\n\nMintlify powers documentation for over 20,000 companies on Vercel.\n\n…\n\n[Agentic Infrastructure > Recently shipped]\n\nRun Python backends, queues, and daemons on Vercel, alongside your frontend.\n\n…\n\nBuild agents and run them on Vercel's agent stack."
+    ]
+  }
+}

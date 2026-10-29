@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://supabase.com/company",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "Supabase was founded in 2020.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://supabase.com/company",
+    "passages": [
+      "[Join one of the world's fastest growing open source communities.]\n\nSupaTroopers\n\n…\n\n[Join one of the world's fastest growing open source communities. > Our investors]\n\nWe've raised $1 billion in funding, backed by some of the world's leading investors.\n\n…\n\n[Join one of the world's fastest growing open source communities. > Individual investors]\n\nPiruze Sabuncu\n\n…\n\n[Join one of the world's fastest growing open source communities. > Individual investors > Press]\n\n**ARTICLE** Supabase Series F\n\n…\n\n[Join one of the world's fastest growing open source communities. > Individual investors > Team]\n\nSupabase is fully remote, with a strong affinity for open source maintainers and ex-Founders. Our engineering team is made up of developers from AWS, Google, Palantir, Stripe, and other YC companies."
+    ]
+  }
+}

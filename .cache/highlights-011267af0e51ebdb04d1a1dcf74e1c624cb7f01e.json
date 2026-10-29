@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://smtechaisolutions.com",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "Vercel's original company name was ZEIT.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://smtechaisolutions.com",
+    "passages": [
+      "[SM Tech | Leading AI Automation & Digital Transformation > About SM Technology]\n\nInnovation Meets AutomationSM Technology is a premier AI Automation Agency and Web Development firm dedicated to driving Digital Transformation for businesses globally.\n\nOur journey is rooted in professional excellence. Registration No. 2747, Registered on 3 December 2019, according to Partnership Act 1932. This ensures reliable automation services to our international clientele.\n\nWhether it's building autonomous reasoning agents or scaling omnichannel AI bots, our mission is to empower enterprises with technology that eliminates repetitive manual tasks.\n\n[SM Tech | Leading AI Automation & Digital Transformation > About SM Technology > Registered & Trusted]\n\nOperating under the Partnership Act 1932 since 2019, Delivering Quality & Security.\n\n…\n\n[SM Tech | Leading AI Automation & Digital Transformation > DOMINATE YOUR NICHE WITH]\n\nSM TECHNOLOGY"
+    ]
+  }
+}

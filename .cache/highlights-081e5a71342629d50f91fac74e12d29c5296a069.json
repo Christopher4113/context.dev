@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://github.com/stripe",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "Patrick Collison is a founder of Stripe.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://github.com/stripe",
+    "passages": [
+      "[Stripe > Pinned Loading]\n\nNode.js library for the Stripe API.\n\n…\n\nPHP library for the Stripe API.\n\n…\n\n[Stripe > Pinned Loading > Repositories]\n\nRuby 2,180 MIT 695 21 9 Updated Oct 29, 2026\n\n…\n\n@jeanregisser @orrc @xavdid @philipithomas @izzygomez @lucavgobbi @mikaelmello @barreeeiroo @nicholasz2510 @godcrampy @alessandro-stripe @droidpl-stripe @ikeike-stripe @benemdon-stripe @dedoussis-stripe @timothyg-stripe @carlflood-stripe @rwh-stripe\n\n[Stripe > Pinned Loading > Repositories > Sponsoring]\n\n- @flutter-stripe\n\n- @BerriAI\n\n- @QuantStack\n\n- @jofftiquez\n\n- @wevm\n\n- @joshnuss\n\n- @richnologies\n\n- @arlyon\n\n- @rdlabo\n\n- @dj-stripe\n\n- @mholt\n\n- @excid3\n\n- @xyflow"
+    ]
+  }
+}

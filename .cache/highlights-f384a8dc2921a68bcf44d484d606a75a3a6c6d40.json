@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://github.com/vercel",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "Vercel was founded by Guillermo Rauch.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://github.com/vercel",
+    "passages": [
+      "[Vercel > Pinned Loading > Repositories]\n\nTypeScript 2,429 MIT 335 11 11 Updated Oct 29, 2026\n\n…\n\nRust 31,270 MIT 2,478 2 15 Updated Oct 29, 2026\n\n…\n\nJavaScript 143,190 MIT 34,154 1,118 (11 issues need help) 2,638 Updated Oct 29, 2026\n\n…\n\nThe Open Framework for Building Agents\n\n…\n\n@rauchg @tomocchino @TooTallNate @vvo @bgw @feugy @sebastianroming @styfle @1st1 @kobolog @qiao @posva @dvoytenko @benjamincanac @wbinnssmith @atinux @swarnava @sokra @tajo @timolins"
+    ]
+  }
+}

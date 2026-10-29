@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://stripe.com",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "Stripe is headquartered in South San Francisco.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://stripe.com",
+    "passages": [
+      "[Financial infrastructure to grow your revenue. Accept payments, handle business banking,1 and implement custom revenue models—from your first transaction to your billionth. > Powering businesses of all sizes. > Hertz unifies commerce with Stripe.]\n\nlocations globally\n\n…\n\nPayments, Terminal, Connect, Radar, and Stripe Sigma\n\n…\n\n[Financial infrastructure to grow your revenue. Accept payments, handle business banking,1 and implement custom revenue models—from your first transaction to your billionth. > Powering businesses of all sizes. > URBN consolidates $5 billion in online and in-store revenue onto Stripe.]\n\nstore locations\n\n…\n\nPayments, Terminal, Connect, Stripe Sigma, Radar, and Link\n\n…\n\n[Financial infrastructure to grow your revenue. Accept payments, handle business banking,1 and implement custom revenue models—from your first transaction to your billionth. > Powering businesses of all sizes. > Instacart powers online grocery delivery with Stripe.]\n\nretail partners across nearly 100K stores"
+    ]
+  }
+}

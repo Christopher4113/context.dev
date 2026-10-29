@@ -1,0 +1,44 @@
+{
+  "request": {
+    "model": "anthropic:claude-opus-5-5",
+    "system": "You verify one claim against evidence passages scraped from the cited sources. Judge only from the passages, never from your own knowledge.\nVerdicts:\n- supported: a passage states the claim's value, so a reader could confirm it from the quote alone. Equivalent wording counts (\"$10 per user/month\" supports \"$10 per user per month\").\n- partial: a passage supports part of the claim, or gives a materially different qualification (a different number, a range, an older date, a different plan or product).\n- unsupported: the passages are on topic but do not state the value, or they contradict it.\n- no_evidence: the passages are irrelevant or empty.\nA passage that only mentions a word in another sense (e.g. a product name in a feature list) does not support a claim about it.\nevidence_quote MUST be copied character-for-character from one passage: the shortest span that shows the value (under 300 characters). Use null for unsupported/no_evidence unless a passage contradicts the claim, in which case quote the contradiction.\nreason: one sentence. If the passage contradicts the claim, say what it actually says.",
+    "user": "Research question: Who is the ceo, cfo and cto of savvy\nClaim: The company in question is named Savvy.\nValue being checked: \"Savvy\"\n\n<passage source=\"http://savvy.com/\">\n[Vacation rentals you want, at the prices you deserve]\n\nThe same stay costs $3,166 on Airbnb and $2,625 on Savvy.\n\n…\n\n[Vacation rentals you want, at the prices you deserve.]\n\nThe same stay costs $3,166 on Airbnb and $2,625 on Savvy.\n\n…\n\n[Vacation rentals you want, at the prices you deserve. > Why travelers book direct with Savvy]\n\n- $500saved on average vs. Airbnb\n- 150K+professionally managed properties\n- 100%professional property managers\n- $0platform markup\n\n…\n\n[Vacation rentals you want, at the prices you deserve. > Savvy, in your pocket.]\n\n- Search & book direct on the go\n- Trip reminders, not spam\n- Verified hosts only\n\n…\n\n[Vacation rentals you want, at the prices you deserve. > What Savvy Travelers Are Saying]\n\n> I was so happy I found Savvy... they saved me almost $500 on my vacation stay. I will continue using them instead of Vrbo and Airbnb.\n</passage>\n\n<passage source=\"https://www.savvy.com/about\">\n[We built the direct > What we believe]\n\nSavvy is a direct booking marketplace built on that belief: professional hosts, real relationships, and the same properties you find on Airbnb for an average of $500 less. No markup. No middleman. Just the trip, at the price it was always meant to be.\n\n…\n\n[We built the direct > Thirty years in this industry.]\n\nThe foundation was already there. bnbfinder had been connecting travelers directly with independent properties since 1998, one of the earliest direct booking directories of its kind. Eric saw something worth scaling. Under his leadership the focus expanded: more professional property managers, more inventory, a sharper commitment to transparent pricing. He introduced the technology to match, building direct API connections with the property management systems that power the industry. By 2024 the marketplace had crossed 100,000 professionally managed properties across the US. In January 2025, bnbfinder became Savvy. Same direct booking mission, sharper name, and a clear position in a market finally ready for it.\n</passage>\n\n<passage source=\"http://github.com/ritikm\">\n[ritikm - Overview]\n\n**ritikm**\n\n…\n\n[Ritik Malhotra ritikm > Organizations]\n\nHackBerkeley\n\n…\n\n[Block or report ritikm > 1 contribution in the last year]\n\non May 6th.No contributions on May 13th.No contributions on May 20th.No contributions on May 27th.No contributions on June 3rd.No contributions on June 10th.No contributions on June 17th.No contributions on June 24th.No contributions on July 1st.No contributions on July 8th.No contributions on July 15th.No contributions on July 22nd.No contributions on July 29th.No contributions on August 5th.No contributions on August 12th.No contributions on August 19th.No contributions on August 26th.No contributions on September 2nd.No contributions on September 9th.No contributions on September 16th.No&#x20;\n\n…\n\non July 25th.No contributions on August 1st.No contributions on August 8th.No contributions on August 15th.No contributions on August 22nd.No contributions on August 29th.No contributions on September 5th.No contributions on September 12th.No contributions on September 19th.No contributions on September 26th.No contributions on October 3rd.No contributions on October 10th.No contributions on October 17th.No contributions on October 24th.\n</passage>",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "verdict": {
+          "type": "string",
+          "enum": [
+            "supported",
+            "partial",
+            "unsupported",
+            "no_evidence"
+          ]
+        },
+        "best_source_url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "evidence_quote": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "reason": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "verdict",
+        "best_source_url",
+        "evidence_quote",
+        "reason"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "response": "{\"verdict\":\"supported\",\"best_source_url\":\"https://www.savvy.com/about\",\"evidence_quote\":\"Savvy is a direct booking marketplace built on that belief\",\"reason\":\"The about page names the company as Savvy, a direct booking marketplace that was formerly bnbfinder.\"}"
+}

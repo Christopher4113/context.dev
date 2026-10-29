@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://supabase.io",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "Ant Wilson is a founder of Supabase.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://supabase.io",
+    "passages": [
+      "[Build in a weekendScale to millions > Vector > Kickstart your next project]\n\n**AI Chatbot** An open-source AI chatbot app template built with Next.js, the Vercel AI SDK, OpenAI, and Supabase.\n\n…\n\n[Build in a weekendScale to millions > Vector > How industry leaders]\n\nPowering millions of AI-generated apps with a complete Supabase backend.\n\n…\n\nThe thing that makes everything possible, all of our rapid development now and AI-generated or assisted development, is Supabase. That's the giant whose shoulders we can stand on.\n\n…\n\nWe could not have built this company without Supabase. If I had to go and build all these components myself, we wouldn't even have launched.\n\n…\n\n[Build in a weekendScale to millions > Open source from day one]\n\nSupabase is built in the open because we believe great developer tools should be transparent, inspectable, and owned by the community. Read, contribute, self-host. You're never locked in, and always in control."
+    ]
+  }
+}

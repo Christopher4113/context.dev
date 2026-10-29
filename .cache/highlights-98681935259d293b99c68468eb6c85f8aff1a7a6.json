@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://supabase.io",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "Supabase has raised $1 billion in total funding.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://supabase.io",
+    "passages": [
+      "[Build in a weekendScale to millions > Vector > Kickstart your next project]\n\n**AI Chatbot** An open-source AI chatbot app template built with Next.js, the Vercel AI SDK, OpenAI, and Supabase.\n\n…\n\n[Build in a weekendScale to millions > Vector > How industry leaders]\n\nare building with Supabase\n\n…\n\nPowering millions of AI-generated apps with a complete Supabase backend.\n\n…\n\nWe could not have built this company without Supabase. If I had to go and build all these components myself, we wouldn't even have launched.\n\n…\n\n[Build in a weekendScale to millions > Vector > Join the community]\n\nVery impressed by @supabase's growth. For new startups, they seem to have gone from \"promising\" to \"standard\" in remarkably short order."
+    ]
+  }
+}

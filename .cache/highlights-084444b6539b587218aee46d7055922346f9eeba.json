@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://github.com/vercel",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "Vercel was founded in 2015.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://github.com/vercel",
+    "passages": [
+      "[Vercel > Pinned Loading > Repositories]\n\nvercel/sandbox's past year of commit activity\n\n…\n\nvercel/academy-starters's past year of commit activity\n\n…\n\nJavaScript 143,190 MIT 34,154 1,118 (11 issues need help) 2,638 Updated Oct 29, 2026\n\n…\n\nvercel/ai's past year of commit activity\n\n…\n\nvercel/sdk's past year of commit activity"
+    ]
+  }
+}

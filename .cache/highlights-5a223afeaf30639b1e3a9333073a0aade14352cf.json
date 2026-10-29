@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://supabase.com",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "Paul Copplestone is a founder of Supabase.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://supabase.com",
+    "passages": [
+      "[Build in a weekendScale to millions > Vector > Kickstart your next project]\n\n**AI Chatbot** An open-source AI chatbot app template built with Next.js, the Vercel AI SDK, OpenAI, and Supabase.\n\n…\n\n[Build in a weekendScale to millions > Vector > How industry leaders]\n\nPowering millions of AI-generated apps with a complete Supabase backend.\n\n…\n\nThe thing that makes everything possible, all of our rapid development now and AI-generated or assisted development, is Supabase. That's the giant whose shoulders we can stand on.\n\n…\n\n[Build in a weekendScale to millions > Vector > Join the community]\n\n@supabase shout out, their MCP is awesome. It's helping me create better row securities and telling me best practises for setting up a supabase app\n\n…\n\nI’ve always used Supabase just as a database. Yesterday, I helped debug a founder’s vibe-coding project built with React + React Router — no backend server. The “backend” was entirely Supabase Edge Functions as the API. First time using Supabase this way. Impressive."
+    ]
+  }
+}

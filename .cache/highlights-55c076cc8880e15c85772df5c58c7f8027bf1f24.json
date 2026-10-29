@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://stripe.com",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "Patrick Collison is a founder of Stripe.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://stripe.com",
+    "passages": [
+      "[Financial infrastructure to grow your revenue. Accept payments, handle business banking,1 and implement custom revenue models—from your first transaction to your billionth. > Powering businesses of all sizes. > Transform your enterprise with agile financial infrastructure]\n\n50% of Fortune 100 companies have used Stripe to grow their businesses—from expanding internationally to reimagining the customer experience.\n\n…\n\n[Financial infrastructure to grow your revenue. Accept payments, handle business banking,1 and implement custom revenue models—from your first transaction to your billionth. > Powering businesses of all sizes. > Build a foundation for your startup that enables faster growth]\n\nFrom stablecoin pioneers to 88% of the Forbes AI 50, Stripe helps startups build what’s next on easy-to-integrate financial infrastructure.\n\n…\n\n[Financial infrastructure to grow your revenue. Accept payments, handle business banking,1 and implement custom revenue models—from your first transaction to your billionth. > Powering businesses of all sizes. > Make your SaaS platform a complete financial operating system > Manage platform risk.]\n\nLaura Collinson, Director of Fintech, Jobber\n\n…\n\n[Financial infrastructure to grow your revenue. Accept payments, handle business banking,1 and implement custom revenue models—from your first transaction to your billionth. > What’s happening > Shopify’s Tobi Lütke sits down with John Collison.]\n\nHear them discuss the choices that shaped Shopify and Stripe, the future of commerce, and their advice for founders.\n\n…\n\n[Financial infrastructure to grow your revenue. Accept payments, handle business banking,1 and implement custom revenue models—from your first transaction to your billionth. > What’s happening > How leading retailers unify customer experiences and drive growth.]\n\n- Shopify’s Tobi Lütke sits down with John Collison.Hear them discuss the choices that shaped Shopify and Stripe, the future of commerce, and their advice for founders."
+    ]
+  }
+}

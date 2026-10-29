@@ -43,6 +43,25 @@ For "President and CEO of Y Combinator", all 5 sources were LinkedIn profiles of
 **5. Values the cited page doesn't show (Notion, Context.dev).**
 Notion's monthly-billed prices (`$12`, `$24`) were `unsupported`. The retrieved passages from notion.com/pricing show only the default view (`$10per member / month`), and the monthly price is probably behind a billing toggle. In Context.dev's own company facts, `latest_funding.round: "Seed"` was `unsupported`. The cited X post says "We raised $9M to give your agents the internet" but never names the round. The fact is correct, but the citation doesn't carry it.
 
+## Follow-up: checking the right links first
+
+Groundcheck checks the first 3 sources per field, and for company and people questions those were mostly profile records. I tried three ways of ordering the sources and reran the benchmark each time. Pricing, product, and date questions have about 1 source each, so they didn't change. Full output is in [results/benchmark-ranked.json](results/benchmark-ranked.json).
+
+| Ordering | Company facts supported | People / roles supported | Overall supported | Overall no evidence |
+| --- | ---: | ---: | ---: | ---: |
+| Answers' order (above) | 50.0% | 41.2% | 67.9% | 11.4% |
+| All LinkedIn / social last | 38.5% | 64.3% | 68.6% | 10.9% |
+| Only personal profiles / social last | 50.0% | 41.2% | 67.9% | 12.1% |
+| **Entity's own site first**, then other pages, then profiles / social | **53.8%** | **58.8%** | **70.7%** | **6.4%** |
+
+- **Moving all of LinkedIn back was too blunt.** It pushed out readable LinkedIn company pages, and GitHub org pages that back nothing took their slots.
+- **Moving only personal profiles back changed nothing.** The slots went to lookalike company pages (`linkedin.com/company/openai-sora`, `/claude-builder-club-umass`).
+- **What helped was checking the entity's own site first.** That means pages whose domain matches a name in the question: anthropic.com/company/leadership for Anthropic, and openai.com's CFO announcement for OpenAI.
+- **One regression:** Microsoft dropped from 3 to 1 supported, because a readable LinkedIn profile lost its slot to a blocked press page.
+- **Lookalike domains can still match.** Domain matching can be fooled by a site like `figma.bot`, which was ranked as Figma's own site.
+
+This also supports suggestion 2 below. Answers already knows which source is the entity's own site, so ordering or labeling sources that way in the response would help every client, not just Groundcheck.
+
 ## What would help
 
 1. **Per-field citations.** Every example above took a scrape per field to reconstruct. The research agent already knows which page it used for each value, so returning that page (the `verify: true` shape in the README) would let users trust the many fields that are fine and only check the rest.

@@ -1,0 +1,44 @@
+{
+  "request": {
+    "model": "anthropic:claude-opus-5-5",
+    "system": "You verify one claim against evidence passages scraped from the cited sources. Judge only from the passages, never from your own knowledge.\nVerdicts:\n- supported: a passage states the claim's value, so a reader could confirm it from the quote alone. Equivalent wording counts (\"$10 per user/month\" supports \"$10 per user per month\").\n- partial: a passage supports part of the claim, or gives a materially different qualification (a different number, a range, an older date, a different plan or product).\n- unsupported: the passages are on topic but do not state the value, or they contradict it.\n- no_evidence: the passages are irrelevant or empty.\nA passage that only mentions a word in another sense (e.g. a product name in a feature list) does not support a claim about it.\nevidence_quote MUST be copied character-for-character from one passage: the shortest span that shows the value (under 300 characters). Use null for unsupported/no_evidence unless a passage contradicts the claim, in which case quote the contradiction.\nreason: one sentence. If the passage contradicts the claim, say what it actually says.",
+    "user": "Research question: Who are the CEO, President, and Chief Science Officer of Anthropic?\nClaim: The company in question is Anthropic.\nValue being checked: \"Anthropic\"\n\n<passage source=\"https://www.linkedin.com/company/anthropicresearch/\">\n[Anthropic > About us]\n\nWe're an AI research company that builds reliable, interpretable, and steerable AI systems. Our first product is Claude, an AI assistant for tasks at any scale. Our research interests span multiple areas including natural language, human feedback, scaling laws, reinforcement learning, code generation, and interpretability.\n\n…\n\n501-1,000 employees\n\n…\n\nPrivately Held\n\n…\n\n[Anthropic > Updates]\n\nAnthropic files S-1 with the SEC for proposed initial public offering anthropic.com\n\n…\n\nWe’re committing a portion of Anthropic’s shares to the Anthropic Public Benefit Fund, a new wholly owned entity dedicated entirely to the public benefit. It will start off with 5% of our shares. For every 50% increase in the company’s value over a set baseline, we can contribute up to an extra 2%, subject to our board’s discretion. In total, this means that roughly 20% of Anthropic’s shares are committed to the public good. Our co-founders have already pledged to donate 80% of their equity, and around half our employees are donating a portion of their equity as part of a donation matching program we’ve run since our founding. In the post below, we share more details about our new fund.&#x20;\n</passage>\n\n<passage source=\"https://www.linkedin.com/company/claude-builder-club-umass\">\n[Claude Builder Club > About us]\n\nWe are offering Claude Pro, API credits, and Exclusive Workshops with Anthropic staff for UMass Students. Sign up here:&#x20;\n\n…\n\n1,001-5,000 employees\n\n…\n\nAmherst, MA\n\n…\n\nPrivately Held\n\n…\n\n[Claude Builder Club > Locations]\n\nAmherst, MA, US\n</passage>\n\n<passage source=\"https://www.crunchbase.com/organization/anthropic\">\n[Anthropic - Crunchbase Company Profile & Funding]\n\nAnthropic is an artificial intelligence company that develops large language models and AI systems for business and research use.\n\n…\n\nPrivateDebt Financing San Francisco, California, United States501-1000  View on Facebook View on LinkedIn\n\nAgentic AI\n\nArtificial Intelligence (AI)\n\nFoundational AI\n\n…\n\nAnthropic\n</passage>",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "verdict": {
+          "type": "string",
+          "enum": [
+            "supported",
+            "partial",
+            "unsupported",
+            "no_evidence"
+          ]
+        },
+        "best_source_url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "evidence_quote": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "reason": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "verdict",
+        "best_source_url",
+        "evidence_quote",
+        "reason"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "response": "{\"verdict\":\"supported\",\"best_source_url\":\"https://www.crunchbase.com/organization/anthropic\",\"evidence_quote\":\"Anthropic is an artificial intelligence company that develops large language models and AI systems for business and research use.\",\"reason\":\"The passages are about the company Anthropic, which confirms the company in question is Anthropic.\"}"
+}

@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://github.com/stripe",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "The company is Stripe.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://github.com/stripe",
+    "passages": [
+      "[Stripe > Pinned Loading]\n\nNode.js library for the Stripe API.\n\n…\n\nPHP library for the Stripe API.\n\n…\n\n[Stripe > Pinned Loading > Repositories]\n\nPHP library for the Stripe API.\n\n…\n\nStripe.net is a sync/async .NET 4.6.1+ client, and a portable class library for stripe.com.\n\n…\n\nNode.js library for the Stripe API."
+    ]
+  }
+}

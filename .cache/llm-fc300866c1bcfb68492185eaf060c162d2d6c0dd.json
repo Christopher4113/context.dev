@@ -1,0 +1,36 @@
+{
+  "request": {
+    "model": "anthropic:claude-opus-5-5",
+    "system": "Rewrite each field of a research answer as one standalone, checkable factual sentence. Name the subject explicitly (e.g. the company). Keep the value exactly as given. Do not add facts.",
+    "user": "Question: What is the pricing of wispr flow app. In particular the subscription cost for each tier.\n\nFields:\n- app_name (app name) = \"Wispr Flow\"\n- currency (currency) = \"USD\"\n- tiers[0].tier_name (tiers › #1 › tier name) = \"Free\"\n- tiers[0].price_monthly (tiers › #1 › price monthly) = \"$0\"\n- tiers[0].key_limits (tiers › #1 › key limits) = \"2,000 words per week on desktop; limited weekly use on mobile\"\n- tiers[1].tier_name (tiers › #2 › tier name) = \"Pro\"\n- tiers[1].price_monthly (tiers › #2 › price monthly) = \"$15/user/mo\"\n- tiers[1].price_annual (tiers › #2 › price annual) = \"$12/user/mo\"\n- tiers[1].billing_note (tiers › #2 › billing note) = \"20% discount for annual billing\"\n- tiers[2].tier_name (tiers › #3 › tier name) = \"Growth\"\n- tiers[2].price_monthly (tiers › #3 › price monthly) = \"$23/user/mo\"\n- tiers[2].price_annual (tiers › #3 › price annual) = \"$18/user/mo\"\n- tiers[2].billing_note (tiers › #3 › billing note) = \"20% discount for annual billing\"\n- tiers[3].tier_name (tiers › #4 › tier name) = \"Enterprise\"\n- tiers[3].price_monthly (tiers › #4 › price monthly) = \"$33/user/mo\"\n- tiers[3].price_annual (tiers › #4 › price annual) = \"$26/user/mo\"\n- tiers[3].billing_note (tiers › #4 › billing note) = \"20% discount for annual billing\"\n- free_trial (free trial) = \"14-day trial\"\n- source_url (source url) = \"https://wisprflow.ai/pricing\"\n\nReturn {\"claims\":[{\"path\",\"claim\"}]} with one entry per field.",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "claims": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "path": {
+                "type": "string"
+              },
+              "claim": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "path",
+              "claim"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "claims"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "response": "{\"claims\":[{\"path\":\"app_name\",\"claim\":\"The app whose pricing is described is named Wispr Flow.\"},{\"path\":\"currency\",\"claim\":\"Wispr Flow's subscription prices are listed in USD.\"},{\"path\":\"tiers[0].tier_name\",\"claim\":\"Wispr Flow offers a pricing tier named Free.\"},{\"path\":\"tiers[0].price_monthly\",\"claim\":\"The monthly price of Wispr Flow's Free tier is $0.\"},{\"path\":\"tiers[0].key_limits\",\"claim\":\"Wispr Flow's Free tier is limited to 2,000 words per week on desktop; limited weekly use on mobile.\"},{\"path\":\"tiers[1].tier_name\",\"claim\":\"Wispr Flow offers a pricing tier named Pro.\"},{\"path\":\"tiers[1].price_monthly\",\"claim\":\"The monthly price of Wispr Flow's Pro tier is $15/user/mo.\"},{\"path\":\"tiers[1].price_annual\",\"claim\":\"The annual-billing price of Wispr Flow's Pro tier is $12/user/mo.\"},{\"path\":\"tiers[1].billing_note\",\"claim\":\"Wispr Flow's Pro tier offers a 20% discount for annual billing.\"},{\"path\":\"tiers[2].tier_name\",\"claim\":\"Wispr Flow offers a pricing tier named Growth.\"},{\"path\":\"tiers[2].price_monthly\",\"claim\":\"The monthly price of Wispr Flow's Growth tier is $23/user/mo.\"},{\"path\":\"tiers[2].price_annual\",\"claim\":\"The annual-billing price of Wispr Flow's Growth tier is $18/user/mo.\"},{\"path\":\"tiers[2].billing_note\",\"claim\":\"Wispr Flow's Growth tier offers a 20% discount for annual billing.\"},{\"path\":\"tiers[3].tier_name\",\"claim\":\"Wispr Flow offers a pricing tier named Enterprise.\"},{\"path\":\"tiers[3].price_monthly\",\"claim\":\"The monthly price of Wispr Flow's Enterprise tier is $33/user/mo.\"},{\"path\":\"tiers[3].price_annual\",\"claim\":\"The annual-billing price of Wispr Flow's Enterprise tier is $26/user/mo.\"},{\"path\":\"tiers[3].billing_note\",\"claim\":\"Wispr Flow's Enterprise tier offers a 20% discount for annual billing.\"},{\"path\":\"free_trial\",\"claim\":\"Wispr Flow offers a 14-day trial.\"},{\"path\":\"source_url\",\"claim\":\"Wispr Flow's pricing information is published at https://wisprflow.ai/pricing.\"}]}"
+}

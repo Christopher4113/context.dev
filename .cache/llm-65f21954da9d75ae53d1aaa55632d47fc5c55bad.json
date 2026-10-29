@@ -1,0 +1,44 @@
+{
+  "request": {
+    "model": "anthropic:claude-opus-5-5",
+    "system": "You verify one claim against evidence passages scraped from the cited sources. Judge only from the passages, never from your own knowledge.\nVerdicts:\n- supported: a passage states the claim's value, so a reader could confirm it from the quote alone. Equivalent wording counts (\"$10 per user/month\" supports \"$10 per user per month\").\n- partial: a passage supports part of the claim, or gives a materially different qualification (a different number, a range, an older date, a different plan or product).\n- unsupported: the passages are on topic but do not state the value, or they contradict it.\n- no_evidence: the passages are irrelevant or empty.\nA passage that only mentions a word in another sense (e.g. a product name in a feature list) does not support a claim about it.\nevidence_quote MUST be copied character-for-character from one passage: the shortest span that shows the value (under 300 characters). Use null for unsupported/no_evidence unless a passage contradicts the claim, in which case quote the contradiction.\nreason: one sentence. If the passage contradicts the claim, say what it actually says.",
+    "user": "Research question: Company facts about Context.dev (context.dev), the web data API for AI agents: founders, accelerator batch, and latest funding round.\nClaim: Context.dev was part of the Y Combinator S26 accelerator batch.\nValue being checked: \"Y Combinator S26\"\n\n<passage source=\"https://www.linkedin.com/company/context-experiments/\">\n[Context > About us]\n\nLet your entire team A/B test, monitor, and personalize user experiences. Move faster without losing control by making feature management product-focused.\n\n…\n\nIndustry\n\nSoftware Development\n\n…\n\nFounded\n\n2020\n</passage>\n\n<passage source=\"https://www.linkedin.com/company/contextdev\">\n[Context.dev (YC S26) > Updates]\n\nIntroducing Parsers on Context.dev (YC S26) Google Maps. Instagram. TikTok. G2. App Store. Google Play. URL in → clean JSON out. You can now pull: → Business listings and reviews → Social profiles, posts and comments → App details, ratings and reviews → Emails, phone numbers and links All through the same API. Build a tool that spots what customers hate about your competitors. Track app reviews. Give your agents social data to work with. We wrote the parsers so you don't have to. go build something cool :)\n\n…\n\nContext.dev (YC S26)\n\n…\n\nContext now powers Zero's enrichment infrastructure, keeping information on 20M+ companies fresh. Zero searches and scrapes millions of data points every day to power its AI CRM, company enrichment, and custom agents. Learn how they do it:&#x20;\n\n…\n\nMuch of the web data teams need is available only after signing in. Introducing Browser Profiles for Context.dev (YC S26). Authenticate once, then reuse that browser session to scrape pages such as customer portals and vendor dashboards. Your password is never stored. Profiles belong to your organization and remain usable after API key rotation. Bring signed-in web data into the agents and workflows you’re building.\n\nA lot of useful web data lives behind a login We just shipped browser profiles for Context.dev (YC S26) Sign in once, and Context saves the browser session so you can reuse it to scrape authenticated pages via a profile\\_id. Your password is NEVER stored. Now agents can pull data from places like customer portals and vendor dashboards.\n</passage>\n\n<passage source=\"https://www.crunchbase.com/organization/context-dev\">\n[context.dev - Crunchbase Company Profile & Funding]\n\ncontext.dev Growth Score\n\n…\n\ncontext.dev provides APIs for web scraping, brand data, company enrichment, and structured data extraction for AI applications.\n\nFounded\n\n…\n\nArtificial Intelligence (AI)\n\n…\n\ncontext.dev\n</passage>",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "verdict": {
+          "type": "string",
+          "enum": [
+            "supported",
+            "partial",
+            "unsupported",
+            "no_evidence"
+          ]
+        },
+        "best_source_url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "evidence_quote": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "reason": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "verdict",
+        "best_source_url",
+        "evidence_quote",
+        "reason"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "response": "{\"verdict\":\"supported\",\"best_source_url\":\"https://www.linkedin.com/company/contextdev\",\"evidence_quote\":\"Introducing Browser Profiles for Context.dev (YC S26).\",\"reason\":\"The Context.dev LinkedIn page repeatedly labels the company \\\"Context.dev (YC S26)\\\", which shows it was in Y Combinator's S26 batch.\"}"
+}

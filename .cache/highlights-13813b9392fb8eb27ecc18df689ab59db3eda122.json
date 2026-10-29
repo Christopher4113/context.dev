@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://news.adobe.com/news/news-details/2023/adobe-and-figma-mutually-agree-to-terminate-merger-agreement",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "The company is Figma.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://news.adobe.com/news/news-details/2023/adobe-and-figma-mutually-agree-to-terminate-merger-agreement",
+    "passages": [
+      "[Adobe and Figma Mutually Agree to Terminate Merger Agreement]\n\n**SAN JOSE, Calif. & SAN FRANCISCO**--(BUSINESS WIRE)-- Today, Adobe (Nasdaq:ADBE) and Figma announced that they have entered into a mutual agreement to terminate their previously announced merger agreement, originally announced on September 15, 2022, under which Adobe would have acquired Figma for a mix of cash and stock consideration.\n\n…\n\n[Adobe and Figma Mutually Agree to Terminate Merger Agreement > Figma Public Relations Contact]\n\nAdobe and Figma announced that they have entered into a mutual agreement to terminate their previously announced merger agreement, originally announced on September 15, 2022, under which Adobe would have acquired Figma for a mix of cash and stock consideration."
+    ]
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://context.dev",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "The company is Context.dev, the web data API for AI agents (context.dev).",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://context.dev",
+    "passages": [
+      "[Give your agents the internet]\n\nAPI for agents to scrape, search, monitor, and collect data from the web.\n\n…\n\n[Give your agents the internet > Web infrastructure that powers agents at any scale.]\n\n```\nimport ContextDev from 'context.dev';\n\nconst client = new ContextDev({ apiKey: 'YOUR_API_KEY' });\n\nconst page = await client.web.scrape({\n  url: 'https://linear.app',\n  formats: {\n    markdown: true,\n    html: true,\n    screenshot: true,\n  },\n  sharedParams: { mainContentOnly: true },\n});\n\nif (page.markdown.success) console.log(page.markdown.data);\nif (page.screenshot.success) console.log(page.screenshot.data);\n```\n\n…\n\n[Give your agents the internet > How customers shipped with Context.dev]\n\nOct 17, 2026 **Zero** Zero uses Context.dev for web scraping, live agent search, and brand data across its AI CRM. Its platform keeps data on 20M+ companies fresh, and switching providers took probably less than five minutes with Codex. Read their story"
+    ]
+  }
+}

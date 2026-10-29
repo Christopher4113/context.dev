@@ -1,0 +1,44 @@
+{
+  "request": {
+    "model": "anthropic:claude-opus-5-5",
+    "system": "You verify one claim against evidence passages scraped from the cited sources. Judge only from the passages, never from your own knowledge.\nVerdicts:\n- supported: a passage states the claim's value, so a reader could confirm it from the quote alone. Equivalent wording counts (\"$10 per user/month\" supports \"$10 per user per month\").\n- partial: a passage supports part of the claim, or gives a materially different qualification (a different number, a range, an older date, a different plan or product).\n- unsupported: the passages are on topic but do not state the value, or they contradict it.\n- no_evidence: the passages are irrelevant or empty.\nA passage that only mentions a word in another sense (e.g. a product name in a feature list) does not support a claim about it.\nevidence_quote MUST be copied character-for-character from one passage: the shortest span that shows the value (under 300 characters). Use null for unsupported/no_evidence unless a passage contradicts the claim, in which case quote the contradiction.\nreason: one sentence. If the passage contradicts the claim, say what it actually says.",
+    "user": "Research question: Company facts about Figma: founders, founding year, headquarters, and the outcome of Adobe's proposed acquisition.\nClaim: Evan Wallace is a founder of Figma.\nValue being checked: \"Evan Wallace\"\n\n<passage source=\"https://www.linkedin.com/company/figma/\">\n[Figma > About us]\n\nDesign Services\n\n…\n\nSan Francisco, California\n\n…\n\nPrivately Held\n\nFounded\n\n…\n\n[Figma > Locations]\n\nSan Francisco, California 94103, US\n</passage>\n\n<passage source=\"https://www.crunchbase.com/organization/figma\">\n[Figma - Crunchbase Company Profile & Funding]\n\n1923\n\n…\n\nFigma is a collaborative design tool that enables teams to create, prototype, and test digital products on one platform.\n\nFounded\n\n…\n\nPublicPost-IPO Equity San Francisco, California, United States1001-5000  View on Facebook View on LinkedIn\n\n…\n\nFigma\n</passage>",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "verdict": {
+          "type": "string",
+          "enum": [
+            "supported",
+            "partial",
+            "unsupported",
+            "no_evidence"
+          ]
+        },
+        "best_source_url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "evidence_quote": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "reason": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "verdict",
+        "best_source_url",
+        "evidence_quote",
+        "reason"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "response": "{\"verdict\":\"no_evidence\",\"best_source_url\":null,\"evidence_quote\":null,\"reason\":\"Neither passage mentions Evan Wallace or names Figma's founders; they only give the company's location, status, and a description.\"}"
+}

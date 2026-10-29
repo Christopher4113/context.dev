@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://github.com/shopify",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "The company in question is Shopify.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://github.com/shopify",
+    "passages": [
+      "[Shopify > Popular repositories Loading]\n\nLiquid markup language. Safe, customer facing template language for flexible web apps.\n\n…\n\nThe exceptionally handsome dashboard framework in Ruby and Coffeescript.\n\n…\n\n[Shopify > Popular repositories Loading > Repositories]\n\nPython Package for building Shopify Apps. Authored & maintained by Shopify.\n\n…\n\nA shopping skill for AI agents, powered by the Universal Commerce Protocol.\n\n…\n\n[Shopify > Popular repositories Loading > Repositories > Most used topics]\n\nshopify ruby react typescript graphql"
+    ]
+  }
+}

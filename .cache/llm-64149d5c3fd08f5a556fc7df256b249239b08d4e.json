@@ -1,0 +1,44 @@
+{
+  "request": {
+    "model": "anthropic:claude-opus-5-5",
+    "system": "You verify one claim against evidence passages scraped from the cited sources. Judge only from the passages, never from your own knowledge.\nVerdicts:\n- supported: a passage states the claim's value, so a reader could confirm it from the quote alone. Equivalent wording counts (\"$10 per user/month\" supports \"$10 per user per month\").\n- partial: a passage supports part of the claim, or gives a materially different qualification (a different number, a range, an older date, a different plan or product).\n- unsupported: the passages are on topic but do not state the value, or they contradict it.\n- no_evidence: the passages are irrelevant or empty.\nA passage that only mentions a word in another sense (e.g. a product name in a feature list) does not support a claim about it.\nevidence_quote MUST be copied character-for-character from one passage: the shortest span that shows the value (under 300 characters). Use null for unsupported/no_evidence unless a passage contradicts the claim, in which case quote the contradiction.\nreason: one sentence. If the passage contradicts the claim, say what it actually says.",
+    "user": "Research question: Company facts about Figma: founders, founding year, headquarters, and the outcome of Adobe's proposed acquisition.\nClaim: Figma is headquartered in San Francisco, California, United States.\nValue being checked: \"San Francisco, California, United States\"\n\n<passage source=\"https://figma.bot\">\n[The full-stack creative canvas > One workspace for your entire product development process.]\n\nMade so your whole team can go from WIP to ship, together.\n\n…\n\nTurn your ideas into apps, websites, and products.\n\n…\n\nDev tools that take you all the way to production.\n\n…\n\n[The full-stack creative canvas > The products you love are designed in Figma]\n\nFrancisco Seiz\n\n…\n\n95% of the Fortune 500 uses Figma\n</passage>\n\n<passage source=\"https://news.adobe.com/news/news-details/2023/adobe-and-figma-mutually-agree-to-terminate-merger-agreement\">\n[Adobe and Figma Mutually Agree to Terminate Merger Agreement]\n\n**SAN JOSE, Calif. & SAN FRANCISCO**--(BUSINESS WIRE)-- Today, Adobe (Nasdaq:ADBE) and Figma announced that they have entered into a mutual agreement to terminate their previously announced merger agreement, originally announced on September 15, 2022, under which Adobe would have acquired Figma for a mix of cash and stock consideration.\n\nAlthough both companies continue to believe in the merits and procompetitive benefits of the combination, Adobe and Figma mutually agreed to terminate the transaction based on a joint assessment that there is no clear path to receive necessary regulatory approvals from the European Commission and the UK Competition and Markets Authority.\n\n“Adobe and Figma strongly disagree with the recent regulatory findings, but we believe it is in our respective best interests to move forward independently,” said Shantanu Narayen, chair and CEO, Adobe. “While Adobe and Figma shared a vision to jointly redefine the future of creativity and productivity, we continue to be well positioned to capitalize on our massive market opportunity and mission to change the world through personalized digital experiences.”\n\n…\n\n[Adobe and Figma Mutually Agree to Terminate Merger Agreement > Figma Public Relations Contact]\n\nMichael Amodeo\npress@figma.com\n\n…\n\nAdobe and Figma announced that they have entered into a mutual agreement to terminate their previously announced merger agreement, originally announced on September 15, 2022, under which Adobe would have acquired Figma for a mix of cash and stock consideration.\n</passage>\n\n<passage source=\"https://www.figma.com/blog/design-meet-the-internet/\">\n[Design: Meet the internet]\n\nDylan FieldCo-founder & Chief Executive Officer, Figma\n\n…\n\nToday, after three years of silence and hard work, I finally get to announce the launch of Figma, a collaborative interface design tool.\n\n…\n\n[Design: Meet the internet > Share Design: Meet the internet]\n\nThis made my ears perk up. Over the next year, Evan and I talked constantly about how we could make creative tools accessible using WebGL and, with the support of the Thiel Fellowship, we decided to start a company together.\n\n…\n\n[Design: Meet the internet > Introducing Figma]\n\nWhen we started working on Figma, we knew it was possible to build a fast and stable graphics tool in the browser, but we had no idea how hard it would be. From vector rendering to font layout to a million performance edge cases, getting here hasn’t been easy. Designers have high expectations for a tool they rely on every day! After dogfooding Figma internally for the past eighteen months and working closely with alpha customers, I’m confident we’ve reached this high bar.\n\n…\n\n[Design: Meet the internet > What’s next]\n\nDylan Field is the co-founder and CEO of Figma. Dylan studied computer science and mathematics at Brown University where he and his co-founder, Evan Wallace, first started experimenting with design tools built on (and for) the web. With funding from a Thiel fellowship, they began Figma. Prior to Figma, Dylan interned at O'Reilly Media, LinkedIn, and Flipboard.\n</passage>",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "verdict": {
+          "type": "string",
+          "enum": [
+            "supported",
+            "partial",
+            "unsupported",
+            "no_evidence"
+          ]
+        },
+        "best_source_url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "evidence_quote": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "reason": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "verdict",
+        "best_source_url",
+        "evidence_quote",
+        "reason"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "response": "{\"verdict\":\"partial\",\"best_source_url\":\"https://news.adobe.com/news/news-details/2023/adobe-and-figma-mutually-agree-to-terminate-merger-agreement\",\"evidence_quote\":\"**SAN JOSE, Calif. & SAN FRANCISCO**--(BUSINESS WIRE)--\",\"reason\":\"The joint press release dateline lists San Francisco alongside Adobe's San Jose, which implies Figma is based in San Francisco, but no passage explicitly says Figma is headquartered there.\"}"
+}

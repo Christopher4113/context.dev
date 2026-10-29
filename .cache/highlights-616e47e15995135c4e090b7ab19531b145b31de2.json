@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://supabase.com/company",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "Supabase has raised $1 billion in total funding.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://supabase.com/company",
+    "passages": [
+      "[Join one of the world's fastest growing open source communities. > Our investors]\n\nWe've raised $1 billion in funding, backed by some of the world's leading investors.\n\n…\n\n[Join one of the world's fastest growing open source communities. > Individual investors > Press]\n\n**ARTICLE** Supabase raises $80M Series B for its open source Firebase alternative\n\n**ARTICLE** Supabase Announces $80 Million Series B Led by Felicis"
+    ]
+  }
+}

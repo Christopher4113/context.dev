@@ -1,0 +1,44 @@
+{
+  "request": {
+    "model": "anthropic:claude-opus-5-5",
+    "system": "You verify one claim against evidence passages scraped from the cited sources. Judge only from the passages, never from your own knowledge.\nVerdicts:\n- supported: a passage states the claim's value, so a reader could confirm it from the quote alone. Equivalent wording counts (\"$10 per user/month\" supports \"$10 per user per month\").\n- partial: a passage supports part of the claim, or gives a materially different qualification (a different number, a range, an older date, a different plan or product).\n- unsupported: the passages are on topic but do not state the value, or they contradict it.\n- no_evidence: the passages are irrelevant or empty.\nA passage that only mentions a word in another sense (e.g. a product name in a feature list) does not support a claim about it.\nevidence_quote MUST be copied character-for-character from one passage: the shortest span that shows the value (under 300 characters). Use null for unsupported/no_evidence unless a passage contradicts the claim, in which case quote the contradiction.\nreason: one sentence. If the passage contradicts the claim, say what it actually says.",
+    "user": "Research question: Who are OpenAI's current CEO, CFO, and Chief Research Officer?\nClaim: The company in question is OpenAI.\nValue being checked: \"OpenAI\"\n\n<passage source=\"https://www.linkedin.com/company/openai-sora/\">\n[Stránka nenalezena > Omlouváme se, nemůžeme najít stránku, kterou hledáte. Zkuste se vrátit zpátky na předchozí stránku, nebo se podívejte do našeho Centra nápovědy pro více informací]\n\nPřejít do informačního kanálu\n\n…\n\n[Impossible de trouver cette page > Nous ne trouvons pas la page que vous recherchez. Essayez de retourner à la page précédente ou consultez notre assistance clientèle pour plus d’informations]\n\nOuvrez votre fil\n\n…\n\n[Laman tidak ditemui > Harap maaf, kami tidak dapat menemui laman yang ingin anda cari. Cuba kembali ke laman sebelumnya atau lihat Pusat Bantuan kami untuk maklumat lanjut]\n\nPergi ke suapan\n\n…\n\n[Pagina nu a fost găsită > Ne pare rău, nu găsim pagina pe care o căutaţi. Reveniţi la pagina anterioară sau consultaţi Centrul nostru de asistenţă pentru mai multe informaţii]\n\nAccesaţi fluxul dvs.\n\n…\n\n[Sidan kunde inte hittas. > Sidan du letar efter hittades inte. Gå tillbaka till föregående sida eller besök vårt Hjälpcenter för mer information]\n\nGå till ditt nyhetsflöde\n</passage>\n\n<passage source=\"https://www.linkedin.com/company/artificial-intelligence-open-ai/\">\n[Stránka nenalezena > Omlouváme se, nemůžeme najít stránku, kterou hledáte. Zkuste se vrátit zpátky na předchozí stránku, nebo se podívejte do našeho Centra nápovědy pro více informací]\n\nPřejít do informačního kanálu\n\n…\n\n[Impossible de trouver cette page > Nous ne trouvons pas la page que vous recherchez. Essayez de retourner à la page précédente ou consultez notre assistance clientèle pour plus d’informations]\n\nOuvrez votre fil\n\n…\n\n[Laman tidak ditemui > Harap maaf, kami tidak dapat menemui laman yang ingin anda cari. Cuba kembali ke laman sebelumnya atau lihat Pusat Bantuan kami untuk maklumat lanjut]\n\nPergi ke suapan\n\n…\n\n[Pagina nu a fost găsită > Ne pare rău, nu găsim pagina pe care o căutaţi. Reveniţi la pagina anterioară sau consultaţi Centrul nostru de asistenţă pentru mai multe informaţii]\n\nAccesaţi fluxul dvs.\n\n…\n\n[Sidan kunde inte hittas. > Sidan du letar efter hittades inte. Gå tillbaka till föregående sida eller besök vårt Hjälpcenter för mer information]\n\nGå till ditt nyhetsflöde\n</passage>\n\n<passage source=\"https://www.linkedin.com/company/openai/\">\n[OpenAI > About us]\n\nOpenAI is an AI research and deployment company dedicated to ensuring that general-purpose artificial intelligence benefits all of humanity. AI is an extremely powerful tool that must be created with safety and human needs at its core. OpenAI is dedicated to putting that alignment of interests first — ahead of profit. To achieve our mission, we must encompass and value the many different perspectives, voices, and experiences that form the full spectrum of humanity. Our investment in diversity, equity, and inclusion is ongoing, executed through a wide range of initiatives, and championed and supported by leadership. At OpenAI, we believe artificial intelligence has the potential to help people solve immense global challenges, and we want the upside of AI to be widely shared. Join us in shaping the future of technology.\n\n…\n\n1,001-5,000 employees\n\n…\n\nartificial intelligence and machine learning\n\n…\n\n[OpenAI > Updates > GPT-6.1 Terra is now in orbit.]\n\nOpenAI models are coming to Google Cloud. We're partnering with Google Cloud to bring OpenAI's frontier models and Codex agentic workflows into Google Cloud's model garden, giving enterprises access to our technology in the environment where they already build. Teams will be able to modernize software development and build agentic workflows with Google Cloud's built-in access controls, data governance, and infrastructure. Customers will also be able to purchase OpenAI models through Google Cloud Marketplace and apply existing Google Cloud spend commitments, giving them more flexibility in how they adopt frontier AI. General availability is planned in the coming weeks. Learn more:&#x20;\n\n…\n\n[OpenAI > Updates > Bringing GPT‑Rosalind to academic research labs]\n\nOpenAI\n</passage>",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "verdict": {
+          "type": "string",
+          "enum": [
+            "supported",
+            "partial",
+            "unsupported",
+            "no_evidence"
+          ]
+        },
+        "best_source_url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "evidence_quote": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "reason": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "verdict",
+        "best_source_url",
+        "evidence_quote",
+        "reason"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "response": "{\"verdict\":\"supported\",\"best_source_url\":\"https://www.linkedin.com/company/openai/\",\"evidence_quote\":\"OpenAI is an AI research and deployment company\",\"reason\":\"The passage is OpenAI's own LinkedIn company page and identifies OpenAI as the company, which matches the claim.\"}"
+}

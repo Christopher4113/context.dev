@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://anthropic.com",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "The President of Anthropic is Daniela Amodei.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://anthropic.com",
+    "passages": [
+      "[AI research and products that put safety at the frontier. AI will have a vast impact on the world. Anthropic is a public benefit corporation dedicated to securing its benefits and mitigating its risks. > 2026 Public Benefit Report]\n\nAnthropic is a Public Benefit Corporation (PBC), a designation that requires us to balance the financial interests of shareholders with the benefit to the broader public. This report takes stock of what we are doing to serve the public benefit, and of the work ahead.\n\n…\n\n[AI research and products that put safety at the frontier. AI will have a vast impact on the world. Anthropic is a public benefit corporation dedicated to securing its benefits and mitigating its risks. > Learn more]\n\nLearn more\n\n…\n\n- Responsible Scaling Policy\n\n**Responsible scaling policy** Our voluntary framework for managing catastrophic risks from advanced AI systems.\n\n…\n\n**Core views on AI safety** Why we believe AI safety research is critical, and how we approach it at Anthropic."
+    ]
+  }
+}

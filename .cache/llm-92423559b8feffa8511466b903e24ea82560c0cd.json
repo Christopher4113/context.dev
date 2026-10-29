@@ -1,0 +1,44 @@
+{
+  "request": {
+    "model": "anthropic:claude-opus-5-5",
+    "system": "You verify one claim against evidence passages scraped from the cited sources. Judge only from the passages, never from your own knowledge.\nVerdicts:\n- supported: a passage states the claim's value, so a reader could confirm it from the quote alone. Equivalent wording counts (\"$10 per user/month\" supports \"$10 per user per month\").\n- partial: a passage supports part of the claim, or gives a materially different qualification (a different number, a range, an older date, a different plan or product).\n- unsupported: the passages are on topic but do not state the value, or they contradict it.\n- no_evidence: the passages are irrelevant or empty.\nA passage that only mentions a word in another sense (e.g. a product name in a feature list) does not support a claim about it.\nevidence_quote MUST be copied character-for-character from one passage: the shortest span that shows the value (under 300 characters). Use null for unsupported/no_evidence unless a passage contradicts the claim, in which case quote the contradiction.\nreason: one sentence. If the passage contradicts the claim, say what it actually says.",
+    "user": "Research question: Company facts about Supabase: founders, founding year, and total funding raised.\nClaim: Ant Wilson is a founder of Supabase.\nValue being checked: \"Ant Wilson\"\n\n<passage source=\"https://github.com/supabase\">\n[Supabase > Pinned Loading]\n\nThe Postgres development platform. Supabase gives you a dedicated Postgres database to build your web, mobile, and AI applications.\n\n…\n\n[Supabase > Pinned Loading > Repositories]\n\nThe Postgres development platform. Supabase gives you a dedicated Postgres database to build your web, mobile, and AI applications.\n\n…\n\nA cloud-native, multi-tenant Postgres connection pooler.\n\n…\n\n[Supabase > Pinned Loading > Repositories > Sponsors]\n\n- @VitorCoelho\n\n- @notts1215\n\n- @thomaskawas\n\n- @BrewHubPHL\n\n- @seanblowers\n\n- @ekdysis\n\n- @mailtrap\n\n- @sanctusgee\n\n- @chandanrjit\n\n- @AsahiSoftWareEngineer\n\n- @zOuateRabbit\n\n- @sasatech-gk\n\n- Private Sponsor\n\n…\n\n[Supabase > Pinned Loading > Repositories > Sponsoring]\n\n- @xyflow\n\n- @vonovak\n\n- @dwsteele\n</passage>\n\n<passage source=\"https://supabase.com\">\n[Build in a weekendScale to millions > Vector > Kickstart your next project]\n\n**AI Chatbot** An open-source AI chatbot app template built with Next.js, the Vercel AI SDK, OpenAI, and Supabase.\n\n…\n\n[Build in a weekendScale to millions > Vector > How industry leaders]\n\nPowering millions of AI-generated apps with a complete Supabase backend.\n\n…\n\nThe thing that makes everything possible, all of our rapid development now and AI-generated or assisted development, is Supabase. That's the giant whose shoulders we can stand on.\n\n…\n\nWe could not have built this company without Supabase. If I had to go and build all these components myself, we wouldn't even have launched.\n\n…\n\n[Build in a weekendScale to millions > Open source from day one]\n\nSupabase is built in the open because we believe great developer tools should be transparent, inspectable, and owned by the community. Read, contribute, self-host. You're never locked in, and always in control.\n</passage>\n\n<passage source=\"https://supabase.io\">\n[Build in a weekendScale to millions > Vector > Kickstart your next project]\n\n**AI Chatbot** An open-source AI chatbot app template built with Next.js, the Vercel AI SDK, OpenAI, and Supabase.\n\n…\n\n[Build in a weekendScale to millions > Vector > How industry leaders]\n\nPowering millions of AI-generated apps with a complete Supabase backend.\n\n…\n\nThe thing that makes everything possible, all of our rapid development now and AI-generated or assisted development, is Supabase. That's the giant whose shoulders we can stand on.\n\n…\n\nWe could not have built this company without Supabase. If I had to go and build all these components myself, we wouldn't even have launched.\n\n…\n\n[Build in a weekendScale to millions > Open source from day one]\n\nSupabase is built in the open because we believe great developer tools should be transparent, inspectable, and owned by the community. Read, contribute, self-host. You're never locked in, and always in control.\n</passage>",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "verdict": {
+          "type": "string",
+          "enum": [
+            "supported",
+            "partial",
+            "unsupported",
+            "no_evidence"
+          ]
+        },
+        "best_source_url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "evidence_quote": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "reason": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "verdict",
+        "best_source_url",
+        "evidence_quote",
+        "reason"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "response": "{\"verdict\":\"no_evidence\",\"best_source_url\":null,\"evidence_quote\":null,\"reason\":\"None of the passages mention Ant Wilson or name any Supabase founders; they cover product descriptions, testimonials and GitHub sponsor lists.\"}"
+}

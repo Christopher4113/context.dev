@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://www.context.dev/blog/context-dev-raises-9m-seed-led-by-general-catalyst",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "Yahia Bakour is a founder of Context.dev.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://www.context.dev/blog/context-dev-raises-9m-seed-led-by-general-catalyst",
+    "passages": [
+      "[We raised $9M to give agents the internet]\n\nYahia Bakour\n\n…\n\n[We raised $9M to give agents the internet > Why I started this]\n\nI started Brand.dev, the company that became Context.dev, with one simple, stubborn idea: **any developer, anywhere in the world, should be able to build software that understands the world it's serving.** An app should know who it's talking to. A product should greet a new customer with their own logo and colors instead of a blank form.\n\n…\n\n[We raised $9M to give agents the internet > Thank you]\n\n- Yahia Bakour, Founder of Context.dev"
+    ]
+  }
+}

@@ -108,5 +108,35 @@ describe("pipeline", () => {
     expect(r.citations["plans[2].price_per_user_monthly"]).toMatchObject({ verdict: "supported", evidence: "$16 per user/month" });
     expect(r.citations["company"].verdict).toBe("unsupported"); // fabricated quote downgraded
     expect(r.summary.supported + r.summary.partial + r.summary.unsupported + r.summary.no_evidence).toBe(9);
+    expect(r.source_report).toEqual([
+      expect.objectContaining({ url: "https://linear.app/pricing", status: "verified", supports: expect.arrayContaining(["plans[2].price_per_user_monthly"]) }),
+    ]);
+  });
+
+  it("ranks the entity's own site first and profiles last, otherwise keeping order", async () => {
+    const { rankSources } = await import("../src/groundcheck.ts");
+    const urls = [
+      "https://www.linkedin.com/in/sam-altman/",
+      "https://x.com/openai",
+      "https://www.linkedin.com/company/openai-sora/",
+      "https://about.me/",
+      "not-a-url",
+      "https://openai.com/index/leadership-team-update/",
+      "https://openai.com/index/leadership-team-update/",
+    ];
+    expect(rankSources(urls, "Company facts about OpenAI: who is the CEO?")).toEqual([
+      "https://openai.com/index/leadership-team-update/",
+      "https://www.linkedin.com/company/openai-sora/",
+      "https://about.me/",
+      "https://www.linkedin.com/in/sam-altman/",
+      "https://x.com/openai",
+    ]);
+    expect(rankSources(["https://news.example.com", "https://www.ycombinator.com/people"], "Who runs Y Combinator?")[0]).toBe("https://www.ycombinator.com/people");
+  });
+
+  it("marks sources past the cap as not_checked and unreadable ones as blocked", async () => {
+    const { sourceReport } = await import("../src/groundcheck.ts");
+    const c = { verdict: "no_evidence", source: null, passages: [{ url: "https://a", passages: [], error: "WEBSITE_BLOCKED" }] } as any;
+    expect(sourceReport(["https://a", "https://b"], ["https://a"], { x: c }).map((s) => s.status)).toEqual(["blocked", "not_checked"]);
   });
 });

@@ -1,0 +1,44 @@
+{
+  "request": {
+    "model": "anthropic:claude-opus-5-5",
+    "system": "You verify one claim against evidence passages scraped from the cited sources. Judge only from the passages, never from your own knowledge.\nVerdicts:\n- supported: a passage states the claim's value, so a reader could confirm it from the quote alone. Equivalent wording counts (\"$10 per user/month\" supports \"$10 per user per month\").\n- partial: a passage supports part of the claim, or gives a materially different qualification (a different number, a range, an older date, a different plan or product).\n- unsupported: the passages are on topic but do not state the value, or they contradict it.\n- no_evidence: the passages are irrelevant or empty.\nA passage that only mentions a word in another sense (e.g. a product name in a feature list) does not support a claim about it.\nevidence_quote MUST be copied character-for-character from one passage: the shortest span that shows the value (under 300 characters). Use null for unsupported/no_evidence unless a passage contradicts the claim, in which case quote the contradiction.\nreason: one sentence. If the passage contradicts the claim, say what it actually says.",
+    "user": "Research question: Company facts about Context.dev (context.dev), the web data API for AI agents: founders, accelerator batch, and latest funding round.\nClaim: The company is Context.dev, the web data API for AI agents (context.dev).\nValue being checked: \"Context.dev\"\n\n<passage source=\"https://context.dev\">\n[Give your agents the internet]\n\nAPI for agents to scrape, search, monitor, and collect data from the web.\n\n…\n\n[Give your agents the internet > Web infrastructure that powers agents at any scale.]\n\n```\nimport ContextDev from 'context.dev';\n\nconst client = new ContextDev({ apiKey: 'YOUR_API_KEY' });\n\nconst page = await client.web.scrape({\n  url: 'https://linear.app',\n  formats: {\n    markdown: true,\n    html: true,\n    screenshot: true,\n  },\n  sharedParams: { mainContentOnly: true },\n});\n\nif (page.markdown.success) console.log(page.markdown.data);\nif (page.screenshot.success) console.log(page.screenshot.data);\n```\n\n…\n\n[Give your agents the internet > How customers shipped with Context.dev]\n\nOct 17, 2026 **Zero** Zero uses Context.dev for web scraping, live agent search, and brand data across its AI CRM. Its platform keeps data on 20M+ companies fresh, and switching providers took probably less than five minutes with Codex. Read their story\n</passage>\n\n<passage source=\"https://www.context.dev/blog/were-now-backed-by-ycombinator\">\n[We're now backed by YCombinator]\n\nShort and sweet update: **Context.dev is now backed by Y Combinator.**\n\nThis is a big milestone for us, but the mission stays the same. We're building the context layer for the internet: one API that helps agents and software understand websites, companies, products, and brands without weeks of scraping, parsing, or enrichment work.\n\n…\n\n- Yahia Bakour, Founder of Context.dev\n\n[We're now backed by YCombinator > Related articles.]\n\n- Oct 19, 2026 **We raised $9M to give agents the internet** Context.dev has raised a $9M seed round led by General Catalyst. A note from Yahia on why he started the company and what changed along the way.\n\n- Apr 19, 2026 **We are Context.dev, not Context.ai** A quick note to our customers: Context.dev has no affiliation with Context.ai, the AI platform named in the recent Vercel security incident.\n\n- Oct 20, 2026 **Introducing news search** Search over 200 million articles for company announcements, press releases, and news. Give your agents current sources to work with.\n\n[We're now backed by YCombinator > Start building with live web context.]\n\nScrape, search, and research the web with one API. Bring the results straight into your product.\n</passage>\n\n<passage source=\"https://www.context.dev/blog/context-dev-raises-9m-seed-led-by-general-catalyst\">\n[We raised $9M to give agents the internet]\n\nToday I get to share some big news: **Context.dev has raised a $9M seed round, led by General Catalyst.**\n\n…\n\n[We raised $9M to give agents the internet > Why I started this]\n\nSo we built the opposite. Self-serve. No lock-in. You can cancel anytime. Great data at a reasonable price, behind an API you can call in a couple of minutes. I wanted to make the internet a more interesting place, and Context is my way of doing that.\n\n…\n\n[We raised $9M to give agents the internet > What changed along the way]\n\nAn agent is only as good as the context it has. A brilliant model that can't see the web is guessing. That's when it clicked for me: what we had been building all along was Context. Earlier this year Brand.dev became Context.dev, and our job got a lot clearer: **give agents the internet.**\n\nToday teams use Context.dev to keep data on more than 20 million companies fresh, to power 3,000+ integrations, to give Similarweb's AI agents the datapoints they need, to build a 2M+ food and supplement database, and to ship an onboarding MVP in an hour. Along the way we joined Y Combinator and launched Highlights so agents spend their tokens on the parts of a page that matter.\n\n…\n\n[We raised $9M to give agents the internet > Start building with live web context.]\n\nScrape, search, and research the web with one API. Bring the results straight into your product.\n</passage>",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "verdict": {
+          "type": "string",
+          "enum": [
+            "supported",
+            "partial",
+            "unsupported",
+            "no_evidence"
+          ]
+        },
+        "best_source_url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "evidence_quote": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "reason": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "verdict",
+        "best_source_url",
+        "evidence_quote",
+        "reason"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "response": "{\"verdict\":\"supported\",\"best_source_url\":\"https://context.dev\",\"evidence_quote\":\"API for agents to scrape, search, monitor, and collect data from the web.\",\"reason\":\"The context.dev site identifies the company as Context.dev and describes it as an API that lets agents scrape, search, and collect data from the web, which matches \\\"web data API for AI agents.\\\"\"}"
+}

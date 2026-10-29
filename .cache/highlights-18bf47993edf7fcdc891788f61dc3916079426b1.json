@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://github.com/shopify",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "Shopify's President is Harley Finkelstein.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://github.com/shopify",
+    "passages": [
+      "[Shopify > Popular repositories Loading > Repositories]\n\nShopify/hydrogen's past year of commit activity\n\n…\n\nShopify/sdoc's past year of commit activity\n\n…\n\nShopify/roundhouse-1's past year of commit activity\n\n…\n\n**People**\n\n@tobi @matthewd @burke @Soleone @antw @lucasuyezu @rafaelfranca @nickpresta @pior @ewalk153 @jmreid @dwradcliffe @jhawthorn @abecevello @punkstar @pushmatrix @mkcny @tjoyal @paracycle @titanoboa"
+    ]
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "http://savvy.com/",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "The company in question is named Savvy.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "http://savvy.com/",
+    "passages": [
+      "[Vacation rentals you want, at the prices you deserve]\n\nThe same stay costs $3,166 on Airbnb and $2,625 on Savvy.\n\n…\n\n[Vacation rentals you want, at the prices you deserve.]\n\nThe same stay costs $3,166 on Airbnb and $2,625 on Savvy.\n\n…\n\n[Vacation rentals you want, at the prices you deserve. > Why travelers book direct with Savvy]\n\n- $500saved on average vs. Airbnb\n- 150K+professionally managed properties\n- 100%professional property managers\n- $0platform markup\n\n…\n\n[Vacation rentals you want, at the prices you deserve. > Savvy, in your pocket.]\n\n- Search & book direct on the go\n- Trip reminders, not spam\n- Verified hosts only\n\n…\n\n[Vacation rentals you want, at the prices you deserve. > What Savvy Travelers Are Saying]\n\n> I was so happy I found Savvy... they saved me almost $500 on my vacation stay. I will continue using them instead of Vrbo and Airbnb."
+    ]
+  }
+}

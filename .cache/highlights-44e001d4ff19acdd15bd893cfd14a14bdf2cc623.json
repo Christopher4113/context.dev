@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://wisprflow.ai/pricing",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "Wispr Flow's pricing information is published at https://wisprflow.ai/pricing.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://wisprflow.ai/pricing",
+    "passages": [
+      "[Pricing]\n\nFree on Mac, Windows, iPhone and Android. Plans add team management, admin controls and support.\n\n…\n\nFree\n\n…\n\n$0/mo\n\n…\n\n$15/user/mo\n\n…\n\n$23/user/mo\n\n$33/user/mo\n\n…\n\n$12/user/mo\n\n$18/user/mo\n\n$26/user/mo\n\n…\n\n[Pricing > Speak. Write faster. Meet smarter.]\n\nFREE"
+    ]
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://github.com/stripe",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "Stripe is headquartered in South San Francisco.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://github.com/stripe",
+    "passages": [
+      "[Stripe > Pinned Loading]\n\n4. stripe-ios stripe-ios Public\n\n…\n\n[Stripe > Pinned Loading > Repositories]\n\nShowing 10 of 101 repositories\n\n…\n\n505 MIT 150 16 2 Updated Oct 29, 2026\n\n…\n\n**People**\n\n@jeanregisser @orrc @xavdid @philipithomas @izzygomez @lucavgobbi @mikaelmello @barreeeiroo @nicholasz2510 @godcrampy @alessandro-stripe @droidpl-stripe @ikeike-stripe @benemdon-stripe @dedoussis-stripe @timothyg-stripe @carlflood-stripe @rwh-stripe"
+    ]
+  }
+}

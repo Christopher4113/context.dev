@@ -89,6 +89,20 @@ export async function phraseClaims(llm: LLM, question: string, fields: { path: s
   }
 }
 
+// ---------- Answer shape ----------
+
+const ShapeSchema = z.object({ json_format: z.string() });
+
+/** When the user gives no json_format, draft one from the question: an example object with "" / 0 / true placeholders. */
+export async function suggestShape(llm: LLM, question: string): Promise<Record<string, unknown>> {
+  const system =
+    "Design the JSON answer shape for a web research question, as an example object (not JSON Schema). Use \"\" for strings, 0 for numbers, true for booleans, and one-element arrays for lists, e.g. {\"plans\":[{\"name\":\"\",\"price_monthly\":\"\"}]}. Keep it small: only the facts the question asks for, at most 12 leaf fields, snake_case keys. No source or URL fields: sources are tracked separately.";
+  const out = ShapeSchema.parse(parseJson(await llm(system, `Question: ${question}\n\nReturn {"json_format": "<the example object as a JSON string>"}.`, jsonSchema(ShapeSchema))));
+  const shape = JSON.parse(out.json_format);
+  if (!shape || typeof shape !== "object" || Array.isArray(shape)) throw new Error("Could not draft an answer shape for this question.");
+  return shape;
+}
+
 // ---------- Judging ----------
 
 const JudgeSchema = z.object({

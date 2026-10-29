@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://www.crunchbase.com/organization/supabase",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "Supabase has raised $1 billion in total funding.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://www.crunchbase.com/organization/supabase",
+    "passages": [
+      "[Supabase - Crunchbase Company Profile & Funding]\n\nSupabase Growth Score\n\n…\n\nSupabase offers an open source backend platform for app development built around a managed PostgreSQL database and tools.\n\n…\n\nPrivateVenture - Series Unknown San Francisco, California, United States251-500 supabase.com View on Facebook View on LinkedIn\n\n…\n\nSupabase\n\nSection: OverviewActions"
+    ]
+  }
+}

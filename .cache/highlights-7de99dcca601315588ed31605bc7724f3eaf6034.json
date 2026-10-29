@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://wisprflow.ai/pricing",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "Wispr Flow's subscription prices are listed in USD.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://wisprflow.ai/pricing",
+    "passages": [
+      "[Pricing]\n\n$0/mo\n\n…\n\n$15/user/mo\n\n…\n\n$23/user/mo\n\n$33/user/mo\n\n…\n\n$12/user/mo\n\n$18/user/mo\n\n$26/user/mo\n\n…\n\n[Pricing > Compare _pricing]\n\n2,000/week on desktop\nLimited weekly use on mobile\n\n…\n\n[Pricing > See how much time]\n\n$13,056\n\n…\n\n[Pricing > You might be wondering. > Questions]\n\nFlow is free for everyone, students and non-profits included. If you want Flow Pro, students and educators with an education email get 50% off, and non-profits get a discounted rate."
+    ]
+  }
+}

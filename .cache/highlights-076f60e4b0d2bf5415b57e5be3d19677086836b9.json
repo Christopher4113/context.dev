@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://openai.com",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "OpenAI's current CFO is Sarah Friar.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://openai.com",
+    "passages": [
+      "[OpenAI | Research & Deployment > Recent news]\n\nPublicationOct 21, 2026\n\n…\n\nCompanyOct 20, 2026\n\n…\n\nPublicationSep 23, 2026\n\n…\n\nCompanySep 29, 2026\n\n…\n\nPublicationOct 6, 2026"
+    ]
+  }
+}

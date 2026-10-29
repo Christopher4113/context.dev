@@ -1,0 +1,44 @@
+{
+  "request": {
+    "model": "anthropic:claude-opus-5-5",
+    "system": "You verify one claim against evidence passages scraped from the cited sources. Judge only from the passages, never from your own knowledge.\nVerdicts:\n- supported: a passage states the claim's value, so a reader could confirm it from the quote alone. Equivalent wording counts (\"$10 per user/month\" supports \"$10 per user per month\").\n- partial: a passage supports part of the claim, or gives a materially different qualification (a different number, a range, an older date, a different plan or product).\n- unsupported: the passages are on topic but do not state the value, or they contradict it.\n- no_evidence: the passages are irrelevant or empty.\nA passage that only mentions a word in another sense (e.g. a product name in a feature list) does not support a claim about it.\nevidence_quote MUST be copied character-for-character from one passage: the shortest span that shows the value (under 300 characters). Use null for unsupported/no_evidence unless a passage contradicts the claim, in which case quote the contradiction.\nreason: one sentence. If the passage contradicts the claim, say what it actually says.",
+    "user": "Research question: Who are OpenAI's current CEO, CFO, and Chief Research Officer?\nClaim: OpenAI's current CEO is Sam Altman.\nValue being checked: \"Sam Altman\"\n\n<passage source=\"https://www.linkedin.com/company/openai-sora/\">\n[Stránka nenalezena > Omlouváme se, nemůžeme najít stránku, kterou hledáte. Zkuste se vrátit zpátky na předchozí stránku, nebo se podívejte do našeho Centra nápovědy pro více informací]\n\nPřejít do informačního kanálu\n\n…\n\n[Sidan kunde inte hittas. > Sidan du letar efter hittades inte. Gå tillbaka till föregående sida eller besök vårt Hjälpcenter för mer information]\n\nGå till ditt nyhetsflöde\n\n…\n\n[Sayfa bulunamadı > Aradığınız sayfa bulunamadı. Önceki sayfaya geri dönün veya daha fazla bilgi için Yardım Merkezimizi görüntüleyin]\n\nHaber akışınıza gidin\n\n[未找到网页 > 抱歉，无法找到页面。试试返回到前一页，或前往帮助中心了解更多信息]\n\n前往动态汇总\n\n[系統找不到頁面。 > 我們好像找不到該頁面。請回到上一頁或前往說明中心來進一步瞭解]\n\n前往首頁動態\n</passage>\n\n<passage source=\"https://www.linkedin.com/company/artificial-intelligence-open-ai/\">\n[Stránka nenalezena > Omlouváme se, nemůžeme najít stránku, kterou hledáte. Zkuste se vrátit zpátky na předchozí stránku, nebo se podívejte do našeho Centra nápovědy pro více informací]\n\nPřejít do informačního kanálu\n\n…\n\n[Sidan kunde inte hittas. > Sidan du letar efter hittades inte. Gå tillbaka till föregående sida eller besök vårt Hjälpcenter för mer information]\n\nGå till ditt nyhetsflöde\n\n…\n\n[Sayfa bulunamadı > Aradığınız sayfa bulunamadı. Önceki sayfaya geri dönün veya daha fazla bilgi için Yardım Merkezimizi görüntüleyin]\n\nHaber akışınıza gidin\n\n[未找到网页 > 抱歉，无法找到页面。试试返回到前一页，或前往帮助中心了解更多信息]\n\n前往动态汇总\n\n[系統找不到頁面。 > 我們好像找不到該頁面。請回到上一頁或前往說明中心來進一步瞭解]\n\n前往首頁動態\n</passage>\n\n<passage source=\"https://www.linkedin.com/company/openai/\">\n[OpenAI > About us]\n\nOpenAI is an AI research and deployment company dedicated to ensuring that general-purpose artificial intelligence benefits all of humanity. AI is an extremely powerful tool that must be created with safety and human needs at its core. OpenAI is dedicated to putting that alignment of interests first — ahead of profit. To achieve our mission, we must encompass and value the many different perspectives, voices, and experiences that form the full spectrum of humanity. Our investment in diversity, equity, and inclusion is ongoing, executed through a wide range of initiatives, and championed and supported by leadership. At OpenAI, we believe artificial intelligence has the potential to help people solve immense global challenges, and we want the upside of AI to be widely shared. Join us in shaping the future of technology.\n\n…\n\n1,001-5,000 employees\n\nHeadquarters\n\n…\n\nartificial intelligence and machine learning\n\n…\n\n[OpenAI > Updates]\n\nView organization page for OpenAI\n</passage>",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "verdict": {
+          "type": "string",
+          "enum": [
+            "supported",
+            "partial",
+            "unsupported",
+            "no_evidence"
+          ]
+        },
+        "best_source_url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "evidence_quote": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "reason": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "verdict",
+        "best_source_url",
+        "evidence_quote",
+        "reason"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "response": "{\"verdict\":\"no_evidence\",\"best_source_url\":null,\"evidence_quote\":null,\"reason\":\"The passages are either 'page not found' errors or a generic OpenAI LinkedIn description that does not name any CEO or other executive.\"}"
+}

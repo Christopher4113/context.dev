@@ -6,7 +6,7 @@ At Cal Hacks 13.0 my team built [Auditor](https://github.com/Christopher4113/Aud
 
 For every field in an Answers response, it answers one question: **does a cited source actually support this value, and where?**
 
-![Groundcheck demo: the Node.js LTS answer says 24, and its own cited source shows 26 (LTS)](docs/demo.jpg)
+![Groundcheck demo: each sentence of the answer is checked, and the links panel shows which of the 20 URLs Answers used actually back a fact](docs/demo.jpg)
 
 ## How it works
 
@@ -18,7 +18,8 @@ question + json_format
   2. Flatten ──────── json_content → one leaf per field (nulls skipped)
         │             → one standalone claim per field ("Linear's Business plan costs $16 per user per month.")
         │
-  3. Gather evidence ─ for each claim × top 3 sources: Scrape + Highlights with the claim as the query
+  3. Gather evidence ─ rank sources (the entity's own site first, profiles/social last), then for each
+        │             claim × top 3 sources: Scrape + Highlights with the claim as the query
         │
   4. Judge ────────── LLM sees claim + passages → verdict, best source, verbatim quote, reason
         │             quote is checked in code against the retrieved passages; if it isn't there,
@@ -43,7 +44,7 @@ cp .env.example .env   # add CONTEXT_DEV_API_KEY and ANTHROPIC_API_KEY
 
 > **No keys?** The repo ships its `.cache/` (1.9 MB of recorded Context.dev and judge responses), so `pnpm web` and the CLI replay all 25 benchmark questions, including every example chip in the demo, with no keys and no credits. Anything new needs keys.
 
-**Web demo.** Enter a question and answer shape, and watch each field get a verdict badge. Click a field to see its source and the highlighted evidence passage. The "verify: true response" tab shows the response shape pitched below.
+**Web demo.** Ask a question in plain English. Groundcheck drafts the answer fields itself, so there's no schema to write. You can customize the fields under *Customize answer fields*. The answer reads as plain sentences, one per fact, each underlined in its verdict color. Click a sentence to see its source and the highlighted evidence passage. *Fields* shows the structured JSON, and *verify: true response* shows the pitched API shape. Below the answer, **Links Answers researched** lists every URL Answers returned, with what became of it: *Verified* (it backs these fields), *Partial*, *Backs nothing* (read, but no value appears in it), *Unreadable* (blocked or failed), or *Not checked* (beyond the 3 sources checked per field). The "verify: true response" tab shows the response shape pitched below.
 
 ```bash
 pnpm web               # http://localhost:3000
@@ -54,6 +55,8 @@ pnpm web               # http://localhost:3000
 ```bash
 pnpm groundcheck "What are the pricing plans for Linear (linear.app)?" --schema examples/linear-pricing.json
 ```
+
+`--schema` is optional. Without it, the answer shape is drafted from the question. The CLI also prints the per-link source report.
 
 **Benchmark.** Runs the 25 questions in [bench/questions.json](bench/questions.json) and writes [results/benchmark.json](results/benchmark.json).
 
@@ -94,6 +97,7 @@ Main takeaways:
 - Questions answered from one first-party page ground very well.
 - Company and people questions mostly cite LinkedIn and X profile records, which can't be scraped or don't contain the field.
 - In two time-sensitive cases (Python, Node.js LTS), the answer is contradicted by a source it cites.
+- Checking the entity's own site first (anthropic.com for a question about Anthropic) instead of in Answers' order raises overall support from 67.9% to 70.7%, and people/roles from 41.2% to 58.8%. See [FINDINGS.md](FINDINGS.md#follow-up-checking-the-right-links-first).
 
 ## How this could ship inside Answers
 
@@ -111,6 +115,9 @@ Answers already has what it needs. The research agent has read the pages, so the
       "reason": "The pricing page lists the Business plan at $16 per user/month, billed yearly."
     }
   },
+  "sources": [
+    { "url": "https://linear.app/pricing", "status": "verified", "supports": ["plans[0].price_per_user_monthly"] }
+  ],
   "summary": { "fields": 2, "supported": 2, "partial": 0, "unsupported": 0, "no_evidence": 0 }
 }
 ```

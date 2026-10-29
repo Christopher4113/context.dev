@@ -1,0 +1,24 @@
+{
+  "request": {
+    "task": "What is the pricing of wispr flow app. In particular the subscription cost for each tier.",
+    "json_format": {
+      "latest_version": "",
+      "release_date": ""
+    },
+    "mode": "fast"
+  },
+  "response": {
+    "json_content": {
+      "latest_version": null,
+      "release_date": null
+    },
+    "sources": [
+      "https://wisprflow.ai/pricing"
+    ],
+    "key_metadata": {
+      "credits_consumed": 10,
+      "credits_remaining": 20164
+    },
+    "request_id": "a8e1f766-7dc0-4630-9bc8-bc9a9f49f1e0"
+  }
+}

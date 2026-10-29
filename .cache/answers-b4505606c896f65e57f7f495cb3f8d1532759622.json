@@ -1,0 +1,67 @@
+{
+  "request": {
+    "task": "What is the pricing of wispr flow app. In particular the subscription cost for each tier.",
+    "json_format": {
+      "app_name": "",
+      "currency": "",
+      "tiers": [
+        {
+          "tier_name": "",
+          "price_monthly": "",
+          "price_annual": "",
+          "billing_note": "",
+          "key_limits": ""
+        }
+      ],
+      "free_trial": "",
+      "source_url": ""
+    },
+    "mode": "fast"
+  },
+  "response": {
+    "json_content": {
+      "app_name": "Wispr Flow",
+      "currency": "USD",
+      "tiers": [
+        {
+          "tier_name": "Free",
+          "price_monthly": "$0",
+          "price_annual": null,
+          "billing_note": null,
+          "key_limits": "2,000 words per week on desktop; limited weekly use on mobile"
+        },
+        {
+          "tier_name": "Pro",
+          "price_monthly": "$15/user/mo",
+          "price_annual": "$12/user/mo",
+          "billing_note": "20% discount for annual billing",
+          "key_limits": null
+        },
+        {
+          "tier_name": "Growth",
+          "price_monthly": "$23/user/mo",
+          "price_annual": "$18/user/mo",
+          "billing_note": "20% discount for annual billing",
+          "key_limits": null
+        },
+        {
+          "tier_name": "Enterprise",
+          "price_monthly": "$33/user/mo",
+          "price_annual": "$26/user/mo",
+          "billing_note": "20% discount for annual billing",
+          "key_limits": null
+        }
+      ],
+      "free_trial": "14-day trial",
+      "source_url": "https://wisprflow.ai/pricing"
+    },
+    "sources": [
+      "https://wisprflow.ai/pricing"
+    ],
+    "key_metadata": {
+      "credits_consumed": 10,
+      "credits_remaining": 20154
+    },
+    "request_id": "217302f4-97f9-417b-8b63-47001e7b0dcc"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://figma.bot",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "Dylan Field is a founder of Figma.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://figma.bot",
+    "passages": [
+      "[The full-stack creative canvas > Move fast in the right direction on an AI-native canvas.]\n\nExplore Figma's agent\n\n[The full-stack creative canvas > One workspace for your entire product development process.]\n\nMade so your whole team can go from WIP to ship, together.\n\n…\n\nTurn your ideas into apps, websites, and products.\n\n…\n\n[The full-stack creative canvas > The products you love are designed in Figma]\n\nFrancisco Seiz\n\nSenior Design Director, Code and Theory"
+    ]
+  }
+}

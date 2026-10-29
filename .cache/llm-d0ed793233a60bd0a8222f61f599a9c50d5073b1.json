@@ -1,0 +1,20 @@
+{
+  "request": {
+    "model": "anthropic:claude-opus-5-5",
+    "system": "Design the JSON answer shape for a web research question, as an example object (not JSON Schema). Use \"\" for strings, 0 for numbers, true for booleans, and one-element arrays for lists, e.g. {\"plans\":[{\"name\":\"\",\"price_monthly\":\"\"}]}. Keep it small: only the facts the question asks for, at most 12 leaf fields, snake_case keys.",
+    "user": "Question: What is the pricing of wispr flow app. In particular the subscription cost for each tier.\n\nReturn {\"json_format\": \"<the example object as a JSON string>\"}.",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "json_format": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "json_format"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "response": "{\"json_format\":\"{\\\"app_name\\\":\\\"\\\",\\\"currency\\\":\\\"\\\",\\\"tiers\\\":[{\\\"tier_name\\\":\\\"\\\",\\\"price_monthly\\\":\\\"\\\",\\\"price_annual\\\":\\\"\\\",\\\"billing_note\\\":\\\"\\\",\\\"key_limits\\\":\\\"\\\"}],\\\"free_trial\\\":\\\"\\\",\\\"source_url\\\":\\\"\\\"}\"}"
+}

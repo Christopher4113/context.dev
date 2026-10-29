@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://openai.com/index/openai-welcomes-cfo-cpo/",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "OpenAI's current CEO is Sam Altman.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://openai.com/index/openai-welcomes-cfo-cpo/",
+    "passages": [
+      "[OpenAI welcomes Sarah Friar (CFO) and Kevin Weil (CPO)]\n\nOpenAI CEO Sam Altman\n\nSarah most recently served as CEO of Nextdoor. She was previously CFO at Square, and also worked at Goldman Sachs, McKinsey, and Salesforce. She is a Board Member of Walmart and Consensys, a Fellow of the Aspen Institute, and Co-Chair of the Stanford Digital Economy Lab, an integral component of the Stanford Institute for Human-Centered AI (HAI)."
+    ]
+  }
+}

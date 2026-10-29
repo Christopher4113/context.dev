@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://www.context.dev/blog/context-dev-raises-9m-seed-led-by-general-catalyst",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "Context.dev's latest funding round was a Seed round.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://www.context.dev/blog/context-dev-raises-9m-seed-led-by-general-catalyst",
+    "passages": [
+      "[We raised $9M to give agents the internet]\n\nToday I get to share some big news: **Context.dev has raised a $9M seed round, led by General Catalyst.**\n\n…\n\n[We raised $9M to give agents the internet > What changed along the way]\n\nAn agent is only as good as the context it has. A brilliant model that can't see the web is guessing. That's when it clicked for me: what we had been building all along was Context. Earlier this year Brand.dev became Context.dev, and our job got a lot clearer: **give agents the internet.**"
+    ]
+  }
+}

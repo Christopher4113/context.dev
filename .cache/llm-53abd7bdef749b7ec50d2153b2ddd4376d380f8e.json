@@ -1,0 +1,44 @@
+{
+  "request": {
+    "model": "anthropic:claude-opus-5-5",
+    "system": "You verify one claim against evidence passages scraped from the cited sources. Judge only from the passages, never from your own knowledge.\nVerdicts:\n- supported: a passage states the claim's value, so a reader could confirm it from the quote alone. Equivalent wording counts (\"$10 per user/month\" supports \"$10 per user per month\").\n- partial: a passage supports part of the claim, or gives a materially different qualification (a different number, a range, an older date, a different plan or product).\n- unsupported: the passages are on topic but do not state the value, or they contradict it.\n- no_evidence: the passages are irrelevant or empty.\nA passage that only mentions a word in another sense (e.g. a product name in a feature list) does not support a claim about it.\nevidence_quote MUST be copied character-for-character from one passage: the shortest span that shows the value (under 300 characters). Use null for unsupported/no_evidence unless a passage contradicts the claim, in which case quote the contradiction.\nreason: one sentence. If the passage contradicts the claim, say what it actually says.",
+    "user": "Research question: What is the pricing of wispr flow app. In particular the subscription cost for each tier.\nClaim: Wispr Flow's Enterprise tier offers a 20% discount for annual billing.\nValue being checked: \"20% discount for annual billing\"\n\n<passage source=\"https://wisprflow.ai/pricing\">\n[Pricing]\n\nMonthly\n\nAnnual\n\n20% discount\n\n…\n\nEnterprise\n\n…\n\nAvailable annually\n\n…\n\n$18/user/mo\n\n…\n\n[Pricing > Compare _pricing]\n\nEnterprise\n\n…\n\n[Pricing > You might be wondering. > Questions]\n\nFor bulk pricing discounts, advanced IT controls and compliance (SSO/SAML, SOC 2 Type II and ISO 27001 compliance, enforced HIPAA compliance), or advanced usage dashboards, reach out to our Sales team to upgrade to Enterprise.\n</passage>",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "verdict": {
+          "type": "string",
+          "enum": [
+            "supported",
+            "partial",
+            "unsupported",
+            "no_evidence"
+          ]
+        },
+        "best_source_url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "evidence_quote": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "reason": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "verdict",
+        "best_source_url",
+        "evidence_quote",
+        "reason"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "response": "{\"verdict\":\"partial\",\"best_source_url\":\"https://wisprflow.ai/pricing\",\"evidence_quote\":\"Annual\\n\\n20% discount\",\"reason\":\"The page shows a general 20% annual-billing discount toggle, but for Enterprise it only says \\\"Available annually\\\" and directs buyers to Sales for bulk pricing, so it does not confirm a 20% discount specifically for Enterprise.\"}"
+}

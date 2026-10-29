@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://www.anthropic.com/company/leadership",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "The company in question is Anthropic.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://www.anthropic.com/company/leadership",
+    "passages": [
+      "[Leadership at Anthropic > CEO and President > Dario Amodei]\n\nDario Amodei co-founded Anthropic and leads the company’s research direction and strategic vision for developing AI systems that are reliable, interpretable, and steerable.\n\n…\n\n[Leadership at Anthropic > CEO and President > Daniela Amodei]\n\nDaniela Amodei co-founded Anthropic and serves as chair of its Board of Directors. As President, she leads the organization’s work across research, engineering, product, governance, and commercial execution and manages the executive team.\n\n…\n\n[Leadership at Anthropic > Co-Founders > Jack Clark]\n\nJack Clark co-founded Anthropic and leads The Anthropic Institute, a think tank dedicated to producing research on the societal implications of frontier AI.\n\n…\n\n[Leadership at Anthropic > Co-Founders > Jared Kaplan]\n\nJared Kaplan co-founded Anthropic and heads its technical research efforts, leading foundational work on AI safety and development.\n\n…\n\n[Leadership at Anthropic > Co-Founders > Sam McCandlish]\n\nSam McCandlish co-founded Anthropic and focuses on large-scale model training, leading pretraining, research productivity, and RL infrastructure."
+    ]
+  }
+}

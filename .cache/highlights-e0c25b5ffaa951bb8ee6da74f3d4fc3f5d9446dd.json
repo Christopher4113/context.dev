@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://supabase.com/company",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "Paul Copplestone is a founder of Supabase.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://supabase.com/company",
+    "passages": [
+      "[Join one of the world's fastest growing open source communities. > Individual investors > Press]\n\n**ARTICLE** Supabase Series F\n\n…\n\n**PODCAST** Elixir at Supabase with Paul Copplestone\n\n…\n\n**PODCAST** Supabase with Paul Copplestone\n\n**PODCAST** Open Source Firebase Alternative with Paul Copplestone of Supabase\n\n[Join one of the world's fastest growing open source communities. > Individual investors > Team]\n\nSupabase is fully remote, with a strong affinity for open source maintainers and ex-Founders. Our engineering team is made up of developers from AWS, Google, Palantir, Stripe, and other YC companies."
+    ]
+  }
+}

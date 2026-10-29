@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://wisprflow.ai/pricing",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "The app whose pricing is described is named Wispr Flow.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://wisprflow.ai/pricing",
+    "passages": [
+      "[Pricing]\n\n$15/user/mo\n\n…\n\n$26/user/mo\n\n…\n\n[Pricing > You might be wondering. > Questions]\n\nYes. Flow is free and includes dictation and the Notetaker, with generous weekly usage. You never need a credit card to start. Flow Pro removes the limits and keeps more meetings for longer. Teams with advanced security and support needs can reach out to our Sales team about Enterprise.\n\n…\n\nFlow is free for everyone, students and non-profits included. If you want Flow Pro, students and educators with an education email get 50% off, and non-profits get a discounted rate."
+    ]
+  }
+}

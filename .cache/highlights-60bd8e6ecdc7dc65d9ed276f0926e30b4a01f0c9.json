@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://www.context.dev/blog/context-dev-raises-9m-seed-led-by-general-catalyst",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "The company is Context.dev, the web data API for AI agents (context.dev).",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://www.context.dev/blog/context-dev-raises-9m-seed-led-by-general-catalyst",
+    "passages": [
+      "[We raised $9M to give agents the internet]\n\nToday I get to share some big news: **Context.dev has raised a $9M seed round, led by General Catalyst.**\n\n…\n\n[We raised $9M to give agents the internet > Why I started this]\n\nSo we built the opposite. Self-serve. No lock-in. You can cancel anytime. Great data at a reasonable price, behind an API you can call in a couple of minutes. I wanted to make the internet a more interesting place, and Context is my way of doing that.\n\n…\n\n[We raised $9M to give agents the internet > What changed along the way]\n\nAn agent is only as good as the context it has. A brilliant model that can't see the web is guessing. That's when it clicked for me: what we had been building all along was Context. Earlier this year Brand.dev became Context.dev, and our job got a lot clearer: **give agents the internet.**\n\nToday teams use Context.dev to keep data on more than 20 million companies fresh, to power 3,000+ integrations, to give Similarweb's AI agents the datapoints they need, to build a 2M+ food and supplement database, and to ship an onboarding MVP in an hour. Along the way we joined Y Combinator and launched Highlights so agents spend their tokens on the parts of a page that matter.\n\n…\n\n[We raised $9M to give agents the internet > Start building with live web context.]\n\nScrape, search, and research the web with one API. Bring the results straight into your product."
+    ]
+  }
+}

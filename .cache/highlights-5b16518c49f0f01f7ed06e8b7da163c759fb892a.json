@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://www.savvy.com/about",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "The CEO of Savvy is Eric Goldreyer.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://www.savvy.com/about",
+    "passages": [
+      "[We built the direct > Thirty years in this industry.]\n\nEric Goldreyer has believed that for thirty years. He founded BedandBreakfast.com. Co-founded TurnKey. Watched the industry grow and the fees grow with it. And through all of it, watched platforms insert themselves between travelers and the hosts who actually care for the properties, taking a cut and calling it a service.\n\n…\n\nThe foundation was already there. bnbfinder had been connecting travelers directly with independent properties since 1998, one of the earliest direct booking directories of its kind. Eric saw something worth scaling. Under his leadership the focus expanded: more professional property managers, more inventory, a sharper commitment to transparent pricing. He introduced the technology to match, building direct API connections with the property management systems that power the industry. By 2024 the marketplace had crossed 100,000 professionally managed properties across the US. In January 2025, bnbfinder became Savvy. Same direct booking mission, sharper name, and a clear position in a market finally ready for it.\n\nEric GoldreyerFounder & CEO"
+    ]
+  }
+}

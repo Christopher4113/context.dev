@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://stripe.com",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "Stripe was founded in 2010.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://stripe.com",
+    "passages": [
+      "[Financial infrastructure to grow your revenue. Accept payments, handle business banking,1 and implement custom revenue models—from your first transaction to your billionth. > Powering businesses of all sizes. > Build a foundation for your startup that enables faster growth]\n\nFrom stablecoin pioneers to 88% of the Forbes AI 50, Stripe helps startups build what’s next on easy-to-integrate financial infrastructure.\n\n…\n\n[Financial infrastructure to grow your revenue. Accept payments, handle business banking,1 and implement custom revenue models—from your first transaction to your billionth. > What’s happening > Shopify’s Tobi Lütke sits down with John Collison.]\n\nHear them discuss the choices that shaped Shopify and Stripe, the future of commerce, and their advice for founders.\n\n…\n\n[Financial infrastructure to grow your revenue. Accept payments, handle business banking,1 and implement custom revenue models—from your first transaction to your billionth. > What’s happening > How leading retailers unify customer experiences and drive growth.]\n\n- Shopify’s Tobi Lütke sits down with John Collison.Hear them discuss the choices that shaped Shopify and Stripe, the future of commerce, and their advice for founders.\n\n…\n\n[Financial infrastructure to grow your revenue. Accept payments, handle business banking,1 and implement custom revenue models—from your first transaction to your billionth. > What’s happening > Book of the week > Start building]\n\n1 Stripe Treasury includes various distinct Stripe products. See applicable product terms. Stripe is not a bank. Checking accounts are provided exclusively by Fifth Third Bank, National Association, Member FDIC. Deposits are insured through Fifth Third Bank."
+    ]
+  }
+}

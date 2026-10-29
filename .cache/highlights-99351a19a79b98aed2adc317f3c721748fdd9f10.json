@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://www.crunchbase.com/organization/anthropic",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "The President of Anthropic is Daniela Amodei.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://www.crunchbase.com/organization/anthropic",
+    "passages": [
+      "[Anthropic - Crunchbase Company Profile & Funding]\n\nAnthropic is an artificial intelligence company that develops large language models and AI systems for business and research use.\n\nFounded\n\n…\n\nPrivateDebt Financing San Francisco, California, United States501-1000  View on Facebook View on LinkedIn\n\n…\n\nFoundational AI\n\n…\n\nAnthropic"
+    ]
+  }
+}

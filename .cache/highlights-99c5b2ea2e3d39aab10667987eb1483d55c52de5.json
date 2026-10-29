@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://wisprflow.ai/pricing",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "The annual-billing price of Wispr Flow's Pro tier is $12/user/mo.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://wisprflow.ai/pricing",
+    "passages": [
+      "[Pricing]\n\nAnnual\n\n…\n\n$15/user/mo\n\n…\n\n$23/user/mo\n\n$33/user/mo\n\n…\n\nAvailable annually\n\n…\n\n$12/user/mo\n\n$18/user/mo\n\n$26/user/mo\n\n…\n\n[Pricing > See how much time]\n\nFlow Pro monthly cost:"
+    ]
+  }
+}

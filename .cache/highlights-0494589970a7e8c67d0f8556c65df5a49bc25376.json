@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://anthropic.com",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "The CEO of Anthropic is Dario Amodei.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://anthropic.com",
+    "passages": [
+      "[AI research and products that put safety at the frontier. AI will have a vast impact on the world. Anthropic is a public benefit corporation dedicated to securing its benefits and mitigating its risks. > 2026 Public Benefit Report]\n\nAnthropic is a Public Benefit Corporation (PBC), a designation that requires us to balance the financial interests of shareholders with the benefit to the broader public. This report takes stock of what we are doing to serve the public benefit, and of the work ahead.\n\n…\n\n[AI research and products that put safety at the frontier. AI will have a vast impact on the world. Anthropic is a public benefit corporation dedicated to securing its benefits and mitigating its risks. > 2026 Public Benefit Report > Introducing Claude Opus 5.5]\n\nClaude Opus 5.5 leads in agentic coding and knowledge work, and costs 40% less to run than Opus 5 on typical workloads.\n\n…\n\n[AI research and products that put safety at the frontier. AI will have a vast impact on the world. Anthropic is a public benefit corporation dedicated to securing its benefits and mitigating its risks. > Learn more]\n\n**The Anthropic Institute** Our effort to confront the most significant challenges that powerful AI will pose to our societies.\n\n…\n\n**Claude's Constitution** A detailed description of our vision for Claude’s values and behavior.\n\n…\n\n**Core views on AI safety** Why we believe AI safety research is critical, and how we approach it at Anthropic."
+    ]
+  }
+}

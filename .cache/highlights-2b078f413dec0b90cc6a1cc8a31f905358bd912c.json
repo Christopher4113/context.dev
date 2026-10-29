@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://openai.com/index/leadership-team-update/",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "OpenAI's current CFO is Sarah Friar.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://openai.com/index/leadership-team-update/",
+    "passages": [
+      "[OpenAI leadership team update]\n\nWe’re happy to announce several executive role changes that reflect our recent progress and will ensure continued momentum toward our next major milestones.\n\n…\n\n**Greg Brockman** is becoming President, a new role which reflects his unique combination of personal coding contributions on our critical path together with company strategy. He is currently focused on training our flagship AI systems.\n\n**Brad Lightcap** has been pivotal in OpenAI’s growth, scaling our structure, team, and capital base through his oversight of our Finance, Legal, People, and Operations organizations. He will become Chief Operating Officer and expand his focus, working with our Applied AI teams to sharpen our business and commercial strategies. He will also continue to manage the OpenAI Startup Fund.\n\n…\n\n[OpenAI leadership team update > Author]\n\nOpenAI announces new members to board of directors\n\n…\n\nReview completed & Altman, Brockman to continue to lead OpenAI"
+    ]
+  }
+}

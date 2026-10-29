@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://wisprflow.ai/pricing",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "Wispr Flow offers a 14-day trial.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://wisprflow.ai/pricing",
+    "passages": [
+      "[Pricing]\n\nFree on Mac, Windows, iPhone and Android. Plans add team management, admin controls and support.\n\nMonthly\n\n…\n\nFree\n\n…\n\n$15/user/mo\n\n…\n\n$12/user/mo\n\n$18/user/mo\n\n$26/user/mo\n\n…\n\n[Pricing > See how much time]\n\nFlow Pro monthly cost:\n\n…\n\n[Pricing > You might be wondering. > Questions]\n\nYes. Flow is free and includes dictation and the Notetaker, with generous weekly usage. You never need a credit card to start. Flow Pro removes the limits and keeps more meetings for longer. Teams with advanced security and support needs can reach out to our Sales team about Enterprise."
+    ]
+  }
+}

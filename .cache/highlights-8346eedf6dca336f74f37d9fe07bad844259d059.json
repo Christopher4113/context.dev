@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://www.crunchbase.com/organization/context-dev",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "Context.dev's latest funding round raised 9000000 USD.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://www.crunchbase.com/organization/context-dev",
+    "passages": [
+      "[context.dev - Crunchbase Company Profile & Funding]\n\ncontext.dev Growth Score\n\n94\n\n…\n\ncontext.dev provides APIs for web scraping, brand data, company enrichment, and structured data extraction for AI applications.\n\n…\n\nArtificial Intelligence (AI)\n\n…\n\ncontext.dev"
+    ]
+  }
+}

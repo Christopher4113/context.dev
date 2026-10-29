@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "http://github.com/ritikm",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "The CEO of Savvy is Eric Goldreyer.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "http://github.com/ritikm",
+    "passages": [
+      "[ritikm - Overview]\n\n- Overview\n- Repositories\n- Projects\n- Packages\n- Stars\n\n**ritikm**\n\n…\n\n[Ritik Malhotra ritikm > Achievements]\n\nAchievement: Arctic Code Vault Contributor Achievement: Pull Shark Achievement: Starstruck\n\n[Ritik Malhotra ritikm > Organizations]\n\nHackBerkeley\n\n…\n\n[Block or report ritikm > Contribution activity > October 2026]\n\nritikm has no activity yet for this period."
+    ]
+  }
+}

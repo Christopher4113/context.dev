@@ -1,0 +1,44 @@
+{
+  "request": {
+    "model": "anthropic:claude-opus-5-5",
+    "system": "You verify one claim against evidence passages scraped from the cited sources. Judge only from the passages, never from your own knowledge.\nVerdicts:\n- supported: a passage states the claim's value, so a reader could confirm it from the quote alone. Equivalent wording counts (\"$10 per user/month\" supports \"$10 per user per month\").\n- partial: a passage supports part of the claim, or gives a materially different qualification (a different number, a range, an older date, a different plan or product).\n- unsupported: the passages are on topic but do not state the value, or they contradict it.\n- no_evidence: the passages are irrelevant or empty.\nA passage that only mentions a word in another sense (e.g. a product name in a feature list) does not support a claim about it.\nevidence_quote MUST be copied character-for-character from one passage: the shortest span that shows the value (under 300 characters). Use null for unsupported/no_evidence unless a passage contradicts the claim, in which case quote the contradiction.\nreason: one sentence. If the passage contradicts the claim, say what it actually says.",
+    "user": "Research question: Company facts about Stripe: founders, founding year, and headquarters city.\nClaim: John Collison is a founder of Stripe.\nValue being checked: \"John Collison\"\n\n<passage source=\"https://github.com/stripe\">\n[Stripe > Pinned Loading]\n\nNode.js library for the Stripe API.\n\n…\n\nPHP library for the Stripe API.\n\n…\n\n[Stripe > Pinned Loading > Repositories]\n\nRuby 2,180 MIT 695 21 9 Updated Oct 29, 2026\n\n…\n\n@jeanregisser @orrc @xavdid @philipithomas @izzygomez @lucavgobbi @mikaelmello @barreeeiroo @nicholasz2510 @godcrampy @alessandro-stripe @droidpl-stripe @ikeike-stripe @benemdon-stripe @dedoussis-stripe @timothyg-stripe @carlflood-stripe @rwh-stripe\n\n[Stripe > Pinned Loading > Repositories > Sponsoring]\n\n- @flutter-stripe\n\n- @BerriAI\n\n- @QuantStack\n\n- @jofftiquez\n\n- @wevm\n\n- @joshnuss\n\n- @richnologies\n\n- @arlyon\n\n- @rdlabo\n\n- @dj-stripe\n\n- @mholt\n\n- @excid3\n\n- @xyflow\n</passage>\n\n<passage source=\"https://github.com/stripe-samples\">\n[Stripe Samples > Pinned Loading > Repositories]\n\nTypeScript 59 MIT 17 0 7 Updated Oct 22, 2026\n\n…\n\nSample apps to give Issuing users a pre-certified foundation for developing their own push provisioning apps\n\n…\n\nCompanion repo for Stripe Developers episode on listing readers.\n\n…\n\nThis organization has no public members. You must be a member to see who’s a part of this organization.\n\n…\n\n[Stripe Samples > Pinned Loading > Repositories > Most used topics]\n\nstripe stripe-billing stripe-checkout\n</passage>\n\n<passage source=\"https://stripe.com\">\n[Financial infrastructure to grow your revenue. Accept payments, handle business banking,1 and implement custom revenue models—from your first transaction to your billionth. > Powering businesses of all sizes. > Transform your enterprise with agile financial infrastructure]\n\n50% of Fortune 100 companies have used Stripe to grow their businesses—from expanding internationally to reimagining the customer experience.\n\n…\n\n[Financial infrastructure to grow your revenue. Accept payments, handle business banking,1 and implement custom revenue models—from your first transaction to your billionth. > Powering businesses of all sizes. > Build a foundation for your startup that enables faster growth]\n\nFrom stablecoin pioneers to 88% of the Forbes AI 50, Stripe helps startups build what’s next on easy-to-integrate financial infrastructure.\n\n…\n\n[Financial infrastructure to grow your revenue. Accept payments, handle business banking,1 and implement custom revenue models—from your first transaction to your billionth. > Powering businesses of all sizes. > Make your SaaS platform a complete financial operating system > Manage platform risk.]\n\nLaura Collinson, Director of Fintech, Jobber\n\n…\n\n[Financial infrastructure to grow your revenue. Accept payments, handle business banking,1 and implement custom revenue models—from your first transaction to your billionth. > What’s happening > Shopify’s Tobi Lütke sits down with John Collison.]\n\nHear them discuss the choices that shaped Shopify and Stripe, the future of commerce, and their advice for founders.\n\n…\n\n[Financial infrastructure to grow your revenue. Accept payments, handle business banking,1 and implement custom revenue models—from your first transaction to your billionth. > What’s happening > How leading retailers unify customer experiences and drive growth.]\n\n- Shopify’s Tobi Lütke sits down with John Collison.Hear them discuss the choices that shaped Shopify and Stripe, the future of commerce, and their advice for founders.\n</passage>",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "verdict": {
+          "type": "string",
+          "enum": [
+            "supported",
+            "partial",
+            "unsupported",
+            "no_evidence"
+          ]
+        },
+        "best_source_url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "evidence_quote": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "reason": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "verdict",
+        "best_source_url",
+        "evidence_quote",
+        "reason"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "response": "{\"verdict\":\"unsupported\",\"best_source_url\":null,\"evidence_quote\":null,\"reason\":\"The passages mention John Collison only as someone Tobi Lütke sits down with; none states that he is a founder of Stripe.\"}"
+}

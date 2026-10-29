@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://shopify.com",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "The company in question is Shopify.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://shopify.com",
+    "passages": [
+      "[Be the next > store they line up for]\n\nDream big and build fast on Shopify. The world’s best commerce platform.\n\n…\n\n[Be the next > Your brand has entered the chat > For anyone from entrepreneurs to enterprise > Raise the bar]\n\nIconic toymaker **Mattel** sells direct to shoppers all around the world. All powered by Shopify.\n\n…\n\n[Be the next > Meet your secret weapon, Sidekick > Hyperdriven by AI. Commerce to the core.]\n\nShopify's Universal Commerce Protocol and APIs, tools, and primitives give devs the power to build agentic commerce experiences that businesses are looking for.\n\nHydrogen: Shopify’s headless commerce toolkit\n\n…\n\n[Be the next > There’s no better place for you to build > The world’s best-converting checkout]\n\nShopify Checkout with Shop Pay converts up to 50% higher than guest checkout and exposes your brand to hundreds of millions of buyers."
+    ]
+  }
+}

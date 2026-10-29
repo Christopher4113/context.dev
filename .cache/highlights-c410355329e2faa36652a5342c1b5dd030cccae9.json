@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://context.dev",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "Context.dev's latest funding round was a Seed round.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://context.dev",
+    "passages": [
+      "[Context.dev: Web Data API for AI Agents (Scrape, Search, Crawl)]\n\nWe raised a $9M seed led by\n\n…\n\n[Give your agents the internet > How customers shipped with Context.dev]\n\nOct 28, 2026 **Upstash** Upstash's Context7 serves up-to-date docs to AI coding agents. Context.dev powers the website crawling behind it at millions of requests a day, and Claude set up the integration in minutes. Read their story\n\nOct 17, 2026 **Zero** Zero uses Context.dev for web scraping, live agent search, and brand data across its AI CRM. Its platform keeps data on 20M+ companies fresh, and switching providers took probably less than five minutes with Codex. Read their story\n\n…\n\nSep 9, 2026 **Squad** Squad integrated Context.dev in five minutes to give its AI agents webpage scraping, screenshots, and structured data extraction, building on Bhanu's experience using the API at SiteGPT. Read their story\n\n…\n\nJan 25, 2026 **Daily.dev** Ido Shamun, Co-founder of daily.dev, shares how Context.dev powers their internal enrichment system to verify companies with zero maintenance overhead. Read their story"
+    ]
+  }
+}

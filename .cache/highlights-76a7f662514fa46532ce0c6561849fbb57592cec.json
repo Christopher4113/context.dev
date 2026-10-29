@@ -1,0 +1,17 @@
+{
+  "request": {
+    "url": "https://wellfound.com/company/company",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "Dylan Field is a founder of Figma.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://wellfound.com/company/company",
+    "passages": [],
+    "error": "NOT_FOUND"
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "request": {
+    "model": "anthropic:claude-opus-5-5",
+    "system": "You verify one claim against evidence passages scraped from the cited sources. Judge only from the passages, never from your own knowledge.\nVerdicts:\n- supported: a passage states the claim's value, so a reader could confirm it from the quote alone. Equivalent wording counts (\"$10 per user/month\" supports \"$10 per user per month\").\n- partial: a passage supports part of the claim, or gives a materially different qualification (a different number, a range, an older date, a different plan or product).\n- unsupported: the passages are on topic but do not state the value, or they contradict it.\n- no_evidence: the passages are irrelevant or empty.\nA passage that only mentions a word in another sense (e.g. a product name in a feature list) does not support a claim about it.\nevidence_quote MUST be copied character-for-character from one passage: the shortest span that shows the value (under 300 characters). Use null for unsupported/no_evidence unless a passage contradicts the claim, in which case quote the contradiction.\nreason: one sentence. If the passage contradicts the claim, say what it actually says.",
+    "user": "Research question: Company facts about Figma: founders, founding year, headquarters, and the outcome of Adobe's proposed acquisition.\nClaim: Dylan Field is a founder of Figma.\nValue being checked: \"Dylan Field\"\n\n<passage source=\"https://figma.bot\">\n[The full-stack creative canvas > Move fast in the right direction on an AI-native canvas.]\n\nExplore Figma's agent\n\n[The full-stack creative canvas > One workspace for your entire product development process.]\n\nMade so your whole team can go from WIP to ship, together.\n\n…\n\nTurn your ideas into apps, websites, and products.\n\n…\n\n[The full-stack creative canvas > The products you love are designed in Figma]\n\nFrancisco Seiz\n\nSenior Design Director, Code and Theory\n</passage>\n\n<passage source=\"https://news.adobe.com/news/news-details/2023/adobe-and-figma-mutually-agree-to-terminate-merger-agreement\">\n[Adobe and Figma Mutually Agree to Terminate Merger Agreement]\n\n“Going through this process with Shantanu, David and the Adobe team has only reinforced my belief in the merits of this deal, but it’s become increasingly clear over the past few months that regulators don’t see things the same way,” said Dylan Field, co-founder and CEO, Figma. “While we’re disappointed in the outcome, I am deeply grateful to everyone who has contributed to this effort and excited to find other ways to innovate on behalf of our respective communities with Adobe.”\n</passage>\n\n<passage source=\"https://www.figma.com/blog/design-meet-the-internet/\">\n[Design: Meet the internet]\n\nDylan FieldCo-founder & Chief Executive Officer, Figma\n\n…\n\n[Design: Meet the internet > What’s next]\n\nDylan Field is the co-founder and CEO of Figma. Dylan studied computer science and mathematics at Brown University where he and his co-founder, Evan Wallace, first started experimenting with design tools built on (and for) the web. With funding from a Thiel fellowship, they began Figma. Prior to Figma, Dylan interned at O'Reilly Media, LinkedIn, and Flipboard.\n</passage>",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "verdict": {
+          "type": "string",
+          "enum": [
+            "supported",
+            "partial",
+            "unsupported",
+            "no_evidence"
+          ]
+        },
+        "best_source_url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "evidence_quote": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "reason": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "verdict",
+        "best_source_url",
+        "evidence_quote",
+        "reason"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "response": "{\"verdict\":\"supported\",\"best_source_url\":\"https://www.figma.com/blog/design-meet-the-internet/\",\"evidence_quote\":\"Dylan Field is the co-founder and CEO of Figma.\",\"reason\":\"The Figma blog passage explicitly identifies Dylan Field as co-founder of Figma, and the Adobe release says the same.\"}"
+}

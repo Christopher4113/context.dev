@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://github.com/vercel",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "The company is Vercel.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://github.com/vercel",
+    "passages": [
+      "[Vercel > Pinned Loading]\n\nBuild system optimized for JavaScript and TypeScript, written in Rust\n\n…\n\n[Vercel > Pinned Loading > Repositories]\n\nUniversal chat layer for building bots and agents.\n\n…\n\nVercel Sandbox is an ephemeral compute primitive designed to safely run untrusted or user-generated code.\n\n…\n\nA drop-in replacement for react-markdown, designed for AI-powered streaming.\n\n…\n\nVercel SDK is a type-safe Typescript SDK that gives you access to the Vercel REST API."
+    ]
+  }
+}

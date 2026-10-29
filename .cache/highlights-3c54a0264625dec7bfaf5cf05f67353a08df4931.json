@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://www.linkedin.com/company/shopify/",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "Shopify's President is Harley Finkelstein.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://www.linkedin.com/company/shopify/",
+    "passages": [
+      "[Shopify > About us]\n\nShopify is a leading global commerce company, providing trusted tools to start, grow, market, and manage a retail business of any size. Shopify makes commerce better for everyone with a platform and services that are engineered for reliability, while delivering a better shopping experience for consumers everywhere. Shopify powers millions of businesses in more than 175 countries and is trusted by brands such as Allbirds, Gymshark, PepsiCo, Staples, and many more. Find all our jobs here:&#x20;\n\n…\n\n[Shopify > Employees at Shopify]\n\n- **Sam Ruby**\n\n- **Joseph Smarr**\n\n- **Todd Muchmore**\n\n- **Jeremy Levine**\n\n…\n\n[Shopify > Updates]\n\nView profile for Harley Finkelstein\n\nHarley Finkelstein Harley Finkelstein is an Influencer\n\nShopify President"
+    ]
+  }
+}

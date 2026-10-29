@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://wisprflow.ai/pricing",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "Wispr Flow's Enterprise tier offers a 20% discount for annual billing.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://wisprflow.ai/pricing",
+    "passages": [
+      "[Pricing]\n\nMonthly\n\nAnnual\n\n20% discount\n\n…\n\nEnterprise\n\n…\n\nAvailable annually\n\n…\n\n$18/user/mo\n\n…\n\n[Pricing > Compare _pricing]\n\nEnterprise\n\n…\n\n[Pricing > You might be wondering. > Questions]\n\nFor bulk pricing discounts, advanced IT controls and compliance (SSO/SAML, SOC 2 Type II and ISO 27001 compliance, enforced HIPAA compliance), or advanced usage dashboards, reach out to our Sales team to upgrade to Enterprise."
+    ]
+  }
+}

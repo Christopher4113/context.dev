@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://context.dev",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "Context.dev was part of the Y Combinator S26 accelerator batch.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://context.dev",
+    "passages": [
+      "[Give your agents the internet > Powering agents and products with the world's data.]\n\n“It was great. Took 5 mins to integrate. We use Context.dev to give AI agents ability to scrape webpages, take screenshots, and also extract specific content from webpages.”\n\n…\n\n[Give your agents the internet > Web infrastructure that powers agents at any scale.]\n\n```\nimport ContextDev from 'context.dev';\n\nconst client = new ContextDev({ apiKey: 'YOUR_API_KEY' });\n\nconst page = await client.web.scrape({\n  url: 'https://linear.app',\n  formats: {\n    markdown: true,\n    html: true,\n    screenshot: true,\n  },\n  sharedParams: { mainContentOnly: true },\n});\n\nif (page.markdown.success) console.log(page.markdown.data);\nif (page.screenshot.success) console.log(page.screenshot.data);\n```\n\n…\n\n```\nfrom context.dev import ContextDev\n\nclient = ContextDev(api_key=\"YOUR_API_KEY\")\n\nresponse = client.web.scrape(\n    url=\"https://linear.app\",\n    formats={\n        \"html\": True,\n        \"markdown\": True,\n        \"screenshot\": True\n    },\n    shared_params={\n        \"main_content_only\": True\n    },\n)\nprint(response)\n```\n\n…\n\n```\nrequire \"cgi/core\"\nrequire \"context_dev\"\n\nclient = ContextDev::Client.new(api_key: \"YOUR_API_KEY\")\n\nresponse = client.web.scrape(\n  url: \"https://linear.app\",\n  formats: {\n    html: true,\n    markdown: true,\n    screenshot: true\n  },\n  shared_params: {\n    main_content_only: true\n  }\n)\nputs response\n```\n\n…\n\n`npm install context.dev`"
+    ]
+  }
+}

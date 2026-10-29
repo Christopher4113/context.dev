@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://www.linkedin.com/company/openai/",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "The company in question is OpenAI.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://www.linkedin.com/company/openai/",
+    "passages": [
+      "[OpenAI > About us]\n\nOpenAI is an AI research and deployment company dedicated to ensuring that general-purpose artificial intelligence benefits all of humanity. AI is an extremely powerful tool that must be created with safety and human needs at its core. OpenAI is dedicated to putting that alignment of interests first — ahead of profit. To achieve our mission, we must encompass and value the many different perspectives, voices, and experiences that form the full spectrum of humanity. Our investment in diversity, equity, and inclusion is ongoing, executed through a wide range of initiatives, and championed and supported by leadership. At OpenAI, we believe artificial intelligence has the potential to help people solve immense global challenges, and we want the upside of AI to be widely shared. Join us in shaping the future of technology.\n\n…\n\n1,001-5,000 employees\n\n…\n\nartificial intelligence and machine learning\n\n…\n\n[OpenAI > Updates > GPT-6.1 Terra is now in orbit.]\n\nOpenAI models are coming to Google Cloud. We're partnering with Google Cloud to bring OpenAI's frontier models and Codex agentic workflows into Google Cloud's model garden, giving enterprises access to our technology in the environment where they already build. Teams will be able to modernize software development and build agentic workflows with Google Cloud's built-in access controls, data governance, and infrastructure. Customers will also be able to purchase OpenAI models through Google Cloud Marketplace and apply existing Google Cloud spend commitments, giving them more flexibility in how they adopt frontier AI. General availability is planned in the coming weeks. Learn more:&#x20;\n\n…\n\n[OpenAI > Updates > Bringing GPT‑Rosalind to academic research labs]\n\nOpenAI"
+    ]
+  }
+}

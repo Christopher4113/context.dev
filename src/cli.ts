@@ -26,6 +26,12 @@ export function printTable(r: GroundcheckResult) {
     const detail = c.evidence ? `“${cut(c.evidence.replace(/\s+/g, " "), 90)}”  ${pc.dim(c.source ?? "")}` : c.reason;
     console.log(`${" ".repeat(13)}${pc.dim(cut(detail, 140))}`);
   }
+  const SRC: Record<string, (s: string) => string> = { verified: pc.green, partial: pc.yellow, no_support: pc.red, blocked: pc.gray, not_checked: pc.dim };
+  console.log(pc.bold("\nSources"));
+  for (const s of r.source_report) {
+    const n = s.supports.length + s.partially_supports.length;
+    console.log(`${SRC[s.status](s.status.padEnd(12))} ${cut(s.url, 90)}${n ? pc.dim(`  backs ${n} field${n > 1 ? "s" : ""}`) : s.error ? pc.dim(`  ${s.error}`) : ""}`);
+  }
   const s = r.summary;
   console.log(
     `\n${s.fields} fields: ${pc.green(`${s.supported} supported`)}, ${pc.yellow(`${s.partial} partial`)}, ${pc.red(`${s.unsupported} unsupported`)}, ${pc.gray(`${s.no_evidence} no evidence`)}`,
@@ -38,16 +44,17 @@ if (import.meta.url === pathToFileURL(process.argv[1]).href) {
     .name("groundcheck")
     .description("Check that each field of a Context.dev Answers response is supported by a cited source.")
     .argument("<question>", "research question for the Answers API")
-    .requiredOption("-s, --schema <file>", "JSON file with the example answer shape (json_format)")
+    .option("-s, --schema <file>", "JSON file with the example answer shape (json_format); drafted from the question if omitted")
     .option("-o, --out <file>", "where to write the JSON result", "results/last.json")
     .option("--max-sources <n>", "sources to check per claim", "3")
     .option("--budget <credits>", "stop if this run would spend more Context.dev credits", "200")
     .action(async (question: string, o) => {
-      const schema = JSON.parse(readFileSync(o.schema, "utf8"));
+      const schema = o.schema ? JSON.parse(readFileSync(o.schema, "utf8")) : undefined;
       const r = await groundcheck(question, schema, {
         maxSourcesPerClaim: Number(o.maxSources),
         credits: new Credits(Number(o.budget)),
         onEvent: (e) => {
+          if (e.type === "shape") console.log(pc.dim(`Drafted answer shape: ${JSON.stringify(e.json_format)}`));
           if (e.type === "answer") console.log(pc.dim(`Answers returned ${e.fields.length} fields from ${e.sources.length} sources. Checking…`));
         },
       });

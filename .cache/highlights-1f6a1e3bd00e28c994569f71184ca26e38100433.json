@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://wisprflow.ai/pricing",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "Wispr Flow's Growth tier offers a 20% discount for annual billing.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://wisprflow.ai/pricing",
+    "passages": [
+      "[Pricing]\n\nMonthly\n\nAnnual\n\n20% discount\n\n…\n\nGrowth\n\n…\n\nAvailable annually\n\n*Everything in Growth, plus:*\n\n…\n\n$18/user/mo\n\n…\n\n[Pricing > Compare _pricing]\n\nGrowth"
+    ]
+  }
+}

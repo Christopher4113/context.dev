@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://figma.bot",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "The company is Figma.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://figma.bot",
+    "passages": [
+      "[The full-stack creative canvas > Move fast in the right direction on an AI-native canvas.]\n\nAsk Figma’s agent to add motion to designs, document your design systems, implement feedback, and more.\n\n…\n\n[The full-stack creative canvas > One workspace for your entire product development process.]\n\nTurn your ideas into apps, websites, and products.\n\n…\n\n[The full-stack creative canvas > The products you love are designed in Figma]\n\n> Everyone is able to influence, inspire, and give input without ever leaving the design file. That creates a really transparent, open, and honest process throughout the whole project.\n\n…\n\nSenior Design Director, Code and Theory\n\n…\n\n95% of the Fortune 500 uses Figma"
+    ]
+  }
+}

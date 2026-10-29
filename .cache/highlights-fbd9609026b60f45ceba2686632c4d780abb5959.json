@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://www.linkedin.com/company/claude-builder-club-umass",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "The President of Anthropic is Daniela Amodei.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://www.linkedin.com/company/claude-builder-club-umass",
+    "passages": [
+      "[Claude Builder Club > About us]\n\nWe are offering Claude Pro, API credits, and Exclusive Workshops with Anthropic staff for UMass Students. Sign up here:&#x20;\n\n…\n\n1,001-5,000 employees\n\nHeadquarters\n\nAmherst, MA\n\n…\n\nPrivately Held"
+    ]
+  }
+}

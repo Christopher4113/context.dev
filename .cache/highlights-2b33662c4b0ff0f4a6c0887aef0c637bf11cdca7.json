@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://openai.com/index/openai-welcomes-cfo-cpo/",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "The company in question is OpenAI.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://openai.com/index/openai-welcomes-cfo-cpo/",
+    "passages": [
+      "[OpenAI welcomes Sarah Friar (CFO) and Kevin Weil (CPO)]\n\n- Sarah Friar is joining as Chief Financial Officer. She will lead a finance team that supports our mission by providing continued investment in our core research capabilities, and ensuring that we can scale to meet the needs of our growing customer base and the complex and global environment in which we are operating. \n\n- Kevin Weil is joining as Chief Product Officer. He will lead a product team focused on applying our research to products and services that benefit consumers, developers, and businesses.\n\n> “Sarah and Kevin bring a depth of experience that will enable OpenAI to scale our operations, set a strategy for the next phase of growth, and ensure that our teams have the resources they need to continue to thrive”\n\n…\n\nSarah most recently served as CEO of Nextdoor. She was previously CFO at Square, and also worked at Goldman Sachs, McKinsey, and Salesforce. She is a Board Member of Walmart and Consensys, a Fellow of the Aspen Institute, and Co-Chair of the Stanford Digital Economy Lab, an integral component of the Stanford Institute for Human-Centered AI (HAI).\n\nKevin was most recently President, Product and Business at Planet Labs. He was previously the co-founder of the Libra cryptocurrency and VP of Product for Novi at Facebook, VP of Product at Instagram, and SVP of Product at Twitter. He is a term member of the Council on Foreign Relations (CFR) and serves on the boards of The Nature Conservancy and Black Product Managers Network.\n\n“I’m honored to join a team that is uniquely talented and mission-focused,” said Sarah Friar. “My goal is to help OpenAI continue excelling at what it does best—producing top-tier research and collaborating to maximize the benefits of AI tools for everyone.”"
+    ]
+  }
+}

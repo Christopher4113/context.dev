@@ -1,0 +1,44 @@
+{
+  "request": {
+    "model": "anthropic:claude-opus-5-5",
+    "system": "You verify one claim against evidence passages scraped from the cited sources. Judge only from the passages, never from your own knowledge.\nVerdicts:\n- supported: a passage states the claim's value, so a reader could confirm it from the quote alone. Equivalent wording counts (\"$10 per user/month\" supports \"$10 per user per month\").\n- partial: a passage supports part of the claim, or gives a materially different qualification (a different number, a range, an older date, a different plan or product).\n- unsupported: the passages are on topic but do not state the value, or they contradict it.\n- no_evidence: the passages are irrelevant or empty.\nA passage that only mentions a word in another sense (e.g. a product name in a feature list) does not support a claim about it.\nevidence_quote MUST be copied character-for-character from one passage: the shortest span that shows the value (under 300 characters). Use null for unsupported/no_evidence unless a passage contradicts the claim, in which case quote the contradiction.\nreason: one sentence. If the passage contradicts the claim, say what it actually says.",
+    "user": "Research question: Who are OpenAI's current CEO, CFO, and Chief Research Officer?\nClaim: The company in question is OpenAI.\nValue being checked: \"OpenAI\"\n\n<passage source=\"https://openai.com\">\n[OpenAI | Research & Deployment]\n\nGPT-6 and Intelligent UI for everyone\n\n…\n\nSecuring our frontier model training environment\n\n…\n\n[OpenAI | Research & Deployment > Recent news]\n\nOpenAI acquires Orchestra Bio\n\n…\n\n[OpenAI | Research & Deployment > OpenAI for business]\n\nVirgin Atlantic sharpens customer journeys with ChatGPT Work\n\n…\n\nHow Zapier transformed core marketing processes with ChatGPT Work\n</passage>\n\n<passage source=\"https://openai.com/index/leadership-team-update/\">\n[OpenAI leadership team update]\n\n**Greg Brockman** is becoming President, a new role which reflects his unique combination of personal coding contributions on our critical path together with company strategy. He is currently focused on training our flagship AI systems.\n\n**Brad Lightcap** has been pivotal in OpenAI’s growth, scaling our structure, team, and capital base through his oversight of our Finance, Legal, People, and Operations organizations. He will become Chief Operating Officer and expand his focus, working with our Applied AI teams to sharpen our business and commercial strategies. He will also continue to manage the OpenAI Startup Fund.\n\n**Mira Murati** has done a tremendous job leading our research, product, and partnership functions over the past 18 months. Most recently, she was instrumental in bringing these functions together for the successful release of our DALL·E⁠ research. Mira is taking on the role of Chief Technology Officer, reflecting her leadership across these critical areas within OpenAI.\n\n**Chris Clark** is becoming Head of Nonprofit and Strategic Initiatives. He will lead the operations of OpenAI’s nonprofit parent and key strategic projects including our relationships with mission-aligned partners.\n\n…\n\n[OpenAI leadership team update > Author]\n\nReview completed & Altman, Brockman to continue to lead OpenAI\n</passage>\n\n<passage source=\"https://openai.com/index/openai-welcomes-cfo-cpo/\">\n[OpenAI welcomes Sarah Friar (CFO) and Kevin Weil (CPO)]\n\n- Sarah Friar is joining as Chief Financial Officer. She will lead a finance team that supports our mission by providing continued investment in our core research capabilities, and ensuring that we can scale to meet the needs of our growing customer base and the complex and global environment in which we are operating. \n\n- Kevin Weil is joining as Chief Product Officer. He will lead a product team focused on applying our research to products and services that benefit consumers, developers, and businesses.\n\n> “Sarah and Kevin bring a depth of experience that will enable OpenAI to scale our operations, set a strategy for the next phase of growth, and ensure that our teams have the resources they need to continue to thrive”\n\n…\n\nSarah most recently served as CEO of Nextdoor. She was previously CFO at Square, and also worked at Goldman Sachs, McKinsey, and Salesforce. She is a Board Member of Walmart and Consensys, a Fellow of the Aspen Institute, and Co-Chair of the Stanford Digital Economy Lab, an integral component of the Stanford Institute for Human-Centered AI (HAI).\n\nKevin was most recently President, Product and Business at Planet Labs. He was previously the co-founder of the Libra cryptocurrency and VP of Product for Novi at Facebook, VP of Product at Instagram, and SVP of Product at Twitter. He is a term member of the Council on Foreign Relations (CFR) and serves on the boards of The Nature Conservancy and Black Product Managers Network.\n\n“I’m honored to join a team that is uniquely talented and mission-focused,” said Sarah Friar. “My goal is to help OpenAI continue excelling at what it does best—producing top-tier research and collaborating to maximize the benefits of AI tools for everyone.”\n</passage>",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "verdict": {
+          "type": "string",
+          "enum": [
+            "supported",
+            "partial",
+            "unsupported",
+            "no_evidence"
+          ]
+        },
+        "best_source_url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "evidence_quote": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "reason": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "verdict",
+        "best_source_url",
+        "evidence_quote",
+        "reason"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "response": "{\"verdict\":\"supported\",\"best_source_url\":\"https://openai.com/index/openai-welcomes-cfo-cpo/\",\"evidence_quote\":\"OpenAI welcomes Sarah Friar (CFO) and Kevin Weil (CPO)\",\"reason\":\"The passages are OpenAI's own pages about its leadership, confirming that the company in question is OpenAI.\"}"
+}

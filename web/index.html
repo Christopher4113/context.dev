@@ -25,9 +25,15 @@
   header { padding: 20px 28px; border-bottom: 1px solid var(--line); display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; }
   header h1 { margin: 0; font-size: 18px; letter-spacing: -0.01em; }
   header p { margin: 0; color: var(--muted); font-size: 14px; }
-  main { display: grid; grid-template-columns: 380px 1fr; min-height: calc(100vh - 66px); }
-  @media (max-width: 900px) { main { grid-template-columns: 1fr; } }
-  .input { padding: 24px 28px; border-right: 1px solid var(--line); display: flex; flex-direction: column; gap: 14px; }
+  main { max-width: 880px; margin: 0 auto; padding: 0 16px 60px; }
+  .input { padding: 28px 0 8px; display: flex; flex-direction: column; gap: 12px; }
+  .ask { display: flex; gap: 10px; align-items: stretch; }
+  .ask textarea { font-size: 16px; padding: 12px 14px; border-radius: 10px; }
+  .ask button.run { padding: 0 22px; border-radius: 10px; white-space: nowrap; }
+  @media (max-width: 600px) { .ask { flex-direction: column; } .ask button.run { padding: 11px; } }
+  .chips .hint { align-self: center; margin-right: 2px; }
+  details summary { cursor: pointer; color: var(--muted); font-size: 13px; }
+  details textarea { margin-top: 8px; }
   label { font-size: 12px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.04em; }
   textarea { width: 100%; padding: 10px 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--panel); color: var(--text); font: inherit; resize: vertical; }
   textarea.code { font: 13px/1.45 var(--mono); min-height: 170px; }
@@ -37,7 +43,21 @@
   button.run { background: var(--accent); color: var(--accent-text); border: 0; border-radius: 8px; padding: 11px; font: 600 15px inherit; font-family: inherit; cursor: pointer; }
   button.run:disabled { opacity: 0.5; cursor: wait; }
   .hint { color: var(--muted); font-size: 13px; }
-  .output { padding: 24px 28px; min-width: 0; }
+  .output { padding: 16px 0 0; min-width: 0; }
+  .prose { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 18px 22px; font-size: 16px; line-height: 1.75; }
+  .prose h4 { margin: 14px 0 2px; font-size: 13px; text-transform: uppercase; letter-spacing: 0.04em; color: var(--muted); }
+  .prose h4:first-child { margin-top: 0; }
+  .prose p { margin: 0; }
+  .claim { cursor: pointer; border-radius: 4px; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px; }
+  .claim:hover, .claim.sel { background: var(--soft); }
+  .claim .dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin: 0 2px 1px 4px; vertical-align: middle; }
+  .claim.c-supported { text-decoration-color: var(--ok); } .claim.c-supported .dot { background: var(--ok); }
+  .claim.c-partial { text-decoration-color: var(--part); } .claim.c-partial .dot { background: var(--part); }
+  .claim.c-unsupported { text-decoration-color: var(--bad); } .claim.c-unsupported .dot { background: var(--bad); }
+  .claim.c-no_evidence { text-decoration-color: var(--none); text-decoration-style: dotted; } .claim.c-no_evidence .dot { background: var(--none); }
+  .claim.c-pending { color: var(--muted); text-decoration: none; } .claim.c-pending .dot { background: var(--muted); animation: pulse 1s infinite alternate; }
+  .legend { display: flex; gap: 14px; flex-wrap: wrap; font-size: 12px; color: var(--muted); margin: 8px 2px 0; }
+  .legend i { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 5px; vertical-align: middle; }
   .empty { color: var(--muted); margin-top: 60px; text-align: center; }
   .summary { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; margin-bottom: 18px; }
   .stat { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 8px 14px; min-width: 96px; }
@@ -68,7 +88,7 @@
   aside.open { transform: none; }
   aside .close { position: absolute; top: 16px; right: 16px; border: 0; background: none; color: var(--muted); font-size: 22px; cursor: pointer; }
   aside h2 { font-size: 13px; color: var(--muted); font-family: var(--mono); font-weight: 500; margin: 0 0 8px; overflow-wrap: anywhere; }
-  aside .claim { font-size: 17px; font-weight: 600; margin: 4px 0 12px; }
+  aside .dclaim { font-size: 17px; font-weight: 600; margin: 4px 0 12px; }
   aside .reason { color: var(--text); margin: 10px 0 18px; }
   aside h3 { font-size: 12px; text-transform: uppercase; letter-spacing: 0.04em; color: var(--muted); margin: 20px 0 8px; }
   aside a { color: inherit; overflow-wrap: anywhere; }
@@ -79,32 +99,48 @@
   .src { font-size: 12px; color: var(--muted); margin: 12px 0 4px; overflow-wrap: anywhere; }
   mark { background: var(--mark); color: inherit; border-radius: 3px; padding: 0 2px; }
   .warn { font-size: 13px; color: var(--bad); }
+  .sources { margin-top: 22px; }
+  .sources h3 { font-size: 12px; text-transform: uppercase; letter-spacing: 0.04em; color: var(--muted); margin: 0 0 8px; }
+  .srclist { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 6px; }
+  .srow { display: flex; align-items: flex-start; gap: 10px; padding: 7px 8px; border-radius: 8px; }
+  .srow + .srow { border-top: 1px solid var(--line); border-radius: 0; }
+  .srow .badge { flex-shrink: 0; width: 92px; text-align: center; margin-top: 1px; }
+  .srow .info { min-width: 0; flex: 1; }
+  .srow a { color: var(--text); text-decoration: none; overflow-wrap: anywhere; font-size: 14px; }
+  .srow a b { font-weight: 600; }
+  .srow a span { color: var(--muted); }
+  .srow a:hover { text-decoration: underline; }
+  .srow .backs { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 4px; font-size: 12px; color: var(--muted); align-items: center; }
+  .fchip.part { border-style: dashed; color: var(--part); }
+  .fchip { font: 12px var(--mono); border: 1px solid var(--line); background: var(--soft); color: var(--text); border-radius: 5px; padding: 1px 6px; cursor: pointer; }
+  .s-verified { color: var(--ok); background: var(--ok-bg); }
+  .s-partial { color: var(--part); background: var(--part-bg); }
+  .s-no_support { color: var(--bad); background: var(--bad-bg); }
+  .s-blocked, .s-not_checked { color: var(--none); background: var(--none-bg); }
+  .s-not_checked { opacity: 0.7; }
+  .notice { background: var(--part-bg); color: var(--part); border-radius: 10px; padding: 10px 14px; font-size: 14px; margin-bottom: 14px; }
   .err { color: var(--bad); }
 </style>
 </head>
 <body>
 <header>
   <h1>Groundcheck</h1>
-  <p>Does each field in a Context.dev Answers response actually appear in a cited source?</p>
+  <p>Ask a question. See which facts in the answer its sources actually back.</p>
 </header>
 <main>
   <section class="input">
-    <div>
-      <label>Try an example</label>
-      <div class="chips" id="examples"></div>
+    <div class="ask">
+      <textarea id="q" rows="2" aria-label="Question" placeholder="Ask anything, e.g. What does Wispr Flow cost per tier?"></textarea>
+      <button class="run" id="run">Ask + verify</button>
     </div>
-    <div>
-      <label for="q">Question</label>
-      <textarea id="q" rows="3"></textarea>
-    </div>
-    <div>
-      <label for="schema">Answer shape (json_format)</label>
-      <textarea id="schema" class="code"></textarea>
-    </div>
-    <button class="run" id="run">Ask + verify</button>
-    <div class="hint">Answers runs in <b>fast</b> mode. Each field is checked against up to 3 cited sources with Scrape + Highlights, then judged. Every response is cached, so reruns are instant and free.</div>
+    <div class="chips" id="examples"><span class="hint">Try:</span></div>
+    <details id="adv">
+      <summary>Customize answer fields (optional)</summary>
+      <textarea id="schema" class="code" aria-label="Answer fields (json_format)" placeholder="Leave empty and the fields are drafted from your question."></textarea>
+    </details>
+    <div class="hint">Context.dev Answers researches the question (fast mode). Each fact is checked against up to 3 of the links it used, with Scrape + Highlights, then judged. Responses are cached, so reruns are instant and free.</div>
   </section>
-  <section class="output" id="out"><div class="empty">Pick an example or write a question, then hit <b>Ask + verify</b>.</div></section>
+  <section class="output" id="out"><div class="empty">Ask a question or pick an example. Every fact in the answer gets checked against the links it came from.</div></section>
 </main>
 <aside id="drawer"><button class="close" id="close" aria-label="Close">×</button><div id="detail"></div></aside>
 
@@ -132,18 +168,21 @@ let state = null;
 for (const ex of EXAMPLES) {
   const b = document.createElement("button");
   b.className = "chip"; b.textContent = ex.name;
-  b.onclick = () => { $("q").value = ex.q; $("schema").value = JSON.stringify(ex.schema, null, 2); };
+  b.onclick = () => { $("q").value = ex.q; $("schema").value = exampleShape = JSON.stringify(ex.schema, null, 2); };
   $("examples").append(b);
 }
-$("examples").firstChild.click();
-$("close").onclick = () => { $("drawer").classList.remove("open"); document.querySelectorAll(".field.sel").forEach((e) => e.classList.remove("sel")); };
+// An example's shape only fits its own question: drop it as soon as the question is edited (unless the shape was edited too).
+let exampleShape = null;
+$("q").addEventListener("input", () => { if (exampleShape && $("schema").value === exampleShape) $("schema").value = ""; exampleShape = null; });
+$("examples").querySelector(".chip").click();
+$("close").onclick = () => { $("drawer").classList.remove("open"); if (state) state.selected = null; document.querySelectorAll(".sel").forEach((e) => e.classList.remove("sel")); };
 document.addEventListener("keydown", (e) => e.key === "Escape" && $("close").onclick());
 
 $("run").onclick = async () => {
   let schema;
-  try { schema = JSON.parse($("schema").value); } catch { return alert("The answer shape must be valid JSON."); }
+  if ($("schema").value.trim()) try { schema = JSON.parse($("schema").value); } catch { return alert("The answer shape must be valid JSON, or empty to draft one."); }
   $("run").disabled = true; $("close").onclick();
-  state = { citations: {}, fields: [], json: null, view: "tree", done: null, error: null, status: "Asking Context.dev Answers (fast mode)…" };
+  state = { citations: {}, fields: [], json: null, view: "text", done: null, error: null, status: schema ? "Asking Context.dev Answers (fast mode)…" : "Planning which facts to look up…", sourceReport: [] };
   render();
   try {
     const res = await fetch("/api/check", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ question: $("q").value, schema }) });
@@ -161,13 +200,17 @@ $("run").onclick = async () => {
 };
 
 function onEvent(e) {
-  if (e.type === "answer") {
+  if (e.type === "shape") {
+    $("schema").value = exampleShape = JSON.stringify(e.json_format, null, 2);
+    state.status = "Asking Context.dev Answers (fast mode)…";
+  } else if (e.type === "answer") {
     state.json = e.json_content; state.fields = e.fields; state.sources = e.sources;
+    state.sourceReport = [...new Set(e.sources)].map((url) => ({ url, status: "pending", supports: [], partially_supports: [] }));
     state.status = `Answers returned ${e.fields.length} fields from ${e.sources.length} source${e.sources.length === 1 ? "" : "s"}. Checking each field…`;
   } else if (e.type === "field") {
-    state.citations[e.path] = e.citation;
+    state.citations[e.path] = e.citation; state.sourceReport = e.source_report;
   } else if (e.type === "done") {
-    state.done = e.result; state.citations = e.result.citations;
+    state.done = e.result; state.citations = e.result.citations; state.sourceReport = e.result.source_report;
     state.status = `Done · ${e.result.credits_used} Context.dev credits used${e.result.credits_used === 0 ? " (served from cache)" : ""} · request ${e.result.request_id}`;
   } else if (e.type === "error") state.error = e.message;
   render();
@@ -182,22 +225,66 @@ function render() {
   const stat = (k) => `<div class="stat"><b class="${k === "fields" ? "" : ""}" style="color:var(--${{ supported: "ok", partial: "part", unsupported: "bad", no_evidence: "none" }[k]})">${counts[k]}</b><span>${LABEL[k]}</span></div>`;
   let html = "";
   if (state.json) {
-    html += `<div class="summary"><div class="stat"><b>${Object.keys(state.citations).length}/${n}</b><span>Fields checked</span></div>${Object.keys(counts).map(stat).join("")}
-      <div class="tabs"><button data-v="tree" class="${state.view === "tree" ? "on" : ""}">Answer</button><button data-v="raw" class="${state.view === "raw" ? "on" : ""}" ${state.done ? "" : "disabled"}>verify: true response</button></div></div>`;
+    html += `<div class="summary"><div class="stat"><b>${Object.keys(state.citations).length}/${n}</b><span>Facts checked</span></div>${Object.keys(counts).map(stat).join("")}
+      <div class="tabs"><button data-v="text" class="${state.view === "text" ? "on" : ""}">Answer</button><button data-v="tree" class="${state.view === "tree" ? "on" : ""}">Fields</button><button data-v="raw" class="${state.view === "raw" ? "on" : ""}" ${state.done ? "" : "disabled"}>verify: true response</button></div></div>`;
   }
   html += `<div class="status">${state.error ? `<span class="err">${esc(state.error)}</span>` : esc(state.status)}</div>`;
-  if (state.json) html += state.view === "raw" && state.done ? `<pre class="raw">${esc(JSON.stringify(pitchShape(state.done), null, 2))}</pre>` : `<div class="tree">${tree(state.json, "")}</div>`;
+  if (state.done && n === 0) html += `<div class="notice">Answers returned null for every field, so there was nothing to verify. Try rephrasing the question, or check the fields under "Customize answer fields".</div>`;
+  if (state.json) html += state.view === "raw" && state.done ? `<pre class="raw">${esc(JSON.stringify(pitchShape(state.done), null, 2))}</pre>` : `${state.view === "tree" ? `<div class="tree">${tree(state.json, "")}</div>` : prose()}${sources()}`;
   out.innerHTML = html;
   out.querySelectorAll(".tabs button").forEach((b) => (b.onclick = () => { state.view = b.dataset.v; render(); }));
-  out.querySelectorAll(".field").forEach((el) => (el.onclick = () => openDetail(el.dataset.path)));
-  if (state.selected) out.querySelector(`.field[data-path="${CSS.escape(state.selected)}"]`)?.classList.add("sel");
+  out.querySelectorAll(".field, .fchip, .claim").forEach((el) => (el.onclick = () => openDetail(el.dataset.path)));
+  if (state.selected) out.querySelectorAll(`.field[data-path="${CSS.escape(state.selected)}"], .claim[data-path="${CSS.escape(state.selected)}"]`).forEach((e) => e.classList.add("sel"));
+}
+
+// The answer as readable text: one sentence per verified fact, grouped by the item it describes (e.g. a pricing tier).
+function prose() {
+  if (!state.fields.length) return "";
+  const groups = new Map();
+  for (const f of state.fields) {
+    const parts = f.label.split(" › ");
+    const g = parts.length > 1 ? parts[parts.length - 2] : "";
+    if (!groups.has(g)) groups.set(g, []);
+    groups.get(g).push(f);
+  }
+  const sentence = (f) => {
+    const c = state.citations[f.path];
+    const v = c ? c.verdict : "pending";
+    return `<span class="claim c-${v}" data-path="${esc(f.path)}" title="${c ? LABEL[v] : "checking"} · ${esc(f.path)}">${esc(f.claim)}<span class="dot"></span></span>`;
+  };
+  const body = [...groups].map(([g, fs]) => `${g ? `<h4>${esc(g)}</h4>` : ""}<p>${fs.map(sentence).join(" ")}</p>`).join("");
+  const key = (v, t) => `<span><i style="background:var(--${v})"></i>${t}</span>`;
+  return `<div class="prose">${body}</div><div class="legend">${key("ok", "Supported by a source")}${key("part", "Partly supported")}${key("bad", "Not in the sources")}${key("none", "No readable evidence")}<span>Click any sentence for its evidence.</span></div>`;
+}
+
+const SRC_LABEL = { verified: "Verified", partial: "Partial", no_support: "Backs nothing", blocked: "Unreadable", not_checked: "Not checked", pending: "checking" };
+const SRC_ORDER = { verified: 0, partial: 1, pending: 2, no_support: 3, blocked: 4, not_checked: 5 };
+
+// Every link Answers returned, and whether it actually backs any field.
+function sources() {
+  const list = [...state.sourceReport].sort((a, b) => SRC_ORDER[a.status] - SRC_ORDER[b.status]);
+  if (!list.length) return "";
+  const good = list.filter((s) => s.status === "verified" || s.status === "partial").length;
+  const rows = list.map((s) => {
+    let u; try { u = new URL(s.url); } catch { u = { hostname: s.url, pathname: "", search: "" }; }
+    const chips = (paths, kind) => paths.map((p) => `<button class="fchip${kind === "supported" ? "" : " part"}" data-path="${esc(p)}" title="${kind}">${esc(p)}</button>`).join("");
+    const backs = s.supports.length || s.partially_supports.length
+      ? `<div class="backs">backs ${chips(s.supports, "supported")}${chips(s.partially_supports, "partially supported")}</div>`
+      : s.status === "blocked" ? `<div class="backs">Could not read this page${s.error ? ` (${esc(s.error)})` : ""}</div>`
+      : s.status === "no_support" ? `<div class="backs">Read, but no field's value appears in it</div>`
+      : s.status === "not_checked" ? `<div class="backs">Beyond the 3 sources checked per field</div>` : "";
+    const badge = s.status === "pending" ? `<span class="badge pending">checking</span>` : `<span class="badge s-${s.status}">${SRC_LABEL[s.status]}</span>`;
+    return `<div class="srow">${badge}<div class="info"><a href="${esc(s.url)}" target="_blank" rel="noopener"><b>${esc(u.hostname.replace(/^www\./, ""))}</b><span>${esc(u.pathname === "/" ? "" : u.pathname)}${esc(u.search)}</span></a>${backs}</div></div>`;
+  }).join("");
+  return `<div class="sources"><h3>Links Answers researched · ${good} of ${list.length} back a field</h3><div class="srclist">${rows}</div></div>`;
 }
 
 // The response shape we'd pitch as a `verify: true` option on Answers (passages omitted).
 function pitchShape(r) {
   const citations = {};
   for (const [p, c] of Object.entries(r.citations)) citations[p] = { verdict: c.verdict, source: c.source, evidence: c.evidence, reason: c.reason };
-  return { json_content: r.json_content, sources: r.sources, citations, summary: r.summary };
+  const sources = r.source_report.map((s) => ({ url: s.url, status: s.status, supports: [...s.supports, ...s.partially_supports] }));
+  return { json_content: r.json_content, citations, sources, summary: r.summary };
 }
 
 const ID_KEYS = ["name", "title", "label", "plan", "id", "full_name"];
@@ -233,7 +320,7 @@ function openDetail(path) {
   $("detail").innerHTML = `
     <h2>${esc(path)}</h2>
     <span class="badge ${c.verdict}">${LABEL[c.verdict]}</span>
-    <div class="claim">${esc(c.claim)}</div>
+    <div class="dclaim">${esc(c.claim)}</div>
     <div class="reason">${esc(c.reason)}</div>
     ${c.quote_verified ? "" : `<div class="warn">The judge's quote was not found verbatim in any retrieved passage, so its verdict was downgraded.</div>`}
     ${c.source ? `<h3>Best source</h3><a href="${esc(c.source)}" target="_blank" rel="noopener">${esc(c.source)}</a>` : ""}

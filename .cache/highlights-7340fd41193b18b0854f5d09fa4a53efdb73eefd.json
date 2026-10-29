@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://news.adobe.com/news/news-details/2023/adobe-and-figma-mutually-agree-to-terminate-merger-agreement",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "Dylan Field is a founder of Figma.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://news.adobe.com/news/news-details/2023/adobe-and-figma-mutually-agree-to-terminate-merger-agreement",
+    "passages": [
+      "[Adobe and Figma Mutually Agree to Terminate Merger Agreement]\n\n“Going through this process with Shantanu, David and the Adobe team has only reinforced my belief in the merits of this deal, but it’s become increasingly clear over the past few months that regulators don’t see things the same way,” said Dylan Field, co-founder and CEO, Figma. “While we’re disappointed in the outcome, I am deeply grateful to everyone who has contributed to this effort and excited to find other ways to innovate on behalf of our respective communities with Adobe.”"
+    ]
+  }
+}

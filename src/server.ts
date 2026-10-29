@@ -28,14 +28,14 @@ createServer(async (req, res) => {
       return;
     }
     const { question, schema } = body;
-    if (typeof question !== "string" || !question.trim() || question.length > 1000 || !schema || typeof schema !== "object" || Array.isArray(schema)) {
-      res.writeHead(400).end("Expected { question: string, schema: object }");
+    if (typeof question !== "string" || !question.trim() || question.length > 1000 || (schema != null && (typeof schema !== "object" || Array.isArray(schema)))) {
+      res.writeHead(400).end("Expected { question: string, schema?: object }");
       return;
     }
     // Stream one JSON event per line so fields light up as they are judged.
     res.writeHead(200, { "content-type": "application/x-ndjson", "cache-control": "no-cache" });
     try {
-      await groundcheck(question.trim(), schema as Record<string, unknown>, {
+      await groundcheck(question.trim(), (schema ?? undefined) as Record<string, unknown> | undefined, {
         credits: new Credits(BUDGET),
         onEvent: (e) => res.write(JSON.stringify(e) + "\n"),
       });

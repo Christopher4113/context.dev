@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://www.context.dev/blog/were-now-backed-by-ycombinator",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "Context.dev was part of the Y Combinator S26 accelerator batch.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://www.context.dev/blog/were-now-backed-by-ycombinator",
+    "passages": [
+      "[We're now backed by YCombinator]\n\nShort and sweet update: **Context.dev is now backed by Y Combinator.**\n\nThis is a big milestone for us, but the mission stays the same. We're building the context layer for the internet: one API that helps agents and software understand websites, companies, products, and brands without weeks of scraping, parsing, or enrichment work.\n\nYC gives us more room to move faster, talk to more builders, and keep raising the bar on data quality and developer experience.\n\n…\n\n- Yahia Bakour, Founder of Context.dev\n\n[We're now backed by YCombinator > Related articles.]\n\n- Oct 19, 2026 **We raised $9M to give agents the internet** Context.dev has raised a $9M seed round led by General Catalyst. A note from Yahia on why he started the company and what changed along the way.\n\n- Apr 19, 2026 **We are Context.dev, not Context.ai** A quick note to our customers: Context.dev has no affiliation with Context.ai, the AI platform named in the recent Vercel security incident.\n\n- Oct 20, 2026 **Introducing news search** Search over 200 million articles for company announcements, press releases, and news. Give your agents current sources to work with."
+    ]
+  }
+}

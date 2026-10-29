@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://www.figma.com/blog/design-meet-the-internet/",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "Figma was founded in 2012.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://www.figma.com/blog/design-meet-the-internet/",
+    "passages": [
+      "[Design: Meet the internet]\n\nDylan FieldCo-founder & Chief Executive Officer, Figma\n\n…\n\nToday, after three years of silence and hard work, I finally get to announce the launch of Figma, a collaborative interface design tool.\n\n…\n\n[Design: Meet the internet > Share Design: Meet the internet]\n\nThis made my ears perk up. Over the next year, Evan and I talked constantly about how we could make creative tools accessible using WebGL and, with the support of the Thiel Fellowship, we decided to start a company together.\n\n…\n\n[Design: Meet the internet > Introducing Figma]\n\nWhen we started working on Figma, we knew it was possible to build a fast and stable graphics tool in the browser, but we had no idea how hard it would be. From vector rendering to font layout to a million performance edge cases, getting here hasn’t been easy. Designers have high expectations for a tool they rely on every day! After dogfooding Figma internally for the past eighteen months and working closely with alpha customers, I’m confident we’ve reached this high bar.\n\n…\n\n[Design: Meet the internet > What’s next]\n\nDylan Field is the co-founder and CEO of Figma. Dylan studied computer science and mathematics at Brown University where he and his co-founder, Evan Wallace, first started experimenting with design tools built on (and for) the web. With funding from a Thiel fellowship, they began Figma. Prior to Figma, Dylan interned at O'Reilly Media, LinkedIn, and Flipboard."
+    ]
+  }
+}

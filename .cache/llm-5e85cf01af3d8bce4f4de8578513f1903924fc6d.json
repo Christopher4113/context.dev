@@ -1,0 +1,44 @@
+{
+  "request": {
+    "model": "anthropic:claude-opus-5-5",
+    "system": "You verify one claim against evidence passages scraped from the cited sources. Judge only from the passages, never from your own knowledge.\nVerdicts:\n- supported: a passage states the claim's value, so a reader could confirm it from the quote alone. Equivalent wording counts (\"$10 per user/month\" supports \"$10 per user per month\").\n- partial: a passage supports part of the claim, or gives a materially different qualification (a different number, a range, an older date, a different plan or product).\n- unsupported: the passages are on topic but do not state the value, or they contradict it.\n- no_evidence: the passages are irrelevant or empty.\nA passage that only mentions a word in another sense (e.g. a product name in a feature list) does not support a claim about it.\nevidence_quote MUST be copied character-for-character from one passage: the shortest span that shows the value (under 300 characters). Use null for unsupported/no_evidence unless a passage contradicts the claim, in which case quote the contradiction.\nreason: one sentence. If the passage contradicts the claim, say what it actually says.",
+    "user": "Research question: Who are Shopify's CEO and President?\nClaim: The company in question is Shopify.\nValue being checked: \"Shopify\"\n\n<passage source=\"http://blog.leetsoft.com/\">\n[We need to talk about carbon December 22 2019]\n\nShopify has taken many steps to build a sustainable company, including becoming carbon neutral. We’re setting best-in-class standards by buying offsets for all the carbon this company has ever used and will ever use, and we choose renewable energy to heat and power our operations.\n\n…\n\n[We need to talk about carbon December 22 2019 > We’re launching the Shopify Sustainability Fund]\n\n> Shopify commits to spending at least $5 million USD annually to fight for our environment.\n\nThe Shopify Sustainability Fund will house all of our environmental investments, including carbon sequestration. Our intention is to increase our financial commitment annually based on our revenue growth.\n\n…\n\n- **Buying $1M of sequestered carbon annually at any price:** Shopify is committed to investing at least $1 million USD each year into carbon sequestration. Our goal is to kickstart the demand and predictability of this market so industrial engineering can scale and the price can come down. \n\n- **Carbon-neutral operations:** We've bought enough renewable energy to neutralize our carbon footprint in Canada, and in 2020 we plan to power 100% of our global operations with renewable energy. We’ll offset all travel-related emissions too.\n\n- **Carbon-neutral platform**: All of Shopify runs in data centers powered by renewable energy.\n\n- **Sustainable offices:** We look for LEED-certified office space, and most of our square footage is LEED Gold or Platinum. We’ve chosen buildings in areas with high transit and walkability scores, and built with local materials wherever possible. This also includes minor but locally impactful things like adding bike racks and storage to every office.\n</passage>\n\n<passage source=\"http://about.me/\">\n[MEET YOUR]\n\nThe next evolution of your about.me page.\nNow alive and interactive.\n\n…\n\n[MEET YOUR > Simple]\n\nCreate your page once. Your AI Twin does the rest — chatting with visitors, answering questions, and collecting leads automatically.\n\n…\n\n[MEET YOUR > Upgrade — Bring Your Page to Life. > Standard]\n\n- about.me page\n- AI Virtual Twin\n- Capture leads directly into about.me CRM for easy follow-up\n- Schedule appointments\n- Email signature\n\n…\n\n[August Sanders > Small Business Owner in Massachusetts]\n\nCall (657) 248-3927\n\n…\n\n[August Sanders > The Mac Maverick > Human-Centered Apple Support]\n\nI’m August Sanders, founder of The Mac Maverick LLC. I’ve spent nearly three decades helping people use Apple technology with confidence, from everyday troubleshooting and device setup to backups, email, photos, security, and digital organization.\n</passage>\n\n<passage source=\"https://www.linkedin.com/company/shopify/\">\n[Shopify > About us]\n\nShopify is a leading global commerce company, providing trusted tools to start, grow, market, and manage a retail business of any size. Shopify makes commerce better for everyone with a platform and services that are engineered for reliability, while delivering a better shopping experience for consumers everywhere. Shopify powers millions of businesses in more than 175 countries and is trusted by brands such as Allbirds, Gymshark, PepsiCo, Staples, and many more. Find all our jobs here:&#x20;\n\n…\n\nSoftware Development\n\n…\n\necommerce, API, applications, customer service, hardware, marketplace, AR/VR, marketing automation, User Experience, Design, Production Engineering, POS, Payments, Software Engineering, Finance, Retail, Mobile Apps, Instagram, Google Pay, Dropshipping, and Shipping\n\n…\n\n[Shopify > Updates]\n\nVercel and Shopify are making agents first-class shoppers. Vercel Shop, our Next.js storefront template for Shopify, is GA. • Built on Shopify's rebuilt Hydrogen SDK • Agents can read product pages directly • MCP for product search and carts&#x20;\n\n…\n\nWe just launched shop.md and shop.dev Every agent can search the web, but shopping takes more than that. For an agent to shop for you, it needs to know your size, the brands you keep going back to, and what you bought last month… plus, with more than a billion products on Shopify to search, you want it to be lightning fast, and always get the right availability info so you’re not sent to something that’s out of stock. That’s why we built shop.md. It gives your agent the power to search millions of stores in a fraction of a second, personalized through your Shop account.  Under the hood of shop.md is Shop MCP, and starting today any developer can build on it. shop.dev gives developers a single API to harness the infrastructure behind our catalog, auth, checkout, and wallet. Soooo excited to get this into the hands of both shoppers and developers.&#x20;\n</passage>",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "verdict": {
+          "type": "string",
+          "enum": [
+            "supported",
+            "partial",
+            "unsupported",
+            "no_evidence"
+          ]
+        },
+        "best_source_url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "evidence_quote": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "reason": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "verdict",
+        "best_source_url",
+        "evidence_quote",
+        "reason"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "response": "{\"verdict\":\"supported\",\"best_source_url\":\"https://www.linkedin.com/company/shopify/\",\"evidence_quote\":\"Shopify is a leading global commerce company, providing trusted tools to start, grow, market, and manage a retail business of any size.\",\"reason\":\"The LinkedIn passage identifies Shopify as a global commerce company, which confirms the company in question is Shopify.\"}"
+}

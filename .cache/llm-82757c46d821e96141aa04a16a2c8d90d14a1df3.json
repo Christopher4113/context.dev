@@ -1,0 +1,44 @@
+{
+  "request": {
+    "model": "anthropic:claude-opus-5-5",
+    "system": "You verify one claim against evidence passages scraped from the cited sources. Judge only from the passages, never from your own knowledge.\nVerdicts:\n- supported: a passage states the claim's value, so a reader could confirm it from the quote alone. Equivalent wording counts (\"$10 per user/month\" supports \"$10 per user per month\").\n- partial: a passage supports part of the claim, or gives a materially different qualification (a different number, a range, an older date, a different plan or product).\n- unsupported: the passages are on topic but do not state the value, or they contradict it.\n- no_evidence: the passages are irrelevant or empty.\nA passage that only mentions a word in another sense (e.g. a product name in a feature list) does not support a claim about it.\nevidence_quote MUST be copied character-for-character from one passage: the shortest span that shows the value (under 300 characters). Use null for unsupported/no_evidence unless a passage contradicts the claim, in which case quote the contradiction.\nreason: one sentence. If the passage contradicts the claim, say what it actually says.",
+    "user": "Research question: Company facts about Supabase: founders, founding year, and total funding raised.\nClaim: The company is Supabase.\nValue being checked: \"Supabase\"\n\n<passage source=\"https://supabase.com\">\n[Build in a weekendScale to millions > Vector > Kickstart your next project]\n\n**AI Chatbot** An open-source AI chatbot app template built with Next.js, the Vercel AI SDK, OpenAI, and Supabase.\n\n…\n\n[Build in a weekendScale to millions > Vector > How industry leaders]\n\nPowering millions of AI-generated apps with a complete Supabase backend.\n\n…\n\nThe thing that makes everything possible, all of our rapid development now and AI-generated or assisted development, is Supabase. That's the giant whose shoulders we can stand on.\n\n…\n\nInstead of splitting things out as we go, we try to consolidate things more as we do. The technology itself works better when you have things that are closely tied together. That's why we're on Supabase.\n\n…\n\n[Build in a weekendScale to millions > Open source from day one]\n\nSupabase is built in the open because we believe great developer tools should be transparent, inspectable, and owned by the community. Read, contribute, self-host. You're never locked in, and always in control.\n</passage>\n\n<passage source=\"https://supabase.io\">\n[Build in a weekendScale to millions > Vector > Kickstart your next project]\n\n**AI Chatbot** An open-source AI chatbot app template built with Next.js, the Vercel AI SDK, OpenAI, and Supabase.\n\n…\n\n[Build in a weekendScale to millions > Vector > How industry leaders]\n\nPowering millions of AI-generated apps with a complete Supabase backend.\n\n…\n\nThe thing that makes everything possible, all of our rapid development now and AI-generated or assisted development, is Supabase. That's the giant whose shoulders we can stand on.\n\n…\n\nInstead of splitting things out as we go, we try to consolidate things more as we do. The technology itself works better when you have things that are closely tied together. That's why we're on Supabase.\n\n…\n\n[Build in a weekendScale to millions > Open source from day one]\n\nSupabase is built in the open because we believe great developer tools should be transparent, inspectable, and owned by the community. Read, contribute, self-host. You're never locked in, and always in control.\n</passage>\n\n<passage source=\"https://supabase.com/company\">\n[Join one of the world's fastest growing open source communities. > Individual investors > Press]\n\n**ARTICLE** Supabase Series F\n\n**ARTICLE** Supabase raises $80M Series B for its open source Firebase alternative\n\n**ARTICLE** Supabase Announces $80 Million Series B Led by Felicis\n\n…\n\n**PODCAST** Supabase with Paul Copplestone\n\n…\n\n[Join one of the world's fastest growing open source communities. > Individual investors > Team]\n\nSupabase is fully remote, with a strong affinity for open source maintainers and ex-Founders. Our engineering team is made up of developers from AWS, Google, Palantir, Stripe, and other YC companies.\n</passage>",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "verdict": {
+          "type": "string",
+          "enum": [
+            "supported",
+            "partial",
+            "unsupported",
+            "no_evidence"
+          ]
+        },
+        "best_source_url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "evidence_quote": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "reason": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "verdict",
+        "best_source_url",
+        "evidence_quote",
+        "reason"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "response": "{\"verdict\":\"supported\",\"best_source_url\":\"https://supabase.com/company\",\"evidence_quote\":\"Supabase is fully remote, with a strong affinity for open source maintainers and ex-Founders.\",\"reason\":\"The company's own site names the company as Supabase.\"}"
+}

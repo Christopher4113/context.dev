@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://wisprflow.ai/pricing",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "Wispr Flow's Pro tier offers a 20% discount for annual billing.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://wisprflow.ai/pricing",
+    "passages": [
+      "[Pricing]\n\nMonthly\n\nAnnual\n\n20% discount\n\n…\n\nPro\n\n…\n\n*Get everything in Pro, plus:*\n\n…\n\nAvailable annually\n\n…\n\n$18/user/mo\n\n…\n\n[Pricing > Compare _pricing]\n\nPro\n\n…\n\n[Pricing > See how much time]\n\nFlow Pro monthly cost:\n\n…\n\n[Pricing > You might be wondering. > Questions]\n\nFlow is free for everyone, students and non-profits included. If you want Flow Pro, students and educators with an education email get 50% off, and non-profits get a discounted rate."
+    ]
+  }
+}

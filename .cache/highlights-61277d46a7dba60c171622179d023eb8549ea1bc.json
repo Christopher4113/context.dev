@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://stripe.com",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "The company is Stripe.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://stripe.com",
+    "passages": [
+      "[Financial infrastructure to grow your revenue. Accept payments, handle business banking,1 and implement custom revenue models—from your first transaction to your billionth. > Powering businesses of all sizes. > Hertz unifies commerce with Stripe.]\n\nPayments, Terminal, Connect, Radar, and Stripe Sigma\n\n…\n\n[Financial infrastructure to grow your revenue. Accept payments, handle business banking,1 and implement custom revenue models—from your first transaction to your billionth. > Powering businesses of all sizes. > Build a foundation for your startup that enables faster growth]\n\nFrom stablecoin pioneers to 88% of the Forbes AI 50, Stripe helps startups build what’s next on easy-to-integrate financial infrastructure.\n\n…\n\n[Financial infrastructure to grow your revenue. Accept payments, handle business banking,1 and implement custom revenue models—from your first transaction to your billionth. > Powering businesses of all sizes. > Make your SaaS platform a complete financial operating system > Manage platform risk.]\n\nStripe offers an enterprise-grade infrastructure that puts our customers on the cutting edge of modern payments technology. The combination of Terminal and Connect is a powerful integrated solution.\n\n…\n\n[Financial infrastructure to grow your revenue. Accept payments, handle business banking,1 and implement custom revenue models—from your first transaction to your billionth. > What’s happening > Book of the week > Start building]\n\n1 Stripe Treasury includes various distinct Stripe products. See applicable product terms. Stripe is not a bank. Checking accounts are provided exclusively by Fifth Third Bank, National Association, Member FDIC. Deposits are insured through Fifth Third Bank."
+    ]
+  }
+}

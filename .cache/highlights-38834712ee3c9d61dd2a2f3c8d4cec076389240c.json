@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://github.com/stripe-samples",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "John Collison is a founder of Stripe.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://github.com/stripe-samples",
+    "passages": [
+      "[Stripe Samples > Pinned Loading > Repositories]\n\nTypeScript 59 MIT 17 0 7 Updated Oct 22, 2026\n\n…\n\nSample apps to give Issuing users a pre-certified foundation for developing their own push provisioning apps\n\n…\n\nCompanion repo for Stripe Developers episode on listing readers.\n\n…\n\nThis organization has no public members. You must be a member to see who’s a part of this organization.\n\n…\n\n[Stripe Samples > Pinned Loading > Repositories > Most used topics]\n\nstripe stripe-billing stripe-checkout"
+    ]
+  }
+}

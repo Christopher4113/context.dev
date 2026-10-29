@@ -1,0 +1,44 @@
+{
+  "request": {
+    "model": "anthropic:claude-opus-5-5",
+    "system": "You verify one claim against evidence passages scraped from the cited sources. Judge only from the passages, never from your own knowledge.\nVerdicts:\n- supported: a passage states the claim's value, so a reader could confirm it from the quote alone. Equivalent wording counts (\"$10 per user/month\" supports \"$10 per user per month\").\n- partial: a passage supports part of the claim, or gives a materially different qualification (a different number, a range, an older date, a different plan or product).\n- unsupported: the passages are on topic but do not state the value, or they contradict it.\n- no_evidence: the passages are irrelevant or empty.\nA passage that only mentions a word in another sense (e.g. a product name in a feature list) does not support a claim about it.\nevidence_quote MUST be copied character-for-character from one passage: the shortest span that shows the value (under 300 characters). Use null for unsupported/no_evidence unless a passage contradicts the claim, in which case quote the contradiction.\nreason: one sentence. If the passage contradicts the claim, say what it actually says.",
+    "user": "Research question: Company facts about Context.dev (context.dev), the web data API for AI agents: founders, accelerator batch, and latest funding round.\nClaim: Yahia Bakour is a founder of Context.dev.\nValue being checked: \"Yahia Bakour\"\n\n<passage source=\"https://www.linkedin.com/company/context-experiments/\">\n[Context > About us]\n\nLet your entire team A/B test, monitor, and personalize user experiences. Move faster without losing control by making feature management product-focused.\n\n…\n\nSoftware Development\n\n…\n\n2-10 employees\n\n…\n\nPrivately Held\n\nFounded\n</passage>\n\n<passage source=\"https://www.linkedin.com/company/contextdev\">\n[Context.dev (YC S26) > About us]\n\nOne API, every piece of web context your agent needs.\n\n…\n\nFounded\n\n…\n\nLogo API, Brand API, Font API, Transaction Enrichment API, Styleguide API, Screenshot API, Web Extraction API, and Web Scraping\n\n…\n\n[Context.dev (YC S26) > Updates]\n\nYahia Bakour\n\n…\n\nI won a hackathon today, along with a $2,500 cash reward !! 🏆 At the \"Build an Agent\" Hackathon in SF, I built Owed, an agentic tool that finds money your company is owed. How it's built: • Each customer gets their own agent harness on Agent 37 (YC F26) • Context.dev (YC S26) for to monitor and collect web data • Monid for tools • OpenAI for the drafting • Auth and dashboard live on InstaCloud by InsForge (YC P26) On top of the cash, the prize includes $1K in Agent37 credits, $500 in Monid credits, $2.5K in OpenAI credits and $1K in Supabase credits. Huge thanks to the organizers: Michael Ryaboy, Vishnu Krishnaprasad and Rohit Tiru (Agent37, YC F26), Hang Huang and Tony (Yao-Wen) Chang (InsForge / InstaCloud, YC P26), Feiyou Guo and Shengkun Y. (Monid), and Vivian C. Thanks to OpenAI and Supabase for sponsoring, Corgi Cafe for hosting, and to the judges Saksham Gupta and Mohit Gupta (@Levocred), Sarman Aulakh (Chasi AI) and Sean Cole (Parasma). If your company pays for a lot of SaaS, DM me. #sftechweek\n</passage>\n\n<passage source=\"https://www.crunchbase.com/organization/context-dev\">\n[context.dev - Crunchbase Company Profile & Funding]\n\ncontext.dev provides APIs for web scraping, brand data, company enrichment, and structured data extraction for AI applications.\n\nFounded\n\n…\n\nPrivateSeed Wilmington, Delaware, United States1-10  View on LinkedIn\n\nArtificial Intelligence (AI)\n\n…\n\ncontext.dev\n</passage>",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "verdict": {
+          "type": "string",
+          "enum": [
+            "supported",
+            "partial",
+            "unsupported",
+            "no_evidence"
+          ]
+        },
+        "best_source_url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "evidence_quote": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "reason": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "verdict",
+        "best_source_url",
+        "evidence_quote",
+        "reason"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "response": "{\"verdict\":\"unsupported\",\"best_source_url\":null,\"evidence_quote\":null,\"reason\":\"Yahia Bakour's name appears only in the LinkedIn updates feed, attached to a post that does not say he founded Context.dev, and no passage names any founders.\"}"
+}

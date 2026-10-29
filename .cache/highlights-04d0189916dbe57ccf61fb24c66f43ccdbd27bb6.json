@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://context.dev",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "Yahia Bakour is a founder of Context.dev.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://context.dev",
+    "passages": [
+      "[Give your agents the internet > Powering agents and products with the world's data.]\n\nCo-founder @ Zero\n\n…\n\n“My agent understood it perfectly. Setup was very easy. I was looking for a nice datapoint for my agents, and Context.dev was the best one in the marketplace.”\n\n…\n\n“We use Context.dev for our internal enrichment system to verify companies. The integration was straightforward. We set it up once and never had to touch it again. It just works.”\n\n…\n\n“Just used Context.dev to help Codex build an on-brand sales deck generator for us. Came out really well!”\n\n…\n\n“It was great. Took 5 mins to integrate. We use Context.dev to give AI agents ability to scrape webpages, take screenshots, and also extract specific content from webpages.”"
+    ]
+  }
+}

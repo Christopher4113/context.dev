@@ -1,0 +1,44 @@
+{
+  "request": {
+    "model": "anthropic:claude-opus-5-5",
+    "system": "You verify one claim against evidence passages scraped from the cited sources. Judge only from the passages, never from your own knowledge.\nVerdicts:\n- supported: a passage states the claim's value, so a reader could confirm it from the quote alone. Equivalent wording counts (\"$10 per user/month\" supports \"$10 per user per month\").\n- partial: a passage supports part of the claim, or gives a materially different qualification (a different number, a range, an older date, a different plan or product).\n- unsupported: the passages are on topic but do not state the value, or they contradict it.\n- no_evidence: the passages are irrelevant or empty.\nA passage that only mentions a word in another sense (e.g. a product name in a feature list) does not support a claim about it.\nevidence_quote MUST be copied character-for-character from one passage: the shortest span that shows the value (under 300 characters). Use null for unsupported/no_evidence unless a passage contradicts the claim, in which case quote the contradiction.\nreason: one sentence. If the passage contradicts the claim, say what it actually says.",
+    "user": "Research question: Who is the ceo, cfo and cto of savvy\nClaim: The CEO of Savvy is Eric Goldreyer.\nValue being checked: \"Eric Goldreyer\"\n\n<passage source=\"http://savvy.com/\">\n[Vacation rentals you want, at the prices you deserve]\n\nWho?\n\n…\n\n[Vacation rentals you want, at the prices you deserve. > Why travelers book direct with Savvy]\n\n- $500saved on average vs. Airbnb\n- 150K+professionally managed properties\n- 100%professional property managers\n- $0platform markup\n\n…\n\n[Vacation rentals you want, at the prices you deserve. > Savvy, in your pocket.]\n\n- Search & book direct on the go\n- Trip reminders, not spam\n- Verified hosts only\n\n…\n\n[Vacation rentals you want, at the prices you deserve. > What Savvy Travelers Are Saying]\n\n> I was so happy I found Savvy... they saved me almost $500 on my vacation stay. I will continue using them instead of Vrbo and Airbnb.\n\n…\n\nSavvy Traveler|August 2025\n</passage>\n\n<passage source=\"https://www.savvy.com/about\">\n[We built the direct > Thirty years in this industry.]\n\nEric Goldreyer has believed that for thirty years. He founded BedandBreakfast.com. Co-founded TurnKey. Watched the industry grow and the fees grow with it. And through all of it, watched platforms insert themselves between travelers and the hosts who actually care for the properties, taking a cut and calling it a service.\n\n…\n\nThe foundation was already there. bnbfinder had been connecting travelers directly with independent properties since 1998, one of the earliest direct booking directories of its kind. Eric saw something worth scaling. Under his leadership the focus expanded: more professional property managers, more inventory, a sharper commitment to transparent pricing. He introduced the technology to match, building direct API connections with the property management systems that power the industry. By 2024 the marketplace had crossed 100,000 professionally managed properties across the US. In January 2025, bnbfinder became Savvy. Same direct booking mission, sharper name, and a clear position in a market finally ready for it.\n\nEric GoldreyerFounder & CEO\n</passage>\n\n<passage source=\"http://github.com/ritikm\">\n[ritikm - Overview]\n\n- Overview\n- Repositories\n- Projects\n- Packages\n- Stars\n\n**ritikm**\n\n…\n\n[Ritik Malhotra ritikm > Achievements]\n\nAchievement: Arctic Code Vault Contributor Achievement: Pull Shark Achievement: Starstruck\n\n[Ritik Malhotra ritikm > Organizations]\n\nHackBerkeley\n\n…\n\n[Block or report ritikm > Contribution activity > October 2026]\n\nritikm has no activity yet for this period.\n</passage>",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "verdict": {
+          "type": "string",
+          "enum": [
+            "supported",
+            "partial",
+            "unsupported",
+            "no_evidence"
+          ]
+        },
+        "best_source_url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "evidence_quote": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "reason": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "verdict",
+        "best_source_url",
+        "evidence_quote",
+        "reason"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "response": "{\"verdict\":\"supported\",\"best_source_url\":\"https://www.savvy.com/about\",\"evidence_quote\":\"Eric GoldreyerFounder & CEO\",\"reason\":\"Savvy's About page lists Eric Goldreyer as Founder & CEO.\"}"
+}

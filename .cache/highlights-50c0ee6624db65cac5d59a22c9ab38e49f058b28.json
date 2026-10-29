@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://context.dev",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "Context.dev's latest funding round raised 9000000 USD.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://context.dev",
+    "passages": [
+      "[Context.dev: Web Data API for AI Agents (Scrape, Search, Crawl)]\n\nWe raised a $9M seed led by"
+    ]
+  }
+}

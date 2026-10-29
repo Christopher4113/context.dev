@@ -1,0 +1,17 @@
+{
+  "request": {
+    "url": "http://microsoft.com/presspass/exec/yusuf/default.mspx",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "The company in question is Microsoft.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "http://microsoft.com/presspass/exec/yusuf/default.mspx",
+    "passages": [],
+    "error": "WEBSITE_BLOCKED"
+  }
+}

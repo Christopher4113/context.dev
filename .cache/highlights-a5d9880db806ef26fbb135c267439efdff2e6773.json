@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://www.linkedin.com/company/shopify/",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "The company in question is Shopify.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://www.linkedin.com/company/shopify/",
+    "passages": [
+      "[Shopify > About us]\n\nShopify is a leading global commerce company, providing trusted tools to start, grow, market, and manage a retail business of any size. Shopify makes commerce better for everyone with a platform and services that are engineered for reliability, while delivering a better shopping experience for consumers everywhere. Shopify powers millions of businesses in more than 175 countries and is trusted by brands such as Allbirds, Gymshark, PepsiCo, Staples, and many more. Find all our jobs here:&#x20;\n\n…\n\nSoftware Development\n\n…\n\necommerce, API, applications, customer service, hardware, marketplace, AR/VR, marketing automation, User Experience, Design, Production Engineering, POS, Payments, Software Engineering, Finance, Retail, Mobile Apps, Instagram, Google Pay, Dropshipping, and Shipping\n\n…\n\n[Shopify > Updates]\n\nVercel and Shopify are making agents first-class shoppers. Vercel Shop, our Next.js storefront template for Shopify, is GA. • Built on Shopify's rebuilt Hydrogen SDK • Agents can read product pages directly • MCP for product search and carts&#x20;\n\n…\n\nWe just launched shop.md and shop.dev Every agent can search the web, but shopping takes more than that. For an agent to shop for you, it needs to know your size, the brands you keep going back to, and what you bought last month… plus, with more than a billion products on Shopify to search, you want it to be lightning fast, and always get the right availability info so you’re not sent to something that’s out of stock. That’s why we built shop.md. It gives your agent the power to search millions of stores in a fraction of a second, personalized through your Shop account.  Under the hood of shop.md is Shop MCP, and starting today any developer can build on it. shop.dev gives developers a single API to harness the infrastructure behind our catalog, auth, checkout, and wallet. Soooo excited to get this into the hands of both shoppers and developers.&#x20;"
+    ]
+  }
+}

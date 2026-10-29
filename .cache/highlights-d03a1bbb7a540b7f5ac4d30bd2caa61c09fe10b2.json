@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://www.linkedin.com/company/artificial-intelligence-open-ai/",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "OpenAI's current CEO is Sam Altman.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://www.linkedin.com/company/artificial-intelligence-open-ai/",
+    "passages": [
+      "[Stránka nenalezena > Omlouváme se, nemůžeme najít stránku, kterou hledáte. Zkuste se vrátit zpátky na předchozí stránku, nebo se podívejte do našeho Centra nápovědy pro více informací]\n\nPřejít do informačního kanálu\n\n…\n\n[Sidan kunde inte hittas. > Sidan du letar efter hittades inte. Gå tillbaka till föregående sida eller besök vårt Hjälpcenter för mer information]\n\nGå till ditt nyhetsflöde\n\n…\n\n[Sayfa bulunamadı > Aradığınız sayfa bulunamadı. Önceki sayfaya geri dönün veya daha fazla bilgi için Yardım Merkezimizi görüntüleyin]\n\nHaber akışınıza gidin\n\n[未找到网页 > 抱歉，无法找到页面。试试返回到前一页，或前往帮助中心了解更多信息]\n\n前往动态汇总\n\n[系統找不到頁面。 > 我們好像找不到該頁面。請回到上一頁或前往說明中心來進一步瞭解]\n\n前往首頁動態"
+    ]
+  }
+}

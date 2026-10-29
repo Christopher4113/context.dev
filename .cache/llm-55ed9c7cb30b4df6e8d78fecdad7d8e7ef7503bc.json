@@ -1,0 +1,44 @@
+{
+  "request": {
+    "model": "anthropic:claude-opus-5-5",
+    "system": "You verify one claim against evidence passages scraped from the cited sources. Judge only from the passages, never from your own knowledge.\nVerdicts:\n- supported: a passage states the claim's value, so a reader could confirm it from the quote alone. Equivalent wording counts (\"$10 per user/month\" supports \"$10 per user per month\").\n- partial: a passage supports part of the claim, or gives a materially different qualification (a different number, a range, an older date, a different plan or product).\n- unsupported: the passages are on topic but do not state the value, or they contradict it.\n- no_evidence: the passages are irrelevant or empty.\nA passage that only mentions a word in another sense (e.g. a product name in a feature list) does not support a claim about it.\nevidence_quote MUST be copied character-for-character from one passage: the shortest span that shows the value (under 300 characters). Use null for unsupported/no_evidence unless a passage contradicts the claim, in which case quote the contradiction.\nreason: one sentence. If the passage contradicts the claim, say what it actually says.",
+    "user": "Research question: Company facts about Supabase: founders, founding year, and total funding raised.\nClaim: Paul Copplestone is a founder of Supabase.\nValue being checked: \"Paul Copplestone\"\n\n<passage source=\"https://www.linkedin.com/company/supabase/\">\n[Supabase > About us]\n\nBuild in a weekend. Scale to millions. Supabase is the Postgres development platform. Start your project with a Postgres Database, Authentication, instant APIs, and realtime subscriptions.\n\n…\n\nIT Services and IT Consulting\n\n…\n\nPrivately Held\n\nFounded\n\n…\n\n[Supabase > Updates]\n\n🌟 Only in Silicon Valley can you meet the co-founder of Apple(Steve Wozniak), CEO of Y Combinator(Garry Tan), ex-CEO of Twitter(Parag Agrawal),CEO of DeepLearning (Andrew Ng),CEO of Supabase(Paul Copplestone), and the entire leadership team of Supabase in one place! I have been vibe coding a lot, so the question I went in with was: What happens when you vibe-code an app, but get actual users? Now your database has to keep up. So what interested me was what these changes mean for someone building with tools like Lovable or Claude Code.&#x20;\n</passage>\n\n<passage source=\"https://github.com/supabase\">\n[Supabase > Pinned Loading]\n\nThe Postgres development platform. Supabase gives you a dedicated Postgres database to build your web, mobile, and AI applications.\n\n…\n\n[Supabase > Pinned Loading > Repositories]\n\nThe Postgres development platform. Supabase gives you a dedicated Postgres database to build your web, mobile, and AI applications.\n\n…\n\nA cloud-native, multi-tenant Postgres connection pooler.\n\n…\n\n@edgurgel @leandrocp @jbergstroem @burggraf @raulb @awalias @KevinBrolly @encima @ivasilov @PragTob @ferhatelmas @phamhieu @thebengeu @kamilogorek @filipecabaco @gregorvand @steve-chavez @inian @gregnr @staaldraad\n\n…\n\n[Supabase > Pinned Loading > Repositories > Sponsors]\n\n- @VitorCoelho\n\n- @notts1215\n\n- @thomaskawas\n\n- @BrewHubPHL\n\n- @seanblowers\n\n- @ekdysis\n\n- @mailtrap\n\n- @sanctusgee\n\n- @chandanrjit\n\n- @AsahiSoftWareEngineer\n\n- @zOuateRabbit\n\n- @sasatech-gk\n\n- Private Sponsor\n</passage>\n\n<passage source=\"https://www.crunchbase.com/organization/supabase\">\n[Supabase - Crunchbase Company Profile & Funding]\n\nSupabase offers an open source backend platform for app development built around a managed PostgreSQL database and tools.\n\nFounded\n\n…\n\nPrivateVenture - Series Unknown San Francisco, California, United States251-500 supabase.com View on Facebook View on LinkedIn\n\nArtificial Intelligence (AI)\n\n…\n\nSupabase\n</passage>",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "verdict": {
+          "type": "string",
+          "enum": [
+            "supported",
+            "partial",
+            "unsupported",
+            "no_evidence"
+          ]
+        },
+        "best_source_url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "evidence_quote": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "reason": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "verdict",
+        "best_source_url",
+        "evidence_quote",
+        "reason"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "response": "{\"verdict\":\"unsupported\",\"best_source_url\":\"https://www.linkedin.com/company/supabase/\",\"evidence_quote\":null,\"reason\":\"The LinkedIn passage identifies Paul Copplestone as CEO of Supabase but none of the passages state that he is a founder.\"}"
+}

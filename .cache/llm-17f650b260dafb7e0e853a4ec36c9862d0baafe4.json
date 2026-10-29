@@ -1,0 +1,44 @@
+{
+  "request": {
+    "model": "anthropic:claude-opus-5-5",
+    "system": "You verify one claim against evidence passages scraped from the cited sources. Judge only from the passages, never from your own knowledge.\nVerdicts:\n- supported: a passage states the claim's value, so a reader could confirm it from the quote alone. Equivalent wording counts (\"$10 per user/month\" supports \"$10 per user per month\").\n- partial: a passage supports part of the claim, or gives a materially different qualification (a different number, a range, an older date, a different plan or product).\n- unsupported: the passages are on topic but do not state the value, or they contradict it.\n- no_evidence: the passages are irrelevant or empty.\nA passage that only mentions a word in another sense (e.g. a product name in a feature list) does not support a claim about it.\nevidence_quote MUST be copied character-for-character from one passage: the shortest span that shows the value (under 300 characters). Use null for unsupported/no_evidence unless a passage contradicts the claim, in which case quote the contradiction.\nreason: one sentence. If the passage contradicts the claim, say what it actually says.",
+    "user": "Research question: Company facts about Context.dev (context.dev), the web data API for AI agents: founders, accelerator batch, and latest funding round.\nClaim: Context.dev's latest funding round raised 9000000 USD.\nValue being checked: \"9000000\"\n\n<passage source=\"https://context.dev\">\n[Context.dev: Web Data API for AI Agents (Scrape, Search, Crawl)]\n\nWe raised a $9M seed led by\n</passage>\n\n<passage source=\"https://www.context.dev/blog/were-now-backed-by-ycombinator\">\n[We're now backed by YCombinator]\n\n·May 31, 2026\n\n…\n\nShort and sweet update: **Context.dev is now backed by Y Combinator.**\n\nThis is a big milestone for us, but the mission stays the same. We're building the context layer for the internet: one API that helps agents and software understand websites, companies, products, and brands without weeks of scraping, parsing, or enrichment work.\n\nYC gives us more room to move faster, talk to more builders, and keep raising the bar on data quality and developer experience.\n\n…\n\n[We're now backed by YCombinator > Related articles.]\n\n- Oct 19, 2026 **We raised $9M to give agents the internet** Context.dev has raised a $9M seed round led by General Catalyst. A note from Yahia on why he started the company and what changed along the way.\n\n- Apr 19, 2026 **We are Context.dev, not Context.ai** A quick note to our customers: Context.dev has no affiliation with Context.ai, the AI platform named in the recent Vercel security incident.\n\n- Oct 20, 2026 **Introducing news search** Search over 200 million articles for company announcements, press releases, and news. Give your agents current sources to work with.\n</passage>\n\n<passage source=\"https://www.context.dev/blog/context-dev-raises-9m-seed-led-by-general-catalyst\">\n[We raised $9M to give agents the internet]\n\n·Oct 19, 2026\n\n…\n\nToday I get to share some big news: **Context.dev has raised a $9M seed round, led by General Catalyst.**\n\n…\n\n[We raised $9M to give agents the internet > What changed along the way]\n\nAn agent is only as good as the context it has. A brilliant model that can't see the web is guessing. That's when it clicked for me: what we had been building all along was Context. Earlier this year Brand.dev became Context.dev, and our job got a lot clearer: **give agents the internet.**\n</passage>",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "verdict": {
+          "type": "string",
+          "enum": [
+            "supported",
+            "partial",
+            "unsupported",
+            "no_evidence"
+          ]
+        },
+        "best_source_url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "evidence_quote": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "reason": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "verdict",
+        "best_source_url",
+        "evidence_quote",
+        "reason"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "response": "{\"verdict\":\"supported\",\"best_source_url\":\"https://www.context.dev/blog/context-dev-raises-9m-seed-led-by-general-catalyst\",\"evidence_quote\":\"Context.dev has raised a $9M seed round, led by General Catalyst.\",\"reason\":\"The company's announcement post says Context.dev raised a $9M seed round, which matches 9000000 USD.\"}"
+}

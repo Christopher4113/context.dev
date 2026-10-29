@@ -1,0 +1,44 @@
+{
+  "request": {
+    "model": "anthropic:claude-opus-5-5",
+    "system": "You verify one claim against evidence passages scraped from the cited sources. Judge only from the passages, never from your own knowledge.\nVerdicts:\n- supported: a passage states the claim's value, so a reader could confirm it from the quote alone. Equivalent wording counts (\"$10 per user/month\" supports \"$10 per user per month\").\n- partial: a passage supports part of the claim, or gives a materially different qualification (a different number, a range, an older date, a different plan or product).\n- unsupported: the passages are on topic but do not state the value, or they contradict it.\n- no_evidence: the passages are irrelevant or empty.\nA passage that only mentions a word in another sense (e.g. a product name in a feature list) does not support a claim about it.\nevidence_quote MUST be copied character-for-character from one passage: the shortest span that shows the value (under 300 characters). Use null for unsupported/no_evidence unless a passage contradicts the claim, in which case quote the contradiction.\nreason: one sentence. If the passage contradicts the claim, say what it actually says.",
+    "user": "Research question: Company facts about Vercel: founder, founding year, original company name, and headquarters.\nClaim: Vercel is headquartered in San Francisco, California.\nValue being checked: \"San Francisco, California\"\n\n<passage source=\"https://github.com/vercel\">\n[Vercel > Pinned Loading]\n\n2. vercel vercel Public\n\n…\n\n6. commerce commerce Public archive\n\n…\n\n[Vercel > Pinned Loading > Repositories]\n\nShowing 10 of 243 repositories\n\n- chat Public\n\n…\n\nRust 31,270 MIT 2,478 2 15 Updated Oct 29, 2026\n</passage>\n\n<passage source=\"https://vercel.com\">\n[Agentic Infrastructure]\n\nTo ship apps and agentsFor coding agentsFor coding agents to ship apps and agents automated by agents.\n\n…\n\n[Agentic Infrastructure > Build agents on infrastructure that thinks like them]\n\nNotion powers millions of agent conversations daily on Vercel.\n\n…\n\n[Agentic Infrastructure > Ship apps that scale from zero to millions instantly]\n\nZapier serves over 100 million monthly website visits on Vercel.\n\n…\n\n[Agentic Infrastructure > Host platforms that serve every customer]\n\nMintlify powers documentation for over 20,000 companies on Vercel.\n\n…\n\n[Agentic Infrastructure > Recently shipped]\n\nAgents\n</passage>\n\n<passage source=\"https://smtechaisolutions.com\">\n[SM Tech | Leading AI Automation & Digital Transformation > About SM Technology]\n\nInnovation Meets AutomationSM Technology is a premier AI Automation Agency and Web Development firm dedicated to driving Digital Transformation for businesses globally.\n\nOur journey is rooted in professional excellence. Registration No. 2747, Registered on 3 December 2019, according to Partnership Act 1932. This ensures reliable automation services to our international clientele.\n\n…\n\n[SM Tech | Leading AI Automation & Digital Transformation > About SM Technology > Registered & Trusted]\n\nOperating under the Partnership Act 1932 since 2019, Delivering Quality & Security.\n\n…\n\n[SM Tech | Leading AI Automation & Digital Transformation > EXECUTIVE LEADERSHIP > Ghulam Abbas Bhatti]\n\nEmpowering local enterprises with high-efficiency R\\&D and future-proof digital infrastructure.\n\n…\n\n[SM Tech | Leading AI Automation & Digital Transformation > DOMINATE YOUR NICHE WITH]\n\nWe deliver Industry Veterans' expertise with 450+ AI Projects completed globally.\n</passage>",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "verdict": {
+          "type": "string",
+          "enum": [
+            "supported",
+            "partial",
+            "unsupported",
+            "no_evidence"
+          ]
+        },
+        "best_source_url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "evidence_quote": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "reason": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "verdict",
+        "best_source_url",
+        "evidence_quote",
+        "reason"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "response": "{\"verdict\":\"no_evidence\",\"best_source_url\":null,\"evidence_quote\":null,\"reason\":\"None of the passages mention where Vercel is headquartered; they cover GitHub repositories, product marketing copy, and an unrelated company.\"}"
+}

@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://vercel.com",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "Vercel is headquartered in San Francisco, California.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://vercel.com",
+    "passages": [
+      "[Agentic Infrastructure]\n\nTo ship apps and agentsFor coding agentsFor coding agents to ship apps and agents automated by agents.\n\n…\n\n[Agentic Infrastructure > Build agents on infrastructure that thinks like them]\n\nNotion powers millions of agent conversations daily on Vercel.\n\n…\n\n[Agentic Infrastructure > Ship apps that scale from zero to millions instantly]\n\nZapier serves over 100 million monthly website visits on Vercel.\n\n…\n\n[Agentic Infrastructure > Host platforms that serve every customer]\n\nMintlify powers documentation for over 20,000 companies on Vercel.\n\n…\n\n[Agentic Infrastructure > Recently shipped]\n\nAgents"
+    ]
+  }
+}

@@ -45,7 +45,8 @@ async function limited<T>(fn: () => Promise<T>): Promise<T> {
 }
 
 let client: ContextDev | undefined;
-const ctx = () => (client ??= new ContextDev()); // reads CONTEXT_DEV_API_KEY
+// Extra retries: 429s from the org concurrency limit clear once in-flight requests finish (SDK honors Retry-After).
+const ctx = () => (client ??= new ContextDev({ maxRetries: 6 })); // reads CONTEXT_DEV_API_KEY
 
 /** Prefer the X-Credits-Used header, fall back to key_metadata in the body. */
 function creditsOf(response: Response, body: { key_metadata?: { credits_consumed: number } }): number {

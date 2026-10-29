@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "http://github.com/ritikm",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "The company in question is named Savvy.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "http://github.com/ritikm",
+    "passages": [
+      "[ritikm - Overview]\n\n**ritikm**\n\n…\n\n[Ritik Malhotra ritikm > Organizations]\n\nHackBerkeley\n\n…\n\n[Block or report ritikm > 1 contribution in the last year]\n\non May 6th.No contributions on May 13th.No contributions on May 20th.No contributions on May 27th.No contributions on June 3rd.No contributions on June 10th.No contributions on June 17th.No contributions on June 24th.No contributions on July 1st.No contributions on July 8th.No contributions on July 15th.No contributions on July 22nd.No contributions on July 29th.No contributions on August 5th.No contributions on August 12th.No contributions on August 19th.No contributions on August 26th.No contributions on September 2nd.No contributions on September 9th.No contributions on September 16th.No&#x20;\n\n…\n\non July 25th.No contributions on August 1st.No contributions on August 8th.No contributions on August 15th.No contributions on August 22nd.No contributions on August 29th.No contributions on September 5th.No contributions on September 12th.No contributions on September 19th.No contributions on September 26th.No contributions on October 3rd.No contributions on October 10th.No contributions on October 17th.No contributions on October 24th."
+    ]
+  }
+}

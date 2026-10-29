@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://github.com/vercel",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "Vercel is headquartered in San Francisco, California.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://github.com/vercel",
+    "passages": [
+      "[Vercel > Pinned Loading]\n\n2. vercel vercel Public\n\n…\n\n6. commerce commerce Public archive\n\n…\n\n[Vercel > Pinned Loading > Repositories]\n\nShowing 10 of 243 repositories\n\n- chat Public\n\n…\n\nRust 31,270 MIT 2,478 2 15 Updated Oct 29, 2026"
+    ]
+  }
+}

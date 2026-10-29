@@ -1,0 +1,36 @@
+{
+  "request": {
+    "model": "anthropic:claude-opus-5-5",
+    "system": "Rewrite each field of a research answer as one standalone, checkable factual sentence. Name the subject explicitly (e.g. the company). Keep the value exactly as given. Do not add facts.",
+    "user": "Question: Who is the ceo, cfo and cto of savvy\n\nFields:\n- company_name (company name) = \"Savvy\"\n- ceo.name (ceo › name) = \"Eric Goldreyer\"\n\nReturn {\"claims\":[{\"path\",\"claim\"}]} with one entry per field.",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "claims": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "path": {
+                "type": "string"
+              },
+              "claim": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "path",
+              "claim"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "claims"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "response": "{\"claims\":[{\"path\":\"company_name\",\"claim\":\"The company in question is named Savvy.\"},{\"path\":\"ceo.name\",\"claim\":\"The CEO of Savvy is Eric Goldreyer.\"}]}"
+}

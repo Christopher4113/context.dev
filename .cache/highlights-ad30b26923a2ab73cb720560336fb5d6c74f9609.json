@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://github.com/stripe-samples",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "Stripe was founded in 2010.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://github.com/stripe-samples",
+    "passages": [
+      "[Stripe Samples > Pinned Loading > Repositories]\n\nstripe-samples/agents's past year of commit activity\n\nTypeScript 0 MIT 0 0 7 Updated Oct 26, 2026\n\n…\n\nstripe-samples/machine-payments's past year of commit activity\n\n…\n\nstripe-samples/terminal-apps-on-devices's past year of commit activity\n\n…\n\nThis organization has no public members. You must be a member to see who’s a part of this organization."
+    ]
+  }
+}
