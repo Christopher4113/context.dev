@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://x.com/figma",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "Figma was founded in 2012.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://x.com/figma",
+    "passages": [
+      "[Figma (@figma) on X]\n\nFigma\n\n…\n\n[Figma]\n\nJoined April 2015\n\n…\n\n85 Affiliates\n\n…\n\nOct 19\n\n…\n\nTurn any image into a video (or generate one from scratch) without leaving your agent chat All powered by Figma Weave via Figma MCP"
+    ]
+  }
+}

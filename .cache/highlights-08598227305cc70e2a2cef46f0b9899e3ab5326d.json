@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://cal-hacks-12-0.devpost.com/",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "Cal Hacks 12.0 was attended by 3000 hackers.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://cal-hacks-12-0.devpost.com/",
+    "passages": [
+      "[Cal Hacks 12.0]\n\nWelcome to Cal Hacks 12.0! We're so excited to have you join us at the Palace of Fine Arts for the world's largest collegiate hackathon.\n\n…\n\n[Cal Hacks 12.0 > Requirements]\n\n- Submit your hack by 10/26 9:30 AM PDT and make sure to add your teammates! You'll have until 10:30 AM to continue hacking and editing your submission **(except for the table number)**, but the project must be submitted by 9:30 AM.\n- Include an image of your project and GitHub repository for any code to be considered.\n- Include the table number you're presenting from. This cannot change after 10/26 9:30 AM PST.\n- All work must be done during the hackathon\n- You will have two minutes to pitch and two minutes for judges to ask questions of you.\n- **You must have a recorded video submission stored locally with a demonstration.**\n\n…\n\n[Cal Hacks 12.0 > Prizes > Cal Hacks: 1st Overall]\n\n1 winner\n\n…\n\n[Cal Hacks 12.0 > Prizes > Cal Hacks: 3rd Overall]\n\n1 winner\n\n…\n\n[Cal Hacks 12.0 > Judges]\n\n**Ddoski & his not-so judgy buddies.**\n*Cal Hacks 12.0*"
+    ]
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://www-cdn.anthropic.com/files/4zrzovbb/website/3684c2faafb97418665782cea0001f439f74b1d2.pdf",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "The Anthropic API price for Claude Opus 5.5 is 20 USD per million output tokens.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://www-cdn.anthropic.com/files/4zrzovbb/website/3684c2faafb97418665782cea0001f439f74b1d2.pdf",
+    "passages": [
+      "Page 1\tClaude Mo del Pricing\nClaude Model Pricing — List Prices by Platform\nPrices Effect ive: May 27, 2026 (2026-05-27)\nThis document contains pricing information as of the effective date lis ted above. All prices are USD per one million tokens\n(MTok) unles s otherwis e noted. \"—\" indicates the SKU is not offered for that pricing tier / s cope / context window\ncombination. Rows marked \"\\*\" indicate that SKU availability varies by region within the lis ted s cope; not all SKUs in that row\nare offered in every region.\n\n…\n\nSt andard \tGlobal \tAll \t$3.00 \t$15.00 \t$3.75 \t$6.00 \t$0.30\nSt andard \tUS-only inference \tAll \t$3.30 \t$16.50 \t$4.125 \t$6.60 \t$0.33\nBatch\nproces s ing Global \tAll \t$1.50 \t$7.50 \t$1.875 \t$3.00 \t$0.15\nBatch\nproces s ing US-only inference \tAll \t$1.65 \t$8.25 \t$2.0625 \t$3.30 \t$0.165\nClaude Opus 4.5 — Claude API\nP RICING T IER S CO P E CO NT EXT\nWIND O W\nBAS E INP UT\nT O KENS\nO UT P UT\nT O KENS\n5M CACHE\nWRIT ES\n1H CACHE\nWRIT ES\nCACHE HIT S\n& REFRES HES\nSt andard \tGlobal \t≤200K \t$5.00 \t$25.00 \t$6.25 \t$10.00 \t$0.50\nBatch\nproces s ing Global \t≤200K \t$2.50 \t$12.50 \t$3.125 \t$5.00 \t$0.25\n\n…\n\nGlobal Cros s\nRegion All \t$1.50 \t$7.50 \t— \t— \t—\nBatch\nproces s ing\nIn-Region & Geo\nCros s Region All \t$1.65 \t$8.25 \t— \t— \t—\nPage 6\tClaude Mo del Pricing\nP RICING T IER S CO P E CO NT EXT\nWIND O W\nBAS E INP UT\nT O KENS\nO UT P UT\nT O KENS\n5M CACHE\nWRIT ES\n1H CACHE\nWRIT ES\nCACHE HIT S\n& REFRES HES\nBatch\nproces s ing AWS GovCloud (US) All \t$1.80 \t$9.00 \t— \t— \t—\nClaude Opus 4.5 — AWS Bedrock\nP RICING T IER S CO P E CO NT EXT\nWIND O W\nBAS E INP UT\nT O KENS\nO UT P UT\nT O KENS\n5M CACHE\nWRIT ES\n1H CACHE\nWRIT ES\nCACHE HIT S\n& REFRES HES\nSt andard Global Cros s"
+    ]
+  }
+}

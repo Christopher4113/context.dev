@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://www.linkedin.com/company/ujenzixform",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "Vercel was founded in 2015.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://www.linkedin.com/company/ujenzixform",
+    "passages": [
+      "[UjenziXform > About us]\n\nUjenziXform is Kenya's all-in-one construction management platform connecting builders, suppliers, and delivery providers. Builders can request quotes from multiple suppliers, track deliveries in real-time with GPS, and verify every material using QR code scanning. Suppliers can manage inventory, respond to quotes instantly, and monitor dispatched orders with QR dispatch scanning. Delivery providers can accept jobs, scan QR codes for pickup and delivery confirmation, and share live GPS location. What sets UjenziXform apart is our Site Monitoring Service featuring professional oversight with drone aerial surveys and 24/7 AI camera monitoring. Packages start from KES 15,000/month, and private clients get 50% off! From quote to delivery to drone-monitored sites — simplifying construction logistics across Kenya! 🏗️🇰🇪\n\n…\n\nConstruction\n\n…\n\nSelf-Owned\n\nFounded\n\n2025"
+    ]
+  }
+}

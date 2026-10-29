@@ -1,0 +1,17 @@
+{
+  "request": {
+    "url": "https://www.linkedin.com/in/mustafa-suleyman",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "Microsoft's CFO is Amy Hood.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://www.linkedin.com/in/mustafa-suleyman",
+    "passages": [],
+    "error": "NOT_FOUND"
+  }
+}

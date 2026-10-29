@@ -1,0 +1,17 @@
+{
+  "request": {
+    "url": "https://linkedin.com/in/mathis-cynthia-lynn-5147a9284",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "The organization in question is Y Combinator.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://linkedin.com/in/mathis-cynthia-lynn-5147a9284",
+    "passages": [],
+    "error": "WEBSITE_BLOCKED"
+  }
+}

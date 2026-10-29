@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://tailwindcss.com/blog/tailwindcss-v4",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "Tailwind CSS v4.0 introduced a new high‑performance engine built in Rust (Oxide) delivering up to 5× faster full builds and over 100× faster incremental builds.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://tailwindcss.com/blog/tailwindcss-v4",
+    "passages": [
+      "[Tailwind CSS v4.0]\n\n- New high-performance engine — where full builds are up to 5x faster, and incremental builds are over 100x faster — and measured in microseconds.\n- Designed for the modern web — built on cutting-edge CSS features like cascade layers, registered custom properties with `@property`, and `color-mix()`.\n- Simplified installation — fewer dependencies, zero configuration, and just a single line of code in your CSS file.\n- First-party Vite plugin — tight integration for maximum performance and minimum configuration.\n- Automatic content detection — all of your template files are discovered automatically, with no configuration required.\n- Built-in import support — no additional tooling necessary to bundle multiple CSS files.\n- CSS-first configuration — a reimagined developer experience where you customize and extend the framework directly in CSS instead of a JavaScript configuration file.\n- CSS theme variables — all of your design tokens exposed as native CSS variables so you can access them anywhere.\n- Dynamic utility values and variants — stop guessing what values exist in your spacing scale, or extending your configuration for things like basic data attributes.\n\n…\n\n[Tailwind CSS v4.0 > New high-performance engine]\n\nWhen benchmarking it on our own projects, we've found full rebuilds to be over 3.5x faster, and incremental builds to be over 8x faster.\n\n…\n\n| | v3.4 | v4.0 | Improvement |\n| - | - | - | - |\n| Full build | 378ms | 100ms | 3.78x |\n| Incremental rebuild with new CSS | 44ms | 5ms | 8.8x |\n| Incremental rebuild with no new CSS | 35ms | 192µs | 182x |\n\nThe most impressive improvement is on incremental builds that don't actually need to compile any new CSS — these builds are over 100x faster and complete in *microseconds*. And the longer you work on a project, the more of these builds you run into because you're just using classes you've already used before, like `flex`, `col-span-2`, or `font-bold`."
+    ]
+  }
+}

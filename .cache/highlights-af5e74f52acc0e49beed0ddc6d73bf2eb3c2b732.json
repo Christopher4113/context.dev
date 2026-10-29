@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://github.com/supabase",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "The company is Supabase.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://github.com/supabase",
+    "passages": [
+      "[Supabase > Pinned Loading]\n\nThe Postgres development platform. Supabase gives you a dedicated Postgres database to build your web, mobile, and AI applications.\n\n…\n\nA RESTful API for managing your Postgres. Fetch tables, add roles, and run queries\n\n…\n\n[Supabase > Pinned Loading > Repositories]\n\nThe Postgres development platform. Supabase gives you a dedicated Postgres database to build your web, mobile, and AI applications.\n\n…\n\nS3 compatible object storage service that stores metadata in Postgres\n\n…\n\nA cloud-native, multi-tenant Postgres connection pooler."
+    ]
+  }
+}

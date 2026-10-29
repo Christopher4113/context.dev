@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://microsoft.ai/",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "The company in question is Microsoft.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://microsoft.ai/",
+    "passages": [
+      "[Humanist > MAI Image 2.7 debuts above GPT Image 2.5 Flare on Artificial Analysis and #3 on Arena > Frontier Pre-training at Microsoft AI]\n\nFrontier Pre-training at\n\nMicrosoft AI\n\n…\n\n[Humanist > At MAI, we’re building the world’s most capable AI systems, with humanity at the center of every decision.]\n\nHumanist Superintelligence means building the world’s most advanced AI systems designed to stay controllable, aligned, and firmly in service of humanity.\n\n…\n\n[Humanist > Key Locations > Redmond]\n\nWhere Microsoft began – set among the evergreen forests, lakes, and mountains of the Pacific Northwest, a calm and grounded place built for deep work and the long view.\n\n…\n\n[Humanist > Key Locations > Paris]\n\nMustafa Suleyman\nCEO Microsoft AI"
+    ]
+  }
+}

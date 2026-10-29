@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://www.sentra.app/articles/claude-api-pricing",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "One of the current Anthropic API models is Claude Opus 5.5.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://www.sentra.app/articles/claude-api-pricing",
+    "passages": [
+      "…\n\n[Claude API Pricing (2026): Per-Million-Token Rates for Every Model]\n\nOpus 5.5 was released on 22 September, replacing Opus 5 at $5 and $25, Sonnet 5.5 on 28 September at the same rates as Sonnet 5, and Haiku 5.5 on 7 October, priced well below Claude Haiku 4.5, which is still sold at $1 and $5. Prompt caching cuts repeat input to 0.1x the base rate (0.05x on Opus 5.5 and Sonnet 5.5, 0.025x on Fable 5.1), the Batch API halves both directions, and the full 1M-token context window is charged at standard rates on every current model except Haiku 5.5, whose price steps up once a prompt passes 100,000 tokens.&#x20;\n\n…\n\n[Claude API Pricing (2026): Per-Million-Token Rates for Every Model > Claude API pricing per million tokens]\n\nCache reads are 0.1x the base input price on every model except Fable 5.1 and Mythos 5.1, where they are 0.025x ($0.25 per million), and Opus 5.5 and Sonnet 5.5, where they are 0.05x ($0.20 and $0.10 per million). Anthropic halved Sonnet 5.5's cache-read price from $0.20 to $0.10 when it launched Haiku 5.5. Retired models still reachable through Amazon Bedrock and Google Cloud carry their old rates: Claude Opus 4.1 and Opus 4 remain $15 in and $75 out, which is 3.75 times the Opus 5.5 price of $4 and $20 for a worse model, so check which model id your code actually pins. Claude Haiku 5.5, released on 7 October 2026 (Anthropic's Haiku 5.5 announcement), is now the cheapest current model, and Haiku 4.5 stays available at $1 and $5 for code that pins it.\n\n…\n\n[Claude API Pricing (2026): Per-Million-Token Rates for Every Model > What do Claude Opus 5.5 fast mode and US-only inference cost?]\n\n| Model | Standard (in / out) | Fast mode (in / out) | US-only standard (in / out) | Fast mode + US-only (in / out) |\n| - | - | - | - | - |\n| Claude Opus 5.5 | $4 / $20 | $8 / $40 | $4.40 / $22 | $8.80 / $44 |\n| Claude Opus 5 | $5 / $25 | $10 / $50 | $5.50 / $27.50 | $11 / $55 |\n| Claude Opus 4.8 | $5 / $25 | $10 / $50 | $5.50 / $27.50 | $11 / $55 |"
+    ]
+  }
+}

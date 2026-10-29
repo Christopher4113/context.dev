@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://github.com/supabase",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "Paul Copplestone is a founder of Supabase.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://github.com/supabase",
+    "passages": [
+      "[Supabase > Pinned Loading]\n\nThe Postgres development platform. Supabase gives you a dedicated Postgres database to build your web, mobile, and AI applications.\n\n…\n\n[Supabase > Pinned Loading > Repositories]\n\nThe Postgres development platform. Supabase gives you a dedicated Postgres database to build your web, mobile, and AI applications.\n\n…\n\nA cloud-native, multi-tenant Postgres connection pooler.\n\n…\n\n@edgurgel @leandrocp @jbergstroem @burggraf @raulb @awalias @KevinBrolly @encima @ivasilov @PragTob @ferhatelmas @phamhieu @thebengeu @kamilogorek @filipecabaco @gregorvand @steve-chavez @inian @gregnr @staaldraad\n\n…\n\n[Supabase > Pinned Loading > Repositories > Sponsors]\n\n- @VitorCoelho\n\n- @notts1215\n\n- @thomaskawas\n\n- @BrewHubPHL\n\n- @seanblowers\n\n- @ekdysis\n\n- @mailtrap\n\n- @sanctusgee\n\n- @chandanrjit\n\n- @AsahiSoftWareEngineer\n\n- @zOuateRabbit\n\n- @sasatech-gk\n\n- Private Sponsor"
+    ]
+  }
+}

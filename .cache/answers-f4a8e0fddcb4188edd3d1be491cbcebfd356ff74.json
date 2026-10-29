@@ -1,0 +1,39 @@
+{
+  "request": {
+    "task": "What are Notion's paid plan prices per member per month, billed annually and billed monthly?",
+    "json_format": {
+      "plans": [
+        {
+          "name": "",
+          "annual_price_per_member": "",
+          "monthly_price_per_member": ""
+        }
+      ]
+    },
+    "mode": "fast"
+  },
+  "response": {
+    "json_content": {
+      "plans": [
+        {
+          "name": "Plus",
+          "annual_price_per_member": "$10",
+          "monthly_price_per_member": "$12"
+        },
+        {
+          "name": "Business",
+          "annual_price_per_member": "$20",
+          "monthly_price_per_member": "$24"
+        }
+      ]
+    },
+    "sources": [
+      "https://www.notion.com/pricing"
+    ],
+    "key_metadata": {
+      "credits_consumed": 10,
+      "credits_remaining": 20749
+    },
+    "request_id": "094208b4-6d02-48b0-8e4b-7a865c9dd136"
+  }
+}

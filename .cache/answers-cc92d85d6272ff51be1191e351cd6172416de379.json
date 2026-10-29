@@ -1,0 +1,28 @@
+{
+  "request": {
+    "task": "When and where was Cal Hacks 12.0 held, and how many hackers attended?",
+    "json_format": {
+      "event": "",
+      "dates": "",
+      "location": "",
+      "attendees": ""
+    },
+    "mode": "fast"
+  },
+  "response": {
+    "json_content": {
+      "event": "Cal Hacks 12.0",
+      "dates": "October 24–26, 2025",
+      "location": "Palace of Fine Arts, San Francisco",
+      "attendees": "3000"
+    },
+    "sources": [
+      "https://cal-hacks-12-0.devpost.com/"
+    ],
+    "key_metadata": {
+      "credits_consumed": 10,
+      "credits_remaining": 20182
+    },
+    "request_id": "5e12974e-d79b-4e4f-8239-ca78012595da"
+  }
+}

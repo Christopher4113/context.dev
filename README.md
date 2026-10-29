@@ -1,0 +1,129 @@
+# Groundcheck
+
+Per-field source verification for the [Context.dev](https://context.dev) Answers API.
+
+At Cal Hacks 13.0 my team built [Auditor](https://github.com/Christopher4113/Auditor), an AI staff accountant. A Claude agent proposes journal entries with citations, and a rules engine decides what gets posted. The biggest lesson was that agents cite things they never actually read, so every citation had to be checked against what was really retrieved. When I used Context.dev's Answers API to fill Auditor with real data, I got facts plus a flat list of source URLs. I still had to check by hand which source supported which field. Groundcheck automates that check.
+
+For every field in an Answers response, it answers one question: **does a cited source actually support this value, and where?**
+
+![Groundcheck demo: the Node.js LTS answer says 24, and its own cited source shows 26 (LTS)](docs/demo.jpg)
+
+## How it works
+
+```
+question + json_format
+        │
+  1. Ask ──────────── Context.dev Answers (fast mode) → json_content + sources[]
+        │
+  2. Flatten ──────── json_content → one leaf per field (nulls skipped)
+        │             → one standalone claim per field ("Linear's Business plan costs $16 per user per month.")
+        │
+  3. Gather evidence ─ for each claim × top 3 sources: Scrape + Highlights with the claim as the query
+        │
+  4. Judge ────────── LLM sees claim + passages → verdict, best source, verbatim quote, reason
+        │             quote is checked in code against the retrieved passages; if it isn't there,
+        │             supported/partial is downgraded to unsupported
+        ▼
+  per-field citation map + summary
+```
+
+- **Verdicts:** `supported`, `partial`, `unsupported`, `no_evidence`.
+- **The verbatim check** ([src/judge.ts](src/judge.ts) `enforceQuote`) is the Auditor lesson in code. The judge must quote a span from a passage that was actually retrieved. Before matching, whitespace, curly quotes, dashes, and Markdown syntax are normalized. Words, numbers, and case are not. If the quote can't be found, a positive verdict is downgraded and marked `quote_verified: false`. If it is found, the source is re-pointed to the page the quote actually came from.
+- **Pluggable judge:** Claude (`claude-opus-5-5`, effort `medium`) is the default. Set `JUDGE_PROVIDER=openai`, `JUDGE_BASE_URL`, `JUDGE_MODEL`, and optionally `JUDGE_API_KEY` to use any OpenAI-compatible endpoint, such as a small fine-tuned judge. The same function also phrases the claims, with one call per answer.
+- **Cost controls:** fast mode only, at most 3 sources per claim, and every Context.dev and LLM response cached under `.cache/`, so reruns cost 0 credits. Credits are read from the `X-Credits-Used` header, and each run hard-stops at a budget (`--budget`, default 200 per CLI run).
+
+## Run it
+
+Requires Node 20.12+ and pnpm.
+
+```bash
+pnpm install
+cp .env.example .env   # add CONTEXT_DEV_API_KEY and ANTHROPIC_API_KEY
+```
+
+> **No keys?** The repo ships its `.cache/` (1.9 MB of recorded Context.dev and judge responses), so `pnpm web` and the CLI replay all 25 benchmark questions, including every example chip in the demo, with no keys and no credits. Anything new needs keys.
+
+**Web demo.** Enter a question and answer shape, and watch each field get a verdict badge. Click a field to see its source and the highlighted evidence passage. The "verify: true response" tab shows the response shape pitched below.
+
+```bash
+pnpm web               # http://localhost:3000
+```
+
+**CLI.** Prints a colored per-field table and writes the JSON result.
+
+```bash
+pnpm groundcheck "What are the pricing plans for Linear (linear.app)?" --schema examples/linear-pricing.json
+```
+
+**Benchmark.** Runs the 25 questions in [bench/questions.json](bench/questions.json) and writes [results/benchmark.json](results/benchmark.json).
+
+```bash
+pnpm bench --budget=1500
+```
+
+**Tests.** These run offline against recorded fixtures in [fixtures/](fixtures/): the flattener, the verbatim-quote validator, verdict downgrading, and the full pipeline with mocked APIs.
+
+```bash
+pnpm test
+```
+
+Library use:
+
+```ts
+import { groundcheck } from "./src/groundcheck.ts";
+const result = await groundcheck("Who is the CEO of Anthropic?", { ceo: "" });
+result.citations["ceo"]; // { verdict, source, evidence, reason, claim, passages, ... }
+```
+
+## Benchmark results
+
+25 questions in `fast` mode → 140 fields, each checked against up to 3 cited sources. 553 credits. Full write-up and example failures: **[FINDINGS.md](FINDINGS.md)**.
+
+| Category | Fields | Supported | Partial | Unsupported | No evidence |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Pricing | 52 | 88.5% | 5.8% | 5.8% | 0% |
+| Product features | 31 | 74.2% | 16.1% | 9.7% | 0% |
+| Company facts | 26 | 50.0% | 11.5% | 15.4% | 23.1% |
+| Dates / numbers | 14 | 42.9% | 21.4% | 35.7% | 0% |
+| People / roles | 17 | 41.2% | 0% | 0% | 58.8% |
+| **All** | **140** | **67.9%** | **10.0%** | **10.7%** | **11.4%** |
+
+Main takeaways:
+- Questions answered from one first-party page ground very well.
+- Company and people questions mostly cite LinkedIn and X profile records, which can't be scraped or don't contain the field.
+- In two time-sensitive cases (Python, Node.js LTS), the answer is contradicted by a source it cites.
+
+## How this could ship inside Answers
+
+Answers already has what it needs. The research agent has read the pages, so the citation map could be produced during research instead of reconstructed afterwards, as Groundcheck has to do. A `verify: true` option could return:
+
+```json
+{
+  "json_content": { "company": "Linear", "plans": [{ "name": "Business", "price_per_user_monthly": "$16" }] },
+  "sources": ["https://linear.app/pricing"],
+  "citations": {
+    "plans[0].price_per_user_monthly": {
+      "verdict": "supported",
+      "source": "https://linear.app/pricing",
+      "evidence": "$16 per user/month",
+      "reason": "The pricing page lists the Business plan at $16 per user/month, billed yearly."
+    }
+  },
+  "summary": { "fields": 2, "supported": 2, "partial": 0, "unsupported": 0, "no_evidence": 0 }
+}
+```
+
+Field paths use the same dotted/indexed form as Groundcheck's flattener, so a client can join `citations` to `json_content` without guessing. The cheapest version would only attach the passage the agent already used for each field. A stricter version would re-check each field the way Groundcheck does: one Highlights query per claim, plus a verbatim check on the quote.
+
+## Layout
+
+```
+src/flatten.ts      json_content → leaf fields + labels
+src/context.ts      Answers + Scrape/Highlights via the context.dev SDK, disk cache, credit budget
+src/judge.ts        claim phrasing, LLM judge (Claude or OpenAI-compatible), zod validation, verbatim check
+src/groundcheck.ts  the pipeline
+src/cli.ts          CLI (commander + picocolors)
+src/server.ts       demo server (node:http, streams NDJSON events)
+web/index.html      demo page (no build step)
+src/bench.ts        benchmark runner
+```

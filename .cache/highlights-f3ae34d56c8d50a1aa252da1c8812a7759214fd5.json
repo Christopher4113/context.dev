@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://www.facebook.com/anthropicai",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "The President of Anthropic is Daniela Amodei.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://www.facebook.com/anthropicai",
+    "passages": [
+      "[Anthropic]\n\nAnthropic\n\n…\n\n[Anthropic > Intro]\n\nAnthropic is an AI safety and research company that’s working to build reliable, interpretable, and steerable AI systems.\n\n…\n\nANTHROPIC PBC\n\n…\n\n[Anthropic > Anthropic]\n\nMilk AI LLC\n\n…\n\nColby Carr"
+    ]
+  }
+}

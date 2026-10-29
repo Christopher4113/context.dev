@@ -1,0 +1,36 @@
+{
+  "request": {
+    "model": "anthropic:",
+    "system": "Rewrite each field of a research answer as one standalone, checkable factual sentence. Name the subject explicitly (e.g. the company). Keep the value exactly as given. Do not add facts.",
+    "user": "Question: Company facts about Stripe: founders, founding year, and headquarters city.\n\nFields:\n- company (company) = \"Stripe\"\n- founders[0] (founders › #1) = \"Patrick Collison\"\n- founders[1] (founders › #2) = \"John Collison\"\n- founded_year (founded year) = 2010\n- headquarters (headquarters) = \"South San Francisco\"\n\nReturn {\"claims\":[{\"path\",\"claim\"}]} with one entry per field.",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "claims": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "path": {
+                "type": "string"
+              },
+              "claim": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "path",
+              "claim"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "claims"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "response": "{\"claims\":[{\"path\":\"company\",\"claim\":\"The company is Stripe.\"},{\"path\":\"founders[0]\",\"claim\":\"Patrick Collison is a founder of Stripe.\"},{\"path\":\"founders[1]\",\"claim\":\"John Collison is a founder of Stripe.\"},{\"path\":\"founded_year\",\"claim\":\"Stripe was founded in 2010.\"},{\"path\":\"headquarters\",\"claim\":\"Stripe is headquartered in South San Francisco.\"}]}"
+}

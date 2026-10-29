@@ -1,0 +1,44 @@
+{
+  "request": {
+    "model": "anthropic:",
+    "system": "You verify one claim against evidence passages scraped from the cited sources. Judge only from the passages, never from your own knowledge.\nVerdicts:\n- supported: a passage states the claim's value, so a reader could confirm it from the quote alone. Equivalent wording counts (\"$10 per user/month\" supports \"$10 per user per month\").\n- partial: a passage supports part of the claim, or gives a materially different qualification (a different number, a range, an older date, a different plan or product).\n- unsupported: the passages are on topic but do not state the value, or they contradict it.\n- no_evidence: the passages are irrelevant or empty.\nA passage that only mentions a word in another sense (e.g. a product name in a feature list) does not support a claim about it.\nevidence_quote MUST be copied character-for-character from one passage: the shortest span that shows the value (under 300 characters). Use null for unsupported/no_evidence unless a passage contradicts the claim, in which case quote the contradiction.\nreason: one sentence. If the passage contradicts the claim, say what it actually says.",
+    "user": "Research question: What major changes did Tailwind CSS v4.0 introduce?\nClaim: Tailwind CSS v4.0 introduced additional utilities and variants such as inset‑shadow‑*, inset‑ring‑*, field‑sizing, color‑scheme, font‑stretch, inert, nth‑*, in‑*, and support for :popover‑open.\nValue being checked: \"Additional utilities and variants such as inset‑shadow‑*, inset‑ring‑*, field‑sizing, color‑scheme, font‑stretch, inert, nth‑*, in‑*, and support for :popover‑open\"\n\n<passage source=\"https://tailwindcss.com/blog/tailwindcss-v4\">\n…\n\n[Tailwind CSS v4.0]\n\n<!-- -->\n\n- Container queries — first-class APIs for styling elements based on their container size, no plugins required.\n- New 3D transform utilities — transform elements in 3D space directly in your HTML.\n- Expanded gradient APIs — radial and conic gradients, interpolation modes, and more.\n- @starting-style support — a new variant you can use to create enter and exit transitions, without the need for JavaScript.\n- not-\\* variant — style an element only when it doesn't match another variant, custom selector, or media or feature query.\n- Even more new utilities and variants — including support for `color-scheme`, `field-sizing`, complex shadows, `inert`, and more.\n\n…\n\n[Tailwind CSS v4.0 > @starting-style support]\n\n```\n<div>  <button popovertarget=\"my-popover\">Check for updates</button>  <div popover id=\"my-popover\" class=\"transition-discrete starting:open:opacity-0 ...\">    <!-- ... -->  </div></div>\n```\n\n…\n\n[Tailwind CSS v4.0 > Even more new utilities and variants]\n\n- **New `inset-shadow-*` and `inset-ring-*` utilities** — making it possible to stack up to four layers of box shadows on a single element.\n- **New `field-sizing` utilities** — for auto-resizing textareas without writing a single line of JavaScript.\n- **New `color-scheme` utilities** — so you can finally get rid of those ugly light scrollbars in dark mode.\n- **New `font-stretch` utilities** — for carefully tweaking variable fonts that support different widths.\n- **New `inert` variant** — for styling non-interactive elements marked with the `inert` attribute.\n- **New `nth-*` variants** — for doing really clever things you'll eventually regret.\n- **New `in-*` variant** — which is a lot like `group-*`, but without the need for the `group` class.\n- **Support for `:popover-open`** — using the existing `open` variant to also target open popovers.\n- **New descendant variant** — for styling all descendant elements, for better or for worse.\n</passage>",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "verdict": {
+          "type": "string",
+          "enum": [
+            "supported",
+            "partial",
+            "unsupported",
+            "no_evidence"
+          ]
+        },
+        "best_source_url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "evidence_quote": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "reason": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "verdict",
+        "best_source_url",
+        "evidence_quote",
+        "reason"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "response": "{\"verdict\":\"supported\",\"best_source_url\":\"https://tailwindcss.com/blog/tailwindcss-v4\",\"evidence_quote\":\"- **New `inset-shadow-*` and `inset-ring-*` utilities** — making it possible to stack up to four layers of box shadows on a single element.\\n- **New `field-sizing` utilities**\",\"reason\":\"The passage's \\\"Even more new utilities and variants\\\" section lists inset-shadow-*, inset-ring-*, field-sizing, color-scheme, font-stretch, inert, nth-*, in-* and :popover-open support as new in v4.0.\"}"
+}

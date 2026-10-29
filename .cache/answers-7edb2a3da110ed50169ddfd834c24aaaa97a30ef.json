@@ -1,0 +1,34 @@
+{
+  "request": {
+    "task": "Who are the CEO, President, and Chief Science Officer of Anthropic?",
+    "json_format": {
+      "company": "",
+      "ceo": "",
+      "president": "",
+      "chief_science_officer": ""
+    },
+    "mode": "fast"
+  },
+  "response": {
+    "json_content": {
+      "company": "Anthropic",
+      "ceo": "Dario Amodei",
+      "president": "Daniela Amodei",
+      "chief_science_officer": "Jared Kaplan"
+    },
+    "sources": [
+      "https://www.linkedin.com/company/anthropicresearch/",
+      "https://x.com/anthropicai",
+      "https://www.facebook.com/anthropicai",
+      "https://www.linkedin.com/company/claude-builder-club-umass",
+      "https://www.crunchbase.com/organization/anthropic",
+      "https://anthropic.com",
+      "https://www.anthropic.com/company/leadership"
+    ],
+    "key_metadata": {
+      "credits_consumed": 10,
+      "credits_remaining": 20363
+    },
+    "request_id": "030d8d59-3b3a-43a9-94be-49d24840afb6"
+  }
+}

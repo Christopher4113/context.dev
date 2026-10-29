@@ -1,0 +1,36 @@
+{
+  "request": {
+    "model": "anthropic:",
+    "system": "Rewrite each field of a research answer as one standalone, checkable factual sentence. Name the subject explicitly (e.g. the company). Keep the value exactly as given. Do not add facts.",
+    "user": "Question: Who is the current President and CEO of Y Combinator?\n\nFields:\n- organization (organization) = \"Y Combinator\"\n- president_and_ceo (president and ceo) = \"Garry Tan\"\n- since_year (since year) = 2023\n\nReturn {\"claims\":[{\"path\",\"claim\"}]} with one entry per field.",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "claims": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "path": {
+                "type": "string"
+              },
+              "claim": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "path",
+              "claim"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "claims"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "response": "{\"claims\":[{\"path\":\"organization\",\"claim\":\"The organization in question is Y Combinator.\"},{\"path\":\"president_and_ceo\",\"claim\":\"The current President and CEO of Y Combinator is Garry Tan.\"},{\"path\":\"since_year\",\"claim\":\"Garry Tan has served as President and CEO of Y Combinator since 2023.\"}]}"
+}

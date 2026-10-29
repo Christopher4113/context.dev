@@ -1,0 +1,6 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    { "name": "groundcheck-web", "runtimeExecutable": "env", "runtimeArgs": ["-u", "ANTHROPIC_BASE_URL", "pnpm", "-s", "web"], "port": 3000 }
+  ]
+}

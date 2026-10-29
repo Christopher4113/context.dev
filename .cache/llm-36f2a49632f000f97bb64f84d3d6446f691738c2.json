@@ -1,0 +1,44 @@
+{
+  "request": {
+    "model": "anthropic:",
+    "system": "You verify one claim against evidence passages scraped from the cited sources. Judge only from the passages, never from your own knowledge.\nVerdicts:\n- supported: a passage states the claim's value, so a reader could confirm it from the quote alone. Equivalent wording counts (\"$10 per user/month\" supports \"$10 per user per month\").\n- partial: a passage supports part of the claim, or gives a materially different qualification (a different number, a range, an older date, a different plan or product).\n- unsupported: the passages are on topic but do not state the value, or they contradict it.\n- no_evidence: the passages are irrelevant or empty.\nA passage that only mentions a word in another sense (e.g. a product name in a feature list) does not support a claim about it.\nevidence_quote MUST be copied character-for-character from one passage: the shortest span that shows the value (under 300 characters). Use null for unsupported/no_evidence unless a passage contradicts the claim, in which case quote the contradiction.\nreason: one sentence. If the passage contradicts the claim, say what it actually says.",
+    "user": "Research question: How many developers use GitHub, according to the most recent official figure?\nClaim: GitHub is used by 225M+ developers, according to the most recent official figure.\nValue being checked: \"225M+\"\n\n<passage source=\"https://github.com/about\">\n[Let's build from here]\n\n225M+ Developers\n\n4M+ Organizations\n\n800M+ Repositories\n\n90% Fortune 100\n\n…\n\n[Let's build from here > News, stories and insights > Octoverse]\n\nDive into the details with our annual State of the Octoverse report looking at the trends and patterns in the code and communities that build on GitHub.\n</passage>",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "verdict": {
+          "type": "string",
+          "enum": [
+            "supported",
+            "partial",
+            "unsupported",
+            "no_evidence"
+          ]
+        },
+        "best_source_url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "evidence_quote": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "reason": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "verdict",
+        "best_source_url",
+        "evidence_quote",
+        "reason"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "response": "{\"verdict\":\"supported\",\"best_source_url\":\"https://github.com/about\",\"evidence_quote\":\"225M+ Developers\",\"reason\":\"GitHub's official About page states 225M+ developers, which matches the claimed figure.\"}"
+}

@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://bun.com/",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "The latest stable version of Bun was released in 2026-10.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://bun.com/",
+    "passages": [
+      "[Bun — A fast all-in-one JavaScript runtime]\n\nNEWBun v1.4.4 released→\n\n…\n\n[Bun is a fast JavaScript runtime & toolkit. All in one. > Serving Express over HTTPS]\n\n| runtime | version | requests/sec | peak RAM |\n| - | - | - | - |\n| Bun | v1.4 | 48,243 req/s | 105 MB |\n| Node.js | v26.7.0 | 25,181 req/s | 142 MB |\n| Deno | v2.9.5 | 19,243 req/s | 176 MB |\n\n…\n\n[Bun is a fast JavaScript runtime & toolkit. All in one. > Running a WebSocket chat server]\n\nv26.7.0\n\n…\n\n| runtime | version | messages/sec | peak RAM |\n| - | - | - | - |\n| Bun (publish) | v1.4 | 4,170,027 msgs/s | 51 MB |\n| Bun (send) | v1.4 | 159,379 msgs/s | 37 MB |\n| Deno | v2.9.5 | 124,088 msgs/s | 1.2 GB |\n| ws (Node.js) | v26.7.0 | 123,486 msgs/s | 78 MB |\n\n…\n\n[Bun is a fast JavaScript runtime & toolkit. All in one. > One binary for the whole workflow.]\n\nv1.4.4Latest release · October 2026"
+    ]
+  }
+}

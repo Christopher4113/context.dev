@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://tailwindcss.com/blog/tailwindcss-v4",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "The Tailwind CSS release being described is version 4.0.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://tailwindcss.com/blog/tailwindcss-v4",
+    "passages": [
+      "[Tailwind CSS v4.0]\n\nTailwind CSS v4.0 is an all-new version of the framework optimized for performance and flexibility, with a reimagined configuration and customization experience, and taking full advantage of the latest advancements the web platform has to offer.\n\n…\n\n[Tailwind CSS v4.0 > New high-performance engine]\n\n| | v3.4 | v4.0 | Improvement |\n| - | - | - | - |\n| Full build | 378ms | 100ms | 3.78x |\n| Incremental rebuild with new CSS | 44ms | 5ms | 8.8x |\n| Incremental rebuild with no new CSS | 35ms | 192µs | 182x |"
+    ]
+  }
+}

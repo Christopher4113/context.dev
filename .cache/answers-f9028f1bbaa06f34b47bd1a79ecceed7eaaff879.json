@@ -1,0 +1,47 @@
+{
+  "request": {
+    "task": "Who are OpenAI's current CEO, CFO, and Chief Research Officer?",
+    "json_format": {
+      "company": "",
+      "ceo": "",
+      "cfo": "",
+      "chief_research_officer": ""
+    },
+    "mode": "fast"
+  },
+  "response": {
+    "json_content": {
+      "company": "OpenAI",
+      "ceo": "Sam Altman",
+      "cfo": "Sarah Friar",
+      "chief_research_officer": "Mark Chen"
+    },
+    "sources": [
+      "https://www.linkedin.com/in/sam-altman-b54557359",
+      "https://linkedin.com/in/sam-altman-891603414",
+      "https://www.linkedin.com/in/sam-altman/",
+      "https://www.linkedin.com/company/openai-sora/",
+      "https://www.linkedin.com/company/artificial-intelligence-open-ai/",
+      "https://www.linkedin.com/company/openai/",
+      "https://www.linkedin.com/company/creativemindco/",
+      "https://www.linkedin.com/company/dall-e-open-ai/",
+      "https://www.linkedin.com/company/openai-chatgpt35/",
+      "https://www.linkedin.com/company/openaievents/",
+      "https://www.linkedin.com/company/openai-residency/",
+      "https://www.linkedin.com/company/sora-ai/",
+      "https://www.linkedin.com/company/collabortivecapitalism/",
+      "https://x.com/openai",
+      "https://wellfound.com/company/company",
+      "https://www.facebook.com/openai",
+      "https://www.crunchbase.com/organization/openai",
+      "https://openai.com",
+      "https://openai.com/index/leadership-team-update/",
+      "https://openai.com/index/openai-welcomes-cfo-cpo/"
+    ],
+    "key_metadata": {
+      "credits_consumed": 10,
+      "credits_remaining": 20329
+    },
+    "request_id": "4543953e-3030-4ce9-b8b9-3f9c11b1bb05"
+  }
+}

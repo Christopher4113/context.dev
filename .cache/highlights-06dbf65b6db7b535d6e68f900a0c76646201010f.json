@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://developers.cloudflare.com/workers/platform/pricing/",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "On the Cloudflare Workers paid plan, the maximum CPU time limit is 30 million CPU milliseconds per month.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://developers.cloudflare.com/workers/platform/pricing/",
+    "passages": [
+      "[Pricing > Workers]\n\n| | Requests1, 2, 3, 4 | Duration | CPU time |\n| - | - | - | - |\n| **Free** | 100,000 per day | No charge for duration | 10 milliseconds of CPU time per invocation |\n| **Standard** | 10 million included per month +$0.30 per additional million | No charge or limit for duration | 30 million CPU milliseconds included per month +$0.02 per additional million CPU milliseconds  Max of 5 minutes of CPU time per invocation (default: 30 seconds) Max of 15 minutes of CPU time per Cron Trigger or Queue Consumer invocation |\n\n…\n\n[Pricing > Workflows]\n\n| Unit | Workers Free | Workers Paid |\n| - | - | - |\n| Requests (millions) | 100,000 per day (shared with Workers requests) | 10 million included per month + $0.30 per additional million |\n| CPU time (ms) | 10 milliseconds of CPU time per invocation | 30 million CPU milliseconds included per month + $0.02 per additional million CPU milliseconds |\n| Storage (GB-mo) | 1 GB-month | 1 GB-month included + $0.20/ GB-month |\n| Steps | 3,000 per day | 500,000 included per month + $0.80/ additional 100,000 per month |"
+    ]
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "request": {
+    "task": "What is the latest stable Python 3 release and its release date?",
+    "json_format": {
+      "latest_version": "",
+      "release_date": ""
+    },
+    "mode": "fast"
+  },
+  "response": {
+    "json_content": {
+      "latest_version": "3.15.0",
+      "release_date": "2026-10-09"
+    },
+    "sources": [
+      "https://www.python.org/downloads/source/"
+    ],
+    "key_metadata": {
+      "credits_consumed": 10,
+      "credits_remaining": 20224
+    },
+    "request_id": "427ea65a-de66-4531-a155-2904738f8ee8"
+  }
+}

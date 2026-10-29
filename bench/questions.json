@@ -1,0 +1,31 @@
+[
+  { "id": "company-stripe", "category": "company facts", "question": "Company facts about Stripe: founders, founding year, and headquarters city.", "schema": { "company": "", "founders": [""], "founded_year": 0, "headquarters": "" } },
+  { "id": "company-figma", "category": "company facts", "question": "Company facts about Figma: founders, founding year, headquarters, and the outcome of Adobe's proposed acquisition.", "schema": { "company": "", "founders": [""], "founded_year": 0, "headquarters": "", "adobe_acquisition_outcome": "" } },
+  { "id": "company-vercel", "category": "company facts", "question": "Company facts about Vercel: founder, founding year, original company name, and headquarters.", "schema": { "company": "", "founder": "", "founded_year": 0, "original_name": "", "headquarters": "" } },
+  { "id": "company-contextdev", "category": "company facts", "question": "Company facts about Context.dev (context.dev), the web data API for AI agents: founders, accelerator batch, and latest funding round.", "schema": { "company": "", "founders": [""], "accelerator_batch": "", "latest_funding": { "round": "", "amount_usd": "" } } },
+  { "id": "company-supabase", "category": "company facts", "question": "Company facts about Supabase: founders, founding year, and total funding raised.", "schema": { "company": "", "founders": [""], "founded_year": 0, "total_funding_usd": "" } },
+
+  { "id": "pricing-linear", "category": "pricing", "question": "What are the pricing plans for Linear (linear.app)? Give plan names and monthly per-user prices.", "schema": { "company": "", "plans": [{ "name": "", "price_per_user_monthly": "" }], "free_plan_available": true } },
+  { "id": "pricing-notion", "category": "pricing", "question": "What are Notion's paid plan prices per member per month, billed annually and billed monthly?", "schema": { "plans": [{ "name": "", "annual_price_per_member": "", "monthly_price_per_member": "" }] } },
+  { "id": "pricing-github-copilot", "category": "pricing", "question": "What are the GitHub Copilot individual plan prices per month?", "schema": { "plans": [{ "name": "", "price_monthly": "" }] } },
+  { "id": "pricing-contextdev", "category": "pricing", "question": "What are the pricing plans for context.dev? Give plan names, monthly price, and monthly credits.", "schema": { "plans": [{ "name": "", "price_monthly": "", "credits_per_month": "" }] } },
+  { "id": "pricing-claude-api", "category": "pricing", "question": "What is the Anthropic API price per million input and output tokens for Claude Haiku, Sonnet, and Opus (current versions)?", "schema": { "models": [{ "name": "", "input_per_mtok_usd": "", "output_per_mtok_usd": "" }] } },
+
+  { "id": "features-postgres", "category": "product features", "question": "What is the latest major version of PostgreSQL and three headline features of that release?", "schema": { "latest_major_version": "", "release_date": "", "headline_features": [""] } },
+  { "id": "features-bun", "category": "product features", "question": "What is the latest stable version of Bun, and which package manager lockfile format does it use by default?", "schema": { "latest_version": "", "release_date": "", "default_lockfile": "" } },
+  { "id": "features-tailwind", "category": "product features", "question": "What major changes did Tailwind CSS v4.0 introduce?", "schema": { "version": "", "release_date": "", "key_changes": [""] } },
+  { "id": "features-contextdev", "category": "product features", "question": "What output formats does the context.dev Scrape API support?", "schema": { "product": "", "formats": [""] } },
+  { "id": "features-cloudflare-workers", "category": "product features", "question": "What are the CPU time limits for Cloudflare Workers on the free and paid plans?", "schema": { "free_plan_cpu_limit": "", "paid_plan_default_cpu_limit": "", "paid_plan_max_cpu_limit": "" } },
+
+  { "id": "people-anthropic", "category": "people / roles", "question": "Who are the CEO, President, and Chief Science Officer of Anthropic?", "schema": { "company": "", "ceo": "", "president": "", "chief_science_officer": "" } },
+  { "id": "people-openai", "category": "people / roles", "question": "Who are OpenAI's current CEO, CFO, and Chief Research Officer?", "schema": { "company": "", "ceo": "", "cfo": "", "chief_research_officer": "" } },
+  { "id": "people-microsoft", "category": "people / roles", "question": "Who is Microsoft's CEO, and who is its CFO?", "schema": { "company": "", "ceo": "", "cfo": "" } },
+  { "id": "people-yc", "category": "people / roles", "question": "Who is the current President and CEO of Y Combinator?", "schema": { "organization": "", "president_and_ceo": "", "since_year": 0 } },
+  { "id": "people-shopify", "category": "people / roles", "question": "Who are Shopify's CEO and President?", "schema": { "company": "", "ceo": "", "president": "" } },
+
+  { "id": "dates-node-lts", "category": "dates / numbers", "question": "What is the latest Node.js LTS release line, its codename, and when does it reach end of life?", "schema": { "lts_line": "", "codename": "", "latest_version": "", "end_of_life": "" } },
+  { "id": "dates-python", "category": "dates / numbers", "question": "What is the latest stable Python 3 release and its release date?", "schema": { "latest_version": "", "release_date": "" } },
+  { "id": "dates-nvidia-revenue", "category": "dates / numbers", "question": "What was NVIDIA's revenue for its most recently reported fiscal quarter?", "schema": { "fiscal_quarter": "", "revenue_usd": "", "reported_on": "" } },
+  { "id": "dates-github-users", "category": "dates / numbers", "question": "How many developers use GitHub, according to the most recent official figure?", "schema": { "developers": "", "as_of": "", "source_publication": "" } },
+  { "id": "dates-calhacks", "category": "dates / numbers", "question": "When and where was Cal Hacks 12.0 held, and how many hackers attended?", "schema": { "event": "", "dates": "", "location": "", "attendees": "" } }
+]

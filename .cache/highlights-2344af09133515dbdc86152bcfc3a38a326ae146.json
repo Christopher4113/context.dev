@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://www.linkedin.com/company/contextdev",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "Context.dev's latest funding round raised 9000000 USD.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://www.linkedin.com/company/contextdev",
+    "passages": [
+      "[Context.dev (YC S26) > Updates]\n\nContext.dev (YC S26)\n\n…\n\nIntroducing the People Search API by Context.dev (YC S26) 1 billion people, one API > decision makers to sell to > founders to build with > engineers to hire Let your agents find them.\n\n…\n\nContext now powers Zero's enrichment infrastructure, keeping information on 20M+ companies fresh. Zero searches and scrapes millions of data points every day to power its AI CRM, company enrichment, and custom agents. Learn how they do it:&#x20;\n\n…\n\nIntroducing Blue Pages, our index of over 80M companies. Now your agents can find: -companies with recent funding rounds -lookalikes for your existing customers -companies that match a query/criteria We're already using it internally to accelerate GTM. Get 500 /company searches free when you sign up to context.dev\n\n…\n\nI won a hackathon today, along with a $2,500 cash reward !! 🏆 At the \"Build an Agent\" Hackathon in SF, I built Owed, an agentic tool that finds money your company is owed. How it's built: • Each customer gets their own agent harness on Agent 37 (YC F26) • Context.dev (YC S26) for to monitor and collect web data • Monid for tools • OpenAI for the drafting • Auth and dashboard live on InstaCloud by InsForge (YC P26) On top of the cash, the prize includes $1K in Agent37 credits, $500 in Monid credits, $2.5K in OpenAI credits and $1K in Supabase credits. Huge thanks to the organizers: Michael Ryaboy, Vishnu Krishnaprasad and Rohit Tiru (Agent37, YC F26), Hang Huang and Tony (Yao-Wen) Chang (InsForge / InstaCloud, YC P26), Feiyou Guo and Shengkun Y. (Monid), and Vivian C. Thanks to OpenAI and Supabase for sponsoring, Corgi Cafe for hosting, and to the judges Saksham Gupta and Mohit Gupta (@Levocred), Sarman Aulakh (Chasi AI) and Sean Cole (Parasma). If your company pays for a lot of SaaS, DM me. #sftechweek"
+    ]
+  }
+}

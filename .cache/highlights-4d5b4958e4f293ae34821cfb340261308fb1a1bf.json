@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://www.linkedin.com/company/ujenzixform",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "Vercel is headquartered in San Francisco, California.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://www.linkedin.com/company/ujenzixform",
+    "passages": [
+      "[UjenziXform > About us]\n\nWebsite\n\n…\n\nConstruction\n\n…\n\n2-10 employees\n\n…\n\nSelf-Owned\n\nFounded"
+    ]
+  }
+}

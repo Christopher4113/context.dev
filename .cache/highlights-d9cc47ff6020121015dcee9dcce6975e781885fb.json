@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://www.linkedin.com/company/stripe-agency/",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "Stripe is headquartered in South San Francisco.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://www.linkedin.com/company/stripe-agency/",
+    "passages": [
+      "[Stripe > About us]\n\nLead with Stripe - Strategy, content, ads & design build to elevate your brand.\n\n…\n\nMarketing Services\n\nCompany size\n\n2-10 employees\n\n…\n\nPrivately Held"
+    ]
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "request": {
+    "task": "What are the CPU time limits for Cloudflare Workers on the free and paid plans?",
+    "json_format": {
+      "free_plan_cpu_limit": "",
+      "paid_plan_default_cpu_limit": "",
+      "paid_plan_max_cpu_limit": ""
+    },
+    "mode": "fast"
+  },
+  "response": {
+    "json_content": {
+      "free_plan_cpu_limit": "10 milliseconds per invocation",
+      "paid_plan_default_cpu_limit": "30 million CPU milliseconds per month (with a max of 5 minutes per invocation)",
+      "paid_plan_max_cpu_limit": "30 million CPU milliseconds per month"
+    },
+    "sources": [
+      "https://developers.cloudflare.com/workers/platform/pricing/"
+    ],
+    "key_metadata": {
+      "credits_consumed": 10,
+      "credits_remaining": 20379
+    },
+    "request_id": "712df439-4d1d-443a-87c0-0472853e4c2c"
+  }
+}

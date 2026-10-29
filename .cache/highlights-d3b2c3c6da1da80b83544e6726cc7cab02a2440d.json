@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://www.linkedin.com/company/vercel/",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "The company is Vercel.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://www.linkedin.com/company/vercel/",
+    "passages": [
+      "[Vercel > About us]\n\nVercel is the platform where humans and AI agents build, ship, and scale software together. Trusted by OpenAI, Meta, Ramp, and Supreme, we free the world to ship what's next.\n\n…\n\nSoftware Development\n\n…\n\n501-1,000 employees\n\n…\n\nNext.js, Developer Velocity, Open Source, Developer Experience, React, and Web Development"
+    ]
+  }
+}

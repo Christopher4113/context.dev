@@ -1,0 +1,26 @@
+{
+  "request": {
+    "task": "What was NVIDIA's revenue for its most recently reported fiscal quarter?",
+    "json_format": {
+      "fiscal_quarter": "",
+      "revenue_usd": "",
+      "reported_on": ""
+    },
+    "mode": "fast"
+  },
+  "response": {
+    "json_content": {
+      "fiscal_quarter": "Q2 FY27",
+      "revenue_usd": "$96.2B",
+      "reported_on": null
+    },
+    "sources": [
+      "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-second-quarter-fiscal-2027"
+    ],
+    "key_metadata": {
+      "credits_consumed": 10,
+      "credits_remaining": 20210
+    },
+    "request_id": "bf26c649-ca1b-4c36-a45e-6ce3316321f9"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://docs.github.com/en/billing/concepts/product-billing/github-copilot-licenses",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "GitHub Copilot offers an individual plan named Copilot Free.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://docs.github.com/en/billing/concepts/product-billing/github-copilot-licenses",
+    "passages": [
+      "[GitHub Copilot licenses > Licenses for Copilot]\n\n| Account type | Options |\n| - | - |\n| **Personal accounts** | - Copilot Pro: $10 USD per calendar month. - Copilot Pro+: $39 USD per calendar month. - Copilot Max: $100 USD per calendar month. - Copilot Student: access to Copilot premium features at no cost. - Copilot Free: limited access to Copilot features at no cost. |\n| **Organizations** | Copilot Business: $19 USD per user per month (billed monthly). |\n| **Enterprises** | Two licensing models are available. See Enterprise licensing models. |\n\n…\n\n[GitHub Copilot licenses > Free use of Copilot > Copilot Free]\n\n- Provides limited access to Copilot features at no cost.\n- Includes a monthly allowance of completions and limited chat and agent usage.\n- Intended for **individual use only** (not suitable for organizations or enterprises).\n- For usage beyond the free plan limits, upgrade to Copilot Pro."
+    ]
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "request": {
+    "task": "Who is Microsoft's CEO, and who is its CFO?",
+    "json_format": {
+      "company": "",
+      "ceo": "",
+      "cfo": ""
+    },
+    "mode": "fast"
+  },
+  "response": {
+    "json_content": {
+      "company": "Microsoft",
+      "ceo": "Satya Nadella",
+      "cfo": "Amy Hood"
+    },
+    "sources": [
+      "https://www.linkedin.com/in/mustafa-suleyman",
+      "https://microsoft.ai/",
+      "https://www.linkedin.com/in/aboutasha",
+      "https://www.linkedin.com/in/yusufmehdi",
+      "http://microsoft.com/presspass/exec/yusuf/default.mspx",
+      "https://www.linkedin.com/in/takeshinumoto",
+      "https://www.linkedin.com/in/amycoleman19/"
+    ],
+    "key_metadata": {
+      "credits_consumed": 10,
+      "credits_remaining": 20319
+    },
+    "request_id": "beec8bb3-0b04-4f89-baca-91005ebb7c24"
+  }
+}

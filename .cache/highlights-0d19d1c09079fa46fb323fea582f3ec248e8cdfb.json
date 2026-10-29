@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://www.linkedin.com/company/figma/",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "Adobe and Figma mutually terminated Adobe's proposed acquisition of Figma on December 18, 2023, because regulatory approval had no clear path, and Adobe paid Figma the agreed termination fee.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://www.linkedin.com/company/figma/",
+    "passages": [
+      "[Figma > Products]\n\nFigJam\n\n…\n\n[Figma > Employees at Figma]\n\n- **John Lilly**\n\n- **Chris Swain**\n\n- **Filipe Fortes**\n\n- **Shanan M. Carney**\n\n…\n\n[Figma > Updates]\n\nView organization page for Figma\n\nFigma\n\n…\n\nAnnouncing 20 new MCP partners →  Amp, ClickUp, Dia, Junie by JetBrains, Linear, Meta Muse, Mistral, Notion, OpenCode, Sarvam Agents, Agentforce Vibes, Amazon Quick, Amplitude Wave, Cline, Delta, Dust, Glass, Gradial, Writer, Zed, Microsoft 365 Copilot"
+    ]
+  }
+}

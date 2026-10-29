@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://www.linkedin.com/company/figma/",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "The company is Figma.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://www.linkedin.com/company/figma/",
+    "passages": [
+      "[Figma > About us]\n\nDesign Services\n\n…\n\n1,001-5,000 employees\n\nHeadquarters\n\nSan Francisco, California\n\n…\n\nPrivately Held\n\nFounded\n\n…\n\n[Figma > Locations]\n\n760 Market St\n\nSan Francisco, California 94103, US\n\n…\n\n[Figma > Employees at Figma]\n\n- **John Lilly**\n\n- **Chris Swain**\n\n- **Filipe Fortes**\n\n- **Shanan M. Carney**\n\n…\n\n[Figma > Updates]\n\nEverything we launched at Config India to bring teams and agents (and the design, code, and context they work with) into Figma’s full-stack creative canvas"
+    ]
+  }
+}

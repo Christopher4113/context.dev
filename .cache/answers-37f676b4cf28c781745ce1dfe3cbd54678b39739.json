@@ -1,0 +1,33 @@
+{
+  "request": {
+    "task": "What output formats does the context.dev Scrape API support?",
+    "json_format": {
+      "product": "",
+      "formats": [
+        ""
+      ]
+    },
+    "mode": "fast"
+  },
+  "response": {
+    "json_content": {
+      "product": "Scrape API",
+      "formats": [
+        "markdown",
+        "html",
+        "images",
+        "screenshots",
+        "parsed fields",
+        "original response body"
+      ]
+    },
+    "sources": [
+      "https://www.context.dev/web-scraping-api"
+    ],
+    "key_metadata": {
+      "credits_consumed": 10,
+      "credits_remaining": 20403
+    },
+    "request_id": "d3be6caf-ba6c-4dd7-82ee-42d24e0bc547"
+  }
+}

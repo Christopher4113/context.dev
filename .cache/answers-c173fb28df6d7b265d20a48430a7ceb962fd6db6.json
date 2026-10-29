@@ -1,0 +1,50 @@
+{
+  "request": {
+    "task": "Company facts about Vercel: founder, founding year, original company name, and headquarters.",
+    "json_format": {
+      "company": "",
+      "founder": "",
+      "founded_year": 0,
+      "original_name": "",
+      "headquarters": ""
+    },
+    "mode": "fast"
+  },
+  "response": {
+    "json_content": {
+      "company": "Vercel",
+      "founder": "Guillermo Rauch",
+      "founded_year": 2015,
+      "original_name": "ZEIT",
+      "headquarters": "San Francisco, California"
+    },
+    "sources": [
+      "https://www.linkedin.com/company/vercel/",
+      "https://www.linkedin.com/company/vercel-corp/",
+      "https://www.linkedin.com/company/ujenzixform",
+      "https://x.com/vercel",
+      "https://github.com/vercel",
+      "https://www.linkedin.com/company/averolearning",
+      "https://www.facebook.com/vercelhq",
+      "https://www.crunchbase.com/organization/vercel",
+      "https://www.linkedin.com/company/car2x",
+      "https://www.linkedin.com/company/losning-agency",
+      "https://www.linkedin.com/company/zerotoherowithai",
+      "https://www.linkedin.com/company/buildwithmannat",
+      "https://www.linkedin.com/company/agentic-pulse-ai",
+      "https://www.linkedin.com/company/firesidehq",
+      "https://vercel.com",
+      "https://www.linkedin.com/company/smtech-solutions-pk",
+      "https://smtechaisolutions.com",
+      "https://www.linkedin.com/company/bit-production/",
+      "https://www.crunchbase.com/organization/bit-production",
+      "https://bit-production.com",
+      "https://www.linkedin.com/company/siliconart/"
+    ],
+    "key_metadata": {
+      "credits_consumed": 10,
+      "credits_remaining": 20815
+    },
+    "request_id": "5a66805e-826c-47db-840a-4536bc86cd06"
+  }
+}

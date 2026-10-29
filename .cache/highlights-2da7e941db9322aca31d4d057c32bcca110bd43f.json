@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://tailwindcss.com/blog/tailwindcss-v4",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "Tailwind CSS v4.0 introduced automatic content detection, which eliminates the need to manually specify the content array.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://tailwindcss.com/blog/tailwindcss-v4",
+    "passages": [
+      "[Tailwind CSS v4.0 > Automatic content detection]\n\nYou know how you always had to configure that annoying `content` array in Tailwind CSS v3? In v4.0, we came up with a bunch of heuristics for detecting all of that stuff automatically so you don’t have to configure it at all.\n\nFor example, we automatically ignore anything in your `.gitignore` file to avoid scanning dependencies or generated files that aren’t under version control:\n\n…\n\nWe also automatically ignore all binary extensions like images, videos, .zip files, and more.\n\nAnd if you ever need to explicitly add a source that's excluded by default, you can always add it with the `@source` directive, right in your CSS file:\n\n…\n\n```\n@import \"tailwindcss\";@source \"../node_modules/@my-company/ui-lib\";\n```\n\nThe `@source` directive uses the same heuristics under the hood, so it will exclude binary file types for example as well, without you having to specify all of the extensions to scan explicitly."
+    ]
+  }
+}

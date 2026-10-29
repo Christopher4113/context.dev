@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://www.notion.com/pricing",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "Notion offers a paid plan named \"Plus\".",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://www.notion.com/pricing",
+    "passages": [
+      "[One tool to run your company. > Essentials for staying organized. > Plus]\n\n$10per member / month\n\n…\n\n[One tool to run your company. > Plans and features]\n\nPlus$10 per seat/monthGet started\n\n…\n\n[One tool to run your company. > Questions & answers]\n\nThe Plus Plan (with a 1-member limit) is free for students and educators. Compared to the Free Plan, you’ll be able to add more guests, have access to more version history, and upload larger files.\n\n…\n\n**Basic page analytics (Free and Plus Plans):** Includes a list of page viewers as well as a chart displaying views over time."
+    ]
+  }
+}

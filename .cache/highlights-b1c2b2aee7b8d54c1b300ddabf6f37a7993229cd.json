@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-second-quarter-fiscal-2027",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "NVIDIA's most recently reported fiscal quarter is Q2 FY27.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-second-quarter-fiscal-2027",
+    "passages": [
+      "[NVIDIA Announces Financial Results for Second Quarter Fiscal 2027]\n\n| **GAAP** | | | | | |\n| - | - | - | - | - | - |\n| *($ in millions, except earnings per share)* | **Q2 FY27** | **Q1 FY27** | **Q2 FY26** | **Q/Q** | **Y/Y** |\n| Revenue | $96,221 | $81,615 | $46,743 | 18 % | 106 % |\n| Gross margin | 75.0 % | 74.9 % | 72.4 % | 0.1 pts | 2.6 pts |\n| Operating expenses | $8,408 | $7,621 | $5,413 | 10 % | 55 % |\n| Operating income | $63,734 | $53,536 | $28,440 | 19 % | 124 % |\n| Net income | $59,688 | $58,321 | $26,422 | 2 % | 126 % |\n| Diluted earnings per share | $2.46 | $2.39 | $1.08 | 3 % | 128 % |\n\n| **Non-GAAP** | | | | | |\n| - | - | - | - | - | - |\n| *($ in millions, except earnings per share)* | **Q2 FY27** | **Q1 FY27** | **Q2 FY26** | **Q/Q** | **Y/Y** |\n| Revenue | $96,221 | $81,615 | $46,743 | 18 % | 106 % |\n| Gross margin | 75.0 % | 75.0 % | 72.5 % | -- | 2.5 pts |\n| Operating expenses | $8,232 | $7,449 | $5,361 | 11 % | 54 % |\n| Operating income | $63,956 | $53,783 | $28,541 | 19 % | 124 % |\n| Net income | $53,954 | $45,548 | $24,763 | 18 % | 118 % |\n| Diluted earnings per share | $2.22 | $1.87 | $1.01 | 19 % | 120 % |\n| | | | | | |"
+    ]
+  }
+}

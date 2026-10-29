@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://bun.com/",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "Bun uses the bun.lock lockfile format by default.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://bun.com/",
+    "passages": [
+      "[Bun is a fast JavaScript runtime & toolkit. All in one. > Four tools, designed together. > Package manager]\n\nnpm-compatible, up to 30× faster. Workspaces, catalogs, overrides, patches and a lockfile you can read.\n\n…\n\n[Bun is a fast JavaScript runtime & toolkit. All in one. > bun fmt: a Prettier-compatible formatter built into Bun.]\n\n- `bun fmt`Prettier-compatible, 3x to 6x faster than oxfmt\n- `bun check`1.4x to 7.8x faster on large projects\n- `bun install`migrates Yarn Berry lockfiles, and hoisted installs from a warm cache are up to 3.2x faster on Linux\n- `Bun.SQL`up to 48% less CPU per query, query.cancel() and COPY streams\n- `bun:sqlite`user-defined functions and update hooks\n- `ws`rewritten to behave like the npm package on Node.js\n- Upgraded JavaScriptCore with 54x faster toLocaleString\n\n…\n\n[Bun is a fast JavaScript runtime & toolkit. All in one. > The fastest install in every situation you actually hit.]\n\nCold cache, warm cache, CI, a no-op reinstall — one T3-stack Next.js app, 25 direct dependencies, ~220 packages in the lockfile, measured six ways against npm, pnpm and yarn at their defaults.\n\n…\n\nno cache · no lockfile · no node\\_modules\n\n…\n\nlockfile committed · every tarball fetched from the registry"
+    ]
+  }
+}

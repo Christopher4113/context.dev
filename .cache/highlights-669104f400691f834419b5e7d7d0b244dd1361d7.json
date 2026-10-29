@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://tailwindcss.com/blog/tailwindcss-v4",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "Tailwind CSS v4.0 was released on 2025-01-22.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://tailwindcss.com/blog/tailwindcss-v4",
+    "passages": [
+      "[Tailwind CSS v4.0]\n\nJanuary 22, 2025\n\n…\n\n[Tailwind CSS v4.0 > New high-performance engine]\n\n| | v3.4 | v4.0 | Improvement |\n| - | - | - | - |\n| Full build | 378ms | 100ms | 3.78x |\n| Incremental rebuild with new CSS | 44ms | 5ms | 8.8x |\n| Incremental rebuild with no new CSS | 35ms | 192µs | 182x |\n\n…\n\n[Tailwind CSS v4.0 > not-* variant]\n\nWe've added a new `not-*` variant which finally adds support for the CSS `:not()` pseudo-class:"
+    ]
+  }
+}

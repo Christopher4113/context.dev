@@ -1,0 +1,45 @@
+{
+  "request": {
+    "task": "What is the Anthropic API price per million input and output tokens for Claude Haiku, Sonnet, and Opus (current versions)?",
+    "json_format": {
+      "models": [
+        {
+          "name": "",
+          "input_per_mtok_usd": "",
+          "output_per_mtok_usd": ""
+        }
+      ]
+    },
+    "mode": "fast"
+  },
+  "response": {
+    "json_content": {
+      "models": [
+        {
+          "name": "Claude Haiku 5.5 (≤100,000 tokens)",
+          "input_per_mtok_usd": "0.10",
+          "output_per_mtok_usd": "0.50"
+        },
+        {
+          "name": "Claude Sonnet 5.5",
+          "input_per_mtok_usd": "2",
+          "output_per_mtok_usd": "10"
+        },
+        {
+          "name": "Claude Opus 5.5",
+          "input_per_mtok_usd": "4",
+          "output_per_mtok_usd": "20"
+        }
+      ]
+    },
+    "sources": [
+      "https://www-cdn.anthropic.com/files/4zrzovbb/website/3684c2faafb97418665782cea0001f439f74b1d2.pdf",
+      "https://www.sentra.app/articles/claude-api-pricing"
+    ],
+    "key_metadata": {
+      "credits_consumed": 10,
+      "credits_remaining": 20521
+    },
+    "request_id": "5a272a67-77b5-48f1-8760-bbe2a59b1aed"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://www.linkedin.com/company/stripe/",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "John Collison is a founder of Stripe.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://www.linkedin.com/company/stripe/",
+    "passages": [
+      "[Stripe > About us]\n\nStripe builds programmable financial services. Millions of companies—from the world’s largest enterprises to the most ambitious startups—use Stripe to accept payments, grow their revenue, and accelerate new business opportunities. Headquartered in San Francisco and Dublin, the company aims to increase the GDP of the internet.\n\n…\n\nTechnology, Information and Internet\n\n…\n\nFounded\n\n…\n\n[Stripe > Products > Stripe > Payment Processing Software]\n\nStripe is a financial infrastructure platform for businesses. Millions of companies—from the world’s largest enterprises to the most ambitious startups—use Stripe to accept payments, grow their revenue, and accelerate new business opportunities. Headquartered in San Francisco and Dublin, the company aims to increase the GDP of the internet.\n\n…\n\n[Stripe > Updates]\n\nUnited Airlines CEO Scott Kirby joins Ben Thompson and John Collison to discuss placing the biggest aircraft order in history during COVID, the race to put Starlink on every United plane, and why he’s still barred from playing blackjack at the Bellagio. Topics: —Why air traffic control is aviation’s biggest bottleneck —The hidden economics of airline networks —What Wall Street gets wrong about aviation —Why Spirit failed but Ryanair works —Scott’s unusual approach to time management Spotify:  Apple Podcasts:  YouTube:  Substack:&#x20;"
+    ]
+  }
+}

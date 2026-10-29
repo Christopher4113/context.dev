@@ -1,0 +1,17 @@
+{
+  "request": {
+    "url": "https://www.linkedin.com/in/sam-altman/",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "OpenAI's current CEO is Sam Altman.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://www.linkedin.com/in/sam-altman/",
+    "passages": [],
+    "error": "WEBSITE_BLOCKED"
+  }
+}

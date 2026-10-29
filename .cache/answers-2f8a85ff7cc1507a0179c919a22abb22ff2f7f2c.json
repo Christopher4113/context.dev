@@ -1,0 +1,29 @@
+{
+  "request": {
+    "task": "What is the latest Node.js LTS release line, its codename, and when does it reach end of life?",
+    "json_format": {
+      "lts_line": "",
+      "codename": "",
+      "latest_version": "",
+      "end_of_life": ""
+    },
+    "mode": "fast"
+  },
+  "response": {
+    "json_content": {
+      "lts_line": "24",
+      "codename": "Krypton",
+      "latest_version": "24",
+      "end_of_life": "2028-04-30"
+    },
+    "sources": [
+      "https://endoflife.date/nodejs",
+      "https://www.herodevs.com/blog-posts/node-js-end-of-life-dates-you-should-be-aware-of"
+    ],
+    "key_metadata": {
+      "credits_consumed": 10,
+      "credits_remaining": 20250
+    },
+    "request_id": "ee288eb2-f81c-42f5-be51-4f09db182f6c"
+  }
+}

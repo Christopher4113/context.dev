@@ -1,0 +1,17 @@
+{
+  "request": {
+    "url": "https://www.linkedin.com/in/sam-altman-b54557359",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "OpenAI's current CFO is Sarah Friar.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://www.linkedin.com/in/sam-altman-b54557359",
+    "passages": [],
+    "error": "WEBSITE_BLOCKED"
+  }
+}

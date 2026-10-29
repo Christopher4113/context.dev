@@ -1,0 +1,48 @@
+{
+  "request": {
+    "task": "What are the GitHub Copilot individual plan prices per month?",
+    "json_format": {
+      "plans": [
+        {
+          "name": "",
+          "price_monthly": ""
+        }
+      ]
+    },
+    "mode": "fast"
+  },
+  "response": {
+    "json_content": {
+      "plans": [
+        {
+          "name": "Copilot Free",
+          "price_monthly": "$0"
+        },
+        {
+          "name": "Copilot Student",
+          "price_monthly": "$0"
+        },
+        {
+          "name": "Copilot Pro",
+          "price_monthly": "$10"
+        },
+        {
+          "name": "Copilot Pro+",
+          "price_monthly": "$39"
+        },
+        {
+          "name": "Copilot Max",
+          "price_monthly": "$100"
+        }
+      ]
+    },
+    "sources": [
+      "https://docs.github.com/en/billing/concepts/product-billing/github-copilot-licenses"
+    ],
+    "key_metadata": {
+      "credits_consumed": 10,
+      "credits_remaining": 20597
+    },
+    "request_id": "a60ec94c-cea9-4e97-9b7a-d974bd35bdee"
+  }
+}

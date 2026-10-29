@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://www.linkedin.com/company/vercel-corp/",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "Vercel was founded by Guillermo Rauch.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://www.linkedin.com/company/vercel-corp/",
+    "passages": [
+      "[Vercel Corp > About us]\n\nInvestment Management\n\n…\n\nHeadquarters\n\nCalabasas, California\n\n[Vercel Corp > Locations]\n\n- 23975 Park Sorrento\n\nCalabasas, California 91302-4015, US"
+    ]
+  }
+}

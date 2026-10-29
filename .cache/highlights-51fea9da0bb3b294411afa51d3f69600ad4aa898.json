@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://www.linkedin.com/company/stripe/",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "Stripe was founded in 2010.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://www.linkedin.com/company/stripe/",
+    "passages": [
+      "[Stripe > About us]\n\nStripe builds programmable financial services. Millions of companies—from the world’s largest enterprises to the most ambitious startups—use Stripe to accept payments, grow their revenue, and accelerate new business opportunities. Headquartered in San Francisco and Dublin, the company aims to increase the GDP of the internet.\n\n…\n\nSouth San Francisco, California\n\n…\n\nFounded\n\n2010\n\n…\n\n[Stripe > Locations]\n\nMelbourne, Victoria 3000, AU"
+    ]
+  }
+}

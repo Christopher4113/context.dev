@@ -1,0 +1,41 @@
+{
+  "request": {
+    "task": "Company facts about Supabase: founders, founding year, and total funding raised.",
+    "json_format": {
+      "company": "",
+      "founders": [
+        ""
+      ],
+      "founded_year": 0,
+      "total_funding_usd": ""
+    },
+    "mode": "fast"
+  },
+  "response": {
+    "json_content": {
+      "company": "Supabase",
+      "founders": [
+        "Paul Copplestone",
+        "Ant Wilson"
+      ],
+      "founded_year": 2020,
+      "total_funding_usd": "$1 billion"
+    },
+    "sources": [
+      "https://www.linkedin.com/company/supabase/",
+      "https://x.com/supabase",
+      "https://github.com/supabase",
+      "https://www.facebook.com/supabasedev",
+      "https://www.crunchbase.com/organization/supabase",
+      "https://supabase.com",
+      "https://supabase.io",
+      "https://www.ycombinator.com/companies/supabase",
+      "https://supabase.com/company"
+    ],
+    "key_metadata": {
+      "credits_consumed": 10,
+      "credits_remaining": 20769
+    },
+    "request_id": "a4b4891b-cea9-4659-85b2-5a2243134c9a"
+  }
+}

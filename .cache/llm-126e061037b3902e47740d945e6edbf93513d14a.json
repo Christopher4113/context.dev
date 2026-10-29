@@ -1,0 +1,44 @@
+{
+  "request": {
+    "model": "anthropic:",
+    "system": "You verify one claim against evidence passages scraped from the cited sources. Judge only from the passages, never from your own knowledge.\nVerdicts:\n- supported: a passage states the claim's value, so a reader could confirm it from the quote alone. Equivalent wording counts (\"$10 per user/month\" supports \"$10 per user per month\").\n- partial: a passage supports part of the claim, or gives a materially different qualification (a different number, a range, an older date, a different plan or product).\n- unsupported: the passages are on topic but do not state the value, or they contradict it.\n- no_evidence: the passages are irrelevant or empty.\nA passage that only mentions a word in another sense (e.g. a product name in a feature list) does not support a claim about it.\nevidence_quote MUST be copied character-for-character from one passage: the shortest span that shows the value (under 300 characters). Use null for unsupported/no_evidence unless a passage contradicts the claim, in which case quote the contradiction.\nreason: one sentence. If the passage contradicts the claim, say what it actually says.",
+    "user": "Research question: What major changes did Tailwind CSS v4.0 introduce?\nClaim: Tailwind CSS v4.0 introduced CSS‑first configuration, in which tailwind.config moves from JavaScript to CSS and design tokens are exposed as native CSS variables.\nValue being checked: \"CSS‑first configuration – tailwind.config moves from JavaScript to CSS and design tokens are exposed as native CSS variables\"\n\n<passage source=\"https://tailwindcss.com/blog/tailwindcss-v4\">\n[Tailwind CSS v4.0]\n\n- New high-performance engine — where full builds are up to 5x faster, and incremental builds are over 100x faster — and measured in microseconds.\n- Designed for the modern web — built on cutting-edge CSS features like cascade layers, registered custom properties with `@property`, and `color-mix()`.\n- Simplified installation — fewer dependencies, zero configuration, and just a single line of code in your CSS file.\n- First-party Vite plugin — tight integration for maximum performance and minimum configuration.\n- Automatic content detection — all of your template files are discovered automatically, with no configuration required.\n- Built-in import support — no additional tooling necessary to bundle multiple CSS files.\n- CSS-first configuration — a reimagined developer experience where you customize and extend the framework directly in CSS instead of a JavaScript configuration file.\n- CSS theme variables — all of your design tokens exposed as native CSS variables so you can access them anywhere.\n- Dynamic utility values and variants — stop guessing what values exist in your spacing scale, or extending your configuration for things like basic data attributes.\n\n…\n\n[Tailwind CSS v4.0 > CSS-first configuration]\n\nOne of the biggest changes in Tailwind CSS v4.0 is the shift from configuring your project in JavaScript to configuring it in CSS.\n\nInstead of a `tailwind.config.js` file, you can configure all of your customizations directly in the CSS file where you import Tailwind, giving you one less file to worry about in your project:\n\n…\n\nThe new CSS-first configuration lets you do just about everything you could do in your `tailwind.config.js` file, including configuring your design tokens, defining custom utilities and variants, and more.\n\n…\n\n[Tailwind CSS v4.0 > CSS theme variables]\n\nTailwind CSS v4.0 takes all of your design tokens and makes them available as CSS variables by default, so you can reference any value you need at run-time using just CSS.\n</passage>",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "verdict": {
+          "type": "string",
+          "enum": [
+            "supported",
+            "partial",
+            "unsupported",
+            "no_evidence"
+          ]
+        },
+        "best_source_url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "evidence_quote": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "reason": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "verdict",
+        "best_source_url",
+        "evidence_quote",
+        "reason"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "response": "{\"verdict\":\"supported\",\"best_source_url\":\"https://tailwindcss.com/blog/tailwindcss-v4\",\"evidence_quote\":\"CSS-first configuration — a reimagined developer experience where you customize and extend the framework directly in CSS instead of a JavaScript configuration file.\",\"reason\":\"The passage lists CSS-first configuration replacing the JavaScript config file. It also states that all design tokens are exposed as native CSS variables.\"}"
+}

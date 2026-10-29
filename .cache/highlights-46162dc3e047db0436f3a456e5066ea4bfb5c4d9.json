@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://x.com/figma",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "Figma is headquartered in San Francisco, California, United States.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://x.com/figma",
+    "passages": [
+      "[Figma]\n\nScience & Technology\n\n…\n\nJoined April 2015\n\n…\n\n85 Affiliates\n\n…\n\nConfig 2027 is coming to Pier 80 in San Francisco May 25-27 Want to be a speaker? Time to apply.\n\n…\n\n638"
+    ]
+  }
+}

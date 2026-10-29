@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://x.com/figma",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "The company is Figma.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://x.com/figma",
+    "passages": [
+      "[Figma (@figma) on X]\n\nFigma\n\n…\n\n[Figma]\n\n85 Affiliates\n\n…\n\nConfig 2027 is coming to Pier 80 in San Francisco May 25-27 Want to be a speaker? Time to apply.\n\n…\n\nVersion history, but for your generative plugins and shaders (rolling out this week)\n\n…\n\nTurn any image into a video (or generate one from scratch) without leaving your agent chat All powered by Figma Weave via Figma MCP"
+    ]
+  }
+}

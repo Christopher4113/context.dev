@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://www.linkedin.com/company/figma/",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "Figma was founded in 2012.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://www.linkedin.com/company/figma/",
+    "passages": [
+      "[Figma > About us]\n\n1,001-5,000 employees\n\n…\n\nSan Francisco, California\n\n…\n\nFounded\n\n2012\n\n…\n\n[Figma > Locations]\n\nSan Francisco, California 94103, US"
+    ]
+  }
+}

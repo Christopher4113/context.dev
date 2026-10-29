@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://www.sentra.app/articles/claude-api-pricing",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "The Anthropic API price for Claude Sonnet 5.5 is 10 USD per million output tokens.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://www.sentra.app/articles/claude-api-pricing",
+    "passages": [
+      "[Claude API Pricing (2026): Per-Million-Token Rates for Every Model]\n\nAs of October 2026, the Claude API costs $4 per million input tokens and $20 per million output tokens on Claude Opus 5.5, $2 and $10 on Claude Sonnet 5.5, $0.10 and $0.50 on Claude Haiku 5.5 for prompts up to 100,000 tokens ($0.50 and $2.50 above that), and $10 and $50 on Claude Fable 5.1, according to Anthropic's pricing docs. Billing is per million tokens, charged separately for input and output.&#x20;\n\n…\n\n[Claude API Pricing (2026): Per-Million-Token Rates for Every Model > Frequently Asked Questions > How much does the Claude API cost per million tokens?]\n\nIt depends on the model and the direction. As of October 2026, Claude Opus 5.5 is $4 per million input tokens and $20 per million output tokens, Claude Sonnet 5.5 is $2 and $10, Claude Haiku 5.5 is $0.10 and $0.50 for prompts up to 100,000 tokens ($0.50 and $2.50 above that), and Claude Haiku 4.5, still available, is $1 and $5. Output is priced at 5x input across the current lineup. Figures are from Anthropic's pricing documentation.\n\n…\n\n[Claude API Pricing (2026): Per-Million-Token Rates for Every Model > Frequently Asked Questions > How much does Claude Sonnet 5.5 cost?]\n\nClaude Sonnet 5.5, released on 28 September 2026, costs $2 per million input tokens and $10 per million output tokens, with cache reads at $0.10 and Batch API calls at half price. That matches Sonnet 5 per token, but Anthropic says Sonnet 5.5 needs fewer tokens for the same work, so most jobs cost up to 30% less (Anthropic's Sonnet 5.5 announcement). Measure on your own prompts before you budget on that figure."
+    ]
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://www.context.dev/pricing",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "The context.dev Developer plan costs $20 per month.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://www.context.dev/pricing",
+    "passages": [
+      "[Straightforward, transparent pricing > Plans > Developer]\n\n$20/month\n\n…\n\n[Straightforward, transparent pricing > Frequently asked questions]\n\nContext.dev offers Developer ($20/mo), Pro ($90/mo), Growth ($300/mo), Scale ($500/mo), and Scale 2.5M ($950/mo), plus Enterprise for teams that need more than 2.5M credits a month, volume discounts, or security and procurement support. We currently do not support one-time lookups, however you can contact us to discuss options for one-time projects at hello@context.dev."
+    ]
+  }
+}

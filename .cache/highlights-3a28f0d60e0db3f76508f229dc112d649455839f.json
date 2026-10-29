@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://x.com/anthropicai",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "The President of Anthropic is Daniela Amodei.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://x.com/anthropicai",
+    "passages": [
+      "[Anthropic]\n\n@AnthropicAI\n\nWe're an AI safety and research company that builds reliable, interpretable, and steerable AI systems. Talk to our AI assistant @claudeai on claude.ai.\n\n…\n\n- @AnthropicAI\n\n…\n\nAnthropic has filed an S-1 registration statement with the SEC related to its proposed IPO. Read more: anthropic.com/news/s1-sec Legal disclaimer: A registration statement relating to these securities has been filed with the SEC but has not yet become effective. These securities Show more\n\nAnthropic files S-1 with the SEC for proposed initial public offering"
+    ]
+  }
+}

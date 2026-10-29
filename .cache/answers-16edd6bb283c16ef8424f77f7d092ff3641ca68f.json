@@ -1,0 +1,64 @@
+{
+  "request": {
+    "task": "What are the pricing plans for context.dev? Give plan names, monthly price, and monthly credits.",
+    "json_format": {
+      "plans": [
+        {
+          "name": "",
+          "price_monthly": "",
+          "credits_per_month": ""
+        }
+      ]
+    },
+    "mode": "fast"
+  },
+  "response": {
+    "json_content": {
+      "plans": [
+        {
+          "name": "Free",
+          "price_monthly": "$0",
+          "credits_per_month": "1,000"
+        },
+        {
+          "name": "Developer",
+          "price_monthly": "$20",
+          "credits_per_month": "10,000"
+        },
+        {
+          "name": "Pro",
+          "price_monthly": "$90",
+          "credits_per_month": "100,000"
+        },
+        {
+          "name": "Growth",
+          "price_monthly": "$300",
+          "credits_per_month": null
+        },
+        {
+          "name": "Scale",
+          "price_monthly": "$500",
+          "credits_per_month": "1,000,000"
+        },
+        {
+          "name": "Scale 2.5M",
+          "price_monthly": "$950",
+          "credits_per_month": "2,500,000"
+        },
+        {
+          "name": "Enterprise",
+          "price_monthly": null,
+          "credits_per_month": null
+        }
+      ]
+    },
+    "sources": [
+      "https://www.context.dev/pricing"
+    ],
+    "key_metadata": {
+      "credits_consumed": 10,
+      "credits_remaining": 20567
+    },
+    "request_id": "56497c83-6b87-46ca-9092-ca1cbea1694c"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://x.com/supabase",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "Supabase has raised $1 billion in total funding.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://x.com/supabase",
+    "passages": [
+      "[Supabase (@supabase) on X]\n\nSupabase\n\n…\n\n[Supabase]\n\nSoftware Company\n\n…\n\n153\n\n…\n\n6.2K\n\n…\n\n6.3K"
+    ]
+  }
+}

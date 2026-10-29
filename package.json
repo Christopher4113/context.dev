@@ -1,0 +1,38 @@
+{
+  "name": "groundcheck",
+  "version": "0.1.0",
+  "description": "Per-field source verification for the Context.dev Answers API",
+  "scripts": {
+    "groundcheck": "tsx src/cli.ts",
+    "web": "tsx src/server.ts",
+    "bench": "tsx src/bench.ts",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "12.16.1",
+      "onFail": "download"
+    }
+  },
+  "packageManager": "pnpm@12.16.1",
+  "type": "module",
+  "dependencies": {
+    "@anthropic-ai/sdk": "^1.3.0",
+    "commander": "^15.0.0",
+    "context.dev": "^3.18.0",
+    "picocolors": "^1.1.1",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.5",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2",
+    "vitest": "^5.0.5"
+  },
+  "private": true,
+  "engines": {
+    "node": ">=20.12"
+  }
+}

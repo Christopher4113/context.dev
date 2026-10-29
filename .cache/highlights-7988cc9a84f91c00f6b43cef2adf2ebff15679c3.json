@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://www.linkedin.com/company/supabase/",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "Supabase has raised $1 billion in total funding.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://www.linkedin.com/company/supabase/",
+    "passages": [
+      "[Supabase > About us]\n\nBuild in a weekend. Scale to millions. Supabase is the Postgres development platform. Start your project with a Postgres Database, Authentication, instant APIs, and realtime subscriptions.\n\n…\n\n201-500 employees\n\n…\n\n2020\n\n…\n\n[Supabase > Updates]\n\nSpaceX Super Intelligence\n\n…\n\n🚨 Here were my favorite announcements from Supabase (which have implications for anyone moving from prototype to production): ↱ Supabase has acquired Turso for $150M: Say you want your agent to try 10 different ways to build a feature. Each version might need its own database. Turso is designed for databases that start quickly, are cheap to run, and scale to zero when unused.  ↱OrioleDB makes a single database fast while reducing the amount of hands-on work it requires. ↱Multigres: tackles reliability as your app grows.&#x20;"
+    ]
+  }
+}

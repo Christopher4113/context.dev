@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://x.com/getcontextdev",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "The company is Context.dev, the web data API for AI agents (context.dev).",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://x.com/getcontextdev",
+    "passages": [
+      "[Context.dev]\n\nOne API to scrape, enrich, and understand the web. Trusted by 20K+ developers.\n\n…\n\nWe raised $9M to give your agents the internet. Led by @generalcatalyst, with @orangecollectv and Robinhood Ventures. Search, scrape, crawl, monitor with one API trusted by 800+ customers. We’re making it ridiculously easy to build with web data."
+    ]
+  }
+}

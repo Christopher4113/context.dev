@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://www.context.dev/pricing",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "context.dev offers a pricing plan named \"Free\".",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://www.context.dev/pricing",
+    "passages": [
+      "[Straightforward, transparent pricing]\n\nStart with 1,000 free credits per month, no credit card required.\n\nMonthlyYearly2 months free\n\n…\n\n[Straightforward, transparent pricing > Plans > Free Tier]\n\n$0/month\n\n…\n\nCredits per month1,000\n\nNo overage\n\n…\n\nScrape 1,000 pages\n\n…\n\n1 concurrent batch\n\n…\n\nPull 10K logos (one-time quota)\n\n…\n\n[Straightforward, transparent pricing > Frequently asked questions]\n\nYes. The free tier includes 1,000 API credits per month, enough for 1,000 standard scrapes, plus 10K one-time Logo Link requests, with no credit card required.\n\n…\n\nStart with Free for testing or Developer for your first workflow. Pro suits steady production usage; Growth adds capacity between Pro and Scale. Scale supports high-volume traffic and self-serve SSO / SAML. Choose Enterprise for custom volume, limits, procurement, or support. Upgrades apply immediately; downgrades apply at renewal.\n\n…\n\nThe Free plan includes 1,000 API credits that renew every month. Paid plans can use Auto-Topup in 1K-credit blocks: Developer $3.00, Pro $2.00, Growth $1.50, Scale $1.00, and Scale 2.5M $0.75 for new subscriptions. Existing subscriptions keep their rates. With insufficient credits and no available top-up, any plan returns 401 USAGE\\_EXCEEDED. Logo Link has a separate quota.\n\n…\n\n[Straightforward, transparent pricing > Start building with live web context.]\n\n1,000free credits"
+    ]
+  }
+}

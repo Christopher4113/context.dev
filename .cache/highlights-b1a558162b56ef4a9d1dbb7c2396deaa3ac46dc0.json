@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://www.context.dev/web-scraping-api",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "context.dev offers a product called the Scrape API.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://www.context.dev/web-scraping-api",
+    "passages": [
+      "[Web scraping API. Return it your way. > Start with a URL. Get usable data.]\n\n```\nimport ContextDev from 'context.dev';\n\nconst client = new ContextDev({ apiKey: 'YOUR_API_KEY' });\n\nconst page = await client.web.scrape({\n  url: 'https://linear.app',\n  formats: {\n    markdown: true,\n    html: true,\n    screenshot: true,\n  },\n  sharedParams: { mainContentOnly: true },\n});\n\nif (page.markdown.success) console.log(page.markdown.data);\nif (page.screenshot.success) console.log(page.screenshot.data);\n```\n\n…\n\n[Web scraping API. Return it your way. > From a single page to your next feature.]\n\nScrape thousands of URLs in one job, or crawl an entire site, then collect the results when the batch completes.\n\n…\n\n[Web scraping API. Return it your way. > Scrape your first page in minutes.]\n\nTurn any URL into the format your product needs. The same API key works for crawling, batches, and monitors."
+    ]
+  }
+}

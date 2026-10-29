@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://linkedin.com/in/bridget-sherrod-1b615a246",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "The current President and CEO of Y Combinator is Garry Tan.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://linkedin.com/in/bridget-sherrod-1b615a246",
+    "passages": [
+      "[Bridget Sherrod > Sign in to view Bridget’s full profile]\n\nY Combinator\n\n…\n\n[Bridget Sherrod > About]\n\nFounded in 2011, it specializes in manufacturing lithium-ion batteries for electric…\n\n…\n\n[Bridget Sherrod > Experience & Education]\n\n- ### Y Combinator\n\n[Bridget Sherrod > Experience & Education > ********* ** **** *** ******** * *** undefined undefined]\n\n2022 - Present\n\n…\n\n[Bridget Sherrod > Explore more posts]\n\n𝗣𝗮𝗿𝗿𝗼𝘁 𝗟𝗮𝘂𝗻𝗰𝗵𝗲𝘀 𝗔𝗜-𝗣𝗼𝘄𝗲𝗿𝗲𝗱 𝗢𝗽𝗲𝗿𝗮𝘁𝗶𝗻𝗴 𝗦𝘆𝘀𝘁𝗲𝗺 𝗳𝗼𝗿 𝘁𝗵𝗲 𝗔𝘂𝘁𝗼 𝗥𝗲𝗽𝗮𝗶𝗿 𝗜𝗻𝗱𝘂𝘀𝘁𝗿𝘆 Y Combinator-backed startup Parrot (YC P26) is transforming the $200 billion auto repair industry with an end-to-end operating system designed to automate shop operations. Founded by Phillip Baek and Liam McBride, the platform addresses longstanding inefficiencies caused by manual coordination involving phone calls, emails, insurers, suppliers, customers, and parts warehouses. Built with a deep understanding of real-world repair shop workflows, Parrot’s AI-powered agents can manage communication, coordinate stakeholders, and automate operational processes using contextual understanding of estimates, payments, inventory, and customer requirements. By bringing intelligent automation to a traditionally manual industry, the company aims to help repair businesses improve efficiency, reduce administrative burden, and scale operations more effectively. #ParrotAI #YCombinator #ArtificialIntelligence #Automation #AutoRepair #DigitalTransformation #StartupInnovation #UniNetwork"
+    ]
+  }
+}

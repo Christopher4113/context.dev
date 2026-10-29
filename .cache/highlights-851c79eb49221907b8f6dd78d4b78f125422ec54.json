@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://linear.app/pricing",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "Linear offers a pricing plan named Business.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://linear.app/pricing",
+    "passages": [
+      "[Pricing > Business]\n\n$16 per user/month$16 per user/month\n\nBilled yearly\n\n- All Basic features +\n- Unlimited teams\n- Private teams and guests\n- Triage Intelligence\n- Code Intelligence\n- Linear Insights\n- Linear Asks\n- Zendesk and Intercom integrations\n\n…\n\n[Pricing > Enterprise]\n\n- All Business features +\n- Invoice/PO billing\n- SAML and SCIM\n- Granular admin controls\n- Enterprise-grade security\n- Advanced org modeling\n- Migration & onboarding support\n- Priority support\n- Account management"
+    ]
+  }
+}

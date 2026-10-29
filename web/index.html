@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Groundcheck</title>
+<style>
+  :root {
+    --bg: #fafaf9; --panel: #ffffff; --text: #1c1917; --muted: #78716c; --line: #e7e5e4; --soft: #f5f5f4;
+    --accent: #1c1917; --accent-text: #fafaf9;
+    --ok: #15803d; --ok-bg: #dcfce7; --part: #a16207; --part-bg: #fef3c7;
+    --bad: #b91c1c; --bad-bg: #fee2e2; --none: #57534e; --none-bg: #e7e5e4; --mark: #fde68a;
+    --mono: ui-monospace, "SF Mono", Menlo, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0c0a09; --panel: #1c1917; --text: #f5f5f4; --muted: #a8a29e; --line: #292524; --soft: #262220;
+      --accent: #f5f5f4; --accent-text: #0c0a09;
+      --ok: #4ade80; --ok-bg: #14532d; --part: #fbbf24; --part-bg: #422006;
+      --bad: #f87171; --bad-bg: #450a0a; --none: #a8a29e; --none-bg: #292524; --mark: #854d0e;
+    }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 15px/1.5 -apple-system, BlinkMacSystemFont, "Inter", system-ui, sans-serif; }
+  header { padding: 20px 28px; border-bottom: 1px solid var(--line); display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; }
+  header h1 { margin: 0; font-size: 18px; letter-spacing: -0.01em; }
+  header p { margin: 0; color: var(--muted); font-size: 14px; }
+  main { display: grid; grid-template-columns: 380px 1fr; min-height: calc(100vh - 66px); }
+  @media (max-width: 900px) { main { grid-template-columns: 1fr; } }
+  .input { padding: 24px 28px; border-right: 1px solid var(--line); display: flex; flex-direction: column; gap: 14px; }
+  label { font-size: 12px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.04em; }
+  textarea { width: 100%; padding: 10px 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--panel); color: var(--text); font: inherit; resize: vertical; }
+  textarea.code { font: 13px/1.45 var(--mono); min-height: 170px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; }
+  .chip { border: 1px solid var(--line); background: var(--panel); color: var(--text); border-radius: 999px; padding: 4px 11px; font-size: 13px; cursor: pointer; }
+  .chip:hover { border-color: var(--muted); }
+  button.run { background: var(--accent); color: var(--accent-text); border: 0; border-radius: 8px; padding: 11px; font: 600 15px inherit; font-family: inherit; cursor: pointer; }
+  button.run:disabled { opacity: 0.5; cursor: wait; }
+  .hint { color: var(--muted); font-size: 13px; }
+  .output { padding: 24px 28px; min-width: 0; }
+  .empty { color: var(--muted); margin-top: 60px; text-align: center; }
+  .summary { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; margin-bottom: 18px; }
+  .stat { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 8px 14px; min-width: 96px; }
+  .stat b { display: block; font-size: 22px; line-height: 1.1; }
+  .stat span { font-size: 12px; color: var(--muted); }
+  .tabs { margin-left: auto; display: flex; gap: 4px; }
+  .tabs button { border: 1px solid var(--line); background: var(--panel); color: var(--muted); padding: 5px 12px; border-radius: 6px; cursor: pointer; font: 13px inherit; font-family: inherit; }
+  .tabs button.on { color: var(--text); border-color: var(--muted); }
+  .status { color: var(--muted); font-size: 14px; margin-bottom: 14px; min-height: 21px; }
+  .tree { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 14px 6px; font-size: 14px; }
+  .node { padding-left: 18px; }
+  .key { color: var(--muted); font-family: var(--mono); font-size: 13px; }
+  .group { padding: 3px 10px; }
+  .field { display: flex; align-items: center; gap: 10px; padding: 5px 10px; border-radius: 8px; cursor: pointer; }
+  .field:hover, .field.sel { background: var(--soft); }
+  .field .val { font-weight: 500; overflow-wrap: anywhere; }
+  .field .badge { margin-left: auto; flex-shrink: 0; }
+  .badge { font-size: 12px; font-weight: 600; padding: 2px 9px; border-radius: 999px; white-space: nowrap; }
+  .supported { color: var(--ok); background: var(--ok-bg); }
+  .partial { color: var(--part); background: var(--part-bg); }
+  .unsupported { color: var(--bad); background: var(--bad-bg); }
+  .no_evidence { color: var(--none); background: var(--none-bg); }
+  .pending { color: var(--muted); background: transparent; border: 1px dashed var(--line); }
+  .pending::before { content: ""; display: inline-block; width: 7px; height: 7px; margin-right: 6px; border-radius: 50%; background: var(--muted); animation: pulse 1s infinite alternate; }
+  @keyframes pulse { from { opacity: 0.2; } to { opacity: 1; } }
+  pre.raw { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 16px; font: 12.5px/1.5 var(--mono); overflow: auto; max-height: 70vh; }
+  aside { position: fixed; top: 0; right: 0; width: min(520px, 100vw); height: 100vh; background: var(--panel); border-left: 1px solid var(--line); box-shadow: -8px 0 30px rgba(0,0,0,0.08); padding: 24px; overflow-y: auto; transform: translateX(100%); transition: transform 0.18s ease; }
+  aside.open { transform: none; }
+  aside .close { position: absolute; top: 16px; right: 16px; border: 0; background: none; color: var(--muted); font-size: 22px; cursor: pointer; }
+  aside h2 { font-size: 13px; color: var(--muted); font-family: var(--mono); font-weight: 500; margin: 0 0 8px; overflow-wrap: anywhere; }
+  aside .claim { font-size: 17px; font-weight: 600; margin: 4px 0 12px; }
+  aside .reason { color: var(--text); margin: 10px 0 18px; }
+  aside h3 { font-size: 12px; text-transform: uppercase; letter-spacing: 0.04em; color: var(--muted); margin: 20px 0 8px; }
+  aside a { color: inherit; overflow-wrap: anywhere; }
+  .passage { border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px; margin-bottom: 8px; font-size: 13px; white-space: pre-wrap; overflow-wrap: anywhere; max-height: 260px; overflow-y: auto; }
+  .passage.best { border-color: var(--ok); }
+  .passage.best.v-partial { border-color: var(--part); }
+  .passage.best.v-unsupported, .passage.best.v-no_evidence { border-color: var(--bad); }
+  .src { font-size: 12px; color: var(--muted); margin: 12px 0 4px; overflow-wrap: anywhere; }
+  mark { background: var(--mark); color: inherit; border-radius: 3px; padding: 0 2px; }
+  .warn { font-size: 13px; color: var(--bad); }
+  .err { color: var(--bad); }
+</style>
+</head>
+<body>
+<header>
+  <h1>Groundcheck</h1>
+  <p>Does each field in a Context.dev Answers response actually appear in a cited source?</p>
+</header>
+<main>
+  <section class="input">
+    <div>
+      <label>Try an example</label>
+      <div class="chips" id="examples"></div>
+    </div>
+    <div>
+      <label for="q">Question</label>
+      <textarea id="q" rows="3"></textarea>
+    </div>
+    <div>
+      <label for="schema">Answer shape (json_format)</label>
+      <textarea id="schema" class="code"></textarea>
+    </div>
+    <button class="run" id="run">Ask + verify</button>
+    <div class="hint">Answers runs in <b>fast</b> mode. Each field is checked against up to 3 cited sources with Scrape + Highlights, then judged. Every response is cached, so reruns are instant and free.</div>
+  </section>
+  <section class="output" id="out"><div class="empty">Pick an example or write a question, then hit <b>Ask + verify</b>.</div></section>
+</main>
+<aside id="drawer"><button class="close" id="close" aria-label="Close">×</button><div id="detail"></div></aside>
+
+<script>
+const EXAMPLES = [
+  { name: "Linear pricing", q: "What are the pricing plans for Linear (linear.app)? Give plan names and monthly per-user prices.",
+    schema: {"company": "", "plans": [{"name": "", "price_per_user_monthly": ""}], "free_plan_available": true} },
+  { name: "Python latest", q: "What is the latest stable Python 3 release and its release date?",
+    schema: {"latest_version": "", "release_date": ""} },
+  { name: "Node.js LTS", q: "What is the latest Node.js LTS release line, its codename, and when does it reach end of life?",
+    schema: {"lts_line": "", "codename": "", "latest_version": "", "end_of_life": ""} },
+  { name: "Cloudflare limits", q: "What are the CPU time limits for Cloudflare Workers on the free and paid plans?",
+    schema: {"free_plan_cpu_limit": "", "paid_plan_default_cpu_limit": "", "paid_plan_max_cpu_limit": ""} },
+  { name: "Context.dev", q: "Company facts about Context.dev (context.dev), the web data API for AI agents: founders, accelerator batch, and latest funding round.",
+    schema: {"company": "", "founders": [""], "accelerator_batch": "", "latest_funding": {"round": "", "amount_usd": ""}} },
+  { name: "OpenAI leadership", q: "Who are OpenAI's current CEO, CFO, and Chief Research Officer?",
+    schema: {"company": "", "ceo": "", "cfo": "", "chief_research_officer": ""} },
+];
+const LABEL = { supported: "Supported", partial: "Partial", unsupported: "Unsupported", no_evidence: "No evidence" };
+const $ = (id) => document.getElementById(id);
+const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
+
+let state = null;
+
+for (const ex of EXAMPLES) {
+  const b = document.createElement("button");
+  b.className = "chip"; b.textContent = ex.name;
+  b.onclick = () => { $("q").value = ex.q; $("schema").value = JSON.stringify(ex.schema, null, 2); };
+  $("examples").append(b);
+}
+$("examples").firstChild.click();
+$("close").onclick = () => { $("drawer").classList.remove("open"); document.querySelectorAll(".field.sel").forEach((e) => e.classList.remove("sel")); };
+document.addEventListener("keydown", (e) => e.key === "Escape" && $("close").onclick());
+
+$("run").onclick = async () => {
+  let schema;
+  try { schema = JSON.parse($("schema").value); } catch { return alert("The answer shape must be valid JSON."); }
+  $("run").disabled = true; $("close").onclick();
+  state = { citations: {}, fields: [], json: null, view: "tree", done: null, error: null, status: "Asking Context.dev Answers (fast mode)…" };
+  render();
+  try {
+    const res = await fetch("/api/check", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ question: $("q").value, schema }) });
+    if (!res.ok) throw new Error(await res.text());
+    const reader = res.body.getReader(); const dec = new TextDecoder(); let buf = "";
+    for (;;) {
+      const { value, done } = await reader.read();
+      if (done) break;
+      buf += dec.decode(value, { stream: true });
+      let i;
+      while ((i = buf.indexOf("\n")) >= 0) { onEvent(JSON.parse(buf.slice(0, i))); buf = buf.slice(i + 1); }
+    }
+  } catch (e) { state.error = e.message; }
+  $("run").disabled = false; render();
+};
+
+function onEvent(e) {
+  if (e.type === "answer") {
+    state.json = e.json_content; state.fields = e.fields; state.sources = e.sources;
+    state.status = `Answers returned ${e.fields.length} fields from ${e.sources.length} source${e.sources.length === 1 ? "" : "s"}. Checking each field…`;
+  } else if (e.type === "field") {
+    state.citations[e.path] = e.citation;
+  } else if (e.type === "done") {
+    state.done = e.result; state.citations = e.result.citations;
+    state.status = `Done · ${e.result.credits_used} Context.dev credits used${e.result.credits_used === 0 ? " (served from cache)" : ""} · request ${e.result.request_id}`;
+  } else if (e.type === "error") state.error = e.message;
+  render();
+}
+
+function render() {
+  const out = $("out");
+  if (!state) return;
+  const counts = { supported: 0, partial: 0, unsupported: 0, no_evidence: 0 };
+  for (const c of Object.values(state.citations)) counts[c.verdict]++;
+  const n = state.fields.length;
+  const stat = (k) => `<div class="stat"><b class="${k === "fields" ? "" : ""}" style="color:var(--${{ supported: "ok", partial: "part", unsupported: "bad", no_evidence: "none" }[k]})">${counts[k]}</b><span>${LABEL[k]}</span></div>`;
+  let html = "";
+  if (state.json) {
+    html += `<div class="summary"><div class="stat"><b>${Object.keys(state.citations).length}/${n}</b><span>Fields checked</span></div>${Object.keys(counts).map(stat).join("")}
+      <div class="tabs"><button data-v="tree" class="${state.view === "tree" ? "on" : ""}">Answer</button><button data-v="raw" class="${state.view === "raw" ? "on" : ""}" ${state.done ? "" : "disabled"}>verify: true response</button></div></div>`;
+  }
+  html += `<div class="status">${state.error ? `<span class="err">${esc(state.error)}</span>` : esc(state.status)}</div>`;
+  if (state.json) html += state.view === "raw" && state.done ? `<pre class="raw">${esc(JSON.stringify(pitchShape(state.done), null, 2))}</pre>` : `<div class="tree">${tree(state.json, "")}</div>`;
+  out.innerHTML = html;
+  out.querySelectorAll(".tabs button").forEach((b) => (b.onclick = () => { state.view = b.dataset.v; render(); }));
+  out.querySelectorAll(".field").forEach((el) => (el.onclick = () => openDetail(el.dataset.path)));
+  if (state.selected) out.querySelector(`.field[data-path="${CSS.escape(state.selected)}"]`)?.classList.add("sel");
+}
+
+// The response shape we'd pitch as a `verify: true` option on Answers (passages omitted).
+function pitchShape(r) {
+  const citations = {};
+  for (const [p, c] of Object.entries(r.citations)) citations[p] = { verdict: c.verdict, source: c.source, evidence: c.evidence, reason: c.reason };
+  return { json_content: r.json_content, sources: r.sources, citations, summary: r.summary };
+}
+
+const ID_KEYS = ["name", "title", "label", "plan", "id", "full_name"];
+function tree(v, path, key) {
+  const k = key !== undefined ? `<span class="key">${esc(key)}</span>` : "";
+  if (v === null || v === undefined || v === "") return `<div class="group">${k} <span class="key">null · skipped</span></div>`;
+  if (Array.isArray(v)) return `<div class="group">${k}</div><div class="node">${v.map((x, i) => tree(x, `${path}[${i}]`, `${i + 1}`)).join("")}</div>`;
+  if (typeof v === "object") {
+    const id = ID_KEYS.map((x) => v[x]).find((x) => typeof x === "string" && x);
+    const inner = Object.entries(v).map(([kk, vv]) => tree(vv, path ? `${path}.${kk}` : kk, kk)).join("");
+    return path ? `<div class="group">${k}${id ? ` <b>${esc(id)}</b>` : ""}</div><div class="node">${inner}</div>` : inner;
+  }
+  const c = state.citations[path];
+  const badge = c ? `<span class="badge ${c.verdict}">${LABEL[c.verdict]}</span>` : `<span class="badge pending">checking</span>`;
+  return `<div class="field" data-path="${esc(path)}">${k}<span class="val">${esc(v)}</span>${badge}</div>`;
+}
+
+// Highlight the judge's quote inside a passage, tolerating whitespace and Markdown differences.
+function highlight(text, quote) {
+  if (!quote) return esc(text);
+  const words = quote.replace(/[*_`#>]/g, " ").split(/\s+/).filter(Boolean).map((w) => w.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"));
+  if (!words.length) return esc(text);
+  const m = new RegExp(words.join("[\\s*_`#>\\[\\]]*?"), "i").exec(text) || new RegExp(words.join("[\\s\\S]{0,40}?"), "i").exec(text);
+  if (!m) return esc(text);
+  return esc(text.slice(0, m.index)) + `<mark>${esc(m[0])}</mark>` + esc(text.slice(m.index + m[0].length));
+}
+
+function openDetail(path) {
+  const c = state.citations[path];
+  if (!c) return;
+  state.selected = path; render();
+  const passages = c.passages.flatMap((p) => p.passages.length ? p.passages.map((t) => ({ url: p.url, t })) : [{ url: p.url, t: null, err: p.error }]);
+  $("detail").innerHTML = `
+    <h2>${esc(path)}</h2>
+    <span class="badge ${c.verdict}">${LABEL[c.verdict]}</span>
+    <div class="claim">${esc(c.claim)}</div>
+    <div class="reason">${esc(c.reason)}</div>
+    ${c.quote_verified ? "" : `<div class="warn">The judge's quote was not found verbatim in any retrieved passage, so its verdict was downgraded.</div>`}
+    ${c.source ? `<h3>Best source</h3><a href="${esc(c.source)}" target="_blank" rel="noopener">${esc(c.source)}</a>` : ""}
+    ${c.evidence ? `<h3>Evidence</h3><div class="passage best v-${c.verdict}">${esc(c.evidence)}</div>` : ""}
+    <h3>Passages retrieved (Scrape + Highlights)</h3>
+    ${passages.map((p) => `<div class="src">${esc(p.url)}</div>${p.t === null ? `<div class="passage hint">No passages${p.err ? ` (${esc(p.err)})` : ""}</div>` : `<div class="passage${p.url === c.source && c.evidence ? ` best v-${c.verdict}` : ""}">${p.url === c.source ? highlight(p.t, c.evidence) : esc(p.t)}</div>`}`).join("")}
+  `;
+  $("drawer").classList.add("open");
+  const mark = $("detail").querySelector("mark");
+  if (mark) mark.parentElement.scrollTop = mark.offsetTop - mark.parentElement.offsetTop - 40;
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://x.com/supabase",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "Ant Wilson is a founder of Supabase.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://x.com/supabase",
+    "passages": [
+      "[Supabase (@supabase) on X]\n\nSupabase\n\n…\n\n[Supabase]\n\nThe Postgres development platform. 🌐 supabase.com ⭐️ github.com/supabase 🎥 youtube.com/supabase 💬 discord.supabase.com\n\nSoftware Company\n\n…\n\nsupabase.com\n\n…\n\nFor #SelectBadge I turned my conf badge into a multi-player gaming platform backed by @supabase and @powersync\\_ :) For this I built: - Tufty native SQLite MicroPython module - MicroPython PowerSync SDK - PSRAM-backed SQLite shadow VFS Full writeup below ⬇️"
+    ]
+  }
+}

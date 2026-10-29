@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://www.linkedin.com/company/supabase/",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "The company is Supabase.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://www.linkedin.com/company/supabase/",
+    "passages": [
+      "[Supabase > About us]\n\nBuild in a weekend. Scale to millions. Supabase is the Postgres development platform. Start your project with a Postgres Database, Authentication, instant APIs, and realtime subscriptions.\n\n…\n\nIT Services and IT Consulting\n\n…\n\n201-500 employees\n\n…\n\n[Supabase > Updates]\n\nSupabase is part of the SpaceX Super Intelligence Partner Network. 🤖 With Grok Bot connected to Cursor, your team can request a change in chat and Cursor builds and runs it on your Supabase backend through the Supabase MCP server. Learn more:&#x20;"
+    ]
+  }
+}

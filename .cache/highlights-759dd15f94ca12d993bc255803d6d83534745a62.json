@@ -1,0 +1,17 @@
+{
+  "request": {
+    "url": "https://linkedin.com/in/mathis-cynthia-lynn-5147a9284",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "Garry Tan has served as President and CEO of Y Combinator since 2023.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://linkedin.com/in/mathis-cynthia-lynn-5147a9284",
+    "passages": [],
+    "error": "WEBSITE_BLOCKED"
+  }
+}

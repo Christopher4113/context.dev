@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://www.sentra.app/articles/claude-api-pricing",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "The Anthropic API price for Claude Haiku 5.5 (≤100,000 tokens) is 0.10 USD per million input tokens.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://www.sentra.app/articles/claude-api-pricing",
+    "passages": [
+      "[Claude API Pricing (2026): Per-Million-Token Rates for Every Model]\n\nAs of October 2026, the Claude API costs $4 per million input tokens and $20 per million output tokens on Claude Opus 5.5, $2 and $10 on Claude Sonnet 5.5, $0.10 and $0.50 on Claude Haiku 5.5 for prompts up to 100,000 tokens ($0.50 and $2.50 above that), and $10 and $50 on Claude Fable 5.1, according to Anthropic's pricing docs. Billing is per million tokens, charged separately for input and output.&#x20;\n\n…\n\n[Claude API Pricing (2026): Per-Million-Token Rates for Every Model > Frequently Asked Questions > How much does the Claude API cost per million tokens?]\n\nIt depends on the model and the direction. As of October 2026, Claude Opus 5.5 is $4 per million input tokens and $20 per million output tokens, Claude Sonnet 5.5 is $2 and $10, Claude Haiku 5.5 is $0.10 and $0.50 for prompts up to 100,000 tokens ($0.50 and $2.50 above that), and Claude Haiku 4.5, still available, is $1 and $5. Output is priced at 5x input across the current lineup. Figures are from Anthropic's pricing documentation.\n\n…\n\n[Claude API Pricing (2026): Per-Million-Token Rates for Every Model > Frequently Asked Questions > How much does Claude Haiku 5.5 cost?]\n\nClaude Haiku 5.5, released on 7 October 2026, costs $0.10 per million input tokens and $0.50 per million output tokens for prompts up to 100,000 tokens, and $0.50 and $2.50 for prompts over 100,000 tokens. Cache reads cost $0.01 or $0.05 per million, and the Batch API halves every rate, to $0.05 and $0.25 below the line or $0.25 and $1.25 above it. The prompt length counts all input tokens, cached ones included, and each request is priced on its own. Haiku 4.5 remains available at $1 and $5. Source: Anthropic's pricing docs."
+    ]
+  }
+}

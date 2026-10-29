@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://www.context.dev/pricing",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "context.dev offers a pricing plan named \"Scale\".",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://www.context.dev/pricing",
+    "passages": [
+      "[Straightforward, transparent pricing > Frequently asked questions]\n\nContext.dev offers Developer ($20/mo), Pro ($90/mo), Growth ($300/mo), Scale ($500/mo), and Scale 2.5M ($950/mo), plus Enterprise for teams that need more than 2.5M credits a month, volume discounts, or security and procurement support. We currently do not support one-time lookups, however you can contact us to discuss options for one-time projects at hello@context.dev.\n\n…\n\nThe Free plan includes 1,000 API credits that renew every month. Paid plans can use Auto-Topup in 1K-credit blocks: Developer $3.00, Pro $2.00, Growth $1.50, Scale $1.00, and Scale 2.5M $0.75 for new subscriptions. Existing subscriptions keep their rates. With insufficient credits and no available top-up, any plan returns 401 USAGE\\_EXCEEDED. Logo Link has a separate quota."
+    ]
+  }
+}

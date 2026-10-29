@@ -1,0 +1,44 @@
+{
+  "request": {
+    "model": "anthropic:",
+    "system": "You verify one claim against evidence passages scraped from the cited sources. Judge only from the passages, never from your own knowledge.\nVerdicts:\n- supported: a passage states the claim's value, so a reader could confirm it from the quote alone. Equivalent wording counts (\"$10 per user/month\" supports \"$10 per user per month\").\n- partial: a passage supports part of the claim, or gives a materially different qualification (a different number, a range, an older date, a different plan or product).\n- unsupported: the passages are on topic but do not state the value, or they contradict it.\n- no_evidence: the passages are irrelevant or empty.\nA passage that only mentions a word in another sense (e.g. a product name in a feature list) does not support a claim about it.\nevidence_quote MUST be copied character-for-character from one passage: the shortest span that shows the value (under 300 characters). Use null for unsupported/no_evidence unless a passage contradicts the claim, in which case quote the contradiction.\nreason: one sentence. If the passage contradicts the claim, say what it actually says.",
+    "user": "Research question: Company facts about Supabase: founders, founding year, and total funding raised.\nClaim: Supabase has raised $1 billion in total funding.\nValue being checked: \"$1 billion\"\n\n<passage source=\"https://www.linkedin.com/company/supabase/\">\n[Supabase > About us]\n\nBuild in a weekend. Scale to millions. Supabase is the Postgres development platform. Start your project with a Postgres Database, Authentication, instant APIs, and realtime subscriptions.\n\n…\n\n201-500 employees\n\n…\n\n2020\n\n…\n\n[Supabase > Updates]\n\nSpaceX Super Intelligence\n\n…\n\n🚨 Here were my favorite announcements from Supabase (which have implications for anyone moving from prototype to production): ↱ Supabase has acquired Turso for $150M: Say you want your agent to try 10 different ways to build a feature. Each version might need its own database. Turso is designed for databases that start quickly, are cheap to run, and scale to zero when unused.  ↱OrioleDB makes a single database fast while reducing the amount of hands-on work it requires. ↱Multigres: tackles reliability as your app grows.&#x20;\n</passage>\n\n<passage source=\"https://x.com/supabase\">\n[Supabase (@supabase) on X]\n\nSupabase\n\n…\n\n[Supabase]\n\nSoftware Company\n\n…\n\n153\n\n…\n\n6.2K\n\n…\n\n6.3K\n</passage>\n\n<passage source=\"https://github.com/supabase\">\n[Supabase > Pinned Loading > Repositories]\n\nShell 9 MIT 1 0 2 Updated Oct 29, 2026\n\n…\n\nNix 3 MIT 5 2 2 Updated Oct 29, 2026\n\n…\n\nsupabase/supabase's past year of commit activity\n\n…\n\nsupabase/supavisor's past year of commit activity\n\n…\n\n[Supabase > Pinned Loading > Repositories > Sponsors]\n\n- @VitorCoelho\n\n- @notts1215\n\n- @thomaskawas\n\n- @BrewHubPHL\n\n- @seanblowers\n\n- @ekdysis\n\n- @mailtrap\n\n- @sanctusgee\n\n- @chandanrjit\n\n- @AsahiSoftWareEngineer\n\n- @zOuateRabbit\n\n- @sasatech-gk\n\n- Private Sponsor\n</passage>",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "verdict": {
+          "type": "string",
+          "enum": [
+            "supported",
+            "partial",
+            "unsupported",
+            "no_evidence"
+          ]
+        },
+        "best_source_url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "evidence_quote": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "reason": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "verdict",
+        "best_source_url",
+        "evidence_quote",
+        "reason"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "response": "{\"verdict\":\"no_evidence\",\"best_source_url\":null,\"evidence_quote\":null,\"reason\":\"None of the passages mention Supabase's total funding amount; they cover company description, employee count, founding year, an acquisition, and GitHub activity.\"}"
+}

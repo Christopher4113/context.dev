@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://www.linkedin.com/in/aboutasha",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "Microsoft's CEO is Satya Nadella.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://www.linkedin.com/in/aboutasha",
+    "passages": [
+      "[Asha Sharma > Explore more posts]\n\nMicrosoft is exploring whether to spin off XBOX, operate it as a wholly-owned subsidiary or shift it into a joint venture, according to The Information - but no decision is imminent 🎮 Amy Hood, Executive Vice President and Chief Financial Officer at Microsoft, and CEO Satya Nadella have already signed off on larger budgets for franchises including Halo, Fallout and The Elder Scrolls. The moves come as Amy manages competing demands, with record AI infrastructure build, shareholder returns and a gaming division under pressure each pulling capital in different directions. 👉 Read more here:  #Gaming #Microsoft #GamingConsoles\n\n…\n\nXbox fans had been anticipating the retirement of Microsoft Gaming CEO Phil Spencer for years, but what most hadn’t expected was the departure of Xbox president Sarah Bond too. For many outside the company, Bond seemed like Spencer’s natural successor, a deputy of sorts. Microsoft CEO Satya Nadella and Microsoft CFO Amy Hood clearly didn’t agree. Instead of picking Bond for the role, Microsoft promoted Asha Sharma, a former Microsoft AI executive, to the top of Xbox. The decision to overlook Bond might have surprised many Xbox fans, but for the more than a dozen current and former Microsoft employees I’ve been speaking to, it’s felt inevitable in recent months. Read more from Tom Warren:&#x20;"
+    ]
+  }
+}

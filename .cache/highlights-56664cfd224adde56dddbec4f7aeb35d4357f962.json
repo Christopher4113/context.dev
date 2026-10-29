@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://www-cdn.anthropic.com/files/4zrzovbb/website/3684c2faafb97418665782cea0001f439f74b1d2.pdf",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "One of the current Anthropic API models is Claude Opus 5.5.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://www-cdn.anthropic.com/files/4zrzovbb/website/3684c2faafb97418665782cea0001f439f74b1d2.pdf",
+    "passages": [
+      "…\n\nSt andard \tGlobal \tAll \t$3.00 \t$15.00 \t$3.75 \t$6.00 \t$0.30\nSt andard \tUS-only inference \tAll \t$3.30 \t$16.50 \t$4.125 \t$6.60 \t$0.33\nBatch\nproces s ing Global \tAll \t$1.50 \t$7.50 \t$1.875 \t$3.00 \t$0.15\nBatch\nproces s ing US-only inference \tAll \t$1.65 \t$8.25 \t$2.0625 \t$3.30 \t$0.165\nClaude Opus 4.5 — Claude API\nP RICING T IER S CO P E CO NT EXT\nWIND O W\nBAS E INP UT\nT O KENS\nO UT P UT\nT O KENS\n5M CACHE\nWRIT ES\n1H CACHE\nWRIT ES\nCACHE HIT S\n& REFRES HES\nSt andard \tGlobal \t≤200K \t$5.00 \t$25.00 \t$6.25 \t$10.00 \t$0.50\nBatch\nproces s ing Global \t≤200K \t$2.50 \t$12.50 \t$3.125 \t$5.00 \t$0.25\n\n…\n\nT O KENS\n5M CACHE\nWRIT ES\n1H CACHE\nWRIT ES\nCACHE HIT S\n& REFRES HES\nSt andard \tGlobal \t≤200K \t$0.80 \t$4.00 \t$1.00 \t$1.60 \t$0.08\nSt andard \tGlobal \t1M \t$1.60 \t$16.00 \t$2.00 \t$3.20 \t$0.16\nBatch\nproces s ing Global \t≤200K \t$0.40 \t$2.00 \t$0.50 \t$0.80 \t$0.04\nBatch\nproces s ing Global \t1M \t$0.80 \t$8.00 \t$1.00 \t$1.60 \t$0.08\nPage 4\tClaude Mo del Pricing\nClaude 3 Opus — Claude API\nP RICING T IER S CO P E CO NT EXT\nWIND O W\nBAS E INP UT\nT O KENS\nO UT P UT\nT O KENS\n5M CACHE\nWRIT ES\n1H CACHE\nWRIT ES\nCACHE HIT S\n& REFRES HES\nSt andard \tGlobal \t≤200K \t$15.00 \t$75.00 \t$18.75 \t$30.00 \t$1.50\nBatch\n\n…\n\nGlobal Cros s\nRegion All \t$1.50 \t$7.50 \t— \t— \t—\nBatch\nproces s ing\nIn-Region & Geo\nCros s Region All \t$1.65 \t$8.25 \t— \t— \t—\nPage 6\tClaude Mo del Pricing\nP RICING T IER S CO P E CO NT EXT\nWIND O W\nBAS E INP UT\nT O KENS\nO UT P UT\nT O KENS\n5M CACHE\nWRIT ES\n1H CACHE\nWRIT ES\nCACHE HIT S\n& REFRES HES\nBatch\nproces s ing AWS GovCloud (US) All \t$1.80 \t$9.00 \t— \t— \t—\nClaude Opus 4.5 — AWS Bedrock\nP RICING T IER S CO P E CO NT EXT\nWIND O W\nBAS E INP UT\nT O KENS\nO UT P UT\nT O KENS\n5M CACHE\nWRIT ES\n1H CACHE\nWRIT ES\nCACHE HIT S\n& REFRES HES\nSt andard Global Cros s"
+    ]
+  }
+}

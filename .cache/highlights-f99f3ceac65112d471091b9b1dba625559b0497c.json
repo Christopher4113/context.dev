@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://github.com/about",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "The most recent official figure for the number of developers using GitHub comes from the GitHub About page.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://github.com/about",
+    "passages": [
+      "[Let's build from here]\n\nThe complete developer platform to build, scale, and deliver secure software.\n\n225M+ Developers\n\n…\n\n800M+ Repositories\n\n90% Fortune 100\n\n…\n\n[Let's build from here > News, stories and insights > Octoverse]\n\nDive into the details with our annual State of the Octoverse report looking at the trends and patterns in the code and communities that build on GitHub."
+    ]
+  }
+}

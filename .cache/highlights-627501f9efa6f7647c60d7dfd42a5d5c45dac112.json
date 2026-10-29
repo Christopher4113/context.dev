@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://www.linkedin.com/company/contextdev",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "The company is Context.dev, the web data API for AI agents (context.dev).",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://www.linkedin.com/company/contextdev",
+    "passages": [
+      "[Context.dev (YC S26) > About us]\n\nOne API, every piece of web context your agent needs.\n\n…\n\nLogo API, Brand API, Font API, Transaction Enrichment API, Styleguide API, Screenshot API, Web Extraction API, and Web Scraping\n\n…\n\n[Context.dev (YC S26) > Updates]\n\nContext now powers Zero's enrichment infrastructure, keeping information on 20M+ companies fresh. Zero searches and scrapes millions of data points every day to power its AI CRM, company enrichment, and custom agents. Learn how they do it:&#x20;\n\n…\n\nMuch of the web data teams need is available only after signing in. Introducing Browser Profiles for Context.dev (YC S26). Authenticate once, then reuse that browser session to scrape pages such as customer portals and vendor dashboards. Your password is never stored. Profiles belong to your organization and remain usable after API key rotation. Bring signed-in web data into the agents and workflows you’re building.\n\nA lot of useful web data lives behind a login We just shipped browser profiles for Context.dev (YC S26) Sign in once, and Context saves the browser session so you can reuse it to scrape authenticated pages via a profile\\_id. Your password is NEVER stored. Now agents can pull data from places like customer portals and vendor dashboards."
+    ]
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://tailwindcss.com/blog/tailwindcss-v4",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "Tailwind CSS v4.0 introduced expanded gradient APIs with linear, radial, and conic utilities, angle support, and color‑interpolation modifiers.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://tailwindcss.com/blog/tailwindcss-v4",
+    "passages": [
+      "[Tailwind CSS v4.0 > Expanded gradient APIs]\n\nWe've added a ton of new gradient features in v4.0, so you can pull off even fancier effects without having to write any custom CSS.\n\n[Tailwind CSS v4.0 > Expanded gradient APIs > Linear gradient angles]\n\nLinear gradients now support angles as values, so you can use utilities like `bg-linear-45` to create a gradient on a 45 degree angle:\n\n```\n<div class=\"bg-linear-45 from-indigo-500 via-purple-500 to-pink-500\"></div>\n```\n\nYou may notice we've renamed `bg-gradient-*` to `bg-linear-*` too — you'll see why shortly!\n\n[Tailwind CSS v4.0 > Expanded gradient APIs > Gradient interpolation modifiers]\n\nWe've added the ability to control the color interpolation mode for gradients using a modifier, so a class like `bg-linear-to-r/srgb` interpolates using sRGB, and `bg-linear-to-r/oklch` interpolates using OKLCH:\n\n```\n<div class=\"bg-linear-to-r/srgb from-indigo-500 to-teal-400\">...</div><div class=\"bg-linear-to-r/oklch from-indigo-500 to-teal-400\">...</div>\n```\n\nUsing polar color spaces like OKLCH or HSL can lead to much more vivid gradients when the `from-*` and `to-*` colors are far apart on the color wheel. We're using OKLAB by default in v4.0 but you can always interpolate using a different color space by adding one of these modifiers.\n\n[Tailwind CSS v4.0 > Expanded gradient APIs > Conic and radial gradients]\n\nWe've added new `bg-conic-*` and `bg-radial-*` utilities for creating conic and radial gradients:\n\n```\n<div class=\"size-24 rounded-full bg-conic/[in_hsl_longer_hue] from-red-600 to-red-600\"></div><div class=\"size-24 rounded-full bg-radial-[at_25%_25%] from-white to-zinc-900 to-75%\"></div>\n```\n\nThese new utilities work alongside the existing `from-*`, `via-*`, and `to-*` utilities to let you create conic and radial gradients the same way you create linear gradients, and include modifiers for setting the color interpolation method and arbitrary value support for controlling details like the gradient position."
+    ]
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://www.linkedin.com/company/contextdev",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "Yahia Bakour is a founder of Context.dev.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://www.linkedin.com/company/contextdev",
+    "passages": [
+      "[Context.dev (YC S26) > About us]\n\nOne API, every piece of web context your agent needs.\n\n…\n\nFounded\n\n…\n\nLogo API, Brand API, Font API, Transaction Enrichment API, Styleguide API, Screenshot API, Web Extraction API, and Web Scraping\n\n…\n\n[Context.dev (YC S26) > Updates]\n\nYahia Bakour\n\n…\n\nI won a hackathon today, along with a $2,500 cash reward !! 🏆 At the \"Build an Agent\" Hackathon in SF, I built Owed, an agentic tool that finds money your company is owed. How it's built: • Each customer gets their own agent harness on Agent 37 (YC F26) • Context.dev (YC S26) for to monitor and collect web data • Monid for tools • OpenAI for the drafting • Auth and dashboard live on InstaCloud by InsForge (YC P26) On top of the cash, the prize includes $1K in Agent37 credits, $500 in Monid credits, $2.5K in OpenAI credits and $1K in Supabase credits. Huge thanks to the organizers: Michael Ryaboy, Vishnu Krishnaprasad and Rohit Tiru (Agent37, YC F26), Hang Huang and Tony (Yao-Wen) Chang (InsForge / InstaCloud, YC P26), Feiyou Guo and Shengkun Y. (Monid), and Vivian C. Thanks to OpenAI and Supabase for sponsoring, Corgi Cafe for hosting, and to the judges Saksham Gupta and Mohit Gupta (@Levocred), Sarman Aulakh (Chasi AI) and Sean Cole (Parasma). If your company pays for a lot of SaaS, DM me. #sftechweek"
+    ]
+  }
+}

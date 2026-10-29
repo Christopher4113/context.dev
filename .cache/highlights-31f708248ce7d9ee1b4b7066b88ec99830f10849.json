@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://www.linkedin.com/company/supabase/",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "Paul Copplestone is a founder of Supabase.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://www.linkedin.com/company/supabase/",
+    "passages": [
+      "[Supabase > About us]\n\nBuild in a weekend. Scale to millions. Supabase is the Postgres development platform. Start your project with a Postgres Database, Authentication, instant APIs, and realtime subscriptions.\n\n…\n\nIT Services and IT Consulting\n\n…\n\nPrivately Held\n\nFounded\n\n…\n\n[Supabase > Updates]\n\n🌟 Only in Silicon Valley can you meet the co-founder of Apple(Steve Wozniak), CEO of Y Combinator(Garry Tan), ex-CEO of Twitter(Parag Agrawal),CEO of DeepLearning (Andrew Ng),CEO of Supabase(Paul Copplestone), and the entire leadership team of Supabase in one place! I have been vibe coding a lot, so the question I went in with was: What happens when you vibe-code an app, but get actual users? Now your database has to keep up. So what interested me was what these changes mean for someone building with tools like Lovable or Claude Code.&#x20;"
+    ]
+  }
+}

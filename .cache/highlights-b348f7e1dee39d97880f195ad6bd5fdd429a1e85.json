@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://www.linkedin.com/company/vercel/",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "Vercel is headquartered in San Francisco, California.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://www.linkedin.com/company/vercel/",
+    "passages": [
+      "[Vercel > About us]\n\n501-1,000 employees\n\nHeadquarters\n\nSan Francisco, California\n\n…\n\n[Vercel > Locations]\n\nSan Francisco, California 94133, US\n\n…\n\n[Vercel > Affiliated pages]\n\n- **v0 by Vercel** Software Development\n\n- **Next.js** Software Development\n\n- **AI SDK** Software Development\n\n- **Turborepo** Software Development San Francisco, California"
+    ]
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://tailwindcss.com/blog/tailwindcss-v4",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "Tailwind CSS v4.0 introduced a not‑* variant supporting the CSS :not() pseudo‑class.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://tailwindcss.com/blog/tailwindcss-v4",
+    "passages": [
+      "[Tailwind CSS v4.0 > not-* variant]\n\nWe've added a new `not-*` variant which finally adds support for the CSS `:not()` pseudo-class:\n\n…\n\n```\n<div class=\"not-hover:opacity-75\">  <!-- ... --></div>\n```\n\n…\n\n```\n.not-hover\\:opacity-75:not(*:hover) {  opacity: 75%;}@media not (hover: hover) {  .not-hover\\:opacity-75 {    opacity: 75%;  }}\n```\n\nIt does double duty and also lets you negate media queries and `@supports` queries:\n\n```\n<div class=\"not-supports-hanging-punctuation:px-4\">  <!-- ... --></div>\n```\n\n```\n.not-supports-hanging-punctuation\\:px-4 {  @supports not (hanging-punctuation: var(--tw)) {    padding-inline: calc(var(--spacing) * 4);  }}\n```"
+    ]
+  }
+}

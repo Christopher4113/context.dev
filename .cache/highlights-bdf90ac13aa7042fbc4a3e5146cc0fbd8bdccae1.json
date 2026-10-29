@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://www.notion.com/pricing",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "Notion's Plus plan costs $10 per member per month when billed annually.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://www.notion.com/pricing",
+    "passages": [
+      "[One tool to run your company. > Essentials for staying organized. > Plus]\n\n$10per member / month\n\n…\n\n[One tool to run your company. > Plans and features]\n\nPlus$10 per seat/monthGet started\n\n…\n\n[One tool to run your company. > Questions & answers]\n\nWhether you're on a monthly or yearly billing schedule, your account may be charged on a monthly basis if you make changes in membership. If you added members, your account will be charged a prorated amount based on the percentage of the billing cycle left when a user was added. If you removed members, you will not receive credit but instead will still have use of that seat for a different user for the remainder of the billing period."
+    ]
+  }
+}

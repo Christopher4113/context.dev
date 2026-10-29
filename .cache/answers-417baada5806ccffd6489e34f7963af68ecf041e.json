@@ -1,0 +1,26 @@
+{
+  "request": {
+    "task": "What is the latest stable version of Bun, and which package manager lockfile format does it use by default?",
+    "json_format": {
+      "latest_version": "",
+      "release_date": "",
+      "default_lockfile": ""
+    },
+    "mode": "fast"
+  },
+  "response": {
+    "json_content": {
+      "latest_version": "1.4.4",
+      "release_date": "2026-10",
+      "default_lockfile": "bun.lock"
+    },
+    "sources": [
+      "https://bun.com/"
+    ],
+    "key_metadata": {
+      "credits_consumed": 10,
+      "credits_remaining": 20455
+    },
+    "request_id": "b4abac60-fdc8-4601-9c3b-b7f6ace992c9"
+  }
+}

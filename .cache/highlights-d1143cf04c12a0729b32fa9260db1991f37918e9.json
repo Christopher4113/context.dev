@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://endoflife.date/nodejs",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "The codename of the latest Node.js LTS release line is Krypton.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://endoflife.date/nodejs",
+    "passages": [
+      "…\n\n[Node.js]\n\n| Release | Released | Active Support | Security Support | Commercial Support | Latest |\n| - | - | - | - | - | - |\n| 19 | 4 years ago (18 Oct 2022) | Ended 3 years and 7 months ago (01 Apr 2023) | Ended 3 years and 5 months ago (01 Jun 2023) | Unavailable | 19.9.0 (10 Apr 2023) |\n| 18 (LTS) | 4 years and 6 months ago (19 Apr 2022) | Ended 3 years ago (18 Oct 2023) | Ended 1 year and 6 months ago (30 Apr 2025) | Yes | 18.20.8 (27 Mar 2025) |\n| 17 | 5 years ago (19 Oct 2021) | Ended 4 years and 7 months ago (01 Apr 2022) | Ended 4 years ago (01 Jun 2022) | Unavailable | 17.9.1 (01 Jun 2022) |\n| 16 (LTS) | 5 years ago (20 Apr 2021) | Ended 4 years ago (18 Oct 2022) | Ended 3 years ago (11 Sep 2023) | Yes | 16.20.2 (09 Aug 2023) |\n| 15 | 6 years ago (20 Oct 2020) | Ended 5 years and 7 months ago (01 Apr 2021) | Ended 5 years ago (01 Jun 2021) | Unavailable | 15.14.0 (06 Apr 2021) |\n| 14 (LTS) | 6 years ago (21 Apr 2020) | Ended 5 years ago (19 Oct 2021) | Ended 3 years and 6 months ago (30 Apr 2023) | Yes | 14.21.3 (16 Feb 2023) |\n| 13 | 7 years ago (22 Oct 2019) | Ended 6 years ago (01 Apr 2020) | Ended 6 years ago (01 Jun 2020) | Unavailable | 13.14.0 (29 Apr 2020) |\n\n…\n\n| Release | Released | Active Support | Security Support | Commercial Support | Latest |\n| - | - | - | - | - | - |\n| 4 (LTS) | 11 years ago (09 Sep 2015) | Ended 9 years ago (01 Apr 2017) | Ended 8 years ago (30 Apr 2018) | Unavailable | 4.9.1 (29 Mar 2018) |\n| 3 | 11 years ago (04 Aug 2015) | No | No | Unavailable | 3.3.1 (15 Sep 2015) |\n| 2 | 11 years ago (04 May 2015) | No | No | Unavailable | 2.5.0 (28 Jul 2015) |\n| 1 | 11 years ago (20 Jan 2015) | No | No | Unavailable | 1.8.4 (09 Jul 2015) |\n| Show more unmaintained releases | | | | | |"
+    ]
+  }
+}

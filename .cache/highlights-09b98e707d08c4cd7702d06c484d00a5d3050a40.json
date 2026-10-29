@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://www.linkedin.com/company/figma/",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "Figma is headquartered in San Francisco, California, United States.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://www.linkedin.com/company/figma/",
+    "passages": [
+      "[Figma > About us]\n\n1,001-5,000 employees\n\nHeadquarters\n\nSan Francisco, California\n\n…\n\n[Figma > Locations]\n\n760 Market St\n\nSan Francisco, California 94103, US"
+    ]
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "request": {
+    "task": "Who are Shopify's CEO and President?",
+    "json_format": {
+      "company": "",
+      "ceo": "",
+      "president": ""
+    },
+    "mode": "fast"
+  },
+  "response": {
+    "json_content": {
+      "company": "Shopify",
+      "ceo": "Tobias Lütke",
+      "president": "Harley Finkelstein"
+    },
+    "sources": [
+      "https://www.linkedin.com/in/tobiaslutke",
+      "http://blog.leetsoft.com/",
+      "http://about.me/",
+      "https://www.linkedin.com/company/shopify/",
+      "https://www.linkedin.com/company/shopify-incc/",
+      "https://www.linkedin.com/company/shopify-ltd/",
+      "https://x.com/shopify",
+      "https://www.instagram.com/shopify/",
+      "https://github.com/shopify",
+      "https://wellfound.com/company/company",
+      "https://facebook.com/shopify",
+      "https://youtube.com/user/shopify",
+      "https://www.crunchbase.com/organization/shopify",
+      "https://www.crunchbase.com/organization/shopify-vietnam-3c81",
+      "https://shopify.com"
+    ],
+    "key_metadata": {
+      "credits_consumed": 10,
+      "credits_remaining": 20278
+    },
+    "request_id": "8158a01a-9e95-4c69-a30c-499383ff779b"
+  }
+}

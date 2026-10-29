@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://www.linkedin.com/in/tobiaslutke",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "Shopify's CEO is Tobias Lütke.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://www.linkedin.com/in/tobiaslutke",
+    "passages": [
+      "[Tobias Lütke > About]\n\nTobias Lütke is CEO and co-founder of Shopify, the marquee shopping cart system of the e-commerce industry. As a programmer Tobi has served on the core team of the Ruby on Rails framework and has created many popular open source libraries such as the Typo weblog engine, Liquid and Active Merchant.\n\n…\n\n[Tobias Lütke > Explore more posts]\n\nShopify CEO Tobi Lütke thinks your right to vote should be linked to how much income tax you pay. On Tech Won’t Save Us, I spoke to Rachel Gilmore to dig into how Shopify’s leaders are pushing right-wing politics in Canada — and why people should think twice about using the company’s services. Listen to the full episode:  #tech #shopify #canada #cdnpoli #politics\n\n…\n\nShopify CEO Tobi Lütke calls the one-person billion-dollar company “bullshit” at Toronto Tech Week despite acknowledging it’s now possible Shopify CEO Tobi Lütke called the one-person billion-dollar company “bullshit” during a fireside chat at Toronto Tech Week’s Homecoming event on Wednesday, saying that while AI makes it technically possible for a solo founder to build that kind of business, he doesn’t see the point. “Why the fuck would you not spend some of that money to have someone else around?” he asked. Lütke spoke alongside Rostra founder and Shopify board member Lulu Cheng Meservey in front of more than 700 attendees. He agreed startups with a handful of people can now scale into billion-dollar businesses, citing AI voice dictation company Wispr, which went from seven employees a year ago to roughly 60 and is reportedly closing a round at a $2B valuation. “The shape of companies is going to change,” Lütke said. “Companies will be smaller, but there will be vastly more of them.”&#x20;"
+    ]
+  }
+}

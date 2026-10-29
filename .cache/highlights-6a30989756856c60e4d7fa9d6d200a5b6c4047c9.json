@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://www.linkedin.com/in/tobiaslutke",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "The company in question is Shopify.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://www.linkedin.com/in/tobiaslutke",
+    "passages": [
+      "[Tobias Lütke > Sign in to view Tobias’ full profile]\n\nShopify\n\n…\n\n[Tobias Lütke > About]\n\nTobias Lütke is CEO and co-founder of Shopify, the marquee shopping cart system of the e-commerce industry. As a programmer Tobi has served on the core team of the Ruby on Rails framework and has created many popular open source libraries such as the Typo weblog engine, Liquid and Active Merchant.\n\n…\n\n[Tobias Lütke > Activity > Liam Fuller]\n\nBut the back-and-forth of figuring out what everyone wants in the group is pretty frustrating and turns into an absolute mess. So... 289 emails, 26 customer discovery calls, and 1 networking event later... We've built CartShare – a Shopify app that allows merchants to let their shoppers easily create a shareable cart with friends and family in just a few simple clicks - allowing friends to add into the same basket as you and browse on the same store as you in REAL TIME.&#x20;\n\n…\n\n[Tobias Lütke > Activity > Andrew Bernstein]\n\nAfter some scrambling trying to come up with a plan to take care of my employees, I faced the very real possibility that for the first time in four years, we were going to miss payroll. Then, at about 11:30 am EST, I remembered receiving an email from Kaz Nejatian, Shopify's COO, earlier this week in which he graciously offered to help Shopify customers who use SVB and who may run into issues making payroll as a result. Let me be clear, Kinder Beauty is most definitely not Shopify's top customer. We're not their smallest partner, either.&#x20;"
+    ]
+  }
+}

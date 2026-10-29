@@ -1,0 +1,26 @@
+{
+  "request": {
+    "task": "How many developers use GitHub, according to the most recent official figure?",
+    "json_format": {
+      "developers": "",
+      "as_of": "",
+      "source_publication": ""
+    },
+    "mode": "fast"
+  },
+  "response": {
+    "json_content": {
+      "developers": "225M+",
+      "as_of": null,
+      "source_publication": "GitHub About page"
+    },
+    "sources": [
+      "https://github.com/about"
+    ],
+    "key_metadata": {
+      "credits_consumed": 10,
+      "credits_remaining": 20196
+    },
+    "request_id": "bc6a3e4e-d157-40ca-8542-7466abad9a89"
+  }
+}

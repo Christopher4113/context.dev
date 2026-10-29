@@ -1,0 +1,44 @@
+{
+  "request": {
+    "task": "Company facts about Figma: founders, founding year, headquarters, and the outcome of Adobe's proposed acquisition.",
+    "json_format": {
+      "company": "",
+      "founders": [
+        ""
+      ],
+      "founded_year": 0,
+      "headquarters": "",
+      "adobe_acquisition_outcome": ""
+    },
+    "mode": "fast"
+  },
+  "response": {
+    "json_content": {
+      "company": "Figma",
+      "founders": [
+        "Dylan Field",
+        "Evan Wallace"
+      ],
+      "founded_year": 2012,
+      "headquarters": "San Francisco, California, United States",
+      "adobe_acquisition_outcome": "Adobe and Figma mutually terminated the proposed acquisition on December 18, 2023, because regulatory approval had no clear path; Adobe paid Figma the agreed termination fee."
+    },
+    "sources": [
+      "https://www.linkedin.com/company/figma/",
+      "https://x.com/figma",
+      "https://x.com/figmadesign",
+      "https://www.instagram.com/figma/",
+      "https://wellfound.com/company/company",
+      "https://www.facebook.com/figmadesign",
+      "https://www.crunchbase.com/organization/figma",
+      "https://figma.bot",
+      "https://news.adobe.com/news/news-details/2023/adobe-and-figma-mutually-agree-to-terminate-merger-agreement",
+      "https://www.figma.com/blog/design-meet-the-internet/"
+    ],
+    "key_metadata": {
+      "credits_consumed": 10,
+      "credits_remaining": 20697
+    },
+    "request_id": "977831e5-b0b3-4ab6-bddb-b83d55069b3f"
+  }
+}

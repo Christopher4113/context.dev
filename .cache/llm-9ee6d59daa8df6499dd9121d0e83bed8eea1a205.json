@@ -1,0 +1,44 @@
+{
+  "request": {
+    "model": "anthropic:",
+    "system": "You verify one claim against evidence passages scraped from the cited sources. Judge only from the passages, never from your own knowledge.\nVerdicts:\n- supported: a passage states the claim's value, so a reader could confirm it from the quote alone. Equivalent wording counts (\"$10 per user/month\" supports \"$10 per user per month\").\n- partial: a passage supports part of the claim, or gives a materially different qualification (a different number, a range, an older date, a different plan or product).\n- unsupported: the passages are on topic but do not state the value, or they contradict it.\n- no_evidence: the passages are irrelevant or empty.\nA passage that only mentions a word in another sense (e.g. a product name in a feature list) does not support a claim about it.\nevidence_quote MUST be copied character-for-character from one passage: the shortest span that shows the value (under 300 characters). Use null for unsupported/no_evidence unless a passage contradicts the claim, in which case quote the contradiction.\nreason: one sentence. If the passage contradicts the claim, say what it actually says.",
+    "user": "Research question: Who are Shopify's CEO and President?\nClaim: Shopify's CEO is Tobias Lütke.\nValue being checked: \"Tobias Lütke\"\n\n<passage source=\"https://www.linkedin.com/in/tobiaslutke\">\n[Tobias Lütke > About]\n\nTobias Lütke is CEO and co-founder of Shopify, the marquee shopping cart system of the e-commerce industry. As a programmer Tobi has served on the core team of the Ruby on Rails framework and has created many popular open source libraries such as the Typo weblog engine, Liquid and Active Merchant.\n\n…\n\n[Tobias Lütke > Explore more posts]\n\nShopify CEO Tobi Lütke thinks your right to vote should be linked to how much income tax you pay. On Tech Won’t Save Us, I spoke to Rachel Gilmore to dig into how Shopify’s leaders are pushing right-wing politics in Canada — and why people should think twice about using the company’s services. Listen to the full episode:  #tech #shopify #canada #cdnpoli #politics\n\n…\n\nShopify CEO Tobi Lütke calls the one-person billion-dollar company “bullshit” at Toronto Tech Week despite acknowledging it’s now possible Shopify CEO Tobi Lütke called the one-person billion-dollar company “bullshit” during a fireside chat at Toronto Tech Week’s Homecoming event on Wednesday, saying that while AI makes it technically possible for a solo founder to build that kind of business, he doesn’t see the point. “Why the fuck would you not spend some of that money to have someone else around?” he asked. Lütke spoke alongside Rostra founder and Shopify board member Lulu Cheng Meservey in front of more than 700 attendees. He agreed startups with a handful of people can now scale into billion-dollar businesses, citing AI voice dictation company Wispr, which went from seven employees a year ago to roughly 60 and is reportedly closing a round at a $2B valuation. “The shape of companies is going to change,” Lütke said. “Companies will be smaller, but there will be vastly more of them.”&#x20;\n</passage>\n\n<passage source=\"http://blog.leetsoft.com/\">\n[Tobi Lütke]\n\nShopify CEO\n\n…\n\n[We need to talk about carbon December 22 2019 > We urge you to join us]\n\n\\- tobi\nCEO Shopify\n</passage>\n\n<passage source=\"http://about.me/\">\n[Dr Manoja Kalupahana > BSc MBChB FANZCA]\n\nDr Manoja Kalupahana is an experienced Consultant Anaesthetist, medical leader and governance professional with over 18 years of experience in New Zealand's public and private healthcare sectors.\n\n…\n\nAlongside her public healthcare role, Manoja is a Director and Specialist Anaesthetist in private practice, with expertise in urological and robotic anaesthesia. She also serves as an Anaesthetic Advisor to Mobile Health Group, focusing on clinical governance, credentialing and patient safety. Manoja has a number of other governance and committee roles.\n\n…\n\nManoja has completed the Institute of Directors' Company Directors' Course and is currently working towards her Chartered Director qualification.\n\nShe is passionate about combining clinical expertise, strategic leadership and effective governance to improve healthcare outcomes and support the medical profession.\n\n…\n\n[August Sanders > The Mac Maverick > Human-Centered Apple Support]\n\nI’m August Sanders, founder of The Mac Maverick LLC. I’ve spent nearly three decades helping people use Apple technology with confidence, from everyday troubleshooting and device setup to backups, email, photos, security, and digital organization.\n</passage>",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "verdict": {
+          "type": "string",
+          "enum": [
+            "supported",
+            "partial",
+            "unsupported",
+            "no_evidence"
+          ]
+        },
+        "best_source_url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "evidence_quote": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "reason": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "verdict",
+        "best_source_url",
+        "evidence_quote",
+        "reason"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "response": "{\"verdict\":\"supported\",\"best_source_url\":\"https://www.linkedin.com/in/tobiaslutke\",\"evidence_quote\":\"Tobias Lütke is CEO and co-founder of Shopify\",\"reason\":\"The LinkedIn passage directly states that Tobias Lütke is CEO and co-founder of Shopify.\"}"
+}

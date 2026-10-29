@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://tailwindcss.com/blog/tailwindcss-v4",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "Tailwind CSS v4.0 introduced a modernized P3 color palette using OKLCH for more vivid colors.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://tailwindcss.com/blog/tailwindcss-v4",
+    "passages": [
+      "…\n\n[Tailwind CSS v4.0]\n\n<!-- -->\n\n- Modernized P3 color palette — a redesigned, more vivid color palette that takes full advantage of modern display technology.\n\n…\n\n[Tailwind CSS v4.0 > Modernized P3 color palette]\n\nWe've upgraded the entire default color palette from `rgb` to `oklch`, taking advantage of the wider gamut to make the colors more vivid in places where we were previously limited by the sRGB color space.\n\nWe've tried to keep the balance between all the colors the same as it was in v3, so even though we've refreshed things across the board, it shouldn't feel like a breaking change when upgrading your existing projects.\n\n…\n\n[Tailwind CSS v4.0 > Expanded gradient APIs > Gradient interpolation modifiers]\n\nUsing polar color spaces like OKLCH or HSL can lead to much more vivid gradients when the `from-*` and `to-*` colors are far apart on the color wheel. We're using OKLAB by default in v4.0 but you can always interpolate using a different color space by adding one of these modifiers."
+    ]
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://www.instaclustr.com/education/postgresql/postgres-versions-supported-releases-eol-dates-upgrades/",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "One headline feature of the latest major PostgreSQL release is native UUID v7 support.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://www.instaclustr.com/education/postgresql/postgres-versions-supported-releases-eol-dates-upgrades/",
+    "passages": [
+      "[Postgres Versions: Supported Releases, EOL Dates & Upgrades > What Is Postgres Versioning?]\n\n| Major Version | Initial Release | End of Life (EOL) | Current Minor Release | Notes |\n| - | - | - | - | - |\n| PostgreSQL 18 | Sep 2025 | Nov 2030 | 18.4 | Latest version; introduces a modern I/O subsystem. |\n| PostgreSQL 17 | Sep 2024 | Nov 2029 | 17.10 | Enhanced JSON/SQL querying and major Vacuum improvements. |\n| PostgreSQL 16 | Sep 2023 | Nov 2028 | 16.14 | Strong parallel query performance and JSON handling. |\n| PostgreSQL 15 | Oct 2022 | Nov 2027 | 15.18 | Introduction of SQL/JSON routines. |\n| PostgreSQL 14 | Sep 2021 | Nov 2026 | 14.23 | Supported until late 2026. |\n\n…\n\n[Postgres Versions: Supported Releases, EOL Dates & Upgrades > Postgres Versions History]\n\n| Major Version | Latest Minor Version | Release Status | Support Status | Notes |\n| - | - | - | - | - |\n| PostgreSQL 18 | 18.4 | Current stable release | Supported | Latest major version; recommended for new deployments where compatibility has been tested. |\n| PostgreSQL 17 | 17.10 | Stable release | Supported | Suitable for production environments that require a mature, supported release. |\n| PostgreSQL 16 | 16.14 | Stable release | Supported | Still actively maintained with security and bug-fix updates. |\n| PostgreSQL 15 | 15.18 | Stable release | Supported | Supported for existing production workloads; continue applying minor updates. |\n| PostgreSQL 14 | 14.23 | Stable release | Supported, nearing EOL | Support is scheduled to end in November 2026, so upgrade planning is recommended. |\n| PostgreSQL 13 | 13.23 | Final release | End-of-life | No longer receives security or bug fixes; production systems should migrate to a supported version. |\n| PostgreSQL 12 and earlier | Varies by version | Legacy releases | End-of-life | Unsupported versions should be upgraded to reduce security, compatibility, and maintenance risks. |"
+    ]
+  }
+}

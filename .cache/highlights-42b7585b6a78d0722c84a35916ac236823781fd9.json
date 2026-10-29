@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://x.com/figmadesign",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "Evan Wallace is a founder of Figma.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://x.com/figmadesign",
+    "passages": [
+      "[figmadesign (@figmadesign) on X]\n\nfigmadesign\n\n…\n\n[figmadesign]\n\n@figmadesign\n\nYou can now find us @figma. 👋\n\nfigma.com\n\nJoined July 2009"
+    ]
+  }
+}

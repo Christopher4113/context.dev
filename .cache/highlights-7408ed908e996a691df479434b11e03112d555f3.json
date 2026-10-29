@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://x.com/getcontextdev",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "Context.dev was part of the Y Combinator S26 accelerator batch.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://x.com/getcontextdev",
+    "passages": [
+      "[Context.dev]\n\nOne API to scrape, enrich, and understand the web. Trusted by 20K+ developers.\n\nSoftware Application\n\n…\n\nContext.dev\n\n…\n\nWe raised $9M to give your agents the internet. Led by @generalcatalyst, with @orangecollectv and Robinhood Ventures. Search, scrape, crawl, monitor with one API trusted by 800+ customers. We’re making it ridiculously easy to build with web data.\n\n…\n\nBig news: Context.dev now helps power Context7 Millions of crawling requests every other day, keeping developer doc context fresh for AI agents around the world"
+    ]
+  }
+}

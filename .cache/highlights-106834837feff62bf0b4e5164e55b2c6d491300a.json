@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://www.herodevs.com/blog-posts/node-js-end-of-life-dates-you-should-be-aware-of",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "The codename of the latest Node.js LTS release line is Krypton.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://www.herodevs.com/blog-posts/node-js-end-of-life-dates-you-should-be-aware-of",
+    "passages": [
+      "[Node.js Version Support: EOL Dates and Latest Releases (July 2026) > How Node.js's Release and Support Policy Works]\n\nOdd-numbered releases (19, 21, 23, 25) never enter LTS. They stay Current for six months and then go straight to EOL, which is why they are unsuitable for production. Even-numbered releases (18, 20, 22, 24, 26) get the full LTS treatment and roughly three years of total support from initial release to EOL. For any system you intend to run longer than a quarter, an even-numbered LTS line is the only sensible choice.\n\n…\n\n[Node.js Version Support: EOL Dates and Latest Releases (July 2026) > Complete Node.js Version Timeline]\n\nThe only fully supported lines today are Node.js 26 (Current), 24 (Active LTS), and 22 (Maintenance LTS). Everything else is end-of-life.\n\n[Node.js Version Support: EOL Dates and Latest Releases (July 2026) > Versions Reaching EOL Next: What to Watch > Node.js 20 End of Life]\n\nNode.js 20 reached end-of-life on **April 30, 2026**. It was one of the most widely deployed LTS lines in Node's history, which means a large installed base is now running an unsupported runtime.\n\n…\n\n[Node.js Version Support: EOL Dates and Latest Releases (July 2026) > Frequently Asked Questions > What is the latest Node.js LTS version?]\n\nNode.js 24 is the Active LTS line (EOL April 30, 2028) and Node.js 22 is in Maintenance LTS (EOL April 30, 2027). Node.js 26, released in May 2026, is the Current line and is scheduled to enter LTS in October 2026."
+    ]
+  }
+}

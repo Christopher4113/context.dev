@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "http://blog.leetsoft.com/",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "Shopify's President is Harley Finkelstein.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "http://blog.leetsoft.com/",
+    "passages": [
+      "[Tobi Lütke]\n\nShopify CEO\n\n[We need to talk about carbon December 22 2019]\n\nAs Shopify prepared to go public in 2015, I wrote a letter in our F1 filing that read,\n\n…\n\n[We need to talk about carbon December 22 2019 > We’re launching the Shopify Sustainability Fund]\n\nThe Shopify Sustainability Fund will house all of our environmental investments, including carbon sequestration. Our intention is to increase our financial commitment annually based on our revenue growth.\n\n…\n\n[We need to talk about carbon December 22 2019 > We urge you to join us]\n\n\\- tobi\nCEO Shopify\n\n…\n\n[The case for swagger: Canadians have a lot to be proud of May 22 2018]\n\nLuckily, I'm not the only one who has noticed. Earlier this month, I sat on stage with Prime Minister Justin Trudeau at Shopify Unite, our annual conference. \"We just need to have a little more swagger as a country,\" he said."
+    ]
+  }
+}

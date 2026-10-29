@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://github.com/supabase",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "Supabase has raised $1 billion in total funding.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://github.com/supabase",
+    "passages": [
+      "[Supabase > Pinned Loading > Repositories]\n\nShell 9 MIT 1 0 2 Updated Oct 29, 2026\n\n…\n\nNix 3 MIT 5 2 2 Updated Oct 29, 2026\n\n…\n\nsupabase/supabase's past year of commit activity\n\n…\n\nsupabase/supavisor's past year of commit activity\n\n…\n\n[Supabase > Pinned Loading > Repositories > Sponsors]\n\n- @VitorCoelho\n\n- @notts1215\n\n- @thomaskawas\n\n- @BrewHubPHL\n\n- @seanblowers\n\n- @ekdysis\n\n- @mailtrap\n\n- @sanctusgee\n\n- @chandanrjit\n\n- @AsahiSoftWareEngineer\n\n- @zOuateRabbit\n\n- @sasatech-gk\n\n- Private Sponsor"
+    ]
+  }
+}

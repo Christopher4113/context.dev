@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://tailwindcss.com/blog/tailwindcss-v4",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "Tailwind CSS v4.0 added container queries as core features, removing the need for the external plugin.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://tailwindcss.com/blog/tailwindcss-v4",
+    "passages": [
+      "…\n\n[Tailwind CSS v4.0]\n\n<!-- -->\n\n- Container queries — first-class APIs for styling elements based on their container size, no plugins required.\n- New 3D transform utilities — transform elements in 3D space directly in your HTML.\n- Expanded gradient APIs — radial and conic gradients, interpolation modes, and more.\n- @starting-style support — a new variant you can use to create enter and exit transitions, without the need for JavaScript.\n- not-\\* variant — style an element only when it doesn't match another variant, custom selector, or media or feature query.\n- Even more new utilities and variants — including support for `color-scheme`, `field-sizing`, complex shadows, `inert`, and more.\n\n…\n\n[Tailwind CSS v4.0 > Container queries]\n\nWe've brought container query support into core for v4.0, so you don't need the `@tailwindcss/container-queries` plugin anymore:\n\n…\n\n```\n<div class=\"@container\">  <div class=\"grid grid-cols-1 @sm:grid-cols-3 @lg:grid-cols-4\">    <!-- ... -->  </div></div>\n```\n\nWe've also added support for max-width container queries using the new `@max-*` variant:\n\n```\n<div class=\"@container\">  <div class=\"grid grid-cols-3 @max-md:grid-cols-1\">    <!-- ... -->  </div></div>\n```\n\nLike our regular breakpoint variants, you can also stack `@min-*` and `@max-*` variants to define container query ranges:\n\n```\n<div class=\"@container\">  <div class=\"flex @min-md:@max-xl:hidden\">    <!-- ... -->  </div></div>\n```"
+    ]
+  }
+}

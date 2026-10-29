@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://www.linkedin.com/in/aboutasha",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "The company in question is Microsoft.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://www.linkedin.com/in/aboutasha",
+    "passages": [
+      "[Asha Sharma > Sign in to view Asha’s full profile]\n\nMicrosoft\n\n…\n\n[Asha Sharma > Explore more posts]\n\nMicrosoft’s head of gaming, Phil Spencer, is leaving the software maker following a 38-year tenure, as the company faces increased challenges in its Xbox business. Asha Sharma, who came to Microsoft from Instacart in 2024, will take over as the head of the gaming division. Read more: cnb.cx/4qMnRmc\n\n…\n\nMicrosoft has announced that Asha Sharma is set to assume the role of CEO of Xbox, leading the company’s gaming division. The transition marks a significant leadership development within Microsoft’s global gaming business. Ms. Sharma currently serves as President of CoreAI Product at Microsoft, where she has led portfolios spanning AI models and developer tools. She previously held the position of Corporate Vice President and Head of Product for Microsoft’s AI Platform, overseeing large-scale product and platform initiatives. Prior to rejoining Microsoft, she held senior executive roles at Instacart, where she served as Chief Operating Officer, and at Meta as Vice President of Product & Engineering. Her career also includes leadership experience at Porch Group, along with earlier tenure at Microsoft in product marketing roles. Her appointment signals leadership continuity for Xbox as the division continues to operate at global scale within the gaming industry. The team at CXO XPERTS congratulates Asha Sharma on this leadership appointment. #LeadershipAppointment #Microsoft #GamingIndustry"
+    ]
+  }
+}

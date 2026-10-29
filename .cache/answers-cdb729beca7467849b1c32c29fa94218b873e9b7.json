@@ -1,0 +1,30 @@
+{
+  "request": {
+    "task": "Who is the current President and CEO of Y Combinator?",
+    "json_format": {
+      "organization": "",
+      "president_and_ceo": "",
+      "since_year": 0
+    },
+    "mode": "fast"
+  },
+  "response": {
+    "json_content": {
+      "organization": "Y Combinator",
+      "president_and_ceo": "Garry Tan",
+      "since_year": 2023
+    },
+    "sources": [
+      "https://linkedin.com/in/bridget-sherrod-1b615a246",
+      "https://linkedin.com/in/andrew-v-aguila-bba53623a",
+      "https://linkedin.com/in/mathis-cynthia-lynn-5147a9284",
+      "https://linkedin.com/in/allan-bain-96114a332",
+      "https://linkedin.com/in/valerie-h-reynolds-7360873a8"
+    ],
+    "key_metadata": {
+      "credits_consumed": 10,
+      "credits_remaining": 20294
+    },
+    "request_id": "d73fc041-3545-418a-bb69-8f8760ef734c"
+  }
+}

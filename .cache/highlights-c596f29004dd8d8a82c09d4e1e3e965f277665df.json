@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://www.python.org/downloads/source/",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "The latest stable Python 3 release is version 3.15.0.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://www.python.org/downloads/source/",
+    "passages": [
+      "[Python Source Releases]\n\n- Latest Python 3 Release - Python 3.15.2\n\n[Python Source Releases > Stable Releases]\n\n- Python 3.11.18 - Oct. 25, 2026\n- Download Gzipped source tarball\n- Download XZ compressed source tarball\n- Python 3.13.18 - Oct. 25, 2026\n- Download Gzipped source tarball\n- Download XZ compressed source tarball\n- Python 3.12.16 - Oct. 25, 2026\n- Download Gzipped source tarball\n- Download XZ compressed source tarball\n- Python 3.14.10 - Oct. 25, 2026\n- Download Gzipped source tarball\n- Download XZ compressed source tarball\n- Python 3.15.2 - Oct. 25, 2026\n- Download Gzipped source tarball\n- Download XZ compressed source tarball\n- Python 3.13.17 - Oct. 21, 2026\n- Download Gzipped source tarball\n- Download XZ compressed source tarball\n- Python 3.14.9 - Oct. 21, 2026\n- Download Gzipped source tarball\n- Download XZ compressed source tarball\n- Python 3.15.1 - Oct. 21, 2026\n- Download Gzipped source tarball\n- Download XZ compressed source tarball\n- Python 3.15.0 - Oct. 9, 2026\n- Download Gzipped source tarball\n- Download XZ compressed source tarball\n- Python 3.11.17 - Oct. 1, 2026\n- Download Gzipped source tarball\n- Download XZ compressed source tarball\n- Python 3.10.22 - Oct. 1, 2026\n- Download Gzipped source tarball\n- Download XZ compressed source tarball"
+    ]
+  }
+}

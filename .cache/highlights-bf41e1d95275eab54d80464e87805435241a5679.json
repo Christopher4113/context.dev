@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://docs.github.com/en/billing/concepts/product-billing/github-copilot-licenses",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "GitHub Copilot offers an individual plan named Copilot Student.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://docs.github.com/en/billing/concepts/product-billing/github-copilot-licenses",
+    "passages": [
+      "[GitHub Copilot licenses > Licenses for Copilot]\n\n| Account type | Options |\n| - | - |\n| **Personal accounts** | - Copilot Pro: $10 USD per calendar month. - Copilot Pro+: $39 USD per calendar month. - Copilot Max: $100 USD per calendar month. - Copilot Student: access to Copilot premium features at no cost. - Copilot Free: limited access to Copilot features at no cost. |\n| **Organizations** | Copilot Business: $19 USD per user per month (billed monthly). |\n| **Enterprises** | Two licensing models are available. See Enterprise licensing models. |\n\n…\n\n[GitHub Copilot licenses > Free use of Copilot > Educational and open source benefits]\n\n- Copilot Student offers free access to Copilot's premium features for verified students. See Access GitHub Copilot for free as a student.\n- Copilot Pro is free for verified teachers and maintainers of popular open source projects. See Access Copilot Pro for free as a teacher or open source maintainer."
+    ]
+  }
+}

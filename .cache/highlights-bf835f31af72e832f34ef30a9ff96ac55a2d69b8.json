@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://www.notion.com/pricing",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "Notion offers a paid plan named \"Business\".",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://www.notion.com/pricing",
+    "passages": [
+      "[One tool to run your company. > Plans and features]\n\nBusiness$20 per seat/monthGet started\n\n…\n\nOn the Free plan, you can upload images, videos and file attachments up to 5 MB each. Upgrade to a paid plan to upload files up to 5 GB each.\n\n…\n\n[One tool to run your company. > Questions & answers]\n\n**Advanced page analytics** **(Business Plan):** Includes everything above as well as a list of page editors.\n\n…\n\nIf you upgrade your workspace to one of the paid plans, you will be charged a fee per member."
+    ]
+  }
+}

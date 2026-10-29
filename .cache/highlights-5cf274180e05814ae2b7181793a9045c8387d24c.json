@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://endoflife.date/nodejs",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "The latest version of the Node.js LTS release line is 24.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://endoflife.date/nodejs",
+    "passages": [
+      "[Node.js]\n\n| Release | Released | Active Support | Security Support | Commercial Support | Latest |\n| - | - | - | - | - | - |\n| 26 (LTS) | 5 months and 3 weeks ago (05 May 2026) | Ends in 1 year (27 Oct 2027) | Ends in 2 years and 6 months (30 Apr 2029) | Unavailable | 26.13.0 (28 Oct 2026) |\n| 25 | 1 year ago (15 Oct 2025) | Ended 7 months ago (01 Apr 2026) | Ended 5 months ago (01 Jun 2026) | Unavailable | 25.9.0 (01 Apr 2026) |\n| 24 (LTS) | 1 year and 5 months ago (06 May 2025) | Ended 1 week and 2 days ago (20 Oct 2026) | Ends in 1 year and 6 months (30 Apr 2028) | Unavailable | 24.22.2 (28 Oct 2026) |\n| 23 | 2 years ago (16 Oct 2024) | Ended 1 year and 7 months ago (01 Apr 2025) | Ended 1 year and 5 months ago (01 Jun 2025) | Unavailable | 23.11.1 (14 May 2025) |\n| 22 (LTS) | 2 years and 6 months ago (24 Apr 2024) | Ended 1 year ago (21 Oct 2025) | Ends in 6 months (30 Apr 2027) | Yes | 22.23.4 (21 Oct 2026) |\n| 21 | 3 years ago (17 Oct 2023) | Ended 2 years and 7 months ago (01 Apr 2024) | Ended 2 years and 5 months ago (01 Jun 2024) | Unavailable | 21.7.3 (10 Apr 2024) |\n| 20 (LTS) | 3 years and 6 months ago (18 Apr 2023) | Ended 2 years ago (22 Oct 2024) | Ended 6 months ago (30 Apr 2026) | Yes | 20.20.2 (24 Mar 2026) |"
+    ]
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "request": {
+    "task": "What major changes did Tailwind CSS v4.0 introduce?",
+    "json_format": {
+      "version": "",
+      "release_date": "",
+      "key_changes": [
+        ""
+      ]
+    },
+    "mode": "fast"
+  },
+  "response": {
+    "json_content": {
+      "version": "4.0",
+      "release_date": "2025-01-22",
+      "key_changes": [
+        "New high‑performance engine built in Rust (Oxide) delivering up to 5× faster full builds and over 100× faster incremental builds",
+        "CSS‑first configuration – tailwind.config moves from JavaScript to CSS and design tokens are exposed as native CSS variables",
+        "Automatic content detection eliminates the need to manually specify the content array",
+        "First‑party Vite plugin for tighter integration and zero‑config setup",
+        "Modernized P3 color palette using OKLCH for more vivid colors",
+        "Container queries added as core features, removing the need for the external plugin",
+        "New 3D transform utilities (rotate‑x‑*, rotate‑y‑*, scale‑z‑*, translate‑z‑* etc.)",
+        "Expanded gradient APIs with linear, radial, and conic utilities, angle support, and color‑interpolation modifiers",
+        "@starting‑style variant for transition‑on‑enter without JavaScript",
+        "not‑* variant supporting the CSS :not() pseudo‑class",
+        "Additional utilities and variants such as inset‑shadow‑*, inset‑ring‑*, field‑sizing, color‑scheme, font‑stretch, inert, nth‑*, in‑*, and support for :popover‑open"
+      ]
+    },
+    "sources": [
+      "https://tailwindcss.com/blog/tailwindcss-v4"
+    ],
+    "key_metadata": {
+      "credits_consumed": 10,
+      "credits_remaining": 20439
+    },
+    "request_id": "d31db7cb-d86b-41fa-a9a6-da6e9d23e76b"
+  }
+}

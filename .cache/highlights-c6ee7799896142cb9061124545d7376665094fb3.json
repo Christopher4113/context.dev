@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://linear.app/pricing",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "Linear offers a pricing plan named Enterprise.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://linear.app/pricing",
+    "passages": [
+      "[Pricing > Enterprise]\n\nAnnual billing only\n\n- All Business features +\n- Invoice/PO billing\n- SAML and SCIM\n- Granular admin controls\n- Enterprise-grade security\n- Advanced org modeling\n- Migration & onboarding support\n- Priority support\n- Account management\n\n…\n\nFree\n\n…\n\nUnlimited\n\n…\n\n10MB\n\n…\n\nIssues, projects, cycles, initiatives\n\n…\n\nAPI and webhook access\n\nImport and export\n\n…\n\n1 level\n\n5 levels\n\n…\n\nMultiple Slack workspaces\n\nPrivate Slack channels\n\nPer-channel configurations\n\n…\n\nThird-party app management\n\n…\n\nSCIM provisioning\n\n…\n\nUptime SLA\n\n…\n\n\\*\\* Requires AI creditsView docs"
+    ]
+  }
+}

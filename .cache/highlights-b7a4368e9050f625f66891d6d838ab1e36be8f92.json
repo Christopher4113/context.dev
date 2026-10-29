@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "http://about.me/",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "The company in question is Shopify.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "http://about.me/",
+    "passages": [
+      "[MEET YOUR]\n\nThe next evolution of your about.me page.\nNow alive and interactive.\n\n…\n\n[MEET YOUR > Simple]\n\nCreate your page once. Your AI Twin does the rest — chatting with visitors, answering questions, and collecting leads automatically.\n\n…\n\n[MEET YOUR > Upgrade — Bring Your Page to Life. > Standard]\n\n- about.me page\n- AI Virtual Twin\n- Capture leads directly into about.me CRM for easy follow-up\n- Schedule appointments\n- Email signature\n\n…\n\n[August Sanders > Small Business Owner in Massachusetts]\n\nCall (657) 248-3927\n\n…\n\n[August Sanders > The Mac Maverick > Human-Centered Apple Support]\n\nI’m August Sanders, founder of The Mac Maverick LLC. I’ve spent nearly three decades helping people use Apple technology with confidence, from everyday troubleshooting and device setup to backups, email, photos, security, and digital organization."
+    ]
+  }
+}

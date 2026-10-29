@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://www.sentra.app/articles/claude-api-pricing",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "One of the current Anthropic API models is Claude Haiku 5.5, priced here for prompts of up to 100,000 tokens.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://www.sentra.app/articles/claude-api-pricing",
+    "passages": [
+      "[Claude API Pricing (2026): Per-Million-Token Rates for Every Model]\n\nAs of October 2026, the Claude API costs $4 per million input tokens and $20 per million output tokens on Claude Opus 5.5, $2 and $10 on Claude Sonnet 5.5, $0.10 and $0.50 on Claude Haiku 5.5 for prompts up to 100,000 tokens ($0.50 and $2.50 above that), and $10 and $50 on Claude Fable 5.1, according to Anthropic's pricing docs. Billing is per million tokens, charged separately for input and output.&#x20;\n\n…\n\n[Claude API Pricing (2026): Per-Million-Token Rates for Every Model > Claude Haiku 5.5 pricing: the 100,000-token price step]\n\nClaude Haiku 5.5 is the one current model priced by prompt length. A request whose prompt is up to 100,000 tokens pays $0.10 per million input tokens and $0.50 per million output tokens. A request whose prompt is over 100,000 tokens pays $0.50 and $2.50 on all of its tokens, not only on the part above the line. Cache writes ($0.125 or $0.625 for 5 minutes, $0.20 or $1 for an hour) and cache reads ($0.01 or $0.05) step up the same way. The prompt length counts every input token in the request, including cache reads and cache writes, and each request is priced on its own, so a conversation that grows past 100,000 tokens pays the higher rate from that turn on while earlier turns keep the price they were billed at (Anthropic pricing docs).\n\n…\n\n[Claude API Pricing (2026): Per-Million-Token Rates for Every Model > API rates or a subscription: the break-even]\n\n| Model | Blended cost per 1M tokens | Tokens equal to $20/mo | Roughly per working day |\n| - | - | - | - |\n| Claude Haiku 5.5 (prompts up to 100,000 tokens) | $0.18 | 111.1M | 5.05M |\n| Claude Haiku 4.5 (legacy) | $1.80 | 11.1M | 505k |\n| Claude Sonnet 5.5 | $3.60 | 5.6M | 253k |\n| Claude Opus 5.5 | $7.20 | 2.8M | 126k |\n| Claude Opus 5 (legacy) | $9.00 | 2.2M | 101k |\n| Claude Fable 5.1 | $18.00 | 1.1M | 51k |"
+    ]
+  }
+}

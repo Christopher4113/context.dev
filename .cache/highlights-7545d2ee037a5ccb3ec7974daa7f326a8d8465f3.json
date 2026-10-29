@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://www.linkedin.com/company/anthropicresearch/",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "The Chief Science Officer of Anthropic is Jared Kaplan.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://www.linkedin.com/company/anthropicresearch/",
+    "passages": [
+      "[Anthropic > About us]\n\nWe're an AI research company that builds reliable, interpretable, and steerable AI systems. Our first product is Claude, an AI assistant for tasks at any scale. Our research interests span multiple areas including natural language, human feedback, scaling laws, reinforcement learning, code generation, and interpretability.\n\n…\n\n501-1,000 employees\n\n…\n\nPrivately Held\n\n[Anthropic > Employees at Anthropic]\n\n- **Steve Jarrett**\n\n- **Sameer Dholakia**\n\n- **Patrick Gates**\n\n- **Ravi Mhatre**\n\n…\n\n[Anthropic > Updates]\n\nAnthropic files S-1 with the SEC for proposed initial public offering anthropic.com"
+    ]
+  }
+}

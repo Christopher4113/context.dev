@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://www.context.dev/pricing",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "The context.dev Free plan costs $0 per month.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://www.context.dev/pricing",
+    "passages": [
+      "[Straightforward, transparent pricing > Plans > Free Tier]\n\n$0/month\n\n…\n\n[Straightforward, transparent pricing > Frequently asked questions]\n\nYes. The free tier includes 1,000 API credits per month, enough for 1,000 standard scrapes, plus 10K one-time Logo Link requests, with no credit card required.\n\n…\n\nThe Free plan includes 1,000 API credits that renew every month. Paid plans can use Auto-Topup in 1K-credit blocks: Developer $3.00, Pro $2.00, Growth $1.50, Scale $1.00, and Scale 2.5M $0.75 for new subscriptions. Existing subscriptions keep their rates. With insufficient credits and no available top-up, any plan returns 401 USAGE\\_EXCEEDED. Logo Link has a separate quota."
+    ]
+  }
+}

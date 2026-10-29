@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://www.linkedin.com/company/incubadoracultura/",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "Patrick Collison is a founder of Stripe.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://www.linkedin.com/company/incubadoracultura/",
+    "passages": [
+      "[Stripe > About us]\n\nEspai per al foment i divulgació de la creació artística, per a la gestió del fons històric i cultural de Bartomeu Rebés i Duran i nova seu d’Editorial Andorra. Espacio para el fomento y divulgación de la creación artística, para la gestión del fondo histórico y cultural de Bartomeu Rebés i Duran y nueva sede de Editorial Andorra. Organisation for the promotion and dissemination of artistic creation, for the management of the historical and cultural collection of Bartomeu Rebés i Duran and new headquarters of Editorial Andorra.\n\n…\n\nAndorra la Vella, Andorra\n\n…\n\nPrivately Held\n\nFounded\n\n…\n\n[Stripe > Locations]\n\nAndorra la Vella, Andorra AD500, AD"
+    ]
+  }
+}

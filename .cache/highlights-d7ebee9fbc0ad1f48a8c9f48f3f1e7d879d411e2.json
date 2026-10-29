@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://www.herodevs.com/blog-posts/node-js-end-of-life-dates-you-should-be-aware-of",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "The latest version of the Node.js LTS release line is 24.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://www.herodevs.com/blog-posts/node-js-end-of-life-dates-you-should-be-aware-of",
+    "passages": [
+      "[Node.js Version Support: EOL Dates and Latest Releases (July 2026) > Complete Node.js Version Timeline]\n\nThe only fully supported lines today are Node.js 26 (Current), 24 (Active LTS), and 22 (Maintenance LTS). Everything else is end-of-life.\n\n…\n\n[Node.js Version Support: EOL Dates and Latest Releases (July 2026) > Frequently Asked Questions > What is the latest Node.js LTS version?]\n\nNode.js 24 is the Active LTS line (EOL April 30, 2028) and Node.js 22 is in Maintenance LTS (EOL April 30, 2027). Node.js 26, released in May 2026, is the Current line and is scheduled to enter LTS in October 2026."
+    ]
+  }
+}

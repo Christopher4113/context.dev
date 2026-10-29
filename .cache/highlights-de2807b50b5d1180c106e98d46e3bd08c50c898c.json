@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://docs.github.com/en/billing/concepts/product-billing/github-copilot-licenses",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "The GitHub Copilot Max plan costs $100 per month.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://docs.github.com/en/billing/concepts/product-billing/github-copilot-licenses",
+    "passages": [
+      "[GitHub Copilot licenses > Licenses for Copilot]\n\n| Account type | Options |\n| - | - |\n| **Personal accounts** | - Copilot Pro: $10 USD per calendar month. - Copilot Pro+: $39 USD per calendar month. - Copilot Max: $100 USD per calendar month. - Copilot Student: access to Copilot premium features at no cost. - Copilot Free: limited access to Copilot features at no cost. |\n| **Organizations** | Copilot Business: $19 USD per user per month (billed monthly). |\n| **Enterprises** | Two licensing models are available. See Enterprise licensing models. |\n\n…\n\n[GitHub Copilot licenses > Licenses for Copilot > Enterprise licensing models]\n\nMost enterprises already using Copilot have Copilot Business or Copilot Enterprise. These plans charge a monthly fee per assigned seat and include a pooled allowance of AI credits.\n\nThe Copilot access plan is rolling out to eligible enterprises. It provides Copilot through GitHub Enterprise Cloud with no Copilot seat charge, or as Copilot Standalone for $10 USD per user per month without a GitHub Enterprise Cloud license. It has no included usage allowance. Existing plans remain supported, and transitioning is voluntary."
+    ]
+  }
+}

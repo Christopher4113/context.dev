@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://www.facebook.com/anthropicai",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "The company in question is Anthropic.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://www.facebook.com/anthropicai",
+    "passages": [
+      "[Anthropic > Intro]\n\nAnthropic is an AI safety and research company that’s working to build reliable, interpretable, and steerable AI systems.\n\n…\n\nANTHROPIC PBC\n\n…\n\nanthropic.com\n\n…\n\n[Anthropic > Anthropic]\n\nA.A.Murakami create immersive, multisensory installations that merge technology with ephemeral natural phenomena like fog, bubbles, and plasma. In their latest piece, C…\n\n…\n\nMilk AI LLC"
+    ]
+  }
+}

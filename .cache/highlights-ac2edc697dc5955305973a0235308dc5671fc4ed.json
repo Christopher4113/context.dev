@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "http://blog.leetsoft.com/",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "Shopify's CEO is Tobias Lütke.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "http://blog.leetsoft.com/",
+    "passages": [
+      "[Tobi Lütke]\n\nShopify CEO\n\n…\n\n[We need to talk about carbon December 22 2019 > We urge you to join us]\n\n\\- tobi\nCEO Shopify"
+    ]
+  }
+}

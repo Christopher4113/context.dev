@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://www.linkedin.com/company/context-experiments/",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "Context.dev's latest funding round raised 9000000 USD.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://www.linkedin.com/company/context-experiments/",
+    "passages": [
+      "[Context > About us]\n\nLet your entire team A/B test, monitor, and personalize user experiences. Move faster without losing control by making feature management product-focused.\n\n…\n\nSoftware Development\n\nCompany size\n\n…\n\nFounded\n\n2020"
+    ]
+  }
+}

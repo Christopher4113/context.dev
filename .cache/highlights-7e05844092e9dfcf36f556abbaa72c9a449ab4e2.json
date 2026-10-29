@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "http://blog.leetsoft.com/",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "The company in question is Shopify.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "http://blog.leetsoft.com/",
+    "passages": [
+      "[We need to talk about carbon December 22 2019]\n\nShopify has taken many steps to build a sustainable company, including becoming carbon neutral. We’re setting best-in-class standards by buying offsets for all the carbon this company has ever used and will ever use, and we choose renewable energy to heat and power our operations.\n\n…\n\n[We need to talk about carbon December 22 2019 > We’re launching the Shopify Sustainability Fund]\n\n> Shopify commits to spending at least $5 million USD annually to fight for our environment.\n\nThe Shopify Sustainability Fund will house all of our environmental investments, including carbon sequestration. Our intention is to increase our financial commitment annually based on our revenue growth.\n\n…\n\n- **Buying $1M of sequestered carbon annually at any price:** Shopify is committed to investing at least $1 million USD each year into carbon sequestration. Our goal is to kickstart the demand and predictability of this market so industrial engineering can scale and the price can come down. \n\n- **Carbon-neutral operations:** We've bought enough renewable energy to neutralize our carbon footprint in Canada, and in 2020 we plan to power 100% of our global operations with renewable energy. We’ll offset all travel-related emissions too.\n\n- **Carbon-neutral platform**: All of Shopify runs in data centers powered by renewable energy.\n\n- **Sustainable offices:** We look for LEED-certified office space, and most of our square footage is LEED Gold or Platinum. We’ve chosen buildings in areas with high transit and walkability scores, and built with local materials wherever possible. This also includes minor but locally impactful things like adding bike racks and storage to every office."
+    ]
+  }
+}

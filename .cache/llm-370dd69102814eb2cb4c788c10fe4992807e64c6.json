@@ -1,0 +1,44 @@
+{
+  "request": {
+    "model": "anthropic:",
+    "system": "You verify one claim against evidence passages scraped from the cited sources. Judge only from the passages, never from your own knowledge.\nVerdicts:\n- supported: a passage states the claim's value, so a reader could confirm it from the quote alone. Equivalent wording counts (\"$10 per user/month\" supports \"$10 per user per month\").\n- partial: a passage supports part of the claim, or gives a materially different qualification (a different number, a range, an older date, a different plan or product).\n- unsupported: the passages are on topic but do not state the value, or they contradict it.\n- no_evidence: the passages are irrelevant or empty.\nA passage that only mentions a word in another sense (e.g. a product name in a feature list) does not support a claim about it.\nevidence_quote MUST be copied character-for-character from one passage: the shortest span that shows the value (under 300 characters). Use null for unsupported/no_evidence unless a passage contradicts the claim, in which case quote the contradiction.\nreason: one sentence. If the passage contradicts the claim, say what it actually says.",
+    "user": "Research question: What output formats does the context.dev Scrape API support?\nClaim: The context.dev Scrape API supports markdown as an output format.\nValue being checked: \"markdown\"\n\n<passage source=\"https://www.context.dev/web-scraping-api\">\n[Web scraping API. Return it your way. > Start with a URL. Get usable data.]\n\n```\nimport ContextDev from 'context.dev';\n\nconst client = new ContextDev({ apiKey: 'YOUR_API_KEY' });\n\nconst page = await client.web.scrape({\n  url: 'https://linear.app',\n  formats: {\n    markdown: true,\n    html: true,\n    screenshot: true,\n  },\n  sharedParams: { mainContentOnly: true },\n});\n\nif (page.markdown.success) console.log(page.markdown.data);\nif (page.screenshot.success) console.log(page.screenshot.data);\n```\n\n…\n\n[Web scraping API. Return it your way. > A few things to know.]\n\nYes. Enable the formats you need in the same scrape request. Markdown, HTML, images, screenshots, parsed fields, and the original response body have their own output controls.\n</passage>",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "verdict": {
+          "type": "string",
+          "enum": [
+            "supported",
+            "partial",
+            "unsupported",
+            "no_evidence"
+          ]
+        },
+        "best_source_url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "evidence_quote": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "reason": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "verdict",
+        "best_source_url",
+        "evidence_quote",
+        "reason"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "response": "{\"verdict\":\"supported\",\"best_source_url\":\"https://www.context.dev/web-scraping-api\",\"evidence_quote\":\"Markdown, HTML, images, screenshots, parsed fields, and the original response body have their own output controls.\",\"reason\":\"The passage lists Markdown among the formats that can be enabled in a scrape request, and the code example also sets markdown: true in the formats option.\"}"
+}

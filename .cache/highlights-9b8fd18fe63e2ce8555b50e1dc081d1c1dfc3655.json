@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "http://about.me/",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "Shopify's CEO is Tobias Lütke.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "http://about.me/",
+    "passages": [
+      "[Dr Manoja Kalupahana > BSc MBChB FANZCA]\n\nDr Manoja Kalupahana is an experienced Consultant Anaesthetist, medical leader and governance professional with over 18 years of experience in New Zealand's public and private healthcare sectors.\n\n…\n\nAlongside her public healthcare role, Manoja is a Director and Specialist Anaesthetist in private practice, with expertise in urological and robotic anaesthesia. She also serves as an Anaesthetic Advisor to Mobile Health Group, focusing on clinical governance, credentialing and patient safety. Manoja has a number of other governance and committee roles.\n\n…\n\nManoja has completed the Institute of Directors' Company Directors' Course and is currently working towards her Chartered Director qualification.\n\nShe is passionate about combining clinical expertise, strategic leadership and effective governance to improve healthcare outcomes and support the medical profession.\n\n…\n\n[August Sanders > The Mac Maverick > Human-Centered Apple Support]\n\nI’m August Sanders, founder of The Mac Maverick LLC. I’ve spent nearly three decades helping people use Apple technology with confidence, from everyday troubleshooting and device setup to backups, email, photos, security, and digital organization."
+    ]
+  }
+}

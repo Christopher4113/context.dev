@@ -1,0 +1,44 @@
+{
+  "request": {
+    "model": "anthropic:",
+    "system": "You verify one claim against evidence passages scraped from the cited sources. Judge only from the passages, never from your own knowledge.\nVerdicts:\n- supported: a passage states the claim's value, so a reader could confirm it from the quote alone. Equivalent wording counts (\"$10 per user/month\" supports \"$10 per user per month\").\n- partial: a passage supports part of the claim, or gives a materially different qualification (a different number, a range, an older date, a different plan or product).\n- unsupported: the passages are on topic but do not state the value, or they contradict it.\n- no_evidence: the passages are irrelevant or empty.\nA passage that only mentions a word in another sense (e.g. a product name in a feature list) does not support a claim about it.\nevidence_quote MUST be copied character-for-character from one passage: the shortest span that shows the value (under 300 characters). Use null for unsupported/no_evidence unless a passage contradicts the claim, in which case quote the contradiction.\nreason: one sentence. If the passage contradicts the claim, say what it actually says.",
+    "user": "Research question: What is the Anthropic API price per million input and output tokens for Claude Haiku, Sonnet, and Opus (current versions)?\nClaim: One of the current Anthropic API models is Claude Opus 5.5.\nValue being checked: \"Claude Opus 5.5\"\n\n<passage source=\"https://www-cdn.anthropic.com/files/4zrzovbb/website/3684c2faafb97418665782cea0001f439f74b1d2.pdf\">\n…\n\nSt andard \tGlobal \tAll \t$3.00 \t$15.00 \t$3.75 \t$6.00 \t$0.30\nSt andard \tUS-only inference \tAll \t$3.30 \t$16.50 \t$4.125 \t$6.60 \t$0.33\nBatch\nproces s ing Global \tAll \t$1.50 \t$7.50 \t$1.875 \t$3.00 \t$0.15\nBatch\nproces s ing US-only inference \tAll \t$1.65 \t$8.25 \t$2.0625 \t$3.30 \t$0.165\nClaude Opus 4.5 — Claude API\nP RICING T IER S CO P E CO NT EXT\nWIND O W\nBAS E INP UT\nT O KENS\nO UT P UT\nT O KENS\n5M CACHE\nWRIT ES\n1H CACHE\nWRIT ES\nCACHE HIT S\n& REFRES HES\nSt andard \tGlobal \t≤200K \t$5.00 \t$25.00 \t$6.25 \t$10.00 \t$0.50\nBatch\nproces s ing Global \t≤200K \t$2.50 \t$12.50 \t$3.125 \t$5.00 \t$0.25\n\n…\n\nT O KENS\n5M CACHE\nWRIT ES\n1H CACHE\nWRIT ES\nCACHE HIT S\n& REFRES HES\nSt andard \tGlobal \t≤200K \t$0.80 \t$4.00 \t$1.00 \t$1.60 \t$0.08\nSt andard \tGlobal \t1M \t$1.60 \t$16.00 \t$2.00 \t$3.20 \t$0.16\nBatch\nproces s ing Global \t≤200K \t$0.40 \t$2.00 \t$0.50 \t$0.80 \t$0.04\nBatch\nproces s ing Global \t1M \t$0.80 \t$8.00 \t$1.00 \t$1.60 \t$0.08\nPage 4\tClaude Mo del Pricing\nClaude 3 Opus — Claude API\nP RICING T IER S CO P E CO NT EXT\nWIND O W\nBAS E INP UT\nT O KENS\nO UT P UT\nT O KENS\n5M CACHE\nWRIT ES\n1H CACHE\nWRIT ES\nCACHE HIT S\n& REFRES HES\nSt andard \tGlobal \t≤200K \t$15.00 \t$75.00 \t$18.75 \t$30.00 \t$1.50\nBatch\n\n…\n\nGlobal Cros s\nRegion All \t$1.50 \t$7.50 \t— \t— \t—\nBatch\nproces s ing\nIn-Region & Geo\nCros s Region All \t$1.65 \t$8.25 \t— \t— \t—\nPage 6\tClaude Mo del Pricing\nP RICING T IER S CO P E CO NT EXT\nWIND O W\nBAS E INP UT\nT O KENS\nO UT P UT\nT O KENS\n5M CACHE\nWRIT ES\n1H CACHE\nWRIT ES\nCACHE HIT S\n& REFRES HES\nBatch\nproces s ing AWS GovCloud (US) All \t$1.80 \t$9.00 \t— \t— \t—\nClaude Opus 4.5 — AWS Bedrock\nP RICING T IER S CO P E CO NT EXT\nWIND O W\nBAS E INP UT\nT O KENS\nO UT P UT\nT O KENS\n5M CACHE\nWRIT ES\n1H CACHE\nWRIT ES\nCACHE HIT S\n& REFRES HES\nSt andard Global Cros s\n</passage>\n\n<passage source=\"https://www.sentra.app/articles/claude-api-pricing\">\n…\n\n[Claude API Pricing (2026): Per-Million-Token Rates for Every Model]\n\nOpus 5.5 was released on 22 September, replacing Opus 5 at $5 and $25, Sonnet 5.5 on 28 September at the same rates as Sonnet 5, and Haiku 5.5 on 7 October, priced well below Claude Haiku 4.5, which is still sold at $1 and $5. Prompt caching cuts repeat input to 0.1x the base rate (0.05x on Opus 5.5 and Sonnet 5.5, 0.025x on Fable 5.1), the Batch API halves both directions, and the full 1M-token context window is charged at standard rates on every current model except Haiku 5.5, whose price steps up once a prompt passes 100,000 tokens.&#x20;\n\n…\n\n[Claude API Pricing (2026): Per-Million-Token Rates for Every Model > Claude API pricing per million tokens]\n\nCache reads are 0.1x the base input price on every model except Fable 5.1 and Mythos 5.1, where they are 0.025x ($0.25 per million), and Opus 5.5 and Sonnet 5.5, where they are 0.05x ($0.20 and $0.10 per million). Anthropic halved Sonnet 5.5's cache-read price from $0.20 to $0.10 when it launched Haiku 5.5. Retired models still reachable through Amazon Bedrock and Google Cloud carry their old rates: Claude Opus 4.1 and Opus 4 remain $15 in and $75 out, which is 3.75 times the Opus 5.5 price of $4 and $20 for a worse model, so check which model id your code actually pins. Claude Haiku 5.5, released on 7 October 2026 (Anthropic's Haiku 5.5 announcement), is now the cheapest current model, and Haiku 4.5 stays available at $1 and $5 for code that pins it.\n\n…\n\n[Claude API Pricing (2026): Per-Million-Token Rates for Every Model > What do Claude Opus 5.5 fast mode and US-only inference cost?]\n\n| Model | Standard (in / out) | Fast mode (in / out) | US-only standard (in / out) | Fast mode + US-only (in / out) |\n| - | - | - | - | - |\n| Claude Opus 5.5 | $4 / $20 | $8 / $40 | $4.40 / $22 | $8.80 / $44 |\n| Claude Opus 5 | $5 / $25 | $10 / $50 | $5.50 / $27.50 | $11 / $55 |\n| Claude Opus 4.8 | $5 / $25 | $10 / $50 | $5.50 / $27.50 | $11 / $55 |\n</passage>",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "verdict": {
+          "type": "string",
+          "enum": [
+            "supported",
+            "partial",
+            "unsupported",
+            "no_evidence"
+          ]
+        },
+        "best_source_url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "evidence_quote": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "reason": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "verdict",
+        "best_source_url",
+        "evidence_quote",
+        "reason"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "response": "{\"verdict\":\"supported\",\"best_source_url\":\"https://www.sentra.app/articles/claude-api-pricing\",\"evidence_quote\":\"Opus 5.5 was released on 22 September, replacing Opus 5 at $5 and $25\",\"reason\":\"The Sentra article describes Claude Opus 5.5 as a released model that replaced Opus 5 and lists its current pricing, so it is presented as a current API model.\"}"
+}

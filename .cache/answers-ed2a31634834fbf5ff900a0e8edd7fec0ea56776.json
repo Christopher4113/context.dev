@@ -1,0 +1,45 @@
+{
+  "request": {
+    "task": "Company facts about Context.dev (context.dev), the web data API for AI agents: founders, accelerator batch, and latest funding round.",
+    "json_format": {
+      "company": "",
+      "founders": [
+        ""
+      ],
+      "accelerator_batch": "",
+      "latest_funding": {
+        "round": "",
+        "amount_usd": ""
+      }
+    },
+    "mode": "fast"
+  },
+  "response": {
+    "json_content": {
+      "company": "Context.dev",
+      "founders": [
+        "Yahia Bakour"
+      ],
+      "accelerator_batch": "Y Combinator S26",
+      "latest_funding": {
+        "round": "Seed",
+        "amount_usd": "9000000"
+      }
+    },
+    "sources": [
+      "https://www.linkedin.com/company/context-experiments/",
+      "https://www.linkedin.com/company/contextdev",
+      "https://x.com/getcontextdev",
+      "https://www.crunchbase.com/organization/context-dev",
+      "https://www.linkedin.com/company/branddev",
+      "https://context.dev",
+      "https://www.context.dev/blog/were-now-backed-by-ycombinator",
+      "https://www.context.dev/blog/context-dev-raises-9m-seed-led-by-general-catalyst"
+    ],
+    "key_metadata": {
+      "credits_consumed": 10,
+      "credits_remaining": 20795
+    },
+    "request_id": "c23da856-1a14-4687-b333-a76d2b8408c7"
+  }
+}

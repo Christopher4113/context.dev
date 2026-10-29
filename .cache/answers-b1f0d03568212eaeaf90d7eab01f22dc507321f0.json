@@ -1,0 +1,42 @@
+{
+  "request": {
+    "task": "Company facts about Stripe: founders, founding year, and headquarters city.",
+    "json_format": {
+      "company": "",
+      "founders": [
+        ""
+      ],
+      "founded_year": 0,
+      "headquarters": ""
+    },
+    "mode": "fast"
+  },
+  "response": {
+    "json_content": {
+      "company": "Stripe",
+      "founders": [
+        "Patrick Collison",
+        "John Collison"
+      ],
+      "founded_year": 2010,
+      "headquarters": "South San Francisco"
+    },
+    "sources": [
+      "https://www.linkedin.com/company/stripe/",
+      "https://www.linkedin.com/company/incubadoracultura/",
+      "https://www.linkedin.com/company/stripe-agency/",
+      "https://x.com/stripe",
+      "https://github.com/stripe",
+      "https://github.com/stripe-samples",
+      "https://facebook.com/stripehq",
+      "https://wellfound.com/company/stripe",
+      "https://www.crunchbase.com/organization/stripe",
+      "https://stripe.com"
+    ],
+    "key_metadata": {
+      "credits_consumed": 10,
+      "credits_remaining": 20835
+    },
+    "request_id": "dd1ae072-4787-4516-809e-c45d75ccff69"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "request": {
+    "task": "What is the latest major version of PostgreSQL and three headline features of that release?",
+    "json_format": {
+      "latest_major_version": "",
+      "release_date": "",
+      "headline_features": [
+        ""
+      ]
+    },
+    "mode": "fast"
+  },
+  "response": {
+    "json_content": {
+      "latest_major_version": "PostgreSQL 18",
+      "release_date": "2025-09-25",
+      "headline_features": [
+        "asynchronous I/O subsystem",
+        "native UUID v7 support",
+        "virtual generated columns"
+      ]
+    },
+    "sources": [
+      "https://www.instaclustr.com/education/postgresql/postgres-versions-supported-releases-eol-dates-upgrades/"
+    ],
+    "key_metadata": {
+      "credits_consumed": 10,
+      "credits_remaining": 20475
+    },
+    "request_id": "43765455-e5b4-4d3b-ab04-64fc120b3462"
+  }
+}

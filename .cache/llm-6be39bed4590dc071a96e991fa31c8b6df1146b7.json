@@ -1,0 +1,36 @@
+{
+  "request": {
+    "model": "anthropic:",
+    "system": "Rewrite each field of a research answer as one standalone, checkable factual sentence. Name the subject explicitly (e.g. the company). Keep the value exactly as given. Do not add facts.",
+    "user": "Question: When and where was Cal Hacks 12.0 held, and how many hackers attended?\n\nFields:\n- event (event) = \"Cal Hacks 12.0\"\n- dates (dates) = \"October 24–26, 2025\"\n- location (location) = \"Palace of Fine Arts, San Francisco\"\n- attendees (attendees) = \"3000\"\n\nReturn {\"claims\":[{\"path\",\"claim\"}]} with one entry per field.",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "claims": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "path": {
+                "type": "string"
+              },
+              "claim": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "path",
+              "claim"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "claims"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "response": "{\"claims\":[{\"path\":\"event\",\"claim\":\"The event in question is Cal Hacks 12.0.\"},{\"path\":\"dates\",\"claim\":\"Cal Hacks 12.0 was held on October 24–26, 2025.\"},{\"path\":\"location\",\"claim\":\"Cal Hacks 12.0 was held at the Palace of Fine Arts, San Francisco.\"},{\"path\":\"attendees\",\"claim\":\"Cal Hacks 12.0 was attended by 3000 hackers.\"}]}"
+}

@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://linear.app/pricing",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "Linear offers a pricing plan named Free.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://linear.app/pricing",
+    "passages": [
+      "[Pricing > Free]\n\n$0\n\nFree for everyone\n\n- Unlimited members\n- 2 teams\n- 250 issues\n- Agent platform\n- Linear Agent\n\n…\n\n[Pricing > Basic]\n\n$10 per user/month$10 per user/month\n\nBilled yearly\n\n- All Free features +\n- 5 teams\n- Unlimited issues\n- Unlimited file uploads\n- Admin roles\n- Loops\n\n…\n\n[Pricing > Enterprise]\n\nAnnual billing only\n\n…\n\nFree\n\n…\n\nUnlimited"
+    ]
+  }
+}

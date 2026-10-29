@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://www.instaclustr.com/education/postgresql/postgres-versions-supported-releases-eol-dates-upgrades/",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "One headline feature of the latest major PostgreSQL release is virtual generated columns.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://www.instaclustr.com/education/postgresql/postgres-versions-supported-releases-eol-dates-upgrades/",
+    "passages": [
+      "[Postgres Versions: Supported Releases, EOL Dates & Upgrades > What Is Postgres Versioning?]\n\n| Major Version | Initial Release | End of Life (EOL) | Current Minor Release | Notes |\n| - | - | - | - | - |\n| PostgreSQL 18 | Sep 2025 | Nov 2030 | 18.4 | Latest version; introduces a modern I/O subsystem. |\n| PostgreSQL 17 | Sep 2024 | Nov 2029 | 17.10 | Enhanced JSON/SQL querying and major Vacuum improvements. |\n| PostgreSQL 16 | Sep 2023 | Nov 2028 | 16.14 | Strong parallel query performance and JSON handling. |\n| PostgreSQL 15 | Oct 2022 | Nov 2027 | 15.18 | Introduction of SQL/JSON routines. |\n| PostgreSQL 14 | Sep 2021 | Nov 2026 | 14.23 | Supported until late 2026. |\n\n…\n\n[Postgres Versions: Supported Releases, EOL Dates & Upgrades > What Is the Current Version of PostgreSQL?]\n\nAs of June 2026, the latest stable PostgreSQL release is **PostgreSQL 18.4**. The PostgreSQL Global Development Group also maintains supported update releases for earlier major versions, including PostgreSQL 17.10, 16.14, 15.18, and 14.23. These minor releases include security fixes and bug fixes, making them the recommended versions for production environments running those major releases.\n\n…\n\n[Postgres Versions: Supported Releases, EOL Dates & Upgrades > Postgres Versions History]\n\nThe table below summarizes the latest supported PostgreSQL major versions and their current minor releases as of June 2026. The latest stable release is PostgreSQL 18.4, while PostgreSQL 14 remains supported but is approaching end-of-life in November 2026. PostgreSQL 13 and earlier versions are no longer supported and should be upgraded for production use."
+    ]
+  }
+}

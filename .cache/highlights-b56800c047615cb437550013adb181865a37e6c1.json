@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://www-cdn.anthropic.com/files/4zrzovbb/website/3684c2faafb97418665782cea0001f439f74b1d2.pdf",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "One of the current Anthropic API models is Claude Sonnet 5.5.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://www-cdn.anthropic.com/files/4zrzovbb/website/3684c2faafb97418665782cea0001f439f74b1d2.pdf",
+    "passages": [
+      "…\n\nBAS E INP UT\nT O KENS\nO UT P UT\nT O KENS\n5M CACHE\nWRIT ES\n1H CACHE\nWRIT ES\nCACHE HIT S\n& REFRES HES\nSt andard \tGlobal \t≤200K \t$3.00 \t$15.00 \t$3.75 \t$6.00 \t$0.30\nBatch\nproces s ing Global \t≤200K \t$1.50 \t$7.50 \t$1.875 \t$3.00 \t$0.15\nClaude 3.7 Sonnet — Claude API\nP RICING T IER S CO P E CO NT EXT\nWIND O W\nBAS E INP UT\nT O KENS\nO UT P UT\nT O KENS\n5M CACHE\nWRIT ES\n1H CACHE\nWRIT ES\nCACHE HIT S\n& REFRES HES\nSt andard \tGlobal \t≤200K \t$3.00 \t$15.00 \t$3.75 \t$6.00 \t$0.30\nSt andard \tGlobal \t1M \t$6.00 \t$60.00 \t$7.50 \t$12.00 \t$0.60\nBatch\nproces s ing Global \t≤200K \t$1.50 \t$7.50 \t$1.875 \t$3.00 \t$0.15\nBatch\n\n…\n\nproces s ing Global \t≤200K \t$7.50 \t$37.50 \t$9.375 \t$15.00 \t$0.75\nClaude 3 Sonnet — Claude API\nP RICING T IER S CO P E CO NT EXT\nWIND O W\nBAS E INP UT\nT O KENS\nO UT P UT\nT O KENS\n5M CACHE\nWRIT ES\n1H CACHE\nWRIT ES\nCACHE HIT S\n& REFRES HES\nSt andard \tGlobal \t≤200K \t$3.00 \t$15.00 \t— \t— \t—\nIf Cus tomer acces s es Claude API through the Claude Platform on AWS (a Marketplace Platform), us age will be invoiced in\nClaude Cons umption Units (\"CCU\"). A CCU is a unit of meas ure us ed for Claude Platform on AWS invoicing. One hundred\n(100) CCU repres ents $1.00 USD of fees owed for the Services .\n\n…\n\nRegion ≤200K \t$5.00 \t$25.00 \t$6.25 \t$10.00 \t$0.50\nSt andard In-Region & Geo\nCros s Region \\* ≤200K \t$5.50 \t$27.50 \t$6.875 \t$11.00 \t$0.55\nSt andard In-Region & Geo\nCros s Region \\* ≤200K \t$5.50 \t$27.50 \t$6.875 \t— \t$0.55\nBatch\nproces s ing\nGlobal Cros s\nRegion ≤200K \t$2.50 \t$12.50 \t— \t— \t—\nBatch\nproces s ing\nIn-Region & Geo\nCros s Region ≤200K \t$2.75 \t$13.75 \t— \t— \t—\nClaude Sonnet 4.5 — AWS Bedrock\nP RICING T IER S CO P E CO NT EXT\nWIND O W\nBAS E INP UT\nT O KENS\nO UT P UT\nT O KENS\n5M CACHE\nWRIT ES\n1H CACHE\nWRIT ES\nCACHE HIT S\n& REFRES HES\nSt andard Global Cros s"
+    ]
+  }
+}

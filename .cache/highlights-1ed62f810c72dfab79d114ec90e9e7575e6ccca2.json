@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://microsoft.ai/",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "Microsoft's CFO is Amy Hood.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://microsoft.ai/",
+    "passages": [
+      "[Humanist > MAI Image 2.7 debuts above GPT Image 2.5 Flare on Artificial Analysis and #3 on Arena > Frontier Pre-training at Microsoft AI]\n\nMicrosoft AI\n\n…\n\n[Humanist > At MAI, we’re building the world’s most capable AI systems, with humanity at the center of every decision.]\n\nAt MAI, we’re building the world’s\n\n…\n\nHumanist Superintelligence means building the world’s most advanced AI systems designed to stay controllable, aligned, and firmly in service of humanity.\n\nHumanist Superintelligence means building the world’s most advanced AI\n\n…\n\n[Humanist > Key Locations > Paris]\n\nMustafa Suleyman\nCEO Microsoft AI"
+    ]
+  }
+}

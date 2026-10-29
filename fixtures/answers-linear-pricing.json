@@ -1,0 +1,21 @@
+{
+  "request": {
+    "task": "What are the pricing plans for Linear (linear.app)? Give plan names and monthly per-user prices.",
+    "json_format": { "company": "", "plans": [{ "name": "", "price_per_user_monthly": "" }], "free_plan_available": true },
+    "mode": "fast"
+  },
+  "response": {
+    "json_content": {
+      "company": "Linear",
+      "plans": [
+        { "name": "Free", "price_per_user_monthly": "$0" },
+        { "name": "Basic", "price_per_user_monthly": "$10" },
+        { "name": "Business", "price_per_user_monthly": "$16" },
+        { "name": "Enterprise", "price_per_user_monthly": null }
+      ],
+      "free_plan_available": true
+    },
+    "sources": ["https://linear.app/pricing"],
+    "request_id": "90e27dd5-a7c8-4cfc-af14-d1d837317162"
+  }
+}
