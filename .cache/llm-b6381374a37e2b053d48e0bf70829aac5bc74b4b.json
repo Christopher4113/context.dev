@@ -1,0 +1,44 @@
+{
+  "request": {
+    "model": "anthropic:claude-opus-5-5",
+    "system": "You verify one claim against evidence passages scraped from the cited sources. Judge only from the passages, never from your own knowledge.\nVerdicts:\n- supported: a passage states the claim's value, so a reader could confirm it from the quote alone. Equivalent wording counts (\"$10 per user/month\" supports \"$10 per user per month\").\n- partial: a passage supports part of the claim, or gives a materially different qualification (a different number, a range, an older date, a different plan or product).\n- unsupported: the passages are on topic but do not state the value, or they contradict it.\n- no_evidence: the passages are irrelevant or empty.\nA passage that only mentions a word in another sense (e.g. a product name in a feature list) does not support a claim about it.\nevidence_quote MUST be copied character-for-character from one passage: the shortest span that shows the value (under 300 characters). Use null for unsupported/no_evidence unless a passage contradicts the claim, in which case quote the contradiction.\nreason: one sentence. If the passage contradicts the claim, say what it actually says.",
+    "user": "Research question: How much does wealthsimple cost to use\nClaim: The Wealthsimple Core plan has an eligibility requirement of $1 in assets.\nValue being checked: \"$1 in assets\"\n\n<passage source=\"https://www.wealthsimple.com/en-ca/pricing\">\n[Compare plans & benefits > Core]\n\n$1 in assets\n\n…\n\n[Compare plans & benefits > Get rewarded as your money grows > Partner perks]\n\n$1 in assets\n\n…\n\n[Compare plans & benefits > Get rewarded as your money grows > Credit card]\n\n| benefit | core | premium | generation |\n| - | - | - | - |\n| Cash back The 2% earn rate applies to net purchases during each statement period, excluding cash-like transactions, refunds, any applicable fees, and adjustments. Read the full details here. | 2% | 2% | 2% |\n| FX fees Foreign transaction (FX) fees are a surcharge typically charged on foreign currency transactions. While we don’t charge them, transactions are still subject to currency conversion from credit card networks, or fees from merchants and financial institutions involved in the transaction. | 0% | 0% | 0% |\n| Annual fee We’ll waive the annual fee for Core clients when you set up a qualifying monthly direct deposit of $4,000 or more to your Wealthsimple chequing account. See Cardholder Agreement for details. Clients with $100,000+ in individual assets with us will also get their fee waived. | $20/month | $0 | $0 |\n| Card material To qualify for a metal card, you need to have $100,000+ in individual assets with us. | Plastic | Metal | Metal |\n</passage>",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "verdict": {
+          "type": "string",
+          "enum": [
+            "supported",
+            "partial",
+            "unsupported",
+            "no_evidence"
+          ]
+        },
+        "best_source_url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "evidence_quote": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "reason": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "verdict",
+        "best_source_url",
+        "evidence_quote",
+        "reason"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "response": "{\"verdict\":\"supported\",\"best_source_url\":\"https://www.wealthsimple.com/en-ca/pricing\",\"evidence_quote\":\"[Compare plans & benefits > Core]\\n\\n$1 in assets\",\"reason\":\"The pricing page lists \\\"$1 in assets\\\" under the Core plan, which matches the stated eligibility requirement.\"}"
+}

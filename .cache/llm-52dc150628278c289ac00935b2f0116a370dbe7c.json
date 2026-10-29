@@ -1,0 +1,20 @@
+{
+  "request": {
+    "model": "anthropic:claude-opus-5-5",
+    "system": "Design the JSON answer shape for a web research question, as an example object (not JSON Schema). Use \"\" for strings, 0 for numbers, true for booleans, and one-element arrays for lists, e.g. {\"plans\":[{\"name\":\"\",\"price_monthly\":\"\"}]}. Keep it small: only the facts the question asks for, at most 12 leaf fields, snake_case keys. No source or URL fields: sources are tracked separately.",
+    "user": "Question: How much does wealthsimple cost to use\n\nReturn {\"json_format\": \"<the example object as a JSON string>\"}.",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "json_format": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "json_format"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "response": "{\"json_format\":\"{\\\"free_to_open_account\\\":true,\\\"account_minimum\\\":\\\"\\\",\\\"plans\\\":[{\\\"name\\\":\\\"\\\",\\\"monthly_fee\\\":\\\"\\\",\\\"eligibility_requirement\\\":\\\"\\\"}],\\\"managed_investing_fee_percent\\\":\\\"\\\",\\\"stock_trading_commission\\\":\\\"\\\",\\\"usd_conversion_fee_percent\\\":\\\"\\\",\\\"crypto_fee_percent\\\":\\\"\\\",\\\"other_fees\\\":[{\\\"name\\\":\\\"\\\",\\\"amount\\\":\\\"\\\"}]}\"}"
+}

@@ -1,0 +1,44 @@
+{
+  "request": {
+    "model": "anthropic:claude-opus-5-5",
+    "system": "You verify one claim against evidence passages scraped from the cited sources. Judge only from the passages, never from your own knowledge.\nVerdicts:\n- supported: a passage states the claim's value, so a reader could confirm it from the quote alone. Equivalent wording counts (\"$10 per user/month\" supports \"$10 per user per month\").\n- partial: a passage supports part of the claim, or gives a materially different qualification (a different number, a range, an older date, a different plan or product).\n- unsupported: the passages are on topic but do not state the value, or they contradict it.\n- no_evidence: the passages are irrelevant or empty.\nA passage that only mentions a word in another sense (e.g. a product name in a feature list) does not support a claim about it.\nevidence_quote MUST be copied character-for-character from one passage: the shortest span that shows the value (under 300 characters). Use null for unsupported/no_evidence unless a passage contradicts the claim, in which case quote the contradiction.\nreason: one sentence. If the passage contradicts the claim, say what it actually says.",
+    "user": "Research question: How much does wealthsimple cost to use\nClaim: Wealthsimple charges a USD conversion fee of 1.5%.\nValue being checked: \"1.5%\"\n\n<passage source=\"https://www.wealthsimple.com/en-ca/pricing\">\n…\n\n[Compare plans & benefits > Get rewarded as your money grows > Wealthsimple Trade]\n\n| benefit | core | premium | generation |\n| - | - | - | - |\n| Foreign exchange fees (CAD Account) A foreign exchange (FX) conversion fee is charged each time you trade U.S.-listed stocks, ETFs, and options without a USD account. When converting between CAD and USD, the FX conversion fee is applied to the WSII corporate exchange rate as described in the fee schedule. The WSII corporate exchange rate is a live rate including a spread which may vary due to market conditions. | 1.5% | 1.5% | 1.5% |\n| Foreign exchange fees (USD Account) A foreign exchange (FX) conversion fee is charged each time you convert Canadian dollars (CAD) to American dollars (USD) and vice-versa. The more you convert each time between your USD and CAD accounts, the lower your FX conversion fee. <$10,000: 1.5% $10,000–$24,999.99: 1.0% $25,000–$99,999.99: 0.5% $100,000+: 0% The FX conversion fee is applied to the WSII corporate exchange rate as described in the Fee schedule. The WSII corporate exchange rate is a live rate including a spread which may vary due to market conditions. | 0–1.5%, depending on transaction size | 0–1.5%, depending on transaction size | 0–1.5%, depending on transaction size |\n\n…\n\n[Compare plans & benefits > FAQs > How does the free USD accounts trial work?]\n\nTo exchange CAD to USD, you’ll still be charged a 1.5% currency conversion fee, or you can transfer USD from another account for free.\n</passage>",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "verdict": {
+          "type": "string",
+          "enum": [
+            "supported",
+            "partial",
+            "unsupported",
+            "no_evidence"
+          ]
+        },
+        "best_source_url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "evidence_quote": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "reason": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "verdict",
+        "best_source_url",
+        "evidence_quote",
+        "reason"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "response": "{\"verdict\":\"supported\",\"best_source_url\":\"https://www.wealthsimple.com/en-ca/pricing\",\"evidence_quote\":\"To exchange CAD to USD, you’ll still be charged a 1.5% currency conversion fee\",\"reason\":\"The pricing page states a 1.5% currency conversion fee for exchanging CAD to USD, though with a USD account the fee scales down to 0% for larger transactions.\"}"
+}

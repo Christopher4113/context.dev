@@ -1,0 +1,44 @@
+{
+  "request": {
+    "model": "anthropic:claude-opus-5-5",
+    "system": "You verify one claim against evidence passages scraped from the cited sources. Judge only from the passages, never from your own knowledge.\nVerdicts:\n- supported: a passage states the claim's value, so a reader could confirm it from the quote alone. Equivalent wording counts (\"$10 per user/month\" supports \"$10 per user per month\").\n- partial: a passage supports part of the claim, or gives a materially different qualification (a different number, a range, an older date, a different plan or product).\n- unsupported: the passages are on topic but do not state the value, or they contradict it.\n- no_evidence: the passages are irrelevant or empty.\nA passage that only mentions a word in another sense (e.g. a product name in a feature list) does not support a claim about it.\nevidence_quote MUST be copied character-for-character from one passage: the shortest span that shows the value (under 300 characters). Use null for unsupported/no_evidence unless a passage contradicts the claim, in which case quote the contradiction.\nreason: one sentence. If the passage contradicts the claim, say what it actually says.",
+    "user": "Research question: How much does wealthsimple cost to use\nClaim: Wealthsimple offers a plan named Core.\nValue being checked: \"Core\"\n\n<passage source=\"https://www.wealthsimple.com/en-ca/pricing\">\n[Compare plans & benefits > Core]\n\n- $0 commission stock trading\n\n- 0.5% management fees on managed investing accounts\n\n- 1.25% interest on your chequing account balance\n\n…\n\n[Compare plans & benefits > Get rewarded as your money grows > Wealthsimple Trade]\n\n| benefit | core | premium | generation |\n| - | - | - | - |\n| Commission fees | $0 | $0 | $0 |\n| USD accounts Accounts funded with U.S. dollars so you can trade U.S.-listed securities without fees. To fund a USD account, you can move USD you already have (for free), or convert CAD to USD for a 1.5% currency conversion fee. Free 30-day trial | $10/month | | |\n| Instant deposits Instant deposits are applied across the client’s Managed investing, Self-direct investing, and Crypto account(s). The actual instant deposit limit depends on your deposit history, net deposits, and other variables we use to calculate your unique limit. | Up to $50,000 | Up to $250,000 | Up to $250,000 |\n| Recurring investments A feature that allows you to automatically purchase a stock or ETF weekly, biweekly, or monthly. | | | |\n| Dividend reinvestments Any eligible dividends you receive will be automatically reinvested into that same stock or ETF within 24 hours. | | | |\n| Fractional shares Stocks and ETFs available in fractional amounts. For example, if a stock price is $100, you could buy or sell just 1/10 of it for $10. | | | |\n| Real-time streaming quotes | | | |\n\n…\n\n| benefit | core | premium | generation |\n| - | - | - | - |\n| Instant withdrawal fees Immediately withdraw cash from your investment accounts to a Visa Debit for a 2.5% fee. Otherwise, withdrawals may take 1–3 business days. | 2.5% | 2.5% | 2.5% |\n| CIPF coverage Canadian Investor Protection Fund (CIPF) coverage protects you if your investment dealer becomes insolvent. Your securities may be eligible for coverage up to specified limits. | | | |\n</passage>",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "verdict": {
+          "type": "string",
+          "enum": [
+            "supported",
+            "partial",
+            "unsupported",
+            "no_evidence"
+          ]
+        },
+        "best_source_url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "evidence_quote": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "reason": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "verdict",
+        "best_source_url",
+        "evidence_quote",
+        "reason"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "response": "{\"verdict\":\"supported\",\"best_source_url\":\"https://www.wealthsimple.com/en-ca/pricing\",\"evidence_quote\":\"| benefit | core | premium | generation |\",\"reason\":\"The Wealthsimple pricing page lists Core as one of its plans, alongside Premium and Generation.\"}"
+}

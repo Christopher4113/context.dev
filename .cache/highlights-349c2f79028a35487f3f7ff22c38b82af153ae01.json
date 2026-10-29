@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://www.wealthsimple.com/en-ca/pricing",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "The Wealthsimple managed investing fee is 0.4% - 0.5%.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://www.wealthsimple.com/en-ca/pricing",
+    "passages": [
+      "[Compare plans & benefits > Premium]\n\n- 0.4% management fees on managed investing accounts\n\n- 1.75% interest on your chequing account balance\n\n- Complimentary USD accounts\n\n- Up to 3 partner rewards depending on assets\n\n…\n\n[Compare plans & benefits > Generation]\n\n- All the benefits of Premium, plus;\n\n- 0.2%\\*–0.4% management fees on managed investing accounts\n\n- 2.25% interest on your chequing account balance\n\n- Access to 3 partner rewards\n\n…\n\n[Compare plans & benefits > Get rewarded as your money grows > Managed investing]\n\n| benefit | core | premium | generation |\n| - | - | - | - |\n| Management fees Fees charged for selecting and buying assets, auto-rebalancing your portfolio, and reinvesting your dividends for you. Our management fees for Generation clients range from 0.4% for clients with $500,000 in assets, to 0.2% for clients with $10,000,000 or more in assets. To learn which rate you qualify for, reach out to our team of advisors. | 0.5% | 0.4% | 0.2%\\*–0.4% |\n| Auto-rebalancing A process in which your portfolios are automatically readjusted to account for deposits, withdrawals, changes in your goals, and price changes in your holdings. | | | |\n| Dividend reinvesting A process in which dividends are periodically reinvested back into your portfolio. We use the dividends to purchase ETFs that are underweight based on the target asset allocation of your portfolio. | | | |\n| Auto-deposits A deposit that automatically moves money into your investment account(s). You can set up auto-deposits on a weekly, bi-weekly, or monthly basis. | | | |\n| Personalized portfolios You can choose a portfolio based on your risk tolerance. | | | |\n\n…\n\n[Compare plans & benefits > FAQs > *How can I access the 0.2% management fee?]\n\nOur management fees for Generation clients range from 0.4% for clients who have $500,000 with us, to 0.2% for clients who have $10,000,000 with us. To learn which rate you qualify for, reach out to our team of advisors here."
+    ]
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://www.wealthsimple.com/en-ca/pricing",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "Opening a Wealthsimple account is free.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://www.wealthsimple.com/en-ca/pricing",
+    "passages": [
+      "[Compare plans & benefits > Core]\n\n- $0 commission stock trading\n\n- 0.5% management fees on managed investing accounts\n\n- 1.25% interest on your chequing account balance\n\n…\n\n[Compare plans & benefits > Get rewarded as your money grows > Wealthsimple Trade]\n\n| benefit | core | premium | generation |\n| - | - | - | - |\n| Commission fees | $0 | $0 | $0 |\n| USD accounts Accounts funded with U.S. dollars so you can trade U.S.-listed securities without fees. To fund a USD account, you can move USD you already have (for free), or convert CAD to USD for a 1.5% currency conversion fee. Free 30-day trial | $10/month | | |\n| Instant deposits Instant deposits are applied across the client’s Managed investing, Self-direct investing, and Crypto account(s). The actual instant deposit limit depends on your deposit history, net deposits, and other variables we use to calculate your unique limit. | Up to $50,000 | Up to $250,000 | Up to $250,000 |\n| Recurring investments A feature that allows you to automatically purchase a stock or ETF weekly, biweekly, or monthly. | | | |\n| Dividend reinvestments Any eligible dividends you receive will be automatically reinvested into that same stock or ETF within 24 hours. | | | |\n| Fractional shares Stocks and ETFs available in fractional amounts. For example, if a stock price is $100, you could buy or sell just 1/10 of it for $10. | | | |\n| Real-time streaming quotes | | | |\n\n…\n\n[Compare plans & benefits > Put your wealth to work]\n\nOpen an account, make a deposit, and start getting more from your money.\n\n…\n\n[Compare plans & benefits > FAQs > How does the free USD accounts trial work?]\n\nOnce you sign up, you’ll receive the benefits of USD accounts for free. After the 30 day trial, you’ll automatically be billed $10/month for upcoming months.\n\nTo exchange CAD to USD, you’ll still be charged a 1.5% currency conversion fee, or you can transfer USD from another account for free."
+    ]
+  }
+}

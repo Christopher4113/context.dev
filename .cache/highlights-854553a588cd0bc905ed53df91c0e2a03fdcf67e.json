@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://www.wealthsimple.com/en-ca/pricing",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "Wealthsimple has an account minimum of $1.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://www.wealthsimple.com/en-ca/pricing",
+    "passages": [
+      "[Compare plans & benefits > Get rewarded as your money grows > Chequing]\n\n| benefit | core | premium | generation |\n| - | - | - | - |\n| Chequing account interest An annualized rate – calculated daily and paid monthly directly into your chequing account. Rates are subject to change. | 1.25% | 1.75% | 2.25% |\n| Direct deposit | | | |\n| Auto-invest your pay After setting up a direct deposit, you can choose to automatically invest part of your paycheque. | | | |\n| Bill pay | | | |\n| Monthly account fees | $0 | $0 | $0 |\n| Account minimums | $0 | $0 | $0 |\n| ATM fees We don't charge any fees for using an ATM to withdraw your money, in Canada or internationally. If the ATM provider does charge you, we'll reimburse you for any eligible fees. T\\&Cs apply. | $0 | $0 | $0 |\n| Foreign exchange fees We don’t charge any fees for using your Visa Platinum Prepaid card to make purchases in a foreign currency (e.g. using your card abroad or buying from a U.S. site). | 0% | 0% | 0% |\n\n…\n\n[Compare plans & benefits > FAQs > What counts towards the $100,000 or $500,000 minimums?]\n\nYour status is determined by whichever is higher — the value of your net deposits, or the value of your entire Wealthsimple portfolio.\n\n…\n\n[Compare plans & benefits > FAQs > What accounts are included in the $100,000 or $500,000 minimums?]\n\nAlmost all your Wealthsimple accounts are included! TFSAs, RESPs, RRSPs, GRSPs, LIRAs, and non-registered accounts — they’re all included, whether they’re Managed investing accounts or Wealthsimple Trade accounts. So are your Crypto, Save, and chequing accounts."
+    ]
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://www.wealthsimple.com/en-ca/pricing",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "Wealthsimple charges a USD conversion fee of 1.5%.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://www.wealthsimple.com/en-ca/pricing",
+    "passages": [
+      "…\n\n[Compare plans & benefits > Get rewarded as your money grows > Wealthsimple Trade]\n\n| benefit | core | premium | generation |\n| - | - | - | - |\n| Foreign exchange fees (CAD Account) A foreign exchange (FX) conversion fee is charged each time you trade U.S.-listed stocks, ETFs, and options without a USD account. When converting between CAD and USD, the FX conversion fee is applied to the WSII corporate exchange rate as described in the fee schedule. The WSII corporate exchange rate is a live rate including a spread which may vary due to market conditions. | 1.5% | 1.5% | 1.5% |\n| Foreign exchange fees (USD Account) A foreign exchange (FX) conversion fee is charged each time you convert Canadian dollars (CAD) to American dollars (USD) and vice-versa. The more you convert each time between your USD and CAD accounts, the lower your FX conversion fee. <$10,000: 1.5% $10,000–$24,999.99: 1.0% $25,000–$99,999.99: 0.5% $100,000+: 0% The FX conversion fee is applied to the WSII corporate exchange rate as described in the Fee schedule. The WSII corporate exchange rate is a live rate including a spread which may vary due to market conditions. | 0–1.5%, depending on transaction size | 0–1.5%, depending on transaction size | 0–1.5%, depending on transaction size |\n\n…\n\n[Compare plans & benefits > FAQs > How does the free USD accounts trial work?]\n\nTo exchange CAD to USD, you’ll still be charged a 1.5% currency conversion fee, or you can transfer USD from another account for free."
+    ]
+  }
+}

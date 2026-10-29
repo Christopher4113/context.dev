@@ -1,0 +1,44 @@
+{
+  "request": {
+    "model": "anthropic:claude-opus-5-5",
+    "system": "You verify one claim against evidence passages scraped from the cited sources. Judge only from the passages, never from your own knowledge.\nVerdicts:\n- supported: a passage states the claim's value, so a reader could confirm it from the quote alone. Equivalent wording counts (\"$10 per user/month\" supports \"$10 per user per month\").\n- partial: a passage supports part of the claim, or gives a materially different qualification (a different number, a range, an older date, a different plan or product).\n- unsupported: the passages are on topic but do not state the value, or they contradict it.\n- no_evidence: the passages are irrelevant or empty.\nA passage that only mentions a word in another sense (e.g. a product name in a feature list) does not support a claim about it.\nevidence_quote MUST be copied character-for-character from one passage: the shortest span that shows the value (under 300 characters). Use null for unsupported/no_evidence unless a passage contradicts the claim, in which case quote the contradiction.\nreason: one sentence. If the passage contradicts the claim, say what it actually says.",
+    "user": "Research question: How much does wealthsimple cost to use\nClaim: Wealthsimple has an account minimum of $1.\nValue being checked: \"$1\"\n\n<passage source=\"https://www.wealthsimple.com/en-ca/pricing\">\n[Compare plans & benefits > Get rewarded as your money grows > Chequing]\n\n| benefit | core | premium | generation |\n| - | - | - | - |\n| Chequing account interest An annualized rate – calculated daily and paid monthly directly into your chequing account. Rates are subject to change. | 1.25% | 1.75% | 2.25% |\n| Direct deposit | | | |\n| Auto-invest your pay After setting up a direct deposit, you can choose to automatically invest part of your paycheque. | | | |\n| Bill pay | | | |\n| Monthly account fees | $0 | $0 | $0 |\n| Account minimums | $0 | $0 | $0 |\n| ATM fees We don't charge any fees for using an ATM to withdraw your money, in Canada or internationally. If the ATM provider does charge you, we'll reimburse you for any eligible fees. T\\&Cs apply. | $0 | $0 | $0 |\n| Foreign exchange fees We don’t charge any fees for using your Visa Platinum Prepaid card to make purchases in a foreign currency (e.g. using your card abroad or buying from a U.S. site). | 0% | 0% | 0% |\n\n…\n\n[Compare plans & benefits > FAQs > What counts towards the $100,000 or $500,000 minimums?]\n\nYour status is determined by whichever is higher — the value of your net deposits, or the value of your entire Wealthsimple portfolio.\n\n…\n\n[Compare plans & benefits > FAQs > What accounts are included in the $100,000 or $500,000 minimums?]\n\nAlmost all your Wealthsimple accounts are included! TFSAs, RESPs, RRSPs, GRSPs, LIRAs, and non-registered accounts — they’re all included, whether they’re Managed investing accounts or Wealthsimple Trade accounts. So are your Crypto, Save, and chequing accounts.\n</passage>",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "verdict": {
+          "type": "string",
+          "enum": [
+            "supported",
+            "partial",
+            "unsupported",
+            "no_evidence"
+          ]
+        },
+        "best_source_url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "evidence_quote": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "reason": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "verdict",
+        "best_source_url",
+        "evidence_quote",
+        "reason"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "response": "{\"verdict\":\"unsupported\",\"best_source_url\":\"https://www.wealthsimple.com/en-ca/pricing\",\"evidence_quote\":\"| Account minimums | $0 | $0 | $0 |\",\"reason\":\"The pricing page lists account minimums of $0 for all plans, not $1.\"}"
+}

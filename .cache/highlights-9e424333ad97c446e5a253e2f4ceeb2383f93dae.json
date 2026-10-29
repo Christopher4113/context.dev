@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://www.wealthsimple.com/en-ca/pricing",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "The Wealthsimple Premium plan has an eligibility requirement of $100,000 in assets.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://www.wealthsimple.com/en-ca/pricing",
+    "passages": [
+      "[Compare plans & benefits > Premium]\n\n$100,000 in assets\n\n…\n\n[Compare plans & benefits > Get rewarded as your money grows > Partner perks]\n\n$100,000 in assets\n\n…\n\n[Compare plans & benefits > FAQs > How do I become a Premium or Generation client?]\n\nYou’ll automatically become a Premium client when you reach $100,000 with Wealthsimple.\n\n…\n\n[Compare plans & benefits > FAQs > What counts towards the $100,000 or $500,000 minimums?]\n\nYour status is determined by whichever is higher — the value of your net deposits, or the value of your entire Wealthsimple portfolio.\n\n…\n\n[Compare plans & benefits > FAQs > What happens if my net deposits and my total assets go below $100,000 or $500,000?]\n\nIf both your net deposits and total assets with Wealthsimple fall and stay below the $100,000 or $500,000 minimum you will be subject to a change in status."
+    ]
+  }
+}

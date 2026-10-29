@@ -1,0 +1,36 @@
+{
+  "request": {
+    "model": "anthropic:claude-opus-5-5",
+    "system": "Rewrite each field of a research answer as one standalone, checkable factual sentence. Name the subject explicitly (e.g. the company). Keep the value exactly as given. Do not add facts.",
+    "user": "Question: How much does wealthsimple cost to use\n\nFields:\n- free_to_open_account (free to open account) = true\n- account_minimum (account minimum) = \"$1\"\n- plans[0].name (plans › Core › name) = \"Core\"\n- plans[0].monthly_fee (plans › Core › monthly fee) = \"$0\"\n- plans[0].eligibility_requirement (plans › Core › eligibility requirement) = \"$1 in assets\"\n- plans[1].name (plans › Premium › name) = \"Premium\"\n- plans[1].monthly_fee (plans › Premium › monthly fee) = \"$10/month\"\n- plans[1].eligibility_requirement (plans › Premium › eligibility requirement) = \"$100,000 in assets\"\n- managed_investing_fee_percent (managed investing fee percent) = \"0.4% - 0.5%\"\n- stock_trading_commission (stock trading commission) = \"$0\"\n- usd_conversion_fee_percent (usd conversion fee percent) = \"1.5%\"\n- other_fees[0].name (other fees › USD account monthly fee (Premium) › name) = \"USD account monthly fee (Premium)\"\n- other_fees[0].amount (other fees › USD account monthly fee (Premium) › amount) = \"$10/month\"\n\nReturn {\"claims\":[{\"path\",\"claim\"}]} with one entry per field.",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "claims": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "path": {
+                "type": "string"
+              },
+              "claim": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "path",
+              "claim"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "claims"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "response": "{\"claims\":[{\"path\":\"free_to_open_account\",\"claim\":\"Opening a Wealthsimple account is free.\"},{\"path\":\"account_minimum\",\"claim\":\"Wealthsimple has an account minimum of $1.\"},{\"path\":\"plans[0].name\",\"claim\":\"Wealthsimple offers a plan named Core.\"},{\"path\":\"plans[0].monthly_fee\",\"claim\":\"The Wealthsimple Core plan has a monthly fee of $0.\"},{\"path\":\"plans[0].eligibility_requirement\",\"claim\":\"The Wealthsimple Core plan has an eligibility requirement of $1 in assets.\"},{\"path\":\"plans[1].name\",\"claim\":\"Wealthsimple offers a plan named Premium.\"},{\"path\":\"plans[1].monthly_fee\",\"claim\":\"The Wealthsimple Premium plan has a monthly fee of $10/month.\"},{\"path\":\"plans[1].eligibility_requirement\",\"claim\":\"The Wealthsimple Premium plan has an eligibility requirement of $100,000 in assets.\"},{\"path\":\"managed_investing_fee_percent\",\"claim\":\"The Wealthsimple managed investing fee is 0.4% - 0.5%.\"},{\"path\":\"stock_trading_commission\",\"claim\":\"Wealthsimple charges a stock trading commission of $0.\"},{\"path\":\"usd_conversion_fee_percent\",\"claim\":\"Wealthsimple charges a USD conversion fee of 1.5%.\"},{\"path\":\"other_fees[0].name\",\"claim\":\"One of Wealthsimple's other fees is a USD account monthly fee (Premium).\"},{\"path\":\"other_fees[0].amount\",\"claim\":\"The Wealthsimple USD account monthly fee (Premium) is $10/month.\"}]}"
+}

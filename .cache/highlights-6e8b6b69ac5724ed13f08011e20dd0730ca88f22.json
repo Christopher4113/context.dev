@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://www.wealthsimple.com/en-ca/pricing",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "One of Wealthsimple's other fees is a USD account monthly fee (Premium).",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://www.wealthsimple.com/en-ca/pricing",
+    "passages": [
+      "[Compare plans & benefits > Premium]\n\n- 0.4% management fees on managed investing accounts\n\n- 1.75% interest on your chequing account balance\n\n- Complimentary USD accounts\n\n- Up to 3 partner rewards depending on assets\n\n…\n\n[Compare plans & benefits > Get rewarded as your money grows > Wealthsimple Trade]\n\n| benefit | core | premium | generation |\n| - | - | - | - |\n| Commission fees | $0 | $0 | $0 |\n| USD accounts Accounts funded with U.S. dollars so you can trade U.S.-listed securities without fees. To fund a USD account, you can move USD you already have (for free), or convert CAD to USD for a 1.5% currency conversion fee. Free 30-day trial | $10/month | | |\n| Instant deposits Instant deposits are applied across the client’s Managed investing, Self-direct investing, and Crypto account(s). The actual instant deposit limit depends on your deposit history, net deposits, and other variables we use to calculate your unique limit. | Up to $50,000 | Up to $250,000 | Up to $250,000 |\n| Recurring investments A feature that allows you to automatically purchase a stock or ETF weekly, biweekly, or monthly. | | | |\n| Dividend reinvestments Any eligible dividends you receive will be automatically reinvested into that same stock or ETF within 24 hours. | | | |\n| Fractional shares Stocks and ETFs available in fractional amounts. For example, if a stock price is $100, you could buy or sell just 1/10 of it for $10. | | | |\n| Real-time streaming quotes | | | |\n\n…\n\n[Compare plans & benefits > FAQs > I pay for USD accounts. What happens when I reach Premium?]\n\nYou’ll no longer be charged for USD accounts, but you’ll keep receiving the same great benefits. You’ll save $10 a month, and continue on your path to reaching Generation status."
+    ]
+  }
+}
