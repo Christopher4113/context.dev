@@ -130,14 +130,14 @@ Answers already has what it needs. The research agent has read the pages, so the
       "reason": "The pricing page lists the Business plan at $16 per user/month, billed yearly."
     }
   },
-  "sources": [
+  "source_report": [
     { "url": "https://linear.app/pricing", "status": "verified", "supports": ["plans[0].price_per_user_monthly"] }
   ],
   "summary": { "fields": 2, "supported": 2, "partial": 0, "unsupported": 0, "no_evidence": 0 }
 }
 ```
 
-Field paths use the same dotted/indexed form as Groundcheck's flattener, so a client can join `citations` to `json_content` without guessing. The cheapest version would only attach the passage the agent already used for each field. A stricter version would re-check each field the way Groundcheck does: one Highlights query per claim, plus a verbatim check on the quote.
+Field paths use the same dotted/indexed form as Groundcheck's flattener, so a client can join `citations` to `json_content` without guessing. `sources` stays exactly as Answers returns it today, and `source_report` is additive: it says what each of those URLs actually backed. The cheapest version would only attach the passage the agent already used for each field. A stricter version would re-check each field the way Groundcheck does: one Highlights query per claim, plus a verbatim check on the quote.
 
 ## Layout
 

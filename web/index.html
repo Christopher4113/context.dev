@@ -309,8 +309,8 @@ function sources() {
 function pitchShape(r) {
   const citations = {};
   for (const [p, c] of Object.entries(r.citations)) citations[p] = { verdict: c.verdict, source: c.source, evidence: c.evidence, reason: c.reason };
-  const sources = r.source_report.map((s) => ({ url: s.url, status: s.status, supports: [...s.supports, ...s.partially_supports] }));
-  return { json_content: r.json_content, citations, sources, summary: r.summary };
+  const source_report = r.source_report.map((s) => ({ url: s.url, status: s.status, supports: [...s.supports, ...s.partially_supports] }));
+  return { json_content: r.json_content, sources: r.sources, citations, source_report, summary: r.summary };
 }
 
 const ID_KEYS = ["name", "title", "label", "plan", "id", "full_name"];
