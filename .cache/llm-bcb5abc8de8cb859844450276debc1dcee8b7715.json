@@ -1,0 +1,44 @@
+{
+  "request": {
+    "model": "anthropic:claude-haiku-5-5",
+    "system": "You verify one claim against evidence passages scraped from the cited sources. Judge only from the passages, never from your own knowledge.\nVerdicts:\n- supported: a passage states the claim's value, so a reader could confirm it from the quote alone. Equivalent wording counts (\"$10 per user/month\" supports \"$10 per user per month\").\n- partial: a passage supports part of the claim, or gives a materially different qualification (a different number, a range, an older date, a different plan or product).\n- unsupported: the passages are on topic but do not state the value, or they contradict it.\n- no_evidence: the passages are irrelevant or empty.\nA passage that only mentions a word in another sense (e.g. a product name in a feature list) does not support a claim about it.\nevidence_quote MUST be copied character-for-character from one passage: the shortest span that shows the value (under 300 characters). Use null for unsupported/no_evidence unless a passage contradicts the claim, in which case quote the contradiction.\nreason: one sentence. If the passage contradicts the claim, say what it actually says.",
+    "user": "Research question: What is the Anthropic API price per million input and output tokens for Claude Haiku, Sonnet, and Opus (current versions)?\nClaim: One of the current Anthropic API models is Claude Sonnet 5.5.\nValue being checked: \"Claude Sonnet 5.5\"\n\n<passage source=\"https://www-cdn.anthropic.com/files/4zrzovbb/website/3684c2faafb97418665782cea0001f439f74b1d2.pdf\">\n…\n\nBAS E INP UT\nT O KENS\nO UT P UT\nT O KENS\n5M CACHE\nWRIT ES\n1H CACHE\nWRIT ES\nCACHE HIT S\n& REFRES HES\nSt andard \tGlobal \t≤200K \t$3.00 \t$15.00 \t$3.75 \t$6.00 \t$0.30\nBatch\nproces s ing Global \t≤200K \t$1.50 \t$7.50 \t$1.875 \t$3.00 \t$0.15\nClaude 3.7 Sonnet — Claude API\nP RICING T IER S CO P E CO NT EXT\nWIND O W\nBAS E INP UT\nT O KENS\nO UT P UT\nT O KENS\n5M CACHE\nWRIT ES\n1H CACHE\nWRIT ES\nCACHE HIT S\n& REFRES HES\nSt andard \tGlobal \t≤200K \t$3.00 \t$15.00 \t$3.75 \t$6.00 \t$0.30\nSt andard \tGlobal \t1M \t$6.00 \t$60.00 \t$7.50 \t$12.00 \t$0.60\nBatch\nproces s ing Global \t≤200K \t$1.50 \t$7.50 \t$1.875 \t$3.00 \t$0.15\nBatch\n\n…\n\nproces s ing Global \t≤200K \t$7.50 \t$37.50 \t$9.375 \t$15.00 \t$0.75\nClaude 3 Sonnet — Claude API\nP RICING T IER S CO P E CO NT EXT\nWIND O W\nBAS E INP UT\nT O KENS\nO UT P UT\nT O KENS\n5M CACHE\nWRIT ES\n1H CACHE\nWRIT ES\nCACHE HIT S\n& REFRES HES\nSt andard \tGlobal \t≤200K \t$3.00 \t$15.00 \t— \t— \t—\nIf Cus tomer acces s es Claude API through the Claude Platform on AWS (a Marketplace Platform), us age will be invoiced in\nClaude Cons umption Units (\"CCU\"). A CCU is a unit of meas ure us ed for Claude Platform on AWS invoicing. One hundred\n(100) CCU repres ents $1.00 USD of fees owed for the Services .\n\n…\n\nRegion ≤200K \t$5.00 \t$25.00 \t$6.25 \t$10.00 \t$0.50\nSt andard In-Region & Geo\nCros s Region \\* ≤200K \t$5.50 \t$27.50 \t$6.875 \t$11.00 \t$0.55\nSt andard In-Region & Geo\nCros s Region \\* ≤200K \t$5.50 \t$27.50 \t$6.875 \t— \t$0.55\nBatch\nproces s ing\nGlobal Cros s\nRegion ≤200K \t$2.50 \t$12.50 \t— \t— \t—\nBatch\nproces s ing\nIn-Region & Geo\nCros s Region ≤200K \t$2.75 \t$13.75 \t— \t— \t—\nClaude Sonnet 4.5 — AWS Bedrock\nP RICING T IER S CO P E CO NT EXT\nWIND O W\nBAS E INP UT\nT O KENS\nO UT P UT\nT O KENS\n5M CACHE\nWRIT ES\n1H CACHE\nWRIT ES\nCACHE HIT S\n& REFRES HES\nSt andard Global Cros s\n</passage>\n\n<passage source=\"https://www.sentra.app/articles/claude-api-pricing\">\n[Claude API Pricing (2026): Per-Million-Token Rates for Every Model > Claude API pricing per million tokens]\n\nCache reads are 0.1x the base input price on every model except Fable 5.1 and Mythos 5.1, where they are 0.025x ($0.25 per million), and Opus 5.5 and Sonnet 5.5, where they are 0.05x ($0.20 and $0.10 per million). Anthropic halved Sonnet 5.5's cache-read price from $0.20 to $0.10 when it launched Haiku 5.5. Retired models still reachable through Amazon Bedrock and Google Cloud carry their old rates: Claude Opus 4.1 and Opus 4 remain $15 in and $75 out, which is 3.75 times the Opus 5.5 price of $4 and $20 for a worse model, so check which model id your code actually pins. Claude Haiku 5.5, released on 7 October 2026 (Anthropic's Haiku 5.5 announcement), is now the cheapest current model, and Haiku 4.5 stays available at $1 and $5 for code that pins it.\n\n…\n\n[Claude API Pricing (2026): Per-Million-Token Rates for Every Model > API rates or a subscription: the break-even]\n\n| Model | Blended cost per 1M tokens | Tokens equal to $20/mo | Roughly per working day |\n| - | - | - | - |\n| Claude Haiku 5.5 (prompts up to 100,000 tokens) | $0.18 | 111.1M | 5.05M |\n| Claude Haiku 4.5 (legacy) | $1.80 | 11.1M | 505k |\n| Claude Sonnet 5.5 | $3.60 | 5.6M | 253k |\n| Claude Opus 5.5 | $7.20 | 2.8M | 126k |\n| Claude Opus 5 (legacy) | $9.00 | 2.2M | 101k |\n| Claude Fable 5.1 | $18.00 | 1.1M | 51k |\n\n…\n\n[Claude API Pricing (2026): Per-Million-Token Rates for Every Model > Frequently Asked Questions > Is Claude Sonnet 5 still $2 per million input tokens?]\n\nYes. The $2 input and $10 output pricing was announced as introductory pricing through 31 August 2026, and Anthropic has confirmed it is now the standard price. The increase to $3 and $15 that had been scheduled for 1 September 2026 will not happen. Sonnet 5.5 launched on 28 September 2026 at the same $2 and $10.\n</passage>",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "verdict": {
+          "type": "string",
+          "enum": [
+            "supported",
+            "partial",
+            "unsupported",
+            "no_evidence"
+          ]
+        },
+        "best_source_url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "evidence_quote": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "reason": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "verdict",
+        "best_source_url",
+        "evidence_quote",
+        "reason"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "response": "{\"verdict\":\"partial\",\"best_source_url\":\"https://www.sentra.app/articles/claude-api-pricing\",\"evidence_quote\":\"Claude Sonnet 5.5 | $3.60 | 5.6M | 253k\",\"reason\":\"The sentra.app passages name Claude Sonnet 5.5 as a current model with pricing ($2 input and $10 output at launch on 28 September 2026), so the model exists per that source, but the Anthropic PDF passage only covers older Claude 3.7, 3 and 4.5 Sonnet pricing and does not confirm the model name; the only quote here is a blended-cost table row, so the claim is partially supported by a secondary source.\"}"
+}

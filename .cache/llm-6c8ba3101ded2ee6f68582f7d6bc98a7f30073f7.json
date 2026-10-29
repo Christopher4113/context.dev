@@ -1,0 +1,36 @@
+{
+  "request": {
+    "model": "anthropic:claude-opus-5-5",
+    "system": "Rewrite each field of a research answer as one standalone, checkable factual sentence. Name the subject explicitly (e.g. the company). Keep the value exactly as given. Do not add facts.",
+    "user": "Question: What major changes did Tailwind CSS v4.0 introduce?\n\nFields:\n- version (version) = \"4.0\"\n- release_date (release date) = \"2025-01-22\"\n- key_changes[0] (key changes › #1) = \"New high‑performance engine built in Rust (Oxide) delivering up to 5× faster full builds and over 100× faster incremental builds\"\n- key_changes[1] (key changes › #2) = \"CSS‑first configuration – tailwind.config moves from JavaScript to CSS and design tokens are exposed as native CSS variables\"\n- key_changes[2] (key changes › #3) = \"Automatic content detection eliminates the need to manually specify the content array\"\n- key_changes[3] (key changes › #4) = \"First‑party Vite plugin for tighter integration and zero‑config setup\"\n- key_changes[4] (key changes › #5) = \"Modernized P3 color palette using OKLCH for more vivid colors\"\n- key_changes[5] (key changes › #6) = \"Container queries added as core features, removing the need for the external plugin\"\n- key_changes[6] (key changes › #7) = \"New 3D transform utilities (rotate‑x‑*, rotate‑y‑*, scale‑z‑*, translate‑z‑* etc.)\"\n- key_changes[7] (key changes › #8) = \"Expanded gradient APIs with linear, radial, and conic utilities, angle support, and color‑interpolation modifiers\"\n- key_changes[8] (key changes › #9) = \"@starting‑style variant for transition‑on‑enter without JavaScript\"\n- key_changes[9] (key changes › #10) = \"not‑* variant supporting the CSS :not() pseudo‑class\"\n- key_changes[10] (key changes › #11) = \"Additional utilities and variants such as inset‑shadow‑*, inset‑ring‑*, field‑sizing, color‑scheme, font‑stretch, inert, nth‑*, in‑*, and support for :popover‑open\"\n\nReturn {\"claims\":[{\"path\",\"claim\"}]} with one entry per field.",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "claims": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "path": {
+                "type": "string"
+              },
+              "claim": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "path",
+              "claim"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "claims"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "response": "{\"claims\":[{\"path\":\"version\",\"claim\":\"The Tailwind CSS release being described is version 4.0.\"},{\"path\":\"release_date\",\"claim\":\"Tailwind CSS v4.0 was released on 2025-01-22.\"},{\"path\":\"key_changes[0]\",\"claim\":\"Tailwind CSS v4.0 introduced a new high‑performance engine built in Rust (Oxide) delivering up to 5× faster full builds and over 100× faster incremental builds.\"},{\"path\":\"key_changes[1]\",\"claim\":\"Tailwind CSS v4.0 introduced CSS‑first configuration, in which tailwind.config moves from JavaScript to CSS and design tokens are exposed as native CSS variables.\"},{\"path\":\"key_changes[2]\",\"claim\":\"Tailwind CSS v4.0 introduced automatic content detection, which eliminates the need to manually specify the content array.\"},{\"path\":\"key_changes[3]\",\"claim\":\"Tailwind CSS v4.0 introduced a first‑party Vite plugin for tighter integration and zero‑config setup.\"},{\"path\":\"key_changes[4]\",\"claim\":\"Tailwind CSS v4.0 introduced a modernized P3 color palette using OKLCH for more vivid colors.\"},{\"path\":\"key_changes[5]\",\"claim\":\"Tailwind CSS v4.0 added container queries as core features, removing the need for the external plugin.\"},{\"path\":\"key_changes[6]\",\"claim\":\"Tailwind CSS v4.0 introduced new 3D transform utilities (rotate‑x‑*, rotate‑y‑*, scale‑z‑*, translate‑z‑* etc.).\"},{\"path\":\"key_changes[7]\",\"claim\":\"Tailwind CSS v4.0 introduced expanded gradient APIs with linear, radial, and conic utilities, angle support, and color‑interpolation modifiers.\"},{\"path\":\"key_changes[8]\",\"claim\":\"Tailwind CSS v4.0 introduced a @starting‑style variant for transition‑on‑enter without JavaScript.\"},{\"path\":\"key_changes[9]\",\"claim\":\"Tailwind CSS v4.0 introduced a not‑* variant supporting the CSS :not() pseudo‑class.\"},{\"path\":\"key_changes[10]\",\"claim\":\"Tailwind CSS v4.0 introduced additional utilities and variants such as inset‑shadow‑*, inset‑ring‑*, field‑sizing, color‑scheme, font‑stretch, inert, nth‑*, in‑*, and support for :popover‑open.\"}]}"
+}

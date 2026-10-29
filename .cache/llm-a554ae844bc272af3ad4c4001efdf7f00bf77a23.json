@@ -1,0 +1,44 @@
+{
+  "request": {
+    "model": "anthropic:claude-opus-5-5",
+    "system": "You verify one claim against evidence passages scraped from the cited sources. Judge only from the passages, never from your own knowledge.\nVerdicts:\n- supported: a passage states the claim's value, so a reader could confirm it from the quote alone. Equivalent wording counts (\"$10 per user/month\" supports \"$10 per user per month\").\n- partial: a passage supports part of the claim, or gives a materially different qualification (a different number, a range, an older date, a different plan or product).\n- unsupported: the passages are on topic but do not state the value, or they contradict it.\n- no_evidence: the passages are irrelevant or empty.\nA passage that only mentions a word in another sense (e.g. a product name in a feature list) does not support a claim about it.\nevidence_quote MUST be copied character-for-character from one passage: the shortest span that shows the value (under 300 characters). Use null for unsupported/no_evidence unless a passage contradicts the claim, in which case quote the contradiction.\nreason: one sentence. If the passage contradicts the claim, say what it actually says.",
+    "user": "Research question: What is the latest major version of PostgreSQL and three headline features of that release?\nClaim: One headline feature of the latest major PostgreSQL release is an asynchronous I/O subsystem.\nValue being checked: \"asynchronous I/O subsystem\"\n\n<passage source=\"https://www.instaclustr.com/education/postgresql/postgres-versions-supported-releases-eol-dates-upgrades/\">\n[Postgres Versions: Supported Releases, EOL Dates & Upgrades > What Is Postgres Versioning?]\n\n| Major Version | Initial Release | End of Life (EOL) | Current Minor Release | Notes |\n| - | - | - | - | - |\n| PostgreSQL 18 | Sep 2025 | Nov 2030 | 18.4 | Latest version; introduces a modern I/O subsystem. |\n| PostgreSQL 17 | Sep 2024 | Nov 2029 | 17.10 | Enhanced JSON/SQL querying and major Vacuum improvements. |\n| PostgreSQL 16 | Sep 2023 | Nov 2028 | 16.14 | Strong parallel query performance and JSON handling. |\n| PostgreSQL 15 | Oct 2022 | Nov 2027 | 15.18 | Introduction of SQL/JSON routines. |\n| PostgreSQL 14 | Sep 2021 | Nov 2026 | 14.23 | Supported until late 2026. |\n\n…\n\n[Postgres Versions: Supported Releases, EOL Dates & Upgrades > Postgres Versions History]\n\n| Major Version | Latest Minor Version | Release Status | Support Status | Notes |\n| - | - | - | - | - |\n| PostgreSQL 18 | 18.4 | Current stable release | Supported | Latest major version; recommended for new deployments where compatibility has been tested. |\n| PostgreSQL 17 | 17.10 | Stable release | Supported | Suitable for production environments that require a mature, supported release. |\n| PostgreSQL 16 | 16.14 | Stable release | Supported | Still actively maintained with security and bug-fix updates. |\n| PostgreSQL 15 | 15.18 | Stable release | Supported | Supported for existing production workloads; continue applying minor updates. |\n| PostgreSQL 14 | 14.23 | Stable release | Supported, nearing EOL | Support is scheduled to end in November 2026, so upgrade planning is recommended. |\n| PostgreSQL 13 | 13.23 | Final release | End-of-life | No longer receives security or bug fixes; production systems should migrate to a supported version. |\n| PostgreSQL 12 and earlier | Varies by version | Legacy releases | End-of-life | Unsupported versions should be upgraded to reduce security, compatibility, and maintenance risks. |\n</passage>",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "verdict": {
+          "type": "string",
+          "enum": [
+            "supported",
+            "partial",
+            "unsupported",
+            "no_evidence"
+          ]
+        },
+        "best_source_url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "evidence_quote": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "reason": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "verdict",
+        "best_source_url",
+        "evidence_quote",
+        "reason"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "response": "{\"verdict\":\"partial\",\"best_source_url\":\"https://www.instaclustr.com/education/postgresql/postgres-versions-supported-releases-eol-dates-upgrades/\",\"evidence_quote\":\"Latest version; introduces a modern I/O subsystem.\",\"reason\":\"The passage says PostgreSQL 18, the latest version, introduces a \\\"modern I/O subsystem\\\" but never says it is asynchronous.\"}"
+}

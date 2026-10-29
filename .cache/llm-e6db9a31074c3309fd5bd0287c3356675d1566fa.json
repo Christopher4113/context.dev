@@ -1,0 +1,44 @@
+{
+  "request": {
+    "model": "anthropic:claude-haiku-5-5",
+    "system": "You verify one claim against evidence passages scraped from the cited sources. Judge only from the passages, never from your own knowledge.\nVerdicts:\n- supported: a passage states the claim's value, so a reader could confirm it from the quote alone. Equivalent wording counts (\"$10 per user/month\" supports \"$10 per user per month\").\n- partial: a passage supports part of the claim, or gives a materially different qualification (a different number, a range, an older date, a different plan or product).\n- unsupported: the passages are on topic but do not state the value, or they contradict it.\n- no_evidence: the passages are irrelevant or empty.\nA passage that only mentions a word in another sense (e.g. a product name in a feature list) does not support a claim about it.\nevidence_quote MUST be copied character-for-character from one passage: the shortest span that shows the value (under 300 characters). Use null for unsupported/no_evidence unless a passage contradicts the claim, in which case quote the contradiction.\nreason: one sentence. If the passage contradicts the claim, say what it actually says.",
+    "user": "Research question: What was NVIDIA's revenue for its most recently reported fiscal quarter?\nClaim: NVIDIA's most recently reported fiscal quarter is Q2 FY27.\nValue being checked: \"Q2 FY27\"\n\n<passage source=\"https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-second-quarter-fiscal-2027\">\n[NVIDIA Announces Financial Results for Second Quarter Fiscal 2027]\n\n| **GAAP** | | | | | |\n| - | - | - | - | - | - |\n| *($ in millions, except earnings per share)* | **Q2 FY27** | **Q1 FY27** | **Q2 FY26** | **Q/Q** | **Y/Y** |\n| Revenue | $96,221 | $81,615 | $46,743 | 18 % | 106 % |\n| Gross margin | 75.0 % | 74.9 % | 72.4 % | 0.1 pts | 2.6 pts |\n| Operating expenses | $8,408 | $7,621 | $5,413 | 10 % | 55 % |\n| Operating income | $63,734 | $53,536 | $28,440 | 19 % | 124 % |\n| Net income | $59,688 | $58,321 | $26,422 | 2 % | 126 % |\n| Diluted earnings per share | $2.46 | $2.39 | $1.08 | 3 % | 128 % |\n\n| **Non-GAAP** | | | | | |\n| - | - | - | - | - | - |\n| *($ in millions, except earnings per share)* | **Q2 FY27** | **Q1 FY27** | **Q2 FY26** | **Q/Q** | **Y/Y** |\n| Revenue | $96,221 | $81,615 | $46,743 | 18 % | 106 % |\n| Gross margin | 75.0 % | 75.0 % | 72.5 % | -- | 2.5 pts |\n| Operating expenses | $8,232 | $7,449 | $5,361 | 11 % | 54 % |\n| Operating income | $63,956 | $53,783 | $28,541 | 19 % | 124 % |\n| Net income | $53,954 | $45,548 | $24,763 | 18 % | 118 % |\n| Diluted earnings per share | $2.22 | $1.87 | $1.01 | 19 % | 120 % |\n| | | | | | |\n</passage>",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "verdict": {
+          "type": "string",
+          "enum": [
+            "supported",
+            "partial",
+            "unsupported",
+            "no_evidence"
+          ]
+        },
+        "best_source_url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "evidence_quote": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "reason": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "verdict",
+        "best_source_url",
+        "evidence_quote",
+        "reason"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "response": "{\"verdict\":\"partial\",\"best_source_url\":\"https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-second-quarter-fiscal-2027\",\"evidence_quote\":\"NVIDIA Announces Financial Results for Second Quarter Fiscal 2027\",\"reason\":\"The passage is NVIDIA's press release reporting Q2 FY27 results, which confirms that quarter was reported, but it does not show that no later quarter has been reported, so 'most recently reported' is not established.\"}"
+}

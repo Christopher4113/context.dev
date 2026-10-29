@@ -1,0 +1,36 @@
+{
+  "request": {
+    "model": "anthropic:claude-opus-5-5",
+    "system": "Rewrite each field of a research answer as one standalone, checkable factual sentence. Name the subject explicitly (e.g. the company). Keep the value exactly as given. Do not add facts.",
+    "user": "Question: Company facts about Vercel: founder, founding year, original company name, and headquarters.\n\nFields:\n- company (company) = \"Vercel\"\n- founder (founder) = \"Guillermo Rauch\"\n- founded_year (founded year) = 2015\n- original_name (original name) = \"ZEIT\"\n- headquarters (headquarters) = \"San Francisco, California\"\n\nReturn {\"claims\":[{\"path\",\"claim\"}]} with one entry per field.",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "claims": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "path": {
+                "type": "string"
+              },
+              "claim": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "path",
+              "claim"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "claims"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "response": "{\"claims\":[{\"path\":\"company\",\"claim\":\"The company is Vercel.\"},{\"path\":\"founder\",\"claim\":\"Vercel was founded by Guillermo Rauch.\"},{\"path\":\"founded_year\",\"claim\":\"Vercel was founded in 2015.\"},{\"path\":\"original_name\",\"claim\":\"Vercel's original company name was ZEIT.\"},{\"path\":\"headquarters\",\"claim\":\"Vercel is headquartered in San Francisco, California.\"}]}"
+}

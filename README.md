@@ -29,7 +29,7 @@ question + json_format
 
 - **Verdicts:** `supported`, `partial`, `unsupported`, `no_evidence`.
 - **The verbatim check** ([src/judge.ts](src/judge.ts) `enforceQuote`) is the Auditor lesson in code. The judge must quote a span from a passage that was actually retrieved. Before matching, whitespace, curly quotes, dashes, and Markdown syntax are normalized. Words, numbers, and case are not. If the quote can't be found, a positive verdict is downgraded and marked `quote_verified: false`. If it is found, the source is re-pointed to the page the quote actually came from.
-- **Pluggable judge:** Claude (`claude-opus-5-5`, effort `medium`) is the default. Set `JUDGE_PROVIDER=openai`, `JUDGE_BASE_URL`, `JUDGE_MODEL`, and optionally `JUDGE_API_KEY` to use any OpenAI-compatible endpoint, such as a small fine-tuned judge. The same function also phrases the claims, with one call per answer.
+- **Pluggable judge:** Claude (`claude-opus-5-5`, effort `medium`) is the default. Set `JUDGE_MODEL` to swap the judge, for example `claude-haiku-5-5`. Set `JUDGE_PROVIDER=openai` with `JUDGE_BASE_URL`, `JUDGE_MODEL`, and optionally `JUDGE_API_KEY` to use any OpenAI-compatible endpoint, such as a small fine-tuned judge. Claims are phrased once per answer by `CLAIM_MODEL` (Opus by default). Swapping only the judge keeps the claims, and so every cached Highlights query, unchanged: re-judging the whole benchmark costs 0 Context.dev credits.
 - **Cost controls:** fast mode only, at most 3 sources per claim, and every Context.dev and LLM response cached under `.cache/`, so reruns cost 0 credits. Credits are read from the `X-Credits-Used` header, and each run hard-stops at a budget (`--budget`, default 200 per CLI run).
 
 ## Run it
@@ -59,9 +59,11 @@ pnpm groundcheck "What are the pricing plans for Linear (linear.app)?" --schema 
 
 ```bash
 pnpm bench --budget=1500
+# re-judge the cached benchmark with another judge (0 Context.dev credits; --budget=0 forbids new calls)
+JUDGE_MODEL=claude-haiku-5-5 pnpm bench --budget=0 --out=results/benchmark-haiku.json
 ```
 
-**Tests.** These run offline against recorded fixtures in [fixtures/](fixtures/): the flattener, the verbatim-quote validator, verdict downgrading, and the full pipeline with mocked APIs.
+**Tests.** These run offline against recorded fixtures in [fixtures/](fixtures/): the flattener, the verbatim-quote validator, verdict downgrading, and the full pipeline with mocked APIs. [test/real-quotes.test.ts](test/real-quotes.test.ts) also replays the verbatim check against the 112 real quotes and passages from the benchmark, and checks that a one-digit or one-word change to any of them is caught.
 
 ```bash
 pnpm test

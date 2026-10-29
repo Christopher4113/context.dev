@@ -1,0 +1,44 @@
+{
+  "request": {
+    "model": "anthropic:claude-opus-5-5",
+    "system": "You verify one claim against evidence passages scraped from the cited sources. Judge only from the passages, never from your own knowledge.\nVerdicts:\n- supported: a passage states the claim's value, so a reader could confirm it from the quote alone. Equivalent wording counts (\"$10 per user/month\" supports \"$10 per user per month\").\n- partial: a passage supports part of the claim, or gives a materially different qualification (a different number, a range, an older date, a different plan or product).\n- unsupported: the passages are on topic but do not state the value, or they contradict it.\n- no_evidence: the passages are irrelevant or empty.\nA passage that only mentions a word in another sense (e.g. a product name in a feature list) does not support a claim about it.\nevidence_quote MUST be copied character-for-character from one passage: the shortest span that shows the value (under 300 characters). Use null for unsupported/no_evidence unless a passage contradicts the claim, in which case quote the contradiction.\nreason: one sentence. If the passage contradicts the claim, say what it actually says.",
+    "user": "Research question: What major changes did Tailwind CSS v4.0 introduce?\nClaim: Tailwind CSS v4.0 introduced a first‑party Vite plugin for tighter integration and zero‑config setup.\nValue being checked: \"First‑party Vite plugin for tighter integration and zero‑config setup\"\n\n<passage source=\"https://tailwindcss.com/blog/tailwindcss-v4\">\n[Tailwind CSS v4.0]\n\n- New high-performance engine — where full builds are up to 5x faster, and incremental builds are over 100x faster — and measured in microseconds.\n- Designed for the modern web — built on cutting-edge CSS features like cascade layers, registered custom properties with `@property`, and `color-mix()`.\n- Simplified installation — fewer dependencies, zero configuration, and just a single line of code in your CSS file.\n- First-party Vite plugin — tight integration for maximum performance and minimum configuration.\n- Automatic content detection — all of your template files are discovered automatically, with no configuration required.\n- Built-in import support — no additional tooling necessary to bundle multiple CSS files.\n- CSS-first configuration — a reimagined developer experience where you customize and extend the framework directly in CSS instead of a JavaScript configuration file.\n- CSS theme variables — all of your design tokens exposed as native CSS variables so you can access them anywhere.\n- Dynamic utility values and variants — stop guessing what values exist in your spacing scale, or extending your configuration for things like basic data attributes.\n\n…\n\n[Tailwind CSS v4.0 > First-party Vite plugin]\n\nIf you're a Vite user, you can now integrate Tailwind using `@tailwindcss/vite` instead of PostCSS:\n\nvite.config.ts\n\n```\nimport { defineConfig } from \"vite\";import tailwindcss from \"@tailwindcss/vite\";export default defineConfig({  plugins: [    tailwindcss(),  ],});\n```\n\nTailwind CSS v4.0 is incredibly fast when used as a PostCSS plugin, but you'll get even better performance using the Vite plugin.\n</passage>",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "verdict": {
+          "type": "string",
+          "enum": [
+            "supported",
+            "partial",
+            "unsupported",
+            "no_evidence"
+          ]
+        },
+        "best_source_url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "evidence_quote": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "reason": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "verdict",
+        "best_source_url",
+        "evidence_quote",
+        "reason"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "response": "{\"verdict\":\"supported\",\"best_source_url\":\"https://tailwindcss.com/blog/tailwindcss-v4\",\"evidence_quote\":\"First-party Vite plugin — tight integration for maximum performance and minimum configuration.\",\"reason\":\"The passage lists a first-party Vite plugin with tight integration and minimum configuration as a v4.0 feature, which is essentially the claim (\\\"minimum configuration\\\" is close to, though not identical to, \\\"zero-config\\\").\"}"
+}

@@ -8,22 +8,30 @@ export type Verdict = (typeof VERDICTS)[number];
 /** A model call that returns JSON text matching `schema`. Claude by default, or any OpenAI-compatible endpoint. */
 export type LLM = (system: string, user: string, schema: Record<string, unknown>) => Promise<string>;
 
-/** Same prompt + model = same answer from disk, so reruns are free and the demo replays instantly. */
-export function defaultLLM(): LLM {
-  const llm = rawLLM();
-  const model = `${process.env.JUDGE_PROVIDER ?? "anthropic"}:${process.env.JUDGE_MODEL ?? ""}`;
-  return async (system, user, schema) => (await cached("llm", { model, system, user, schema }, () => llm(system, user, schema))).data;
+const openai = () => process.env.JUDGE_PROVIDER === "openai";
+
+/**
+ * Same prompt + model = same answer from disk, so reruns are free and the demo replays instantly.
+ * `model` defaults to JUDGE_MODEL, then Claude Opus 5.5.
+ */
+export function defaultLLM(model = process.env.JUDGE_MODEL ?? (openai() ? "" : "claude-opus-5-5")): LLM {
+  const llm = rawLLM(model);
+  const key = `${openai() ? "openai" : "anthropic"}:${model}`;
+  return async (system, user, schema) => (await cached("llm", { model: key, system, user, schema }, () => llm(system, user, schema))).data;
 }
 
-function rawLLM(): LLM {
-  if (process.env.JUDGE_PROVIDER === "openai") {
+/** Claim phrasing stays on Opus when only the judge is swapped, so claims (and the cached Highlights queries) don't change. */
+export const claimLLM = () => defaultLLM(process.env.CLAIM_MODEL ?? (openai() ? undefined : "claude-opus-5-5"));
+
+function rawLLM(model: string): LLM {
+  if (openai()) {
     const base = process.env.JUDGE_BASE_URL ?? "https://api.openai.com/v1";
     return async (system, user) => {
       const res = await fetch(`${base}/chat/completions`, {
         method: "POST",
         headers: { "content-type": "application/json", authorization: `Bearer ${process.env.JUDGE_API_KEY ?? ""}` },
         body: JSON.stringify({
-          model: process.env.JUDGE_MODEL,
+          model,
           response_format: { type: "json_object" },
           messages: [
             { role: "system", content: system },
@@ -38,10 +46,10 @@ function rawLLM(): LLM {
   const client = new Anthropic();
   return async (system, user, schema) => {
     const msg = await client.beta.messages.create({
-      model: process.env.JUDGE_MODEL ?? "claude-opus-5-5",
+      model,
       max_tokens: 8000,
-      betas: ["server-side-fallback-2026-07-01"],
-      fallbacks: "default",
+      // Haiku has no server-side refusal fallback.
+      ...(model.startsWith("claude-haiku") ? {} : { betas: ["server-side-fallback-2026-07-01"], fallbacks: "default" as const }),
       output_config: { effort: "medium", format: { type: "json_schema", schema } },
       system,
       messages: [{ role: "user", content: user }],

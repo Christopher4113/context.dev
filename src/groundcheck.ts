@@ -1,6 +1,6 @@
 import { answers, Credits, highlights, type Highlights } from "./context.ts";
 import { flatten, label, templateClaim } from "./flatten.ts";
-import { defaultLLM, judge, phraseClaims, VERDICTS, type Citation, type LLM, type Verdict } from "./judge.ts";
+import { claimLLM, defaultLLM, judge, phraseClaims, VERDICTS, type Citation, type LLM, type Verdict } from "./judge.ts";
 
 export { Credits } from "./context.ts";
 export type { Verdict } from "./judge.ts";
@@ -54,6 +54,7 @@ async function pool<T, R>(items: T[], n: number, fn: (t: T) => Promise<R>): Prom
 export async function groundcheck(question: string, schema: Record<string, unknown>, opts: Options = {}): Promise<GroundcheckResult> {
   const { maxSourcesPerClaim = 3, credits = new Credits(), concurrency = 4, onEvent } = opts;
   const llm = opts.llm ?? defaultLLM();
+  const phraser = opts.llm ?? claimLLM();
   const startCredits = credits.used;
 
   // 1. Ask
@@ -63,7 +64,7 @@ export async function groundcheck(question: string, schema: Record<string, unkno
   // 2. Flatten into claims
   const leaves = flatten(root);
   const labelled = leaves.map((l) => ({ ...l, label: label(root, l.path) }));
-  const phrased = leaves.length ? await phraseClaims(llm, question, labelled) : new Map<string, string>();
+  const phrased = leaves.length ? await phraseClaims(phraser, question, labelled) : new Map<string, string>();
   const fields = labelled.map((l) => ({ ...l, claim: phrased.get(l.path) ?? templateClaim(root, l) }));
   const sources = [...new Set(answer.sources.filter((u) => /^https?:\/\//.test(u)))].slice(0, maxSourcesPerClaim);
   onEvent?.({ type: "answer", json_content: root, sources: answer.sources, fields: fields.map(({ path, label, claim }) => ({ path, label, claim })) });

@@ -1,0 +1,44 @@
+{
+  "request": {
+    "model": "anthropic:claude-opus-5-5",
+    "system": "You verify one claim against evidence passages scraped from the cited sources. Judge only from the passages, never from your own knowledge.\nVerdicts:\n- supported: a passage states the claim's value, so a reader could confirm it from the quote alone. Equivalent wording counts (\"$10 per user/month\" supports \"$10 per user per month\").\n- partial: a passage supports part of the claim, or gives a materially different qualification (a different number, a range, an older date, a different plan or product).\n- unsupported: the passages are on topic but do not state the value, or they contradict it.\n- no_evidence: the passages are irrelevant or empty.\nA passage that only mentions a word in another sense (e.g. a product name in a feature list) does not support a claim about it.\nevidence_quote MUST be copied character-for-character from one passage: the shortest span that shows the value (under 300 characters). Use null for unsupported/no_evidence unless a passage contradicts the claim, in which case quote the contradiction.\nreason: one sentence. If the passage contradicts the claim, say what it actually says.",
+    "user": "Research question: Company facts about Vercel: founder, founding year, original company name, and headquarters.\nClaim: Vercel's original company name was ZEIT.\nValue being checked: \"ZEIT\"\n\n<passage source=\"https://www.linkedin.com/company/vercel/\">\n[Vercel > About us]\n\nVercel is the platform where humans and AI agents build, ship, and scale software together. Trusted by OpenAI, Meta, Ramp, and Supreme, we free the world to ship what's next.\n\n…\n\nSoftware Development\n\n…\n\nSan Francisco, California\n\n…\n\nFounded\n\n…\n\nNext.js, Developer Velocity, Open Source, Developer Experience, React, and Web Development\n</passage>\n\n<passage source=\"https://www.linkedin.com/company/vercel-corp/\">\n[Vercel Corp > About us]\n\nWebsite\n\n…\n\nIndustry\n\nInvestment Management\n\n…\n\nHeadquarters\n\nCalabasas, California\n</passage>\n\n<passage source=\"https://www.linkedin.com/company/ujenzixform\">\n[UjenziXform > About us]\n\nUjenziXform is Kenya's all-in-one construction management platform connecting builders, suppliers, and delivery providers. Builders can request quotes from multiple suppliers, track deliveries in real-time with GPS, and verify every material using QR code scanning. Suppliers can manage inventory, respond to quotes instantly, and monitor dispatched orders with QR dispatch scanning. Delivery providers can accept jobs, scan QR codes for pickup and delivery confirmation, and share live GPS location. What sets UjenziXform apart is our Site Monitoring Service featuring professional oversight with drone aerial surveys and 24/7 AI camera monitoring. Packages start from KES 15,000/month, and private clients get 50% off! From quote to delivery to drone-monitored sites — simplifying construction logistics across Kenya! 🏗️🇰🇪\n\n…\n\nIndustry\n\nConstruction\n\n…\n\nSelf-Owned\n\nFounded\n</passage>",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "verdict": {
+          "type": "string",
+          "enum": [
+            "supported",
+            "partial",
+            "unsupported",
+            "no_evidence"
+          ]
+        },
+        "best_source_url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "evidence_quote": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "reason": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "verdict",
+        "best_source_url",
+        "evidence_quote",
+        "reason"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "response": "{\"verdict\":\"no_evidence\",\"best_source_url\":null,\"evidence_quote\":null,\"reason\":\"None of the passages mention ZEIT or any former company name for Vercel; they only describe Vercel's platform, location, and unrelated companies.\"}"
+}

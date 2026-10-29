@@ -1,0 +1,44 @@
+{
+  "request": {
+    "model": "anthropic:claude-opus-5-5",
+    "system": "You verify one claim against evidence passages scraped from the cited sources. Judge only from the passages, never from your own knowledge.\nVerdicts:\n- supported: a passage states the claim's value, so a reader could confirm it from the quote alone. Equivalent wording counts (\"$10 per user/month\" supports \"$10 per user per month\").\n- partial: a passage supports part of the claim, or gives a materially different qualification (a different number, a range, an older date, a different plan or product).\n- unsupported: the passages are on topic but do not state the value, or they contradict it.\n- no_evidence: the passages are irrelevant or empty.\nA passage that only mentions a word in another sense (e.g. a product name in a feature list) does not support a claim about it.\nevidence_quote MUST be copied character-for-character from one passage: the shortest span that shows the value (under 300 characters). Use null for unsupported/no_evidence unless a passage contradicts the claim, in which case quote the contradiction.\nreason: one sentence. If the passage contradicts the claim, say what it actually says.",
+    "user": "Research question: Company facts about Figma: founders, founding year, headquarters, and the outcome of Adobe's proposed acquisition.\nClaim: Figma was founded in 2012.\nValue being checked: 2012\n\n<passage source=\"https://www.linkedin.com/company/figma/\">\n[Figma > About us]\n\n1,001-5,000 employees\n\n…\n\nSan Francisco, California\n\n…\n\nFounded\n\n2012\n\n…\n\n[Figma > Locations]\n\nSan Francisco, California 94103, US\n</passage>\n\n<passage source=\"https://x.com/figma\">\n[Figma (@figma) on X]\n\nFigma\n\n…\n\n[Figma]\n\nJoined April 2015\n\n…\n\n85 Affiliates\n\n…\n\nOct 19\n\n…\n\nTurn any image into a video (or generate one from scratch) without leaving your agent chat All powered by Figma Weave via Figma MCP\n</passage>\n\n<passage source=\"https://x.com/figmadesign\">\n[figmadesign (@figmadesign) on X]\n\nfigmadesign\n\n…\n\n[figmadesign]\n\n@figmadesign\n\nYou can now find us @figma. 👋\n\nfigma.com\n\nJoined July 2009\n</passage>",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "verdict": {
+          "type": "string",
+          "enum": [
+            "supported",
+            "partial",
+            "unsupported",
+            "no_evidence"
+          ]
+        },
+        "best_source_url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "evidence_quote": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "reason": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "verdict",
+        "best_source_url",
+        "evidence_quote",
+        "reason"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "response": "{\"verdict\":\"supported\",\"best_source_url\":\"https://www.linkedin.com/company/figma/\",\"evidence_quote\":\"Founded\\n\\n2012\",\"reason\":\"Figma's LinkedIn company page lists its founding year as 2012.\"}"
+}

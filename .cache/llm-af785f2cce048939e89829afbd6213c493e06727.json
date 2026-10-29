@@ -1,0 +1,44 @@
+{
+  "request": {
+    "model": "anthropic:claude-opus-5-5",
+    "system": "You verify one claim against evidence passages scraped from the cited sources. Judge only from the passages, never from your own knowledge.\nVerdicts:\n- supported: a passage states the claim's value, so a reader could confirm it from the quote alone. Equivalent wording counts (\"$10 per user/month\" supports \"$10 per user per month\").\n- partial: a passage supports part of the claim, or gives a materially different qualification (a different number, a range, an older date, a different plan or product).\n- unsupported: the passages are on topic but do not state the value, or they contradict it.\n- no_evidence: the passages are irrelevant or empty.\nA passage that only mentions a word in another sense (e.g. a product name in a feature list) does not support a claim about it.\nevidence_quote MUST be copied character-for-character from one passage: the shortest span that shows the value (under 300 characters). Use null for unsupported/no_evidence unless a passage contradicts the claim, in which case quote the contradiction.\nreason: one sentence. If the passage contradicts the claim, say what it actually says.",
+    "user": "Research question: Who are Shopify's CEO and President?\nClaim: The company in question is Shopify.\nValue being checked: \"Shopify\"\n\n<passage source=\"https://www.linkedin.com/in/tobiaslutke\">\n[Tobias Lütke > Sign in to view Tobias’ full profile]\n\nShopify\n\n…\n\n[Tobias Lütke > About]\n\nTobias Lütke is CEO and co-founder of Shopify, the marquee shopping cart system of the e-commerce industry. As a programmer Tobi has served on the core team of the Ruby on Rails framework and has created many popular open source libraries such as the Typo weblog engine, Liquid and Active Merchant.\n\n…\n\n[Tobias Lütke > Activity > Liam Fuller]\n\nBut the back-and-forth of figuring out what everyone wants in the group is pretty frustrating and turns into an absolute mess. So... 289 emails, 26 customer discovery calls, and 1 networking event later... We've built CartShare – a Shopify app that allows merchants to let their shoppers easily create a shareable cart with friends and family in just a few simple clicks - allowing friends to add into the same basket as you and browse on the same store as you in REAL TIME.&#x20;\n\n…\n\n[Tobias Lütke > Activity > Andrew Bernstein]\n\nAfter some scrambling trying to come up with a plan to take care of my employees, I faced the very real possibility that for the first time in four years, we were going to miss payroll. Then, at about 11:30 am EST, I remembered receiving an email from Kaz Nejatian, Shopify's COO, earlier this week in which he graciously offered to help Shopify customers who use SVB and who may run into issues making payroll as a result. Let me be clear, Kinder Beauty is most definitely not Shopify's top customer. We're not their smallest partner, either.&#x20;\n</passage>\n\n<passage source=\"http://blog.leetsoft.com/\">\n[We need to talk about carbon December 22 2019]\n\nShopify has taken many steps to build a sustainable company, including becoming carbon neutral. We’re setting best-in-class standards by buying offsets for all the carbon this company has ever used and will ever use, and we choose renewable energy to heat and power our operations.\n\n…\n\n[We need to talk about carbon December 22 2019 > We’re launching the Shopify Sustainability Fund]\n\n> Shopify commits to spending at least $5 million USD annually to fight for our environment.\n\nThe Shopify Sustainability Fund will house all of our environmental investments, including carbon sequestration. Our intention is to increase our financial commitment annually based on our revenue growth.\n\n…\n\n- **Buying $1M of sequestered carbon annually at any price:** Shopify is committed to investing at least $1 million USD each year into carbon sequestration. Our goal is to kickstart the demand and predictability of this market so industrial engineering can scale and the price can come down. \n\n- **Carbon-neutral operations:** We've bought enough renewable energy to neutralize our carbon footprint in Canada, and in 2020 we plan to power 100% of our global operations with renewable energy. We’ll offset all travel-related emissions too.\n\n- **Carbon-neutral platform**: All of Shopify runs in data centers powered by renewable energy.\n\n- **Sustainable offices:** We look for LEED-certified office space, and most of our square footage is LEED Gold or Platinum. We’ve chosen buildings in areas with high transit and walkability scores, and built with local materials wherever possible. This also includes minor but locally impactful things like adding bike racks and storage to every office.\n</passage>\n\n<passage source=\"http://about.me/\">\n[MEET YOUR]\n\nThe next evolution of your about.me page.\nNow alive and interactive.\n\n…\n\n[MEET YOUR > Simple]\n\nCreate your page once. Your AI Twin does the rest — chatting with visitors, answering questions, and collecting leads automatically.\n\n…\n\n[MEET YOUR > Upgrade — Bring Your Page to Life. > Standard]\n\n- about.me page\n- AI Virtual Twin\n- Capture leads directly into about.me CRM for easy follow-up\n- Schedule appointments\n- Email signature\n\n…\n\n[August Sanders > Small Business Owner in Massachusetts]\n\nCall (657) 248-3927\n\n…\n\n[August Sanders > The Mac Maverick > Human-Centered Apple Support]\n\nI’m August Sanders, founder of The Mac Maverick LLC. I’ve spent nearly three decades helping people use Apple technology with confidence, from everyday troubleshooting and device setup to backups, email, photos, security, and digital organization.\n</passage>",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "verdict": {
+          "type": "string",
+          "enum": [
+            "supported",
+            "partial",
+            "unsupported",
+            "no_evidence"
+          ]
+        },
+        "best_source_url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "evidence_quote": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "reason": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "verdict",
+        "best_source_url",
+        "evidence_quote",
+        "reason"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "response": "{\"verdict\":\"supported\",\"best_source_url\":\"https://www.linkedin.com/in/tobiaslutke\",\"evidence_quote\":\"Tobias Lütke is CEO and co-founder of Shopify\",\"reason\":\"The passage explicitly discusses Shopify and its CEO, which confirms that the company in question is Shopify.\"}"
+}

@@ -1,0 +1,44 @@
+{
+  "request": {
+    "model": "anthropic:claude-haiku-5-5",
+    "system": "You verify one claim against evidence passages scraped from the cited sources. Judge only from the passages, never from your own knowledge.\nVerdicts:\n- supported: a passage states the claim's value, so a reader could confirm it from the quote alone. Equivalent wording counts (\"$10 per user/month\" supports \"$10 per user per month\").\n- partial: a passage supports part of the claim, or gives a materially different qualification (a different number, a range, an older date, a different plan or product).\n- unsupported: the passages are on topic but do not state the value, or they contradict it.\n- no_evidence: the passages are irrelevant or empty.\nA passage that only mentions a word in another sense (e.g. a product name in a feature list) does not support a claim about it.\nevidence_quote MUST be copied character-for-character from one passage: the shortest span that shows the value (under 300 characters). Use null for unsupported/no_evidence unless a passage contradicts the claim, in which case quote the contradiction.\nreason: one sentence. If the passage contradicts the claim, say what it actually says.",
+    "user": "Research question: Who are the CEO, President, and Chief Science Officer of Anthropic?\nClaim: The company in question is Anthropic.\nValue being checked: \"Anthropic\"\n\n<passage source=\"https://www.linkedin.com/company/anthropicresearch/\">\n[Anthropic > About us]\n\nWe're an AI research company that builds reliable, interpretable, and steerable AI systems. Our first product is Claude, an AI assistant for tasks at any scale. Our research interests span multiple areas including natural language, human feedback, scaling laws, reinforcement learning, code generation, and interpretability.\n\n…\n\n501-1,000 employees\n\n…\n\nPrivately Held\n\n…\n\n[Anthropic > Updates]\n\nAnthropic files S-1 with the SEC for proposed initial public offering anthropic.com\n\n…\n\nWe’re committing a portion of Anthropic’s shares to the Anthropic Public Benefit Fund, a new wholly owned entity dedicated entirely to the public benefit. It will start off with 5% of our shares. For every 50% increase in the company’s value over a set baseline, we can contribute up to an extra 2%, subject to our board’s discretion. In total, this means that roughly 20% of Anthropic’s shares are committed to the public good. Our co-founders have already pledged to donate 80% of their equity, and around half our employees are donating a portion of their equity as part of a donation matching program we’ve run since our founding. In the post below, we share more details about our new fund.&#x20;\n</passage>\n\n<passage source=\"https://x.com/anthropicai\">\n[Anthropic]\n\nWe're an AI safety and research company that builds reliable, interpretable, and steerable AI systems. Talk to our AI assistant @claudeai on claude.ai.\n\n…\n\n3 Affiliates\n\n…\n\nWe're expanding our partnership with @USGSA. Under a new OneGov agreement, we are bringing Claude to federal, state, local, tribal, and territorial governments at 40% off.\n\n…\n\nAnthropic has filed an S-1 registration statement with the SEC related to its proposed IPO. Read more: anthropic.com/news/s1-sec Legal disclaimer: A registration statement relating to these securities has been filed with the SEC but has not yet become effective. These securities Show more\n\nAnthropic files S-1 with the SEC for proposed initial public offering\n</passage>\n\n<passage source=\"https://www.facebook.com/anthropicai\">\n[Anthropic > Intro]\n\nAnthropic is an AI safety and research company that’s working to build reliable, interpretable, and steerable AI systems.\n\n…\n\nANTHROPIC PBC\n\n…\n\nanthropic.com\n\n…\n\n[Anthropic > Anthropic]\n\nA.A.Murakami create immersive, multisensory installations that merge technology with ephemeral natural phenomena like fog, bubbles, and plasma. In their latest piece, C…\n\n…\n\nMilk AI LLC\n</passage>",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "verdict": {
+          "type": "string",
+          "enum": [
+            "supported",
+            "partial",
+            "unsupported",
+            "no_evidence"
+          ]
+        },
+        "best_source_url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "evidence_quote": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "reason": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "verdict",
+        "best_source_url",
+        "evidence_quote",
+        "reason"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "response": "{\"verdict\":\"supported\",\"best_source_url\":\"https://www.facebook.com/anthropicai\",\"evidence_quote\":\"Anthropic is an AI safety and research company that’s working to build reliable, interpretable, and steerable AI systems.\",\"reason\":\"The passages consistently refer to the company as Anthropic, which matches the claim that the company in question is Anthropic.\"}"
+}

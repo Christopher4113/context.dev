@@ -1,0 +1,458 @@
+$ tsx src/bench.ts --budget=0 --out=results/benchmark-haiku.json
+
+[company-stripe] Company facts about Stripe: founders, founding year, and headquarters city.
+
+supported    company       Stripe
+             “Stripe builds programmable financial services.”  https://www.linkedin.com/company/stripe/
+no_evidence  founders[0]   Patrick Collison
+             The passages describe Stripe's business and headquarters but never mention Patrick Collison or any founder, so the claim is not addressed.
+no_evidence  founders[1]   John Collison
+             The passages mention John Collison only as a podcast co-host in a Stripe update, and say nothing about him being a founder of Stripe.
+supported    founded_year  2010
+             “Founded 2010”  https://www.linkedin.com/company/stripe/
+partial      headquarters  South San Francisco
+             “Headquartered in San Francisco and Dublin, the company aims to increase the GDP of the in…”  https://www.linkedin.com/company/stripe/
+
+5 fields: 2 supported, 1 partial, 0 unsupported, 2 no evidence
+10 sources returned by Answers · 0 Context.dev credits used this run (0 = all cached)
+  running total: 0 credits
+
+[company-figma] Company facts about Figma: founders, founding year, headquarters, and the outcome of Adobe's proposed acquisition.
+
+supported    company                    Figma
+             “[Figma > About us]”  https://www.linkedin.com/company/figma/
+no_evidence  founders[0]                Dylan Field
+             The passages cover Figma's location, founding-date fragments, and social media profiles but never mention Dylan Field or any founders.
+no_evidence  founders[1]                Evan Wallace
+             The passages cover Figma's location, join date on X, and a product post but none mention Evan Wallace or any founders.
+supported    founded_year               2012
+             “Founded 2012”  https://www.linkedin.com/company/figma/
+supported    headquarters               San Francisco, California, United States
+             “Headquarters San Francisco, California”  https://www.linkedin.com/company/figma/
+no_evidence  adobe_acquisition_outcome  Adobe and Figma mutually terminated the…
+             The passages are LinkedIn and X profile pages with employee names, product mentions, and social posts; none mention Adobe's acquisition, it…
+
+6 fields: 3 supported, 0 partial, 0 unsupported, 3 no evidence
+10 sources returned by Answers · 0 Context.dev credits used this run (0 = all cached)
+  running total: 0 credits
+
+[company-vercel] Company facts about Vercel: founder, founding year, original company name, and headquarters.
+
+supported    company        Vercel
+             “Vercel is the platform where humans and AI agents build, ship, and scale software togethe…”  https://www.linkedin.com/company/vercel/
+no_evidence  founder        Guillermo Rauch
+             None of the passages mention Vercel's founder; the Vercel LinkedIn page only lists a 'Founded' label with no value, and the other passages …
+supported    founded_year   2015
+             “Founded 2015”  https://www.linkedin.com/company/vercel/
+no_evidence  original_name  ZEIT
+             None of the passages mention ZEIT or Vercel's original company name; the Vercel LinkedIn page only gives San Francisco and a 'Founded' labe…
+supported    headquarters   San Francisco, California
+             “Headquarters San Francisco, California”  https://www.linkedin.com/company/vercel/
+
+5 fields: 3 supported, 0 partial, 0 unsupported, 2 no evidence
+21 sources returned by Answers · 0 Context.dev credits used this run (0 = all cached)
+  running total: 0 credits
+
+[company-contextdev] Company facts about Context.dev (context.dev), the web data API for AI agents: founders, accelerator batch, and latest funding round.
+
+supported    company                    Context.dev
+             “[Context.dev (YC S26) > About us]”  https://www.linkedin.com/company/contextdev
+partial      founders[0]                Yahia Bakour
+             “Yahia Bakour We raised $9M to give your agents the internet.”  https://x.com/getcontextdev
+supported    accelerator_batch          Y Combinator S26
+             “Context.dev (YC S26)”  https://www.linkedin.com/company/contextdev
+unsupported  latest_funding.round       Seed
+             “We raised $9M to give your agents the internet. Led by @generalcatalyst, with @orangecoll…”  https://x.com/getcontextdev
+supported    latest_funding.amount_usd  9000000
+             “We raised $9M to give your agents the internet.”  https://x.com/getcontextdev
+
+5 fields: 3 supported, 1 partial, 1 unsupported, 0 no evidence
+8 sources returned by Answers · 0 Context.dev credits used this run (0 = all cached)
+  running total: 0 credits
+
+[company-supabase] Company facts about Supabase: founders, founding year, and total funding raised.
+
+supported    company            Supabase
+             “The Postgres development platform. Supabase gives you a dedicated Postgres database to bu…”  https://github.com/supabase
+partial      founders[0]        Paul Copplestone
+             “Paul Copplestone - e/postgres”  https://x.com/supabase
+unsupported  founders[1]        Ant Wilson
+             “CEO of Supabase(Paul Copplestone), and the entire leadership team of Supabase in one plac…”  https://www.linkedin.com/company/supabase/
+supported    founded_year       2020
+             “Founded 2020”  https://www.linkedin.com/company/supabase/
+no_evidence  total_funding_usd  $1 billion
+             The passages mention a $150M Turso acquisition and employee counts but contain no information about Supabase's total funding raised, so the…
+
+5 fields: 2 supported, 1 partial, 1 unsupported, 1 no evidence
+9 sources returned by Answers · 0 Context.dev credits used this run (0 = all cached)
+  running total: 0 credits
+
+[pricing-linear] What are the pricing plans for Linear (linear.app)? Give plan names and monthly per-user prices.
+
+supported    company                          Linear
+             “[Pricing > Free]”  https://linear.app/pricing
+supported    plans[0].name                    Free
+             “[Pricing > Free] $0 Free for everyone”  https://linear.app/pricing
+supported    plans[0].price_per_user_monthly  $0
+             “[Pricing > Free] $0 Free for everyone”  https://linear.app/pricing
+supported    plans[1].name                    Basic
+             “[Pricing > Basic]”  https://linear.app/pricing
+supported    plans[1].price_per_user_monthly  $10
+             “$10 per user/month$10 per user/month”  https://linear.app/pricing
+supported    plans[2].name                    Business
+             “[Pricing > Business]”  https://linear.app/pricing
+supported    plans[2].price_per_user_monthly  $16
+             “[Pricing > Business] $16 per user/month$16 per user/month Billed yearly”  https://linear.app/pricing
+supported    plans[3].name                    Enterprise
+             “[Pricing > Enterprise]”  https://linear.app/pricing
+supported    free_plan_available              true
+             “[Pricing > Free] $0 Free for everyone”  https://linear.app/pricing
+
+9 fields: 9 supported, 0 partial, 0 unsupported, 0 no evidence
+1 sources returned by Answers · 0 Context.dev credits used this run (0 = all cached)
+  running total: 0 credits
+
+[pricing-notion] What are Notion's paid plan prices per member per month, billed annually and billed monthly?
+
+supported    plans[0].name                      Plus
+             “Plus$10 per seat/monthGet started”  https://www.notion.com/pricing
+supported    plans[0].annual_price_per_member   $10
+             “$10per member / month”  https://www.notion.com/pricing
+unsupported  plans[0].monthly_price_per_member  $12
+             “$10per member / month”  https://www.notion.com/pricing
+supported    plans[1].name                      Business
+             “Business$20 per seat/monthGet started”  https://www.notion.com/pricing
+partial      plans[1].annual_price_per_member   $20
+             “Business$20 per seat/month”  https://www.notion.com/pricing
+no_evidence  plans[1].monthly_price_per_member  $24
+             The passage discusses billing mechanics per member and renewals but does not state any Business plan price, so the $24 monthly figure is no…
+
+6 fields: 3 supported, 1 partial, 1 unsupported, 1 no evidence
+1 sources returned by Answers · 0 Context.dev credits used this run (0 = all cached)
+  running total: 0 credits
+
+[pricing-github-copilot] What are the GitHub Copilot individual plan prices per month?
+
+supported    plans[0].name           Copilot Free
+             “Copilot Free: limited access to Copilot features at no cost.”  https://docs.github.com/en/billing/concepts/product-billing/github-copilot-…
+partial      plans[0].price_monthly  $0
+             “Copilot Free: limited access to Copilot features at no cost.”  https://docs.github.com/en/billing/concepts/product-billing/github-copilot-…
+supported    plans[1].name           Copilot Student
+             “Copilot Student: access to Copilot premium features at no cost.”  https://docs.github.com/en/billing/concepts/product-billing/github-copil…
+supported    plans[1].price_monthly  $0
+             “Copilot Student: access to Copilot premium features at no cost.”  https://docs.github.com/en/billing/concepts/product-billing/github-copil…
+supported    plans[2].name           Copilot Pro
+             “Copilot Pro: $10 USD per calendar month.”  https://docs.github.com/en/billing/concepts/product-billing/github-copilot-licenses
+supported    plans[2].price_monthly  $10
+             “Copilot Pro: $10 USD per calendar month.”  https://docs.github.com/en/billing/concepts/product-billing/github-copilot-licenses
+supported    plans[3].name           Copilot Pro+
+             “Copilot Pro+: $39 USD per calendar month.”  https://docs.github.com/en/billing/concepts/product-billing/github-copilot-licenses
+supported    plans[3].price_monthly  $39
+             “Copilot Pro+: $39 USD per calendar month.”  https://docs.github.com/en/billing/concepts/product-billing/github-copilot-licenses
+supported    plans[4].name           Copilot Max
+             “Copilot Max: $100 USD per calendar month.”  https://docs.github.com/en/billing/concepts/product-billing/github-copilot-licenses
+supported    plans[4].price_monthly  $100
+             “Copilot Max: $100 USD per calendar month.”  https://docs.github.com/en/billing/concepts/product-billing/github-copilot-licenses
+
+10 fields: 9 supported, 1 partial, 0 unsupported, 0 no evidence
+1 sources returned by Answers · 0 Context.dev credits used this run (0 = all cached)
+  running total: 0 credits
+
+[pricing-contextdev] What are the pricing plans for context.dev? Give plan names, monthly price, and monthly credits.
+
+supported    plans[0].name               Free
+             “Start with Free for testing or Developer for your first workflow.”  https://www.context.dev/pricing
+supported    plans[0].price_monthly      $0
+             “[Straightforward, transparent pricing > Plans > Free Tier] $0/month”  https://www.context.dev/pricing
+supported    plans[0].credits_per_month  1,000
+             “Credits per month1,000”  https://www.context.dev/pricing
+supported    plans[1].name               Developer
+             “[Straightforward, transparent pricing > Plans > Developer]”  https://www.context.dev/pricing
+supported    plans[1].price_monthly      $20
+             “Developer ($20/mo)”  https://www.context.dev/pricing
+supported    plans[1].credits_per_month  10,000
+             “Credits per month10,000”  https://www.context.dev/pricing
+supported    plans[2].name               Pro
+             “Context.dev offers Developer ($20/mo), Pro ($90/mo), Growth ($300/mo), Scale ($500/mo), a…”  https://www.context.dev/pricing
+supported    plans[2].price_monthly      $90
+             “$90/month”  https://www.context.dev/pricing
+partial      plans[2].credits_per_month  100,000
+             “Credits per month 100K500K1M2.5M”  https://www.context.dev/pricing
+supported    plans[3].name               Growth
+             “Growth ($300/mo)”  https://www.context.dev/pricing
+supported    plans[3].price_monthly      $300
+             “Growth ($300/mo)”  https://www.context.dev/pricing
+supported    plans[4].name               Scale
+             “Scale ($500/mo), and Scale 2.5M ($950/mo)”  https://www.context.dev/pricing
+supported    plans[4].price_monthly      $500
+             “Scale ($500/mo)”  https://www.context.dev/pricing
+unsupported  plans[4].credits_per_month  1,000,000
+             “Scale ($500/mo), and Scale 2.5M ($950/mo), plus Enterprise for teams that need more than …”  https://www.context.dev/pricing
+supported    plans[5].name               Scale 2.5M
+             “Scale 2.5M ($950/mo)”  https://www.context.dev/pricing
+supported    plans[5].price_monthly      $950
+             “Scale 2.5M ($950/mo)”  https://www.context.dev/pricing
+partial      plans[5].credits_per_month  2,500,000
+             “Scale 2.5M ($950/mo), plus Enterprise for teams that need more than 2.5M credits a month”  https://www.context.dev/pricing
+supported    plans[6].name               Enterprise
+             “[Straightforward, transparent pricing > Plans > Enterprise]”  https://www.context.dev/pricing
+
+18 fields: 15 supported, 2 partial, 1 unsupported, 0 no evidence
+1 sources returned by Answers · 0 Context.dev credits used this run (0 = all cached)
+  running total: 0 credits
+
+[pricing-claude-api] What is the Anthropic API price per million input and output tokens for Claude Haiku, Sonnet, and Opus (current versions)?
+
+partial      models[0].name                 Claude Haiku 5.5 (≤100,000 tokens)
+             “$0.10 and $0.50 on Claude Haiku 5.5 for prompts up to 100,000 tokens ($0.50 and $2.50 abo…”  https://www.sentra.app/articles/claude-api-pr…
+supported    models[0].input_per_mtok_usd   0.10
+             “$0.10 per million input tokens and $0.50 per million output tokens for prompts up to 100,…”  https://www.sentra.app/articles/claude-api-pr…
+supported    models[0].output_per_mtok_usd  0.50
+             “$0.10 and $0.50 on Claude Haiku 5.5 for prompts up to 100,000 tokens ($0.50 and $2.50 abo…”  https://www.sentra.app/articles/claude-api-pr…
+partial      models[1].name                 Claude Sonnet 5.5
+             “Claude Sonnet 5.5 | $3.60 | 5.6M | 253k”  https://www.sentra.app/articles/claude-api-pricing
+supported    models[1].input_per_mtok_usd   2
+             “$2 and $10 on Claude Sonnet 5.5”  https://www.sentra.app/articles/claude-api-pricing
+supported    models[1].output_per_mtok_usd  10
+             “$2 and $10 on Claude Sonnet 5.5”  https://www.sentra.app/articles/claude-api-pricing
+supported    models[2].name                 Claude Opus 5.5
+             “Opus 5.5 was released on 22 September, replacing Opus 5 at $5 and $25”  https://www.sentra.app/articles/claude-api-pricing
+supported    models[2].input_per_mtok_usd   4
+             “Claude Opus 5.5, released on 22 September 2026, costs $4 per million input tokens and $20…”  https://www.sentra.app/articles/claude-api-pr…
+partial      models[2].output_per_mtok_usd  20
+             “the Claude API costs $4 per million input tokens and $20 per million output tokens on Cla…”  https://www.sentra.app/articles/claude-api-pr…
+
+9 fields: 6 supported, 3 partial, 0 unsupported, 0 no evidence
+2 sources returned by Answers · 0 Context.dev credits used this run (0 = all cached)
+  running total: 0 credits
+
+[features-postgres] What is the latest major version of PostgreSQL and three headline features of that release?
+
+supported    latest_major_version  PostgreSQL 18
+             “| PostgreSQL 18 | Sep 2025 | Nov 2030 | 18.4 | Latest version; introduces a modern I/O su…”  https://www.instaclustr.com/education/postgre…
+partial      release_date          2025-09-25
+             “| PostgreSQL 18 | Sep 2025 | Nov 2030 | 18.4 | Latest version; introduces a modern I/O su…”  https://www.instaclustr.com/education/postgre…
+partial      headline_features[0]  asynchronous I/O subsystem
+             “PostgreSQL 18 | Sep 2025 | Nov 2030 | 18.4 | Latest version; introduces a modern I/O subs…”  https://www.instaclustr.com/education/postgre…
+unsupported  headline_features[1]  native UUID v7 support
+             “PostgreSQL 18 | Sep 2025 | Nov 2030 | 18.4 | Latest version; introduces a modern I/O subs…”  https://www.instaclustr.com/education/postgre…
+no_evidence  headline_features[2]  virtual generated columns
+             The passages establish PostgreSQL 18 as the latest version but say nothing about its headline features, so the claim that virtual generated…
+
+5 fields: 1 supported, 2 partial, 1 unsupported, 1 no evidence
+1 sources returned by Answers · 0 Context.dev credits used this run (0 = all cached)
+  running total: 0 credits
+
+[features-bun] What is the latest stable version of Bun, and which package manager lockfile format does it use by default?
+
+supported    latest_version    1.4.4
+             “v1.4.4Latest release · October 2026”  https://bun.com/
+supported    release_date      2026-10
+             “v1.4.4Latest release · October 2026”  https://bun.com/
+unsupported  default_lockfile  bun.lock
+             The passage is on topic and says Bun has 'a lockfile you can read' and migrates Yarn Berry lockfiles, but it never names bun.lock or states…
+
+3 fields: 2 supported, 0 partial, 1 unsupported, 0 no evidence
+1 sources returned by Answers · 0 Context.dev credits used this run (0 = all cached)
+  running total: 0 credits
+
+[features-tailwind] What major changes did Tailwind CSS v4.0 introduce?
+
+supported    version          4.0
+             “Tailwind CSS v4.0 is an all-new version of the framework optimized for performance and fl…”  https://tailwindcss.com/blog/tailwindcss-v4
+supported    release_date     2025-01-22
+             “January 22, 2025”  https://tailwindcss.com/blog/tailwindcss-v4
+partial      key_changes[0]   New high‑performance engine built in Ru…
+             “New high-performance engine — where full builds are up to 5x faster, and incremental buil…”  https://tailwindcss.com/blog/tailwindcss-v4
+supported    key_changes[1]   CSS‑first configuration – tailwind.conf…
+             “Instead of a `tailwind.config.js` file, you can configure all of your customizations dire…”  https://tailwindcss.com/blog/tailwindcss-v4
+supported    key_changes[2]   Automatic content detection eliminates …
+             “In v4.0, we came up with a bunch of heuristics for detecting all of that stuff automatica…”  https://tailwindcss.com/blog/tailwindcss-v4
+supported    key_changes[3]   First‑party Vite plugin for tighter int…
+             “First-party Vite plugin — tight integration for maximum performance and minimum configura…”  https://tailwindcss.com/blog/tailwindcss-v4
+supported    key_changes[4]   Modernized P3 color palette using OKLCH…
+             “We've upgraded the entire default color palette from `rgb` to `oklch`, taking advantage o…”  https://tailwindcss.com/blog/tailwindcss-v4
+supported    key_changes[5]   Container queries added as core feature…
+             “We've brought container query support into core for v4.0, so you don't need the `@tailwin…”  https://tailwindcss.com/blog/tailwindcss-v4
+supported    key_changes[6]   New 3D transform utilities (rotate‑x‑*,…
+             “We've finally added APIs for doing 3D transforms, like `rotate-x-*`, `rotate-y-*`, `scale…”  https://tailwindcss.com/blog/tailwindcss-v4
+supported    key_changes[7]   Expanded gradient APIs with linear, rad…
+             “We've added new `bg-conic-*` and `bg-radial-*` utilities for creating conic and radial gr…”  https://tailwindcss.com/blog/tailwindcss-v4
+supported    key_changes[8]   @starting‑style variant for transition‑…
+             “@starting-style support — a new variant you can use to create enter and exit transitions,…”  https://tailwindcss.com/blog/tailwindcss-v4
+supported    key_changes[9]   not‑* variant supporting the CSS :not()…
+             “We've added a new `not-*` variant which finally adds support for the CSS `:not()` pseudo-…”  https://tailwindcss.com/blog/tailwindcss-v4
+supported    key_changes[10]  Additional utilities and variants such …
+             “**New `inset-shadow-*` and `inset-ring-*` utilities** — making it possible to stack up to…”  https://tailwindcss.com/blog/tailwindcss-v4
+
+13 fields: 12 supported, 1 partial, 0 unsupported, 0 no evidence
+1 sources returned by Answers · 0 Context.dev credits used this run (0 = all cached)
+  running total: 0 credits
+
+[features-contextdev] What output formats does the context.dev Scrape API support?
+
+supported    product     Scrape API
+             “Web scraping API. Return it your way. > Start with a URL. Get usable data.”  https://www.context.dev/web-scraping-api
+supported    formats[0]  markdown
+             “formats: { markdown: true, html: true, screenshot: true,”  https://www.context.dev/web-scraping-api
+supported    formats[1]  html
+             “Read clean content, keep the HTML, or capture the page visually.”  https://www.context.dev/web-scraping-api
+supported    formats[2]  images
+             “Turn websites and PDFs into Markdown, HTML, structured fields, images, and screenshots.”  https://www.context.dev/web-scraping-api
+supported    formats[3]  screenshots
+             “Turn websites and PDFs into Markdown, HTML, structured fields, images, and screenshots.”  https://www.context.dev/web-scraping-api
+supported    formats[4]  parsed fields
+             “Markdown, HTML, images, screenshots, parsed fields, and the original response body have t…”  https://www.context.dev/web-scraping-api
+supported    formats[5]  original response body
+             “Markdown, HTML, images, screenshots, parsed fields, and the original response body have t…”  https://www.context.dev/web-scraping-api
+
+7 fields: 7 supported, 0 partial, 0 unsupported, 0 no evidence
+1 sources returned by Answers · 0 Context.dev credits used this run (0 = all cached)
+  running total: 0 credits
+
+[features-cloudflare-workers] What are the CPU time limits for Cloudflare Workers on the free and paid plans?
+
+supported    free_plan_cpu_limit          10 milliseconds per invocation
+             “Free | 100,000 per day | No charge for duration | 10 milliseconds of CPU time per invocat…”  https://developers.cloudflare.com/workers/pla…
+supported    paid_plan_default_cpu_limit  30 million CPU milliseconds per month (…
+             “30 million CPU milliseconds included per month +$0.02 per additional million CPU millisec…”  https://developers.cloudflare.com/workers/pla…
+partial      paid_plan_max_cpu_limit      30 million CPU milliseconds per month
+             “30 million CPU milliseconds included per month +$0.02 per additional million CPU millisec…”  https://developers.cloudflare.com/workers/pla…
+
+3 fields: 2 supported, 1 partial, 0 unsupported, 0 no evidence
+1 sources returned by Answers · 0 Context.dev credits used this run (0 = all cached)
+  running total: 0 credits
+
+[people-anthropic] Who are the CEO, President, and Chief Science Officer of Anthropic?
+
+supported    company                Anthropic
+             “Anthropic is an AI safety and research company that’s working to build reliable, interpre…”  https://www.facebook.com/anthropicai
+no_evidence  ceo                    Dario Amodei
+             None of the passages mention Anthropic's CEO or Dario Amodei; they cover company descriptions, employee names unrelated to the CEO role, an…
+no_evidence  president              Daniela Amodei
+             The passages are company profile and social media pages for Anthropic that do not mention Daniela Amodei or any of its executives' titles.
+no_evidence  chief_science_officer  Jared Kaplan
+             The passages are about Anthropic's company description, employees list, and S-1 filing, and none mention a Chief Science Officer or Jared K…
+
+4 fields: 1 supported, 0 partial, 0 unsupported, 3 no evidence
+7 sources returned by Answers · 0 Context.dev credits used this run (0 = all cached)
+  running total: 0 credits
+
+[people-openai] Who are OpenAI's current CEO, CFO, and Chief Research Officer?
+
+no_evidence  company                 OpenAI
+             No passages returned; failed: https://www.linkedin.com/in/sam-altman-b54557359 (WEBSITE_BLOCKED), https://linkedin.com/in/sam-altman-891603…
+no_evidence  ceo                     Sam Altman
+             No passages returned; failed: https://www.linkedin.com/in/sam-altman-b54557359 (WEBSITE_BLOCKED), https://linkedin.com/in/sam-altman-891603…
+no_evidence  cfo                     Sarah Friar
+             No passages returned; failed: https://www.linkedin.com/in/sam-altman-b54557359 (WEBSITE_BLOCKED), https://linkedin.com/in/sam-altman-891603…
+no_evidence  chief_research_officer  Mark Chen
+             No passages returned; failed: https://www.linkedin.com/in/sam-altman-b54557359 (WEBSITE_BLOCKED), https://linkedin.com/in/sam-altman-891603…
+
+4 fields: 0 supported, 0 partial, 0 unsupported, 4 no evidence
+20 sources returned by Answers · 0 Context.dev credits used this run (0 = all cached)
+  running total: 0 credits
+
+[people-microsoft] Who is Microsoft's CEO, and who is its CFO?
+
+supported    company  Microsoft
+             “Where Microsoft began – set among the evergreen forests, lakes, and mountains of the Paci…”  https://microsoft.ai/
+supported    ceo      Satya Nadella
+             “Microsoft CEO Satya Nadella and Microsoft CFO Amy Hood clearly didn't agree.”  https://www.linkedin.com/in/aboutasha
+supported    cfo      Amy Hood
+             “Microsoft CFO Amy Hood clearly didn't agree”  https://www.linkedin.com/in/aboutasha
+
+3 fields: 3 supported, 0 partial, 0 unsupported, 0 no evidence
+7 sources returned by Answers · 0 Context.dev credits used this run (0 = all cached)
+  running total: 0 credits
+
+[people-yc] Who is the current President and CEO of Y Combinator?
+
+supported    organization       Y Combinator
+             “Backed by Y Combinator”  https://linkedin.com/in/bridget-sherrod-1b615a246
+no_evidence  president_and_ceo  Garry Tan
+             The only passage is a LinkedIn profile snippet for Bridget Sherrod showing a Y Combinator role since 2022 and unrelated startup news; it sa…
+no_evidence  since_year         2023
+             The passage is a LinkedIn profile for a different person (Bridget Sherrod) showing a Y Combinator role from 2022 - Present and unrelated st…
+
+3 fields: 1 supported, 0 partial, 0 unsupported, 2 no evidence
+5 sources returned by Answers · 0 Context.dev credits used this run (0 = all cached)
+  running total: 0 credits
+
+[people-shopify] Who are Shopify's CEO and President?
+
+supported    company    Shopify
+             “Tobias Lütke is CEO and co-founder of Shopify”  https://www.linkedin.com/in/tobiaslutke
+supported    ceo        Tobias Lütke
+             “Tobias Lütke is CEO and co-founder of Shopify”  https://www.linkedin.com/in/tobiaslutke
+no_evidence  president  Harley Finkelstein
+             The passages cover Tobias Lütke's CEO role at Shopify and unrelated people, but none mention Shopify's President or Harley Finkelstein.
+
+3 fields: 2 supported, 0 partial, 0 unsupported, 1 no evidence
+15 sources returned by Answers · 0 Context.dev credits used this run (0 = all cached)
+  running total: 0 credits
+
+[dates-node-lts] What is the latest Node.js LTS release line, its codename, and when does it reach end of life?
+
+unsupported  lts_line        24
+             “26 (LTS) | 5 months and 3 weeks ago (05 May 2026)”  https://endoflife.date/nodejs
+unsupported  codename        Krypton
+             “Node.js 24 is the Active LTS line (EOL April 30, 2028) and Node.js 22 is in Maintenance L…”  https://www.herodevs.com/blog-posts/node-js-e…
+unsupported  latest_version  24
+             “26 (LTS) | 5 months and 3 weeks ago (05 May 2026)”  https://endoflife.date/nodejs
+partial      end_of_life     2028-04-30
+             “Node.js 24 is the Active LTS line (EOL April 30, 2028)”  https://www.herodevs.com/blog-posts/node-js-end-of-life-dates-you-should-be-aware…
+
+4 fields: 0 supported, 1 partial, 3 unsupported, 0 no evidence
+2 sources returned by Answers · 0 Context.dev credits used this run (0 = all cached)
+  running total: 0 credits
+
+[dates-python] What is the latest stable Python 3 release and its release date?
+
+unsupported  latest_version  3.15.0
+             “Latest Python 3 Release - Python 3.15.2”  https://www.python.org/downloads/source/
+unsupported  release_date    2026-10-09
+             “Latest Python 3 Release - Python 3.15.2”  https://www.python.org/downloads/source/
+
+2 fields: 0 supported, 0 partial, 2 unsupported, 0 no evidence
+1 sources returned by Answers · 0 Context.dev credits used this run (0 = all cached)
+  running total: 0 credits
+
+[dates-nvidia-revenue] What was NVIDIA's revenue for its most recently reported fiscal quarter?
+
+partial      fiscal_quarter  Q2 FY27
+             “NVIDIA Announces Financial Results for Second Quarter Fiscal 2027”  https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-…
+supported    revenue_usd     $96.2B
+             “Revenue of $96.2 billion, up 106% from a year ago”  https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-second-quart…
+
+2 fields: 1 supported, 1 partial, 0 unsupported, 0 no evidence
+1 sources returned by Answers · 0 Context.dev credits used this run (0 = all cached)
+  running total: 0 credits
+
+[dates-github-users] How many developers use GitHub, according to the most recent official figure?
+
+supported    developers          225M+
+             “225M+ Developers”  https://github.com/about
+supported    source_publication  GitHub About page
+             “225M+ Developers”  https://github.com/about
+
+2 fields: 2 supported, 0 partial, 0 unsupported, 0 no evidence
+1 sources returned by Answers · 0 Context.dev credits used this run (0 = all cached)
+  running total: 0 credits
+
+[dates-calhacks] When and where was Cal Hacks 12.0 held, and how many hackers attended?
+
+partial      event      Cal Hacks 12.0
+             “Welcome to Cal Hacks 12.0! We're so excited to have you join us at the Palace of Fine Art…”  https://cal-hacks-12-0.devpost.com/
+partial      dates      October 24–26, 2025
+             “Submit your hack by 10/26 9:30 AM PDT and make sure to add your teammates!”  https://cal-hacks-12-0.devpost.com/
+supported    location   Palace of Fine Arts, San Francisco
+             “We're so excited to have you join us at the Palace of Fine Arts for the world's largest c…”  https://cal-hacks-12-0.devpost.com/
+no_evidence  attendees  3000
+             The passage describes Cal Hacks 12.0 requirements, prizes, and judges, and mentions the Palace of Fine Arts venue, but nothing about the nu…
+
+4 fields: 1 supported, 2 partial, 0 unsupported, 1 no evidence
+1 sources returned by Answers · 0 Context.dev credits used this run (0 = all cached)
+  running total: 0 credits
+
+Overall: 140 fields { supported: 64.3, partial: 12.9, unsupported: 7.9, no_evidence: 15 } · 0 credits · 0 quote downgrades · wrote results/benchmark-haiku.json

@@ -1,0 +1,44 @@
+{
+  "request": {
+    "model": "anthropic:claude-haiku-5-5",
+    "system": "You verify one claim against evidence passages scraped from the cited sources. Judge only from the passages, never from your own knowledge.\nVerdicts:\n- supported: a passage states the claim's value, so a reader could confirm it from the quote alone. Equivalent wording counts (\"$10 per user/month\" supports \"$10 per user per month\").\n- partial: a passage supports part of the claim, or gives a materially different qualification (a different number, a range, an older date, a different plan or product).\n- unsupported: the passages are on topic but do not state the value, or they contradict it.\n- no_evidence: the passages are irrelevant or empty.\nA passage that only mentions a word in another sense (e.g. a product name in a feature list) does not support a claim about it.\nevidence_quote MUST be copied character-for-character from one passage: the shortest span that shows the value (under 300 characters). Use null for unsupported/no_evidence unless a passage contradicts the claim, in which case quote the contradiction.\nreason: one sentence. If the passage contradicts the claim, say what it actually says.",
+    "user": "Research question: What is the Anthropic API price per million input and output tokens for Claude Haiku, Sonnet, and Opus (current versions)?\nClaim: The Anthropic API price for Claude Opus 5.5 is 20 USD per million output tokens.\nValue being checked: \"20\"\n\n<passage source=\"https://www-cdn.anthropic.com/files/4zrzovbb/website/3684c2faafb97418665782cea0001f439f74b1d2.pdf\">\nPage 1\tClaude Mo del Pricing\nClaude Model Pricing — List Prices by Platform\nPrices Effect ive: May 27, 2026 (2026-05-27)\nThis document contains pricing information as of the effective date lis ted above. All prices are USD per one million tokens\n(MTok) unles s otherwis e noted. \"—\" indicates the SKU is not offered for that pricing tier / s cope / context window\ncombination. Rows marked \"\\*\" indicate that SKU availability varies by region within the lis ted s cope; not all SKUs in that row\nare offered in every region.\n\n…\n\nSt andard \tGlobal \tAll \t$3.00 \t$15.00 \t$3.75 \t$6.00 \t$0.30\nSt andard \tUS-only inference \tAll \t$3.30 \t$16.50 \t$4.125 \t$6.60 \t$0.33\nBatch\nproces s ing Global \tAll \t$1.50 \t$7.50 \t$1.875 \t$3.00 \t$0.15\nBatch\nproces s ing US-only inference \tAll \t$1.65 \t$8.25 \t$2.0625 \t$3.30 \t$0.165\nClaude Opus 4.5 — Claude API\nP RICING T IER S CO P E CO NT EXT\nWIND O W\nBAS E INP UT\nT O KENS\nO UT P UT\nT O KENS\n5M CACHE\nWRIT ES\n1H CACHE\nWRIT ES\nCACHE HIT S\n& REFRES HES\nSt andard \tGlobal \t≤200K \t$5.00 \t$25.00 \t$6.25 \t$10.00 \t$0.50\nBatch\nproces s ing Global \t≤200K \t$2.50 \t$12.50 \t$3.125 \t$5.00 \t$0.25\n\n…\n\nGlobal Cros s\nRegion All \t$1.50 \t$7.50 \t— \t— \t—\nBatch\nproces s ing\nIn-Region & Geo\nCros s Region All \t$1.65 \t$8.25 \t— \t— \t—\nPage 6\tClaude Mo del Pricing\nP RICING T IER S CO P E CO NT EXT\nWIND O W\nBAS E INP UT\nT O KENS\nO UT P UT\nT O KENS\n5M CACHE\nWRIT ES\n1H CACHE\nWRIT ES\nCACHE HIT S\n& REFRES HES\nBatch\nproces s ing AWS GovCloud (US) All \t$1.80 \t$9.00 \t— \t— \t—\nClaude Opus 4.5 — AWS Bedrock\nP RICING T IER S CO P E CO NT EXT\nWIND O W\nBAS E INP UT\nT O KENS\nO UT P UT\nT O KENS\n5M CACHE\nWRIT ES\n1H CACHE\nWRIT ES\nCACHE HIT S\n& REFRES HES\nSt andard Global Cros s\n</passage>\n\n<passage source=\"https://www.sentra.app/articles/claude-api-pricing\">\n[Claude API Pricing (2026): Per-Million-Token Rates for Every Model]\n\nAs of October 2026, the Claude API costs $4 per million input tokens and $20 per million output tokens on Claude Opus 5.5, $2 and $10 on Claude Sonnet 5.5, $0.10 and $0.50 on Claude Haiku 5.5 for prompts up to 100,000 tokens ($0.50 and $2.50 above that), and $10 and $50 on Claude Fable 5.1, according to Anthropic's pricing docs. Billing is per million tokens, charged separately for input and output.&#x20;\n\n…\n\n[Claude API Pricing (2026): Per-Million-Token Rates for Every Model > Frequently Asked Questions > How much does Claude Opus 5.5 cost?]\n\nClaude Opus 5.5, released on 22 September 2026, costs $4 per million input tokens and $20 per million output tokens, 20% less than Opus 5. Cache reads cost $0.20 per million, 0.05x the input rate, and the Batch API halves both directions to $2 and $10. Anthropic says typical workloads cost about 40% less than on Opus 5 at default settings (Anthropic's Opus 5.5 announcement).\n\n[Claude API Pricing (2026): Per-Million-Token Rates for Every Model > Frequently Asked Questions > How much does the Claude API cost per million tokens?]\n\nIt depends on the model and the direction. As of October 2026, Claude Opus 5.5 is $4 per million input tokens and $20 per million output tokens, Claude Sonnet 5.5 is $2 and $10, Claude Haiku 5.5 is $0.10 and $0.50 for prompts up to 100,000 tokens ($0.50 and $2.50 above that), and Claude Haiku 4.5, still available, is $1 and $5. Output is priced at 5x input across the current lineup. Figures are from Anthropic's pricing documentation.\n</passage>",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "verdict": {
+          "type": "string",
+          "enum": [
+            "supported",
+            "partial",
+            "unsupported",
+            "no_evidence"
+          ]
+        },
+        "best_source_url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "evidence_quote": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "reason": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "verdict",
+        "best_source_url",
+        "evidence_quote",
+        "reason"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "response": "{\"verdict\":\"partial\",\"best_source_url\":\"https://www.sentra.app/articles/claude-api-pricing\",\"evidence_quote\":\"the Claude API costs $4 per million input tokens and $20 per million output tokens on Claude Opus 5.5\",\"reason\":\"The Sentra article states Claude Opus 5.5 costs $20 per million output tokens, matching the claim, but the Anthropic pricing PDF does not list Opus 5.5 (it shows Opus 4.5 at $25 output), and the Sentra page is a secondary source, so the support is only partial.\"}"
+}

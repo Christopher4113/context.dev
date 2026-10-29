@@ -1,0 +1,44 @@
+{
+  "request": {
+    "model": "anthropic:claude-haiku-5-5",
+    "system": "You verify one claim against evidence passages scraped from the cited sources. Judge only from the passages, never from your own knowledge.\nVerdicts:\n- supported: a passage states the claim's value, so a reader could confirm it from the quote alone. Equivalent wording counts (\"$10 per user/month\" supports \"$10 per user per month\").\n- partial: a passage supports part of the claim, or gives a materially different qualification (a different number, a range, an older date, a different plan or product).\n- unsupported: the passages are on topic but do not state the value, or they contradict it.\n- no_evidence: the passages are irrelevant or empty.\nA passage that only mentions a word in another sense (e.g. a product name in a feature list) does not support a claim about it.\nevidence_quote MUST be copied character-for-character from one passage: the shortest span that shows the value (under 300 characters). Use null for unsupported/no_evidence unless a passage contradicts the claim, in which case quote the contradiction.\nreason: one sentence. If the passage contradicts the claim, say what it actually says.",
+    "user": "Research question: What is the Anthropic API price per million input and output tokens for Claude Haiku, Sonnet, and Opus (current versions)?\nClaim: The Anthropic API price for Claude Haiku 5.5 (≤100,000 tokens) is 0.50 USD per million output tokens.\nValue being checked: \"0.50\"\n\n<passage source=\"https://www-cdn.anthropic.com/files/4zrzovbb/website/3684c2faafb97418665782cea0001f439f74b1d2.pdf\">\nPage 1\tClaude Mo del Pricing\nClaude Model Pricing — List Prices by Platform\nPrices Effect ive: May 27, 2026 (2026-05-27)\nThis document contains pricing information as of the effective date lis ted above. All prices are USD per one million tokens\n(MTok) unles s otherwis e noted. \"—\" indicates the SKU is not offered for that pricing tier / s cope / context window\ncombination. Rows marked \"\\*\" indicate that SKU availability varies by region within the lis ted s cope; not all SKUs in that row\nare offered in every region.\n\n…\n\nRegion ≤200K \t$3.00 \t$15.00 \t$3.75 \t$6.00 \t$0.30\nSt andard In-Region & Geo\nCros s Region ≤200K \t$3.30 \t$16.50 \t$4.125 \t$6.60 \t$0.33\nSt andard \tAWS GovCloud (US) ≤200K \t$3.60 \t$18.00 \t$4.50 \t$7.20 \t$0.36\nBatch\nproces s ing\nGlobal Cros s\nRegion ≤200K \t$1.50 \t$7.50 \t— \t— \t—\nBatch\nproces s ing\nIn-Region & Geo\nCros s Region ≤200K \t$1.65 \t$8.25 \t— \t— \t—\nBatch\nproces s ing AWS GovCloud (US) ≤200K \t$1.80 \t$9.00 \t— \t— \t—\nClaude Haiku 4.5 — AWS Bedrock\nP RICING T IER S CO P E CO NT EXT\nWIND O W\nBAS E INP UT\nT O KENS\nO UT P UT\nT O KENS\n5M CACHE\nWRIT ES\n1H CACHE\nWRIT ES\nCACHE HIT S\n& REFRES HES\n\n…\n\nT O KENS\nO UT P UT\nT O KENS\n5M CACHE\nWRIT ES\n1H CACHE\nWRIT ES\nCACHE HIT S\n& REFRES HES\nSt andard \tGlobal \t≤200K \t$3.00 \t$15.00 \t$3.75 \t— \t$0.30\nSt andard Multi-Region and\nRegional Endpoint ≤200K \t$3.30 \t$16.50 \t$4.125 \t— \t$0.33\nBatch\nproces s ing Global \t≤200K \t$1.50 \t$7.50 \t$1.875 \t— \t$0.15\nBatch\nproces s ing\nMulti-Region and\nRegional Endpoint ≤200K \t$1.65 \t$8.25 \t$2.0625 \t— \t$0.165\nClaude Haiku 4.5 — Google Vertex AI\nP RICING T IER S CO P E CO NT EXT\nWIND O W\nBAS E INP UT\nT O KENS\nO UT P UT\nT O KENS\n5M CACHE\nWRIT ES\n1H CACHE\nWRIT ES\nCACHE HIT S\n& REFRES HES\n</passage>\n\n<passage source=\"https://www.sentra.app/articles/claude-api-pricing\">\n[Claude API Pricing (2026): Per-Million-Token Rates for Every Model]\n\nAs of October 2026, the Claude API costs $4 per million input tokens and $20 per million output tokens on Claude Opus 5.5, $2 and $10 on Claude Sonnet 5.5, $0.10 and $0.50 on Claude Haiku 5.5 for prompts up to 100,000 tokens ($0.50 and $2.50 above that), and $10 and $50 on Claude Fable 5.1, according to Anthropic's pricing docs. Billing is per million tokens, charged separately for input and output.&#x20;\n\n…\n\n[Claude API Pricing (2026): Per-Million-Token Rates for Every Model > Claude API pricing per million tokens]\n\n| Model | Input | 5m cache write | 1h cache write | Cache read | Output |\n| - | - | - | - | - | - |\n| Claude Haiku 5.5 (prompts over 100,000 tokens) | $0.50 | $0.625 | $1 | $0.05 | $2.50 |\n| Claude Haiku 4.5 | $1 | $1.25 | $2 | $0.10 | $5 |\n| Claude Haiku 3.5 (retired, Bedrock and Google Cloud only) | $0.80 | $1 | $1.60 | $0.08 | $4 |\n\n…\n\n[Claude API Pricing (2026): Per-Million-Token Rates for Every Model > Frequently Asked Questions > How much does the Claude API cost per million tokens?]\n\nIt depends on the model and the direction. As of October 2026, Claude Opus 5.5 is $4 per million input tokens and $20 per million output tokens, Claude Sonnet 5.5 is $2 and $10, Claude Haiku 5.5 is $0.10 and $0.50 for prompts up to 100,000 tokens ($0.50 and $2.50 above that), and Claude Haiku 4.5, still available, is $1 and $5. Output is priced at 5x input across the current lineup. Figures are from Anthropic's pricing documentation.\n</passage>",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "verdict": {
+          "type": "string",
+          "enum": [
+            "supported",
+            "partial",
+            "unsupported",
+            "no_evidence"
+          ]
+        },
+        "best_source_url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "evidence_quote": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "reason": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "verdict",
+        "best_source_url",
+        "evidence_quote",
+        "reason"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "response": "{\"verdict\":\"supported\",\"best_source_url\":\"https://www.sentra.app/articles/claude-api-pricing\",\"evidence_quote\":\"$0.10 and $0.50 on Claude Haiku 5.5 for prompts up to 100,000 tokens ($0.50 and $2.50 above that)\",\"reason\":\"The Sentra article states Claude Haiku 5.5 costs $0.50 per million output tokens for prompts up to 100,000 tokens, matching the claim, though the Anthropic PDF passage does not mention Haiku 5.5 and the source's reliability for this model is secondary.\"}"
+}

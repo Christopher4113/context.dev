@@ -1,0 +1,44 @@
+{
+  "request": {
+    "model": "anthropic:claude-haiku-5-5",
+    "system": "You verify one claim against evidence passages scraped from the cited sources. Judge only from the passages, never from your own knowledge.\nVerdicts:\n- supported: a passage states the claim's value, so a reader could confirm it from the quote alone. Equivalent wording counts (\"$10 per user/month\" supports \"$10 per user per month\").\n- partial: a passage supports part of the claim, or gives a materially different qualification (a different number, a range, an older date, a different plan or product).\n- unsupported: the passages are on topic but do not state the value, or they contradict it.\n- no_evidence: the passages are irrelevant or empty.\nA passage that only mentions a word in another sense (e.g. a product name in a feature list) does not support a claim about it.\nevidence_quote MUST be copied character-for-character from one passage: the shortest span that shows the value (under 300 characters). Use null for unsupported/no_evidence unless a passage contradicts the claim, in which case quote the contradiction.\nreason: one sentence. If the passage contradicts the claim, say what it actually says.",
+    "user": "Research question: What is the latest stable Python 3 release and its release date?\nClaim: The latest stable Python 3 release is version 3.15.0.\nValue being checked: \"3.15.0\"\n\n<passage source=\"https://www.python.org/downloads/source/\">\n[Python Source Releases]\n\n- Latest Python 3 Release - Python 3.15.2\n\n[Python Source Releases > Stable Releases]\n\n- Python 3.11.18 - Oct. 25, 2026\n- Download Gzipped source tarball\n- Download XZ compressed source tarball\n- Python 3.13.18 - Oct. 25, 2026\n- Download Gzipped source tarball\n- Download XZ compressed source tarball\n- Python 3.12.16 - Oct. 25, 2026\n- Download Gzipped source tarball\n- Download XZ compressed source tarball\n- Python 3.14.10 - Oct. 25, 2026\n- Download Gzipped source tarball\n- Download XZ compressed source tarball\n- Python 3.15.2 - Oct. 25, 2026\n- Download Gzipped source tarball\n- Download XZ compressed source tarball\n- Python 3.13.17 - Oct. 21, 2026\n- Download Gzipped source tarball\n- Download XZ compressed source tarball\n- Python 3.14.9 - Oct. 21, 2026\n- Download Gzipped source tarball\n- Download XZ compressed source tarball\n- Python 3.15.1 - Oct. 21, 2026\n- Download Gzipped source tarball\n- Download XZ compressed source tarball\n- Python 3.15.0 - Oct. 9, 2026\n- Download Gzipped source tarball\n- Download XZ compressed source tarball\n- Python 3.11.17 - Oct. 1, 2026\n- Download Gzipped source tarball\n- Download XZ compressed source tarball\n- Python 3.10.22 - Oct. 1, 2026\n- Download Gzipped source tarball\n- Download XZ compressed source tarball\n</passage>",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "verdict": {
+          "type": "string",
+          "enum": [
+            "supported",
+            "partial",
+            "unsupported",
+            "no_evidence"
+          ]
+        },
+        "best_source_url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "evidence_quote": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "reason": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "verdict",
+        "best_source_url",
+        "evidence_quote",
+        "reason"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "response": "{\"verdict\":\"unsupported\",\"best_source_url\":\"https://www.python.org/downloads/source/\",\"evidence_quote\":\"Latest Python 3 Release - Python 3.15.2\",\"reason\":\"The passage states the latest Python 3 release is 3.15.2, not 3.15.0, which appears only as an earlier stable release dated Oct. 9, 2026.\"}"
+}

@@ -1,0 +1,44 @@
+{
+  "request": {
+    "model": "anthropic:claude-opus-5-5",
+    "system": "You verify one claim against evidence passages scraped from the cited sources. Judge only from the passages, never from your own knowledge.\nVerdicts:\n- supported: a passage states the claim's value, so a reader could confirm it from the quote alone. Equivalent wording counts (\"$10 per user/month\" supports \"$10 per user per month\").\n- partial: a passage supports part of the claim, or gives a materially different qualification (a different number, a range, an older date, a different plan or product).\n- unsupported: the passages are on topic but do not state the value, or they contradict it.\n- no_evidence: the passages are irrelevant or empty.\nA passage that only mentions a word in another sense (e.g. a product name in a feature list) does not support a claim about it.\nevidence_quote MUST be copied character-for-character from one passage: the shortest span that shows the value (under 300 characters). Use null for unsupported/no_evidence unless a passage contradicts the claim, in which case quote the contradiction.\nreason: one sentence. If the passage contradicts the claim, say what it actually says.",
+    "user": "Research question: What major changes did Tailwind CSS v4.0 introduce?\nClaim: The Tailwind CSS release being described is version 4.0.\nValue being checked: \"4.0\"\n\n<passage source=\"https://tailwindcss.com/blog/tailwindcss-v4\">\n[Tailwind CSS v4.0]\n\nTailwind CSS v4.0 is an all-new version of the framework optimized for performance and flexibility, with a reimagined configuration and customization experience, and taking full advantage of the latest advancements the web platform has to offer.\n\n…\n\n[Tailwind CSS v4.0 > New high-performance engine]\n\n| | v3.4 | v4.0 | Improvement |\n| - | - | - | - |\n| Full build | 378ms | 100ms | 3.78x |\n| Incremental rebuild with new CSS | 44ms | 5ms | 8.8x |\n| Incremental rebuild with no new CSS | 35ms | 192µs | 182x |\n</passage>",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "verdict": {
+          "type": "string",
+          "enum": [
+            "supported",
+            "partial",
+            "unsupported",
+            "no_evidence"
+          ]
+        },
+        "best_source_url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "evidence_quote": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "reason": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "verdict",
+        "best_source_url",
+        "evidence_quote",
+        "reason"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "response": "{\"verdict\":\"supported\",\"best_source_url\":\"https://tailwindcss.com/blog/tailwindcss-v4\",\"evidence_quote\":\"Tailwind CSS v4.0 is an all-new version of the framework optimized for performance and flexibility\",\"reason\":\"The passage explicitly describes the release as Tailwind CSS v4.0.\"}"
+}

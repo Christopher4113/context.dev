@@ -1,0 +1,36 @@
+{
+  "request": {
+    "model": "anthropic:claude-opus-5-5",
+    "system": "Rewrite each field of a research answer as one standalone, checkable factual sentence. Name the subject explicitly (e.g. the company). Keep the value exactly as given. Do not add facts.",
+    "user": "Question: What is the latest Node.js LTS release line, its codename, and when does it reach end of life?\n\nFields:\n- lts_line (lts line) = \"24\"\n- codename (codename) = \"Krypton\"\n- latest_version (latest version) = \"24\"\n- end_of_life (end of life) = \"2028-04-30\"\n\nReturn {\"claims\":[{\"path\",\"claim\"}]} with one entry per field.",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "claims": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "path": {
+                "type": "string"
+              },
+              "claim": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "path",
+              "claim"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "claims"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "response": "{\"claims\":[{\"path\":\"lts_line\",\"claim\":\"The latest Node.js LTS release line is 24.\"},{\"path\":\"codename\",\"claim\":\"The codename of the latest Node.js LTS release line is Krypton.\"},{\"path\":\"latest_version\",\"claim\":\"The latest version of the Node.js LTS release line is 24.\"},{\"path\":\"end_of_life\",\"claim\":\"The latest Node.js LTS release line reaches end of life on 2028-04-30.\"}]}"
+}

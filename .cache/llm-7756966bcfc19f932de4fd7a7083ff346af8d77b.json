@@ -1,0 +1,36 @@
+{
+  "request": {
+    "model": "anthropic:claude-opus-5-5",
+    "system": "Rewrite each field of a research answer as one standalone, checkable factual sentence. Name the subject explicitly (e.g. the company). Keep the value exactly as given. Do not add facts.",
+    "user": "Question: What are the pricing plans for context.dev? Give plan names, monthly price, and monthly credits.\n\nFields:\n- plans[0].name (plans › Free › name) = \"Free\"\n- plans[0].price_monthly (plans › Free › price monthly) = \"$0\"\n- plans[0].credits_per_month (plans › Free › credits per month) = \"1,000\"\n- plans[1].name (plans › Developer › name) = \"Developer\"\n- plans[1].price_monthly (plans › Developer › price monthly) = \"$20\"\n- plans[1].credits_per_month (plans › Developer › credits per month) = \"10,000\"\n- plans[2].name (plans › Pro › name) = \"Pro\"\n- plans[2].price_monthly (plans › Pro › price monthly) = \"$90\"\n- plans[2].credits_per_month (plans › Pro › credits per month) = \"100,000\"\n- plans[3].name (plans › Growth › name) = \"Growth\"\n- plans[3].price_monthly (plans › Growth › price monthly) = \"$300\"\n- plans[4].name (plans › Scale › name) = \"Scale\"\n- plans[4].price_monthly (plans › Scale › price monthly) = \"$500\"\n- plans[4].credits_per_month (plans › Scale › credits per month) = \"1,000,000\"\n- plans[5].name (plans › Scale 2.5M › name) = \"Scale 2.5M\"\n- plans[5].price_monthly (plans › Scale 2.5M › price monthly) = \"$950\"\n- plans[5].credits_per_month (plans › Scale 2.5M › credits per month) = \"2,500,000\"\n- plans[6].name (plans › Enterprise › name) = \"Enterprise\"\n\nReturn {\"claims\":[{\"path\",\"claim\"}]} with one entry per field.",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "claims": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "path": {
+                "type": "string"
+              },
+              "claim": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "path",
+              "claim"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "claims"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "response": "{\"claims\":[{\"path\":\"plans[0].name\",\"claim\":\"context.dev offers a pricing plan named \\\"Free\\\".\"},{\"path\":\"plans[0].price_monthly\",\"claim\":\"The context.dev Free plan costs $0 per month.\"},{\"path\":\"plans[0].credits_per_month\",\"claim\":\"The context.dev Free plan includes 1,000 credits per month.\"},{\"path\":\"plans[1].name\",\"claim\":\"context.dev offers a pricing plan named \\\"Developer\\\".\"},{\"path\":\"plans[1].price_monthly\",\"claim\":\"The context.dev Developer plan costs $20 per month.\"},{\"path\":\"plans[1].credits_per_month\",\"claim\":\"The context.dev Developer plan includes 10,000 credits per month.\"},{\"path\":\"plans[2].name\",\"claim\":\"context.dev offers a pricing plan named \\\"Pro\\\".\"},{\"path\":\"plans[2].price_monthly\",\"claim\":\"The context.dev Pro plan costs $90 per month.\"},{\"path\":\"plans[2].credits_per_month\",\"claim\":\"The context.dev Pro plan includes 100,000 credits per month.\"},{\"path\":\"plans[3].name\",\"claim\":\"context.dev offers a pricing plan named \\\"Growth\\\".\"},{\"path\":\"plans[3].price_monthly\",\"claim\":\"The context.dev Growth plan costs $300 per month.\"},{\"path\":\"plans[4].name\",\"claim\":\"context.dev offers a pricing plan named \\\"Scale\\\".\"},{\"path\":\"plans[4].price_monthly\",\"claim\":\"The context.dev Scale plan costs $500 per month.\"},{\"path\":\"plans[4].credits_per_month\",\"claim\":\"The context.dev Scale plan includes 1,000,000 credits per month.\"},{\"path\":\"plans[5].name\",\"claim\":\"context.dev offers a pricing plan named \\\"Scale 2.5M\\\".\"},{\"path\":\"plans[5].price_monthly\",\"claim\":\"The context.dev Scale 2.5M plan costs $950 per month.\"},{\"path\":\"plans[5].credits_per_month\",\"claim\":\"The context.dev Scale 2.5M plan includes 2,500,000 credits per month.\"},{\"path\":\"plans[6].name\",\"claim\":\"context.dev offers a pricing plan named \\\"Enterprise\\\".\"}]}"
+}

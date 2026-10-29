@@ -1,0 +1,44 @@
+{
+  "request": {
+    "model": "anthropic:claude-opus-5-5",
+    "system": "You verify one claim against evidence passages scraped from the cited sources. Judge only from the passages, never from your own knowledge.\nVerdicts:\n- supported: a passage states the claim's value, so a reader could confirm it from the quote alone. Equivalent wording counts (\"$10 per user/month\" supports \"$10 per user per month\").\n- partial: a passage supports part of the claim, or gives a materially different qualification (a different number, a range, an older date, a different plan or product).\n- unsupported: the passages are on topic but do not state the value, or they contradict it.\n- no_evidence: the passages are irrelevant or empty.\nA passage that only mentions a word in another sense (e.g. a product name in a feature list) does not support a claim about it.\nevidence_quote MUST be copied character-for-character from one passage: the shortest span that shows the value (under 300 characters). Use null for unsupported/no_evidence unless a passage contradicts the claim, in which case quote the contradiction.\nreason: one sentence. If the passage contradicts the claim, say what it actually says.",
+    "user": "Research question: Who is the current President and CEO of Y Combinator?\nClaim: Garry Tan has served as President and CEO of Y Combinator since 2023.\nValue being checked: 2023\n\n<passage source=\"https://linkedin.com/in/bridget-sherrod-1b615a246\">\n[Bridget Sherrod > Sign in to view Bridget’s full profile]\n\nY Combinator\n\n…\n\n[Bridget Sherrod > Experience & Education]\n\n- ### Y Combinator\n\n[Bridget Sherrod > Experience & Education > ********* ** **** *** ******** * *** undefined undefined]\n\n2022 - Present\n\n…\n\n[Bridget Sherrod > Explore more posts]\n\n𝗣𝗮𝗿𝗿𝗼𝘁 𝗟𝗮𝘂𝗻𝗰𝗵𝗲𝘀 𝗔𝗜-𝗣𝗼𝘄𝗲𝗿𝗲𝗱 𝗢𝗽𝗲𝗿𝗮𝘁𝗶𝗻𝗴 𝗦𝘆𝘀𝘁𝗲𝗺 𝗳𝗼𝗿 𝘁𝗵𝗲 𝗔𝘂𝘁𝗼 𝗥𝗲𝗽𝗮𝗶𝗿 𝗜𝗻𝗱𝘂𝘀𝘁𝗿𝘆 Y Combinator-backed startup Parrot (YC P26) is transforming the $200 billion auto repair industry with an end-to-end operating system designed to automate shop operations. Founded by Phillip Baek and Liam McBride, the platform addresses longstanding inefficiencies caused by manual coordination involving phone calls, emails, insurers, suppliers, customers, and parts warehouses. Built with a deep understanding of real-world repair shop workflows, Parrot’s AI-powered agents can manage communication, coordinate stakeholders, and automate operational processes using contextual understanding of estimates, payments, inventory, and customer requirements. By bringing intelligent automation to a traditionally manual industry, the company aims to help repair businesses improve efficiency, reduce administrative burden, and scale operations more effectively. #ParrotAI #YCombinator #ArtificialIntelligence #Automation #AutoRepair #DigitalTransformation #StartupInnovation #UniNetwork\n\n…\n\nAseon Labs is building robotic pitstops for autonomous fleets. Charging, cleaning & inspection where the fleet operates, not miles away from it. The pit crew for the autonomous age. Backed by Y Combinator\n</passage>",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "verdict": {
+          "type": "string",
+          "enum": [
+            "supported",
+            "partial",
+            "unsupported",
+            "no_evidence"
+          ]
+        },
+        "best_source_url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "evidence_quote": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "reason": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "verdict",
+        "best_source_url",
+        "evidence_quote",
+        "reason"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "response": "{\"verdict\":\"no_evidence\",\"best_source_url\":null,\"evidence_quote\":null,\"reason\":\"The passage is a LinkedIn profile of Bridget Sherrod and some YC startup posts; it never mentions Garry Tan or YC's President and CEO, so it gives no information about who holds that role or since when.\"}"
+}

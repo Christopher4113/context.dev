@@ -13,6 +13,7 @@ const questions: Q[] = JSON.parse(readFileSync("bench/questions.json", "utf8"));
 const only = process.argv.slice(2).filter((a) => !a.startsWith("--"));
 const budget = Number(process.argv.find((a) => a.startsWith("--budget="))?.split("=")[1] ?? 600);
 const credits = new Credits(budget);
+const out = process.argv.find((a) => a.startsWith("--out="))?.split("=")[1] ?? "results/benchmark.json";
 
 const runs: (Q & { result?: GroundcheckResult; error?: string })[] = [];
 for (const q of questions.filter((q) => !only.length || only.includes(q.id))) {
@@ -40,9 +41,11 @@ const pct = (t: ReturnType<typeof tally>) =>
 const overall = tally(runs);
 const byCategory = Object.fromEntries([...new Set(runs.map((r) => r.category))].map((c) => [c, { ...tally(runs.filter((r) => r.category === c)), pct: pct(tally(runs.filter((r) => r.category === c))) }]));
 
+const downgraded = runs.flatMap((r) => Object.values(r.result?.citations ?? {})).filter((c) => !c.quote_verified && c.evidence);
+
 mkdirSync("results", { recursive: true });
 writeFileSync(
-  "results/benchmark.json",
-  JSON.stringify({ ran_at: new Date().toISOString(), mode: "fast", max_sources_per_claim: 3, credits_used: credits.used, overall: { ...overall, pct: pct(overall) }, by_category: byCategory, runs }, null, 2),
+  out,
+  JSON.stringify({ ran_at: new Date().toISOString(), mode: "fast", judge: process.env.JUDGE_MODEL ?? "claude-opus-5-5", max_sources_per_claim: 3, credits_used: credits.used, quote_downgrades: downgraded.length, overall: { ...overall, pct: pct(overall) }, by_category: byCategory, runs }, null, 2),
 );
-console.log(pc.bold(`\nOverall: ${overall.fields} fields`), pct(overall), pc.dim(`· ${credits.used} credits · wrote results/benchmark.json`));
+console.log(pc.bold(`\nOverall: ${overall.fields} fields`), pct(overall), pc.dim(`· ${credits.used} credits · ${downgraded.length} quote downgrades · wrote ${out}`));

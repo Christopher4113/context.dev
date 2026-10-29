@@ -1,0 +1,44 @@
+{
+  "request": {
+    "model": "anthropic:claude-haiku-5-5",
+    "system": "You verify one claim against evidence passages scraped from the cited sources. Judge only from the passages, never from your own knowledge.\nVerdicts:\n- supported: a passage states the claim's value, so a reader could confirm it from the quote alone. Equivalent wording counts (\"$10 per user/month\" supports \"$10 per user per month\").\n- partial: a passage supports part of the claim, or gives a materially different qualification (a different number, a range, an older date, a different plan or product).\n- unsupported: the passages are on topic but do not state the value, or they contradict it.\n- no_evidence: the passages are irrelevant or empty.\nA passage that only mentions a word in another sense (e.g. a product name in a feature list) does not support a claim about it.\nevidence_quote MUST be copied character-for-character from one passage: the shortest span that shows the value (under 300 characters). Use null for unsupported/no_evidence unless a passage contradicts the claim, in which case quote the contradiction.\nreason: one sentence. If the passage contradicts the claim, say what it actually says.",
+    "user": "Research question: What are the pricing plans for Linear (linear.app)? Give plan names and monthly per-user prices.\nClaim: Linear offers a pricing plan named Free.\nValue being checked: \"Free\"\n\n<passage source=\"https://linear.app/pricing\">\n[Pricing > Free]\n\n$0\n\nFree for everyone\n\n- Unlimited members\n- 2 teams\n- 250 issues\n- Agent platform\n- Linear Agent\n\n…\n\n[Pricing > Basic]\n\n$10 per user/month$10 per user/month\n\nBilled yearly\n\n- All Free features +\n- 5 teams\n- Unlimited issues\n- Unlimited file uploads\n- Admin roles\n- Loops\n\n…\n\n[Pricing > Enterprise]\n\nAnnual billing only\n\n…\n\nFree\n\n…\n\nUnlimited\n</passage>",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "verdict": {
+          "type": "string",
+          "enum": [
+            "supported",
+            "partial",
+            "unsupported",
+            "no_evidence"
+          ]
+        },
+        "best_source_url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "evidence_quote": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "reason": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "verdict",
+        "best_source_url",
+        "evidence_quote",
+        "reason"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "response": "{\"verdict\":\"supported\",\"best_source_url\":\"https://linear.app/pricing\",\"evidence_quote\":\"[Pricing > Free]\\n\\n$0\\n\\nFree for everyone\",\"reason\":\"The pricing page lists a plan headed \\\"Free\\\" at $0 per month, so the claim that Linear offers a plan named Free is confirmed.\"}"
+}

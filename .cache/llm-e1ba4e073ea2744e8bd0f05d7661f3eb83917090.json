@@ -1,0 +1,44 @@
+{
+  "request": {
+    "model": "anthropic:claude-opus-5-5",
+    "system": "You verify one claim against evidence passages scraped from the cited sources. Judge only from the passages, never from your own knowledge.\nVerdicts:\n- supported: a passage states the claim's value, so a reader could confirm it from the quote alone. Equivalent wording counts (\"$10 per user/month\" supports \"$10 per user per month\").\n- partial: a passage supports part of the claim, or gives a materially different qualification (a different number, a range, an older date, a different plan or product).\n- unsupported: the passages are on topic but do not state the value, or they contradict it.\n- no_evidence: the passages are irrelevant or empty.\nA passage that only mentions a word in another sense (e.g. a product name in a feature list) does not support a claim about it.\nevidence_quote MUST be copied character-for-character from one passage: the shortest span that shows the value (under 300 characters). Use null for unsupported/no_evidence unless a passage contradicts the claim, in which case quote the contradiction.\nreason: one sentence. If the passage contradicts the claim, say what it actually says.",
+    "user": "Research question: What is the latest stable version of Bun, and which package manager lockfile format does it use by default?\nClaim: The latest stable version of Bun was released in 2026-10.\nValue being checked: \"2026-10\"\n\n<passage source=\"https://bun.com/\">\n[Bun — A fast all-in-one JavaScript runtime]\n\nNEWBun v1.4.4 released→\n\n…\n\n[Bun is a fast JavaScript runtime & toolkit. All in one. > Serving Express over HTTPS]\n\n| runtime | version | requests/sec | peak RAM |\n| - | - | - | - |\n| Bun | v1.4 | 48,243 req/s | 105 MB |\n| Node.js | v26.7.0 | 25,181 req/s | 142 MB |\n| Deno | v2.9.5 | 19,243 req/s | 176 MB |\n\n…\n\n[Bun is a fast JavaScript runtime & toolkit. All in one. > Running a WebSocket chat server]\n\nv26.7.0\n\n…\n\n| runtime | version | messages/sec | peak RAM |\n| - | - | - | - |\n| Bun (publish) | v1.4 | 4,170,027 msgs/s | 51 MB |\n| Bun (send) | v1.4 | 159,379 msgs/s | 37 MB |\n| Deno | v2.9.5 | 124,088 msgs/s | 1.2 GB |\n| ws (Node.js) | v26.7.0 | 123,486 msgs/s | 78 MB |\n\n…\n\n[Bun is a fast JavaScript runtime & toolkit. All in one. > One binary for the whole workflow.]\n\nv1.4.4Latest release · October 2026\n</passage>",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "verdict": {
+          "type": "string",
+          "enum": [
+            "supported",
+            "partial",
+            "unsupported",
+            "no_evidence"
+          ]
+        },
+        "best_source_url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "evidence_quote": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "reason": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "verdict",
+        "best_source_url",
+        "evidence_quote",
+        "reason"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "response": "{\"verdict\":\"supported\",\"best_source_url\":\"https://bun.com/\",\"evidence_quote\":\"v1.4.4Latest release · October 2026\",\"reason\":\"The Bun homepage lists v1.4.4 as the latest release, dated October 2026.\"}"
+}

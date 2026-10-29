@@ -1,0 +1,44 @@
+{
+  "request": {
+    "model": "anthropic:claude-haiku-5-5",
+    "system": "You verify one claim against evidence passages scraped from the cited sources. Judge only from the passages, never from your own knowledge.\nVerdicts:\n- supported: a passage states the claim's value, so a reader could confirm it from the quote alone. Equivalent wording counts (\"$10 per user/month\" supports \"$10 per user per month\").\n- partial: a passage supports part of the claim, or gives a materially different qualification (a different number, a range, an older date, a different plan or product).\n- unsupported: the passages are on topic but do not state the value, or they contradict it.\n- no_evidence: the passages are irrelevant or empty.\nA passage that only mentions a word in another sense (e.g. a product name in a feature list) does not support a claim about it.\nevidence_quote MUST be copied character-for-character from one passage: the shortest span that shows the value (under 300 characters). Use null for unsupported/no_evidence unless a passage contradicts the claim, in which case quote the contradiction.\nreason: one sentence. If the passage contradicts the claim, say what it actually says.",
+    "user": "Research question: Company facts about Stripe: founders, founding year, and headquarters city.\nClaim: Stripe is headquartered in South San Francisco.\nValue being checked: \"South San Francisco\"\n\n<passage source=\"https://www.linkedin.com/company/stripe/\">\n[Stripe > About us]\n\nStripe builds programmable financial services. Millions of companies—from the world’s largest enterprises to the most ambitious startups—use Stripe to accept payments, grow their revenue, and accelerate new business opportunities. Headquartered in San Francisco and Dublin, the company aims to increase the GDP of the internet.\n\n…\n\nSouth San Francisco, California\n\n…\n\n[Stripe > Products > Stripe > Payment Processing Software]\n\nStripe is a financial infrastructure platform for businesses. Millions of companies—from the world’s largest enterprises to the most ambitious startups—use Stripe to accept payments, grow their revenue, and accelerate new business opportunities. Headquartered in San Francisco and Dublin, the company aims to increase the GDP of the internet.\n\n…\n\n[Stripe > Locations]\n\nSouth San Francisco, California 94080, US\n</passage>\n\n<passage source=\"https://www.linkedin.com/company/incubadoracultura/\">\n[Stripe > About us]\n\nEspai per al foment i divulgació de la creació artística, per a la gestió del fons històric i cultural de Bartomeu Rebés i Duran i nova seu d’Editorial Andorra. Espacio para el fomento y divulgación de la creación artística, para la gestión del fondo histórico y cultural de Bartomeu Rebés i Duran y nueva sede de Editorial Andorra. Organisation for the promotion and dissemination of artistic creation, for the management of the historical and cultural collection of Bartomeu Rebés i Duran and new headquarters of Editorial Andorra.\n\n…\n\nHeadquarters\n\nAndorra la Vella, Andorra\n\n…\n\n[Stripe > Locations]\n\nParc Guillemó\n\nAndorra la Vella, Andorra AD500, AD\n</passage>\n\n<passage source=\"https://www.linkedin.com/company/stripe-agency/\">\n[Stripe > About us]\n\nLead with Stripe - Strategy, content, ads & design build to elevate your brand.\n\n…\n\nMarketing Services\n\nCompany size\n\n2-10 employees\n\n…\n\nPrivately Held\n</passage>",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "verdict": {
+          "type": "string",
+          "enum": [
+            "supported",
+            "partial",
+            "unsupported",
+            "no_evidence"
+          ]
+        },
+        "best_source_url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "evidence_quote": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "reason": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "verdict",
+        "best_source_url",
+        "evidence_quote",
+        "reason"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "response": "{\"verdict\":\"partial\",\"best_source_url\":\"https://www.linkedin.com/company/stripe/\",\"evidence_quote\":\"Headquartered in San Francisco and Dublin, the company aims to increase the GDP of the internet.\",\"reason\":\"The Stripe passage says Stripe is headquartered in San Francisco and Dublin, while \\\"South San Francisco\\\" appears only in a location listing (\\\"South San Francisco, California 94080, US\\\") without being stated as the headquarters, so the claim is only partly supported.\"}"
+}
