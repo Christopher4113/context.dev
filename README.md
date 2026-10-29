@@ -19,7 +19,8 @@ question + json_format
         │             → one standalone claim per field ("Linear's Business plan costs $16 per user per month.")
         │
   3. Gather evidence ─ rank sources (the entity's own site first, profiles/social last), then for each
-        │             claim × top 3 sources: Scrape + Highlights with the claim as the query
+        │             claim × top 3 sources: Scrape + Highlights with the claim as the query.
+        │             If the claim isn't supported, try the next 3 sources for that claim only.
         │
   4. Judge ────────── LLM sees claim + passages → verdict, best source, verbatim quote, reason
         │             quote is checked in code against the retrieved passages; if it isn't there,
@@ -44,7 +45,7 @@ cp .env.example .env   # add CONTEXT_DEV_API_KEY and ANTHROPIC_API_KEY
 
 > **No keys?** The repo ships its `.cache/` (1.9 MB of recorded Context.dev and judge responses), so `pnpm web` and the CLI replay all 25 benchmark questions, including every example chip in the demo, with no keys and no credits. Anything new needs keys.
 
-**Web demo.** Ask a question in plain English. Groundcheck drafts the answer fields itself, so there's no schema to write. You can customize the fields under *Customize answer fields*. The answer reads as plain sentences, one per fact, each underlined in its verdict color. Click a sentence to see its source and the highlighted evidence passage. *Fields* shows the structured JSON, and *verify: true response* shows the pitched API shape. Below the answer, **Links Answers researched** lists every URL Answers returned, with what became of it: *Verified* (it backs these fields), *Partial*, *Backs nothing* (read, but no value appears in it), *Unreadable* (blocked or failed), or *Not checked* (beyond the 3 sources checked per field). The "verify: true response" tab shows the response shape pitched below.
+**Web demo.** Ask a question in plain English. Groundcheck drafts the answer fields itself, so there's no schema to write. You can customize the fields under *Customize answer fields*. The answer reads as plain sentences, one per fact, each underlined in its verdict color. Click a sentence to see its source and the highlighted evidence passage. *Fields* shows the structured JSON, and *verify: true response* shows the pitched API shape. Facts Answers couldn't find are shown as *Not found* instead of being left out. If a name in the question matches several different companies' sites among the sources ("savvy" → savvy.com, savvywealth.com, getsavvy.com), a notice offers one-click re-asks pinned to each site. Below the answer, **Links Answers researched** lists every URL Answers returned, with what became of it: *Verified* (it backs these fields), *Partial*, *Backs nothing* (read, but no value appears in it), *Unreadable* (blocked or failed), or *Not checked* (beyond the 3 sources checked per field). The "verify: true response" tab shows the response shape pitched below.
 
 ```bash
 pnpm web               # http://localhost:3000
@@ -97,7 +98,7 @@ Main takeaways:
 - Questions answered from one first-party page ground very well.
 - Company and people questions mostly cite LinkedIn and X profile records, which can't be scraped or don't contain the field.
 - In two time-sensitive cases (Python, Node.js LTS), the answer is contradicted by a source it cites.
-- Checking the entity's own site first (anthropic.com for a question about Anthropic) instead of in Answers' order raises overall support from 67.9% to 70.7%, and people/roles from 41.2% to 58.8%. See [FINDINGS.md](FINDINGS.md#follow-up-checking-the-right-links-first).
+- Checking the entity's own site first, then 3 more sources only for facts the first 3 don't support, raises overall support from 67.9% to 75.7%: people/roles from 41.2% to 76.5%, and company facts from 50.0% to 69.2%. The extra checks cost about 15% more scrapes. See [FINDINGS.md](FINDINGS.md#follow-up-checking-the-right-links-first).
 
 ## How this could ship inside Answers
 

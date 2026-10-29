@@ -18,6 +18,16 @@ export function flatten(value: unknown, path = ""): Leaf[] {
   return [];
 }
 
+/** Paths Answers left empty (null or ""): the facts it could not find. Empty arrays and objects are skipped. */
+export function missing(value: unknown, path = ""): string[] {
+  if (value === null || value === "") return path ? [path] : [];
+  if (Array.isArray(value)) return value.flatMap((v, i) => missing(v, `${path}[${i}]`));
+  if (value && typeof value === "object") {
+    return Object.entries(value as Record<string, unknown>).flatMap(([k, v]) => missing(v, path ? `${path}.${k}` : k));
+  }
+  return [];
+}
+
 /** Readable label for a path, using an array item's name when it has one: "plans › Business › price per user monthly". */
 export function label(root: unknown, path: string): string {
   const parts: string[] = [];

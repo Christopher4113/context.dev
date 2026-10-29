@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://savvywealth.com/",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "The CEO of Savvy Wealth is Ritik Malhotra.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://savvywealth.com/",
+    "passages": [
+      "[Your > Why]\n\nFounder & CEO, Colorado Wealth Group — Powered by Savvy\n\n…\n\n[Your > Why > World class people, intelligent tools]\n\nWealth Manager — Powered by Savvy\n\n…\n\n[Your > Why > Community of exceptional advisors]\n\nWealth Manager — Powered by Savvy\n\n…\n\n[Your > Why > Connected financial ecosystem]\n\nFounder & CEO, Colorado Wealth Group — Powered by Savvy\n\n…\n\n[Your > The]\n\nWealth Manager - Powered by Savvy\n\n…\n\nFounder & CEO, Colorado Wealth Group - Powered by Savvy\n\n…\n\nWealth Manager, Savvy Wealth\n\n…\n\nWealth Manager at Savvy"
+    ]
+  }
+}

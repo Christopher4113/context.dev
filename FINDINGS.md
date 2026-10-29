@@ -52,13 +52,15 @@ Groundcheck checks the first 3 sources per field, and for company and people que
 | Answers' order (above) | 50.0% | 41.2% | 67.9% | 11.4% |
 | All LinkedIn / social last | 38.5% | 64.3% | 68.6% | 10.9% |
 | Only personal profiles / social last | 50.0% | 41.2% | 67.9% | 12.1% |
-| **Entity's own site first**, then other pages, then profiles / social | **53.8%** | **58.8%** | **70.7%** | **6.4%** |
+| Entity's own site first, then other pages, then profiles / social | 53.8% | 58.8% | 70.7% | 6.4% |
+| **+ 3 extra sources only for facts the first 3 don't support** | **69.2%** | **76.5%** | **75.7%** | **4.3%** |
 
 - **Moving all of LinkedIn back was too blunt.** It pushed out readable LinkedIn company pages, and GitHub org pages that back nothing took their slots.
 - **Moving only personal profiles back changed nothing.** The slots went to lookalike company pages (`linkedin.com/company/openai-sora`, `/claude-builder-club-umass`).
 - **What helped was checking the entity's own site first.** That means pages whose domain matches a name in the question: anthropic.com/company/leadership for Anthropic, and openai.com's CFO announcement for OpenAI.
 - **One regression:** Microsoft dropped from 3 to 1 supported, because a readable LinkedIn profile lost its slot to a blocked press page.
 - **Lookalike domains can still match.** Domain matching can be fooled by a site like `figma.bot`, which was ranked as Figma's own site.
+- **Checking more sources only where needed helped most.** When a fact isn't supported by the first 3 sources, Groundcheck tries the next 3 for that fact only. Only 19 of 140 facts needed this, which took 55 extra scrapes, or at most about 110 credits on a cold cache, versus 239 base scrapes. It fixed the Microsoft regression and turned a Savvy Wealth CTO claim from unsupported to supported via a trade-press article ([results/benchmark-escalated.json](results/benchmark-escalated.json)).
 
 This also supports suggestion 2 below. Answers already knows which source is the entity's own site, so ordering or labeling sources that way in the response would help every client, not just Groundcheck.
 

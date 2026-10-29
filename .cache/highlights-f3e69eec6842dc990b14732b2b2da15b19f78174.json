@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://www.savvywealth.com/about",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "The company at savvywealth.com is Savvy Wealth.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://www.savvywealth.com/about",
+    "passages": [
+      "[Make > FAQ]\n\nSavvy Wealth was founded by Ritik Malhotra, who serves as Founder and CEO. Malhotra is a repeat technology entrepreneur and Y Combinator alum who sold two prior companies before Savvy, one to Box in 2014 and one to Brex in 2019, where he went on to build Brex Cash. He started Savvy Wealth in 2021 to pair modern technology with human financial advice.\n\n…\n\nSavvy Wealth is both, by design. Savvy Wealth Inc is the technology company, and Savvy Advisors, Inc. is its affiliated SEC-registered investment adviser (RIA). The technology company builds the platform advisors use, and the RIA delivers the regulated investment advice, so advisors get modern software and a compliant home for their practice in one place.\n\n…\n\nYes. All advisory services are provided by Savvy Advisors, Inc., an investment adviser registered with the SEC. As a registered investment adviser, Savvy Advisors is a fiduciary—held to a duty of care and loyalty to act in clients' best interests at all times. Savvy Wealth, Inc. is the parent technology company that builds the platform; the advice itself is delivered by the RIA, Savvy Advisors, Inc."
+    ]
+  }
+}

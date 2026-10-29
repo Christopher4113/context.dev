@@ -1,0 +1,44 @@
+{
+  "request": {
+    "model": "anthropic:claude-opus-5-5",
+    "system": "You verify one claim against evidence passages scraped from the cited sources. Judge only from the passages, never from your own knowledge.\nVerdicts:\n- supported: a passage states the claim's value, so a reader could confirm it from the quote alone. Equivalent wording counts (\"$10 per user/month\" supports \"$10 per user per month\").\n- partial: a passage supports part of the claim, or gives a materially different qualification (a different number, a range, an older date, a different plan or product).\n- unsupported: the passages are on topic but do not state the value, or they contradict it.\n- no_evidence: the passages are irrelevant or empty.\nA passage that only mentions a word in another sense (e.g. a product name in a feature list) does not support a claim about it.\nevidence_quote MUST be copied character-for-character from one passage: the shortest span that shows the value (under 300 characters). Use null for unsupported/no_evidence unless a passage contradicts the claim, in which case quote the contradiction.\nreason: one sentence. If the passage contradicts the claim, say what it actually says.",
+    "user": "Research question: Who is the ceo, cfo and cto of savvy (savvywealth.com)\nClaim: The company at savvywealth.com is Savvy Wealth.\nValue being checked: \"Savvy Wealth\"\n\n<passage source=\"https://savvywealth.com/demo\">\n[Your > advisors nationwide]\n\nOur Custodians:\n\n\"Being at Savvy helps me serve my clients better, it's the best career decision I've made. My clients can feel the difference in my ability to be a true advisor to them.\"\n\n…\n\nPrivate Wealth Manager\n\n…\n\n[Book a confidential intro call > advisors nationwide]\n\n\"Being at Savvy helps me serve my clients better, it's the best career decision I've made. My clients can feel the difference in my ability to be a true advisor to them.\"\n\n…\n\nPrivate Wealth Manager\n</passage>\n\n<passage source=\"https://savvywealth.com/\">\n[Your > FAQ]\n\nSavvy Wealth is an intelligent wealth management platform built for independent financial advisors. Savvy Wealth Inc is the technology company, and its affiliated registered investment adviser (RIA), Savvy Advisors, Inc., is registered with the SEC. Together they give advisors an all-in-one platform: in-house technology, investment management, and a full operations team, so advisors can run their practice without the overhead.\n\n…\n\nYes, Savvy Advisors, Inc. is an SEC-registered investment adviser (RIA), with CRD #318493, and it's the RIA that advisors and clients work with. Savvy Wealth Inc is the parent technology company. SEC registration does not imply a particular level of skill or endorsement by the Commission.\n</passage>\n\n<passage source=\"https://www.savvywealth.com/about\">\n[Make > FAQ]\n\nSavvy Wealth was founded by Ritik Malhotra, who serves as Founder and CEO. Malhotra is a repeat technology entrepreneur and Y Combinator alum who sold two prior companies before Savvy, one to Box in 2014 and one to Brex in 2019, where he went on to build Brex Cash. He started Savvy Wealth in 2021 to pair modern technology with human financial advice.\n\n…\n\nSavvy Wealth is both, by design. Savvy Wealth Inc is the technology company, and Savvy Advisors, Inc. is its affiliated SEC-registered investment adviser (RIA). The technology company builds the platform advisors use, and the RIA delivers the regulated investment advice, so advisors get modern software and a compliant home for their practice in one place.\n\n…\n\nYes. All advisory services are provided by Savvy Advisors, Inc., an investment adviser registered with the SEC. As a registered investment adviser, Savvy Advisors is a fiduciary—held to a duty of care and loyalty to act in clients' best interests at all times. Savvy Wealth, Inc. is the parent technology company that builds the platform; the advice itself is delivered by the RIA, Savvy Advisors, Inc.\n</passage>",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "verdict": {
+          "type": "string",
+          "enum": [
+            "supported",
+            "partial",
+            "unsupported",
+            "no_evidence"
+          ]
+        },
+        "best_source_url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "evidence_quote": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "reason": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "verdict",
+        "best_source_url",
+        "evidence_quote",
+        "reason"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "response": "{\"verdict\":\"supported\",\"best_source_url\":\"https://savvywealth.com/\",\"evidence_quote\":\"Savvy Wealth is an intelligent wealth management platform built for independent financial advisors. Savvy Wealth Inc is the technology company\",\"reason\":\"The savvywealth.com homepage identifies the company as Savvy Wealth (Savvy Wealth Inc).\"}"
+}

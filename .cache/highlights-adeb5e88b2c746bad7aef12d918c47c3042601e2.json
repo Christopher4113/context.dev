@@ -1,0 +1,17 @@
+{
+  "request": {
+    "url": "https://linkedin.com/in/allan-bain-96114a332",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "The current President and CEO of Y Combinator is Garry Tan.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://linkedin.com/in/allan-bain-96114a332",
+    "passages": [],
+    "error": "WEBSITE_BLOCKED"
+  }
+}

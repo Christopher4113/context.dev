@@ -1,0 +1,32 @@
+{
+  "request": {
+    "task": "Who is the CFO and who is the CTO of Savvy (savvy.com), the company whose CEO is Eric Goldreyer? Only answer for this company, not similarly named ones.",
+    "json_format": {
+      "cfo": {
+        "name": ""
+      },
+      "cto": {
+        "name": ""
+      }
+    },
+    "mode": "fast"
+  },
+  "response": {
+    "json_content": {
+      "cfo": {
+        "name": null
+      },
+      "cto": {
+        "name": null
+      }
+    },
+    "sources": [
+      "https://www.savvy.com/about"
+    ],
+    "key_metadata": {
+      "credits_consumed": 10,
+      "credits_remaining": 19792
+    },
+    "request_id": "7b69f266-1209-4f78-aab0-38e26b06d9c1"
+  }
+}

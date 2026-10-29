@@ -8,13 +8,26 @@ const highlightsFx = JSON.parse(readFileSync("fixtures/highlights-linear-busines
 const root = answersFx.response.json_content;
 const evidence = [{ url: "https://linear.app/pricing", passages: highlightsFx.response.highlights.data as string[] }];
 
+// Tests can swap in another Answers response and per-URL passages; defaults replay the Linear fixture.
+let mockAnswer: any = answersFx.response;
+let mockPages: Record<string, string[]> = {};
+const scraped: string[] = [];
 vi.mock("../src/context.ts", async (orig) => ({
   ...(await orig<typeof import("../src/context.ts")>()),
-  answers: async () => ({ data: answersFx.response, hit: true }),
-  highlights: async () => evidence[0],
+  answers: async () => ({ data: mockAnswer, hit: true }),
+  highlights: async (url: string) => {
+    scraped.push(url);
+    return mockPages[url] ? { url, passages: mockPages[url] } : evidence[0];
+  },
 }));
 
 describe("flatten", () => {
+  it("lists the fields Answers left empty", async () => {
+    const { missing } = await import("../src/flatten.ts");
+    expect(missing({ company: "Savvy", ceo: { name: "Eric" }, cfo: { name: null }, cto: { name: "" }, tags: [] })).toEqual(["cfo.name", "cto.name"]);
+    expect(missing(root)).toEqual(["plans[3].price_per_user_monthly"]);
+  });
+
   it("turns json_content into leaf fields and skips nulls", () => {
     const paths = flatten(root).map((l) => l.path);
     expect(paths).toContain("plans[2].price_per_user_monthly");
@@ -113,6 +126,35 @@ describe("pipeline", () => {
     ]);
   });
 
+  it("checks extra sources only for facts the first three don't support", async () => {
+    const { groundcheck } = await import("../src/groundcheck.ts");
+    mockAnswer = { json_content: { ceo: "Ritik Malhotra", cto: "Eric Hurkman" }, sources: ["https://a.com", "https://b.com", "https://c.com", "https://d.com", "https://e.com"], request_id: "r" };
+    mockPages = {
+      "https://a.com": ["Ritik Malhotra, Founder & CEO"],
+      "https://b.com": ["nothing relevant"],
+      "https://c.com": ["Eric Hurkman, Chief Business Officer"],
+      "https://d.com": ["Savvy Wealth names Eric Hurkman as first CTO"],
+      "https://e.com": ["unrelated"],
+    };
+    scraped.length = 0;
+    const llm: LLM = async (system, user) => {
+      if (system.startsWith("Rewrite")) return '{"claims":[]}';
+      const claim = user.split("\n")[1];
+      const quote = claim.includes("ceo") ? "Founder & CEO" : user.includes("first CTO") ? "names Eric Hurkman as first CTO" : null;
+      return JSON.stringify({ verdict: quote ? "supported" : "unsupported", best_source_url: null, evidence_quote: quote, reason: "r" });
+    };
+    try {
+      const r = await groundcheck("Who leads Savvy Wealth?", { ceo: "", cto: "" }, { llm });
+      expect(r.citations["ceo"]).toMatchObject({ verdict: "supported", source: "https://a.com" });
+      expect(r.citations["cto"]).toMatchObject({ verdict: "supported", source: "https://d.com" });
+      expect(scraped.filter((u) => u === "https://d.com")).toHaveLength(1); // only the CTO fact went past the first three
+      expect(r.source_report.find((x) => x.url === "https://d.com")?.status).toBe("verified");
+    } finally {
+      mockAnswer = answersFx.response;
+      mockPages = {};
+    }
+  });
+
   it("ranks the entity's own site first and profiles last, otherwise keeping order", async () => {
     const { rankSources } = await import("../src/groundcheck.ts");
     const urls = [
@@ -134,9 +176,16 @@ describe("pipeline", () => {
     expect(rankSources(["https://news.example.com", "https://www.ycombinator.com/people"], "Who runs Y Combinator?")[0]).toBe("https://www.ycombinator.com/people");
   });
 
+  it("flags a question name that matches several companies' sites", async () => {
+    const { ambiguity } = await import("../src/groundcheck.ts");
+    const savvy = ["https://www.linkedin.com/in/ritikmalhotra", "https://savvywealth.com/", "http://getsavvy.com/", "https://www.savvy.com/about", "http://savvy.com/", "http://sagehill.com/"];
+    expect(ambiguity(savvy, "Who is the ceo, cfo and cto of savvy")).toEqual({ name: "savvy", sites: ["savvywealth.com", "getsavvy.com", "savvy.com"] });
+    expect(ambiguity(["https://linear.app/pricing"], "What are the pricing plans for Linear (linear.app)?")).toBeNull();
+  });
+
   it("marks sources past the cap as not_checked and unreadable ones as blocked", async () => {
     const { sourceReport } = await import("../src/groundcheck.ts");
     const c = { verdict: "no_evidence", source: null, passages: [{ url: "https://a", passages: [], error: "WEBSITE_BLOCKED" }] } as any;
-    expect(sourceReport(["https://a", "https://b"], ["https://a"], { x: c }).map((s) => s.status)).toEqual(["blocked", "not_checked"]);
+    expect(sourceReport(["https://a", "https://b"], { x: c }).map((s) => s.status)).toEqual(["blocked", "not_checked"]);
   });
 });

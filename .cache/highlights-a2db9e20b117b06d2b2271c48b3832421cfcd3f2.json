@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://www.wealthmanagement.com/ria-news/savvy-wealth-creates-cto-position-to-build-out-product-engineering-teams",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "The CTO of Savvy Wealth is Eric Hurkman.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://www.wealthmanagement.com/ria-news/savvy-wealth-creates-cto-position-to-build-out-product-engineering-teams",
+    "passages": [
+      "[Savvy Wealth Creates CTO Position to Build Out Product, Engineering Teams]\n\nEric Hurkman, formerly of valuation software firm Carta, has joined Savvy to continue developing products for advisors and hiring more tech talent.\n\n…\n\nSavvy Wealth CTO Eric Hurkman\n\n…\n\nSavvy Wealth, the New York-based tech-driven advisor platform, has created a new chief technology officer role to expand its product and engineering teams and innovate in areas such as integrating artificial intelligence into its advisor tools.\n\nEric Hurkman took the CTO role after a stint as vice president of engineering at Carta, a valuation software startup. He was originally CTO at Carta, where he built its equity management and investor services platforms and engineering teams, then returned for a second run as vice president of engineering.\n\n…\n\nIn his new role, Hurkman will have about 12 to 18 months to lead the expansion of Savvy Wealth’s product development, design, engineering and AI teams. The effort will be partly fueled by a $26.5 million Series A funding round Savvy booked last year.\n\n…\n\nHurkman’s other experience includes a stint as CTO at Say Technologies, a financial services platform acquired by Robinhood; DrChrono, an electronic health records platform for doctors; and vice president of engineering at Maven Clinic, a women’s and family health company.\n\n…\n\nHurkman is Savvy's second C-suite hire to a newly created role in February. Earlier in the month, it announced David Weiner as chief growth officer. Weiner had previously led sales and go-to-market strategies for firms such as Compass Real Estate, David Energy and Tekmetric, an automotive software company."
+    ]
+  }
+}

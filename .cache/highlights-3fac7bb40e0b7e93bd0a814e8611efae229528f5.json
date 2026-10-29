@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://www.linkedin.com/in/takeshinumoto",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "Microsoft's CFO is Amy Hood.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://www.linkedin.com/in/takeshinumoto",
+    "passages": [
+      "[Takeshi Numoto > Sign in to view Takeshi’s full profile]\n\nTakeshi can introduce you to 10+ people at Microsoft\n\n…\n\nMicrosoft\n\n…\n\n[Takeshi Numoto > About]\n\nAs Microsoft’s Chief Marketing Officer, I lead the company’s global marketing efforts…\n\n…\n\n[Takeshi Numoto > Experience & Education]\n\n- ### Microsoft\n\n…\n\n[Takeshi Numoto > Explore more posts]\n\nRegister here   #MTLC #GTM #RevenueEngine #AI Ruth Morris Nayla Daly Sara Fraim Christopher Hughes David Chang Carol Meyers MASSACHUSETTS TECHNOLOGY LEADERSHIP COUNCIL Eyal Worthalter Jay Bhandari MB Samuel Grace Lee Judah Phillips Rich Hempel Taylor Deboodt Paul Baier Thomas Hazel Scott Weller Alden Do Rosario Francesca Polycarpe Zoe Bhargava Daniel Cook Shuo Chen Jerel Lim Hana Jallaf Erich Archer Ben Putano 📚 Alan MacCormack Luca Rubino Jero Beccar Ethan Pierce Rami Aljundi Romain Assunção (رومان اسونساو) Dilyana Ocetova Dilan D.&#x20;"
+    ]
+  }
+}

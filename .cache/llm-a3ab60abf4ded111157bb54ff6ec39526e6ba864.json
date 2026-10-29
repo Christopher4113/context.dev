@@ -1,0 +1,44 @@
+{
+  "request": {
+    "model": "anthropic:claude-opus-5-5",
+    "system": "You verify one claim against evidence passages scraped from the cited sources. Judge only from the passages, never from your own knowledge.\nVerdicts:\n- supported: a passage states the claim's value, so a reader could confirm it from the quote alone. Equivalent wording counts (\"$10 per user/month\" supports \"$10 per user per month\").\n- partial: a passage supports part of the claim, or gives a materially different qualification (a different number, a range, an older date, a different plan or product).\n- unsupported: the passages are on topic but do not state the value, or they contradict it.\n- no_evidence: the passages are irrelevant or empty.\nA passage that only mentions a word in another sense (e.g. a product name in a feature list) does not support a claim about it.\nevidence_quote MUST be copied character-for-character from one passage: the shortest span that shows the value (under 300 characters). Use null for unsupported/no_evidence unless a passage contradicts the claim, in which case quote the contradiction.\nreason: one sentence. If the passage contradicts the claim, say what it actually says.",
+    "user": "Research question: Who are OpenAI's current CEO, CFO, and Chief Research Officer?\nClaim: OpenAI's current Chief Research Officer is Mark Chen.\nValue being checked: \"Mark Chen\"\n\n<passage source=\"https://openai.com\">\n[OpenAI | Research & Deployment > Recent news]\n\nPublicationOct 21, 2026\n\n…\n\nCompanyOct 20, 2026\n\n…\n\nPublicationSep 23, 2026\n\n…\n\nCompanySep 29, 2026\n\n…\n\nPublicationOct 6, 2026\n</passage>\n\n<passage source=\"https://openai.com/index/leadership-team-update/\">\n[OpenAI leadership team update]\n\nWe’re happy to announce several executive role changes that reflect our recent progress and will ensure continued momentum toward our next major milestones.\n\n…\n\n**Brad Lightcap** has been pivotal in OpenAI’s growth, scaling our structure, team, and capital base through his oversight of our Finance, Legal, People, and Operations organizations. He will become Chief Operating Officer and expand his focus, working with our Applied AI teams to sharpen our business and commercial strategies. He will also continue to manage the OpenAI Startup Fund.\n\n**Mira Murati** has done a tremendous job leading our research, product, and partnership functions over the past 18 months. Most recently, she was instrumental in bringing these functions together for the successful release of our DALL·E⁠ research. Mira is taking on the role of Chief Technology Officer, reflecting her leadership across these critical areas within OpenAI.\n\n…\n\n[OpenAI leadership team update > Author]\n\nOpenAI announces new members to board of directors\n\n…\n\nReview completed & Altman, Brockman to continue to lead OpenAI\n</passage>\n\n<passage source=\"https://openai.com/index/openai-welcomes-cfo-cpo/\">\n[OpenAI welcomes Sarah Friar (CFO) and Kevin Weil (CPO)]\n\nThat’s why we are excited to welcome two leaders with the right experience, skills, and values to push the mission forward:\n\n- Sarah Friar is joining as Chief Financial Officer. She will lead a finance team that supports our mission by providing continued investment in our core research capabilities, and ensuring that we can scale to meet the needs of our growing customer base and the complex and global environment in which we are operating. \n\n- Kevin Weil is joining as Chief Product Officer. He will lead a product team focused on applying our research to products and services that benefit consumers, developers, and businesses.\n\n…\n\nOpenAI CEO Sam Altman\n\nSarah most recently served as CEO of Nextdoor. She was previously CFO at Square, and also worked at Goldman Sachs, McKinsey, and Salesforce. She is a Board Member of Walmart and Consensys, a Fellow of the Aspen Institute, and Co-Chair of the Stanford Digital Economy Lab, an integral component of the Stanford Institute for Human-Centered AI (HAI).\n\nKevin was most recently President, Product and Business at Planet Labs. He was previously the co-founder of the Libra cryptocurrency and VP of Product for Novi at Facebook, VP of Product at Instagram, and SVP of Product at Twitter. He is a term member of the Council on Foreign Relations (CFR) and serves on the boards of The Nature Conservancy and Black Product Managers Network.\n</passage>\n\n<passage source=\"https://www.linkedin.com/company/openai-sora/\">\n[Stránka nenalezena > Omlouváme se, nemůžeme najít stránku, kterou hledáte. Zkuste se vrátit zpátky na předchozí stránku, nebo se podívejte do našeho Centra nápovědy pro více informací]\n\nPřejít do informačního kanálu\n\n…\n\n[Страница не найдена > Не удаётся найти искомую вами страницу. Вернитесь на предыдущую страницу или посетите страницу нашего справочного центра для получения дополнительной информации.]\n\nПерейти к ленте\n\n[Sidan kunde inte hittas. > Sidan du letar efter hittades inte. Gå tillbaka till föregående sida eller besök vårt Hjälpcenter för mer information]\n\nGå till ditt nyhetsflöde\n\n…\n\n[未找到网页 > 抱歉，无法找到页面。试试返回到前一页，或前往帮助中心了解更多信息]\n\n前往动态汇总\n\n[系統找不到頁面。 > 我們好像找不到該頁面。請回到上一頁或前往說明中心來進一步瞭解]\n\n前往首頁動態\n</passage>\n\n<passage source=\"https://www.linkedin.com/company/artificial-intelligence-open-ai/\">\n[Stránka nenalezena > Omlouváme se, nemůžeme najít stránku, kterou hledáte. Zkuste se vrátit zpátky na předchozí stránku, nebo se podívejte do našeho Centra nápovědy pro více informací]\n\nPřejít do informačního kanálu\n\n…\n\n[Страница не найдена > Не удаётся найти искомую вами страницу. Вернитесь на предыдущую страницу или посетите страницу нашего справочного центра для получения дополнительной информации.]\n\nПерейти к ленте\n\n[Sidan kunde inte hittas. > Sidan du letar efter hittades inte. Gå tillbaka till föregående sida eller besök vårt Hjälpcenter för mer information]\n\nGå till ditt nyhetsflöde\n\n…\n\n[未找到网页 > 抱歉，无法找到页面。试试返回到前一页，或前往帮助中心了解更多信息]\n\n前往动态汇总\n\n[系統找不到頁面。 > 我們好像找不到該頁面。請回到上一頁或前往說明中心來進一步瞭解]\n\n前往首頁動態\n</passage>\n\n<passage source=\"https://www.linkedin.com/company/openai/\">\n[OpenAI > About us]\n\nOpenAI is an AI research and deployment company dedicated to ensuring that general-purpose artificial intelligence benefits all of humanity. AI is an extremely powerful tool that must be created with safety and human needs at its core. OpenAI is dedicated to putting that alignment of interests first — ahead of profit. To achieve our mission, we must encompass and value the many different perspectives, voices, and experiences that form the full spectrum of humanity. Our investment in diversity, equity, and inclusion is ongoing, executed through a wide range of initiatives, and championed and supported by leadership. At OpenAI, we believe artificial intelligence has the potential to help people solve immense global challenges, and we want the upside of AI to be widely shared. Join us in shaping the future of technology.\n\n…\n\nResearch Services\n\n…\n\n1,001-5,000 employees\n\n…\n\nartificial intelligence and machine learning\n\n[OpenAI > Employees at OpenAI]\n\n- **Krish Bandaru**\n\n- ### LinkedIn Member\n</passage>",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "verdict": {
+          "type": "string",
+          "enum": [
+            "supported",
+            "partial",
+            "unsupported",
+            "no_evidence"
+          ]
+        },
+        "best_source_url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "evidence_quote": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "reason": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "verdict",
+        "best_source_url",
+        "evidence_quote",
+        "reason"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "response": "{\"verdict\":\"no_evidence\",\"best_source_url\":null,\"evidence_quote\":null,\"reason\":\"None of the passages mention Mark Chen or a Chief Research Officer; they cover other executives (COO, CTO, CFO, CPO) or are empty error pages.\"}"
+}

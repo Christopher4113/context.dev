@@ -1,0 +1,17 @@
+{
+  "request": {
+    "url": "https://linkedin.com/in/valerie-h-reynolds-7360873a8",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "The current President and CEO of Y Combinator is Garry Tan.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://linkedin.com/in/valerie-h-reynolds-7360873a8",
+    "passages": [],
+    "error": "WEBSITE_BLOCKED"
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "request": {
+    "task": "Who is the ceo, cfo and cto of savvy",
+    "json_format": {
+      "company_name": "",
+      "ceo": {
+        "name": ""
+      },
+      "cfo": {
+        "name": ""
+      },
+      "cto": {
+        "name": ""
+      }
+    },
+    "mode": "ultra"
+  },
+  "response": {
+    "json_content": {
+      "company_name": "Savvy",
+      "ceo": {
+        "name": "Eric Goldreyer"
+      },
+      "cfo": {
+        "name": null
+      },
+      "cto": {
+        "name": null
+      }
+    },
+    "sources": [
+      "https://www.linkedin.com/in/ritikmalhotra",
+      "http://github.com/ritikm",
+      "http://pioneerfund.vc/",
+      "https://savvywealth.com/demo",
+      "https://savvywealth.com/",
+      "https://www.linkedin.com/in/frank-bellio",
+      "https://www.linkedin.com/in/xanaalves/",
+      "https://pt.linkedin.com/in/xanaalves",
+      "https://www.linkedin.com/in/catherine-s-b221b79",
+      "http://getsavvy.com/",
+      "https://www.linkedin.com/in/ericgoldreyer",
+      "http://sagehill.com/",
+      "http://funair.com/",
+      "http://bulbapp.com/",
+      "http://savvy.com/",
+      "https://www.savvywealth.com/about",
+      "https://www.fintechfutures.com/venture-capital-funding/savvy-wealth-names-eric-hurkman-as-first-cto",
+      "https://www.savvy.com/about"
+    ],
+    "key_metadata": {
+      "credits_consumed": 100,
+      "credits_remaining": 19692
+    },
+    "request_id": "b7c89595-7a16-4d4e-9d77-6fcde6c46233"
+  }
+}

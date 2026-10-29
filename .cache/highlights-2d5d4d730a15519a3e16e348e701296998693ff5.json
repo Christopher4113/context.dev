@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://www.linkedin.com/in/yusufmehdi",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "Microsoft's CFO is Amy Hood.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://www.linkedin.com/in/yusufmehdi",
+    "passages": [
+      "[Yusuf Mehdi > Activity > Yusuf Mehdi]\n\nSatya Nadella\n\n…\n\n[Yusuf Mehdi > Other similar profiles > Kirk Koenigsbauer]\n\nMicrosoft\n\n…\n\n[Yusuf Mehdi > Other similar profiles > Sarah R. Bond]\n\nMicrosoft\n\n…\n\n[Yusuf Mehdi > Explore more posts]\n\nAfter an extraordinary 35-year journey at Microsoft, Executive Vice President and Consumer CMO Yusuf Mehdi is preparing to step away from the company — closing one of the most remarkable long-term leadership chapters in Microsoft’s history. Mehdi joined Microsoft in 1992 as an intern during the era of Bill Gates and went on to become one of the company’s most influential product and marketing leaders. Over more than three decades, he played a key role in shaping and launching some of Microsoft’s most iconic products and platforms, including: Windows 95 Internet Explorer Xbox Bing Microsoft Surface Windows 10 Recognized for his exceptional product storytelling and consumer-tech vision, Mehdi also became one of the leading public voices behind Microsoft’s AI transformation, helping drive awareness around Microsoft Copilot and the company’s broader AI ecosystem under CEO Satya Nadella. His departure comes at a pivotal moment as Microsoft continues reshaping its future around artificial intelligence — reflecting a wider generational transition as several veteran leaders move on during the AI era. #Microsoft #YusufMehdi #CMO #35Years\n\n…\n\nIt’s a huge opportunity and I’m grateful we have brilliant, empathetic minds like Jaime at Microsoft, to help bring it to life responsibly."
+    ]
+  }
+}

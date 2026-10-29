@@ -1,0 +1,44 @@
+{
+  "request": {
+    "model": "anthropic:claude-opus-5-5",
+    "system": "You verify one claim against evidence passages scraped from the cited sources. Judge only from the passages, never from your own knowledge.\nVerdicts:\n- supported: a passage states the claim's value, so a reader could confirm it from the quote alone. Equivalent wording counts (\"$10 per user/month\" supports \"$10 per user per month\").\n- partial: a passage supports part of the claim, or gives a materially different qualification (a different number, a range, an older date, a different plan or product).\n- unsupported: the passages are on topic but do not state the value, or they contradict it.\n- no_evidence: the passages are irrelevant or empty.\nA passage that only mentions a word in another sense (e.g. a product name in a feature list) does not support a claim about it.\nevidence_quote MUST be copied character-for-character from one passage: the shortest span that shows the value (under 300 characters). Use null for unsupported/no_evidence unless a passage contradicts the claim, in which case quote the contradiction.\nreason: one sentence. If the passage contradicts the claim, say what it actually says.",
+    "user": "Research question: Company facts about Supabase: founders, founding year, and total funding raised.\nClaim: Supabase was founded in 2020.\nValue being checked: 2020\n\n<passage source=\"https://supabase.com\">\n[Build in a weekendScale to millions > Vector > How industry leaders]\n\nPowering millions of AI-generated apps with a complete Supabase backend.\n\n…\n\nWe could not have built this company without Supabase. If I had to go and build all these components myself, we wouldn't even have launched.\n\n…\n\n[Build in a weekendScale to millions > Vector > Join the community]\n\nVery impressed by @supabase's growth. For new startups, they seem to have gone from \"promising\" to \"standard\" in remarkably short order.\n\n…\n\nI’ve always used Supabase just as a database. Yesterday, I helped debug a founder’s vibe-coding project built with React + React Router — no backend server. The “backend” was entirely Supabase Edge Functions as the API. First time using Supabase this way. Impressive.\n\n…\n\n[Build in a weekendScale to millions > Open source from day one]\n\nSupabase is built in the open because we believe great developer tools should be transparent, inspectable, and owned by the community. Read, contribute, self-host. You're never locked in, and always in control.\n</passage>\n\n<passage source=\"https://supabase.io\">\n[Build in a weekendScale to millions > Vector > How industry leaders]\n\nPowering millions of AI-generated apps with a complete Supabase backend.\n\n…\n\nWe could not have built this company without Supabase. If I had to go and build all these components myself, we wouldn't even have launched.\n\n…\n\n[Build in a weekendScale to millions > Vector > Join the community]\n\nVery impressed by @supabase's growth. For new startups, they seem to have gone from \"promising\" to \"standard\" in remarkably short order.\n\n…\n\nI’ve always used Supabase just as a database. Yesterday, I helped debug a founder’s vibe-coding project built with React + React Router — no backend server. The “backend” was entirely Supabase Edge Functions as the API. First time using Supabase this way. Impressive.\n\n…\n\n[Build in a weekendScale to millions > Open source from day one]\n\nSupabase is built in the open because we believe great developer tools should be transparent, inspectable, and owned by the community. Read, contribute, self-host. You're never locked in, and always in control.\n</passage>\n\n<passage source=\"https://supabase.com/company\">\n[Join one of the world's fastest growing open source communities.]\n\nSupaTroopers\n\n…\n\n[Join one of the world's fastest growing open source communities. > Our investors]\n\nWe've raised $1 billion in funding, backed by some of the world's leading investors.\n\n…\n\n[Join one of the world's fastest growing open source communities. > Individual investors]\n\nPiruze Sabuncu\n\n…\n\n[Join one of the world's fastest growing open source communities. > Individual investors > Press]\n\n**ARTICLE** Supabase Series F\n\n…\n\n[Join one of the world's fastest growing open source communities. > Individual investors > Team]\n\nSupabase is fully remote, with a strong affinity for open source maintainers and ex-Founders. Our engineering team is made up of developers from AWS, Google, Palantir, Stripe, and other YC companies.\n</passage>\n\n<passage source=\"https://www.linkedin.com/company/supabase/\">\n[Supabase > About us]\n\nBuild in a weekend. Scale to millions. Supabase is the Postgres development platform. Start your project with a Postgres Database, Authentication, instant APIs, and realtime subscriptions.\n\n…\n\nIT Services and IT Consulting\n\n…\n\n201-500 employees\n\n…\n\nFounded\n\n2020\n</passage>\n\n<passage source=\"https://github.com/supabase\">\n[Supabase > Pinned Loading]\n\nThe Postgres development platform. Supabase gives you a dedicated Postgres database to build your web, mobile, and AI applications.\n\n…\n\n[Supabase > Pinned Loading > Repositories]\n\nThe Postgres development platform. Supabase gives you a dedicated Postgres database to build your web, mobile, and AI applications.\n\nsupabase/supabase's past year of commit activity\n\n…\n\nA cloud-native, multi-tenant Postgres connection pooler.\n\nsupabase/supavisor's past year of commit activity\n</passage>\n\n<passage source=\"https://www.crunchbase.com/organization/supabase\">\n[Supabase - Crunchbase Company Profile & Funding]\n\nSupabase offers an open source backend platform for app development built around a managed PostgreSQL database and tools.\n\nFounded\n\n…\n\nPrivateVenture - Series Unknown San Francisco, California, United States251-500 supabase.com View on Facebook View on LinkedIn\n\nArtificial Intelligence (AI)\n\n…\n\nSupabase\n</passage>",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "verdict": {
+          "type": "string",
+          "enum": [
+            "supported",
+            "partial",
+            "unsupported",
+            "no_evidence"
+          ]
+        },
+        "best_source_url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "evidence_quote": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "reason": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "verdict",
+        "best_source_url",
+        "evidence_quote",
+        "reason"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "response": "{\"verdict\":\"supported\",\"best_source_url\":\"https://www.linkedin.com/company/supabase/\",\"evidence_quote\":\"Founded\\n\\n2020\",\"reason\":\"Supabase's LinkedIn company page lists its founding year as 2020.\"}"
+}

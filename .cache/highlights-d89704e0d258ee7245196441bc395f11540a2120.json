@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://savvywealth.com/",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "The company at savvywealth.com is Savvy Wealth.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://savvywealth.com/",
+    "passages": [
+      "[Your > FAQ]\n\nSavvy Wealth is an intelligent wealth management platform built for independent financial advisors. Savvy Wealth Inc is the technology company, and its affiliated registered investment adviser (RIA), Savvy Advisors, Inc., is registered with the SEC. Together they give advisors an all-in-one platform: in-house technology, investment management, and a full operations team, so advisors can run their practice without the overhead.\n\n…\n\nYes, Savvy Advisors, Inc. is an SEC-registered investment adviser (RIA), with CRD #318493, and it's the RIA that advisors and clients work with. Savvy Wealth Inc is the parent technology company. SEC registration does not imply a particular level of skill or endorsement by the Commission."
+    ]
+  }
+}

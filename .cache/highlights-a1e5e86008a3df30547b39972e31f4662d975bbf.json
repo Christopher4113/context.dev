@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://savvywealth.com/demo",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "The company at savvywealth.com is Savvy Wealth.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://savvywealth.com/demo",
+    "passages": [
+      "[Your > advisors nationwide]\n\nOur Custodians:\n\n\"Being at Savvy helps me serve my clients better, it's the best career decision I've made. My clients can feel the difference in my ability to be a true advisor to them.\"\n\n…\n\nPrivate Wealth Manager\n\n…\n\n[Book a confidential intro call > advisors nationwide]\n\n\"Being at Savvy helps me serve my clients better, it's the best career decision I've made. My clients can feel the difference in my ability to be a true advisor to them.\"\n\n…\n\nPrivate Wealth Manager"
+    ]
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://www.linkedin.com/in/takeshinumoto",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "Microsoft's CEO is Satya Nadella.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://www.linkedin.com/in/takeshinumoto",
+    "passages": [
+      "[Takeshi Numoto > Sign in to view Takeshi’s full profile]\n\nTakeshi can introduce you to 10+ people at Microsoft\n\n…\n\n[Takeshi Numoto > View mutual connections with Takeshi]\n\nTakeshi can introduce you to 10+ people at Microsoft\n\n…\n\n[Takeshi Numoto > Sign in to view Takeshi’s full profile]\n\nMicrosoft\n\n…\n\n[Takeshi Numoto > About]\n\nAs Microsoft’s Chief Marketing Officer, I lead the company’s global marketing efforts…\n\n…\n\n[Takeshi Numoto > Experience & Education]\n\n- ### Microsoft"
+    ]
+  }
+}

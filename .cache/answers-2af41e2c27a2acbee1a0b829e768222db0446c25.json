@@ -1,0 +1,47 @@
+{
+  "request": {
+    "task": "Who is the ceo, cfo and cto of savvy (savvywealth.com)",
+    "json_format": {
+      "company": "",
+      "ceo": {
+        "name": ""
+      },
+      "cfo": {
+        "name": ""
+      },
+      "cto": {
+        "name": ""
+      }
+    },
+    "mode": "fast"
+  },
+  "response": {
+    "json_content": {
+      "company": "Savvy Wealth",
+      "ceo": {
+        "name": "Ritik Malhotra"
+      },
+      "cfo": {
+        "name": null
+      },
+      "cto": {
+        "name": "Eric Hurkman"
+      }
+    },
+    "sources": [
+      "https://www.linkedin.com/in/ritikmalhotra",
+      "http://github.com/ritikm",
+      "http://pioneerfund.vc/",
+      "https://savvywealth.com/demo",
+      "https://savvywealth.com/",
+      "https://www.linkedin.com/in/erichurkman",
+      "https://www.savvywealth.com/about",
+      "https://www.wealthmanagement.com/ria-news/savvy-wealth-creates-cto-position-to-build-out-product-engineering-teams"
+    ],
+    "key_metadata": {
+      "credits_consumed": 10,
+      "credits_remaining": 19672
+    },
+    "request_id": "f57acecc-18f5-47f8-a2cf-d6d25871d8b8"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://savvywealth.com/demo",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "The CTO of Savvy Wealth is Eric Hurkman.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://savvywealth.com/demo",
+    "passages": [
+      "[Your > advisors nationwide]\n\nOur Custodians:\n\n…\n\nBrian Mills\n\nPrivate Wealth Manager\n\n…\n\n[Book a confidential intro call > advisors nationwide]\n\nOur Custodians:\n\n…\n\nPrivate Wealth Manager"
+    ]
+  }
+}

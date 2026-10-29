@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://www.linkedin.com/company/shopify-ltd/",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "Shopify's President is Harley Finkelstein.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://www.linkedin.com/company/shopify-ltd/",
+    "passages": [
+      "[shopify > About us]\n\n51-200 employees\n\nHeadquarters\n\nmumbai, maharastra\n\n…\n\nFounded\n\n1996"
+    ]
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://www.linkedin.com/company/shopify-incc/",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "Shopify's President is Harley Finkelstein.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://www.linkedin.com/company/shopify-incc/",
+    "passages": [
+      "[Stránka nenalezena > Omlouváme se, nemůžeme najít stránku, kterou hledáte. Zkuste se vrátit zpátky na předchozí stránku, nebo se podívejte do našeho Centra nápovědy pro více informací]\n\nPřejít do informačního kanálu\n\n…\n\n[Impossible de trouver cette page > Nous ne trouvons pas la page que vous recherchez. Essayez de retourner à la page précédente ou consultez notre assistance clientèle pour plus d’informations]\n\nOuvrez votre fil\n\n…\n\n[Laman tidak ditemui > Harap maaf, kami tidak dapat menemui laman yang ingin anda cari. Cuba kembali ke laman sebelumnya atau lihat Pusat Bantuan kami untuk maklumat lanjut]\n\nPergi ke suapan\n\n…\n\n[Sidan kunde inte hittas. > Sidan du letar efter hittades inte. Gå tillbaka till föregående sida eller besök vårt Hjälpcenter för mer information]\n\nGå till ditt nyhetsflöde\n\n…\n\n[系統找不到頁面。 > 我們好像找不到該頁面。請回到上一頁或前往說明中心來進一步瞭解]\n\n前往首頁動態"
+    ]
+  }
+}

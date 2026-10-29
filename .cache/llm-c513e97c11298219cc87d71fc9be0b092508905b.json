@@ -1,0 +1,44 @@
+{
+  "request": {
+    "model": "anthropic:claude-opus-5-5",
+    "system": "You verify one claim against evidence passages scraped from the cited sources. Judge only from the passages, never from your own knowledge.\nVerdicts:\n- supported: a passage states the claim's value, so a reader could confirm it from the quote alone. Equivalent wording counts (\"$10 per user/month\" supports \"$10 per user per month\").\n- partial: a passage supports part of the claim, or gives a materially different qualification (a different number, a range, an older date, a different plan or product).\n- unsupported: the passages are on topic but do not state the value, or they contradict it.\n- no_evidence: the passages are irrelevant or empty.\nA passage that only mentions a word in another sense (e.g. a product name in a feature list) does not support a claim about it.\nevidence_quote MUST be copied character-for-character from one passage: the shortest span that shows the value (under 300 characters). Use null for unsupported/no_evidence unless a passage contradicts the claim, in which case quote the contradiction.\nreason: one sentence. If the passage contradicts the claim, say what it actually says.",
+    "user": "Research question: Who is the ceo, cfo and cto of savvy (savvywealth.com)\nClaim: The CTO of Savvy Wealth is Eric Hurkman.\nValue being checked: \"Eric Hurkman\"\n\n<passage source=\"https://savvywealth.com/demo\">\n[Your > advisors nationwide]\n\nOur Custodians:\n\n…\n\nBrian Mills\n\nPrivate Wealth Manager\n\n…\n\n[Book a confidential intro call > advisors nationwide]\n\nOur Custodians:\n\n…\n\nPrivate Wealth Manager\n</passage>\n\n<passage source=\"https://savvywealth.com/\">\n[Your > Why]\n\nFounder & CEO, Colorado Wealth Group — Powered by Savvy\n\n…\n\n[Your > Why > World class people, intelligent tools]\n\nWealth Manager — Powered by Savvy\n\n…\n\n[Your > Why > Connected financial ecosystem]\n\nFounder & CEO, Colorado Wealth Group — Powered by Savvy\n\n…\n\n[Your > The]\n\nWealth Manager - Powered by Savvy\n\n…\n\nFounder & CEO, Colorado Wealth Group - Powered by Savvy\n\n…\n\nWealth Manager, Savvy Wealth\n\n…\n\nPrivate Wealth Manager\n\n…\n\nWealth Manager at Savvy\n</passage>\n\n<passage source=\"https://www.savvywealth.com/about\">\n[Make > Meet]\n\nFounder & CEO\n\n…\n\nEric Hurkman\n\n…\n\nChief Business Officer\n\n…\n\n[Make > FAQ]\n\nSavvy Wealth was founded by Ritik Malhotra, who serves as Founder and CEO. Malhotra is a repeat technology entrepreneur and Y Combinator alum who sold two prior companies before Savvy, one to Box in 2014 and one to Brex in 2019, where he went on to build Brex Cash. He started Savvy Wealth in 2021 to pair modern technology with human financial advice.\n\n…\n\nSavvy Wealth is backed by leading venture capital investors, including Thrive Capital, Industry Ventures, Index Ventures, Brewer Lane Ventures, The House Fund, Alumni Ventures, Canvas Prime, and Mark Casady's Vestigo Ventures. The company has raised more than $100M to date, and is privately held and led by founder and CEO Ritik Malhotra.\n</passage>",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "verdict": {
+          "type": "string",
+          "enum": [
+            "supported",
+            "partial",
+            "unsupported",
+            "no_evidence"
+          ]
+        },
+        "best_source_url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "evidence_quote": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "reason": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "verdict",
+        "best_source_url",
+        "evidence_quote",
+        "reason"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "response": "{\"verdict\":\"unsupported\",\"best_source_url\":\"https://www.savvywealth.com/about\",\"evidence_quote\":\"Eric Hurkman\\n\\n…\\n\\nChief Business Officer\",\"reason\":\"The About page appears to list Eric Hurkman as Chief Business Officer, not CTO, and no passage names a CTO.\"}"
+}

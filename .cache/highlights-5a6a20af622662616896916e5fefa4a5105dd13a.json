@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://www.linkedin.com/in/yusufmehdi",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "Microsoft's CEO is Satya Nadella.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://www.linkedin.com/in/yusufmehdi",
+    "passages": [
+      "[Yusuf Mehdi > Activity > Yusuf Mehdi]\n\nSatya Nadella\n\n[Yusuf Mehdi > Activity > Satya Nadella]\n\n1mo\n\nYusuf Mehdi shared this\n\nWe’re building Copilot as a new OS for work that spans every model, every form factor, and every task. Today, we’re announcing our biggest update to Copilot to date, bringing four things together: • Autopilot: proactive and long-running agent built for the enterprise • Code: build apps with Copilot, hosted inside your company’s tenant • Home: Chat + Cowork together • Office: now fully embedded in Copilot (and Copilot embedded in Office, of course!) Plus, you can invoke Copilot in Teams, and we’re introducing Today, a proactive experience that surfaces the most important information from across M365 without needing to ask for it. The way we work is changing and so are our workflows. This update brings AI into that flow, from answering a question, to building an app, to getting work done on your behalf. Read more about what we are announcing:&#x20;\n\n…\n\n[Yusuf Mehdi > Other similar profiles > Kirk Koenigsbauer]\n\nMicrosoft"
+    ]
+  }
+}

@@ -56,6 +56,10 @@
   .claim.c-unsupported { text-decoration-color: var(--bad); } .claim.c-unsupported .dot { background: var(--bad); }
   .claim.c-no_evidence { text-decoration-color: var(--none); text-decoration-style: dotted; } .claim.c-no_evidence .dot { background: var(--none); }
   .claim.c-pending { color: var(--muted); text-decoration: none; } .claim.c-pending .dot { background: var(--muted); animation: pulse 1s infinite alternate; }
+  .nf { color: var(--muted); font-style: italic; }
+  .notice .pick { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+  .notice .pick button { border: 1px solid var(--part); background: transparent; color: var(--part); border-radius: 999px; padding: 3px 11px; font: 13px inherit; font-family: inherit; cursor: pointer; }
+  .notice .pick button:hover { background: var(--part); color: var(--bg); }
   .legend { display: flex; gap: 14px; flex-wrap: wrap; font-size: 12px; color: var(--muted); margin: 8px 2px 0; }
   .legend i { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 5px; vertical-align: middle; }
   .empty { color: var(--muted); margin-top: 60px; text-align: center; }
@@ -138,7 +142,7 @@
       <summary>Customize answer fields (optional)</summary>
       <textarea id="schema" class="code" aria-label="Answer fields (json_format)" placeholder="Leave empty and the fields are drafted from your question."></textarea>
     </details>
-    <div class="hint">Context.dev Answers researches the question (fast mode). Each fact is checked against up to 3 of the links it used, with Scrape + Highlights, then judged. Responses are cached, so reruns are instant and free.</div>
+    <div class="hint">Context.dev Answers researches the question (fast mode). Each fact is checked against the 3 most relevant links it used (its own site first), and 3 more if those don't back it, with Scrape + Highlights, then judged. Responses are cached, so reruns are instant and free.</div>
   </section>
   <section class="output" id="out"><div class="empty">Ask a question or pick an example. Every fact in the answer gets checked against the links it came from.</div></section>
 </main>
@@ -182,7 +186,7 @@ $("run").onclick = async () => {
   let schema;
   if ($("schema").value.trim()) try { schema = JSON.parse($("schema").value); } catch { return alert("The answer shape must be valid JSON, or empty to draft one."); }
   $("run").disabled = true; $("close").onclick();
-  state = { citations: {}, fields: [], json: null, view: "text", done: null, error: null, status: schema ? "Asking Context.dev Answers (fast mode)…" : "Planning which facts to look up…", sourceReport: [] };
+  state = { question: $("q").value, citations: {}, fields: [], json: null, view: "text", done: null, error: null, status: schema ? "Asking Context.dev Answers (fast mode)…" : "Planning which facts to look up…", sourceReport: [] };
   render();
   try {
     const res = await fetch("/api/check", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ question: $("q").value, schema }) });
@@ -204,9 +208,9 @@ function onEvent(e) {
     $("schema").value = exampleShape = JSON.stringify(e.json_format, null, 2);
     state.status = "Asking Context.dev Answers (fast mode)…";
   } else if (e.type === "answer") {
-    state.json = e.json_content; state.fields = e.fields; state.sources = e.sources;
+    state.json = e.json_content; state.fields = e.fields; state.sources = e.sources; state.notFound = e.not_found; state.ambiguous = e.ambiguous;
     state.sourceReport = [...new Set(e.sources)].map((url) => ({ url, status: "pending", supports: [], partially_supports: [] }));
-    state.status = `Answers returned ${e.fields.length} fields from ${e.sources.length} source${e.sources.length === 1 ? "" : "s"}. Checking each field…`;
+    state.status = `Answers returned ${e.fields.length} facts${e.not_found.length ? ` (${e.not_found.length} not found)` : ""} from ${e.sources.length} source${e.sources.length === 1 ? "" : "s"}. Checking each field…`;
   } else if (e.type === "field") {
     state.citations[e.path] = e.citation; state.sourceReport = e.source_report;
   } else if (e.type === "done") {
@@ -225,29 +229,43 @@ function render() {
   const stat = (k) => `<div class="stat"><b class="${k === "fields" ? "" : ""}" style="color:var(--${{ supported: "ok", partial: "part", unsupported: "bad", no_evidence: "none" }[k]})">${counts[k]}</b><span>${LABEL[k]}</span></div>`;
   let html = "";
   if (state.json) {
-    html += `<div class="summary"><div class="stat"><b>${Object.keys(state.citations).length}/${n}</b><span>Facts checked</span></div>${Object.keys(counts).map(stat).join("")}
+    html += `<div class="summary"><div class="stat"><b>${Object.keys(state.citations).length}/${n}</b><span>Facts checked</span></div>${Object.keys(counts).map(stat).join("")}${state.notFound?.length ? `<div class="stat"><b style="color:var(--muted)">${state.notFound.length}</b><span>Not found</span></div>` : ""}
       <div class="tabs"><button data-v="text" class="${state.view === "text" ? "on" : ""}">Answer</button><button data-v="tree" class="${state.view === "tree" ? "on" : ""}">Fields</button><button data-v="raw" class="${state.view === "raw" ? "on" : ""}" ${state.done ? "" : "disabled"}>verify: true response</button></div></div>`;
   }
   html += `<div class="status">${state.error ? `<span class="err">${esc(state.error)}</span>` : esc(state.status)}</div>`;
-  if (state.done && n === 0) html += `<div class="notice">Answers returned null for every field, so there was nothing to verify. Try rephrasing the question, or check the fields under "Customize answer fields".</div>`;
+  if (state.ambiguous) {
+    const a = state.ambiguous;
+    html += `<div class="notice">“${esc(a.name)}” matches ${a.sites.length} different sites in the sources (${a.sites.map(esc).join(", ")}), so the answer may mix up companies. Ask about one:<div class="pick">${a.sites.map((x) => `<button data-site="${esc(x)}">${esc(x)}</button>`).join("")}</div></div>`;
+  }
+  if (state.done && n === 0 && !state.notFound?.length) html += `<div class="notice">Answers returned null for every field, so there was nothing to verify. Try rephrasing the question, or check the fields under "Customize answer fields".</div>`;
   if (state.json) html += state.view === "raw" && state.done ? `<pre class="raw">${esc(JSON.stringify(pitchShape(state.done), null, 2))}</pre>` : `${state.view === "tree" ? `<div class="tree">${tree(state.json, "")}</div>` : prose()}${sources()}`;
   out.innerHTML = html;
   out.querySelectorAll(".tabs button").forEach((b) => (b.onclick = () => { state.view = b.dataset.v; render(); }));
+  out.querySelectorAll(".pick button").forEach((b) => (b.onclick = () => {
+    $("q").value = `${state.question.replace(/\s*\([^)]*\)\s*$/, "")} (${b.dataset.site})`;
+    $("schema").value = ""; exampleShape = null;
+    $("run").click();
+  }));
   out.querySelectorAll(".field, .fchip, .claim").forEach((el) => (el.onclick = () => openDetail(el.dataset.path)));
   if (state.selected) out.querySelectorAll(`.field[data-path="${CSS.escape(state.selected)}"], .claim[data-path="${CSS.escape(state.selected)}"]`).forEach((e) => e.classList.add("sel"));
 }
 
 // The answer as readable text: one sentence per verified fact, grouped by the item it describes (e.g. a pricing tier).
 function prose() {
-  if (!state.fields.length) return "";
+  const nf = (state.notFound || []).map((m) => ({ ...m, missing: true }));
+  if (!state.fields.length && !nf.length) return "";
   const groups = new Map();
-  for (const f of state.fields) {
+  for (const f of [...state.fields, ...nf]) {
     const parts = f.label.split(" › ");
     const g = parts.length > 1 ? parts[parts.length - 2] : "";
     if (!groups.has(g)) groups.set(g, []);
     groups.get(g).push(f);
   }
   const sentence = (f) => {
+    if (f.missing) {
+      const what = f.label.split(" › ").pop();
+      return `<span class="nf">${what === "name" ? "Not found" : `${esc(what)}: not found`} in Answers' research.</span>`;
+    }
     const c = state.citations[f.path];
     const v = c ? c.verdict : "pending";
     return `<span class="claim c-${v}" data-path="${esc(f.path)}" title="${c ? LABEL[v] : "checking"} · ${esc(f.path)}">${esc(f.claim)}<span class="dot"></span></span>`;
@@ -272,7 +290,7 @@ function sources() {
       ? `<div class="backs">backs ${chips(s.supports, "supported")}${chips(s.partially_supports, "partially supported")}</div>`
       : s.status === "blocked" ? `<div class="backs">Could not read this page${s.error ? ` (${esc(s.error)})` : ""}</div>`
       : s.status === "no_support" ? `<div class="backs">Read, but no field's value appears in it</div>`
-      : s.status === "not_checked" ? `<div class="backs">Beyond the 3 sources checked per field</div>` : "";
+      : s.status === "not_checked" ? `<div class="backs">Not needed, or beyond the 6 links checked per fact</div>` : "";
     const badge = s.status === "pending" ? `<span class="badge pending">checking</span>` : `<span class="badge s-${s.status}">${SRC_LABEL[s.status]}</span>`;
     return `<div class="srow">${badge}<div class="info"><a href="${esc(s.url)}" target="_blank" rel="noopener"><b>${esc(u.hostname.replace(/^www\./, ""))}</b><span>${esc(u.pathname === "/" ? "" : u.pathname)}${esc(u.search)}</span></a>${backs}</div></div>`;
   }).join("");

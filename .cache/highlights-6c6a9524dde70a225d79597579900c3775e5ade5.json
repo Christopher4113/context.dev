@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://www.savvywealth.com/about",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "The CEO of Savvy Wealth is Ritik Malhotra.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://www.savvywealth.com/about",
+    "passages": [
+      "[Make > FAQ]\n\nSavvy Wealth was founded by Ritik Malhotra, who serves as Founder and CEO. Malhotra is a repeat technology entrepreneur and Y Combinator alum who sold two prior companies before Savvy, one to Box in 2014 and one to Brex in 2019, where he went on to build Brex Cash. He started Savvy Wealth in 2021 to pair modern technology with human financial advice.\n\n…\n\nSavvy Wealth is backed by leading venture capital investors, including Thrive Capital, Industry Ventures, Index Ventures, Brewer Lane Ventures, The House Fund, Alumni Ventures, Canvas Prime, and Mark Casady's Vestigo Ventures. The company has raised more than $100M to date, and is privately held and led by founder and CEO Ritik Malhotra."
+    ]
+  }
+}

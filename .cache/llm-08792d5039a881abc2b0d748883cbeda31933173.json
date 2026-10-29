@@ -1,0 +1,44 @@
+{
+  "request": {
+    "model": "anthropic:claude-opus-5-5",
+    "system": "You verify one claim against evidence passages scraped from the cited sources. Judge only from the passages, never from your own knowledge.\nVerdicts:\n- supported: a passage states the claim's value, so a reader could confirm it from the quote alone. Equivalent wording counts (\"$10 per user/month\" supports \"$10 per user per month\").\n- partial: a passage supports part of the claim, or gives a materially different qualification (a different number, a range, an older date, a different plan or product).\n- unsupported: the passages are on topic but do not state the value, or they contradict it.\n- no_evidence: the passages are irrelevant or empty.\nA passage that only mentions a word in another sense (e.g. a product name in a feature list) does not support a claim about it.\nevidence_quote MUST be copied character-for-character from one passage: the shortest span that shows the value (under 300 characters). Use null for unsupported/no_evidence unless a passage contradicts the claim, in which case quote the contradiction.\nreason: one sentence. If the passage contradicts the claim, say what it actually says.",
+    "user": "Research question: Who is the ceo, cfo and cto of savvy (savvywealth.com)\nClaim: The CTO of Savvy Wealth is Eric Hurkman.\nValue being checked: \"Eric Hurkman\"\n\n<passage source=\"https://savvywealth.com/demo\">\n[Your > advisors nationwide]\n\nOur Custodians:\n\n…\n\nBrian Mills\n\nPrivate Wealth Manager\n\n…\n\n[Book a confidential intro call > advisors nationwide]\n\nOur Custodians:\n\n…\n\nPrivate Wealth Manager\n</passage>\n\n<passage source=\"https://savvywealth.com/\">\n[Your > Why]\n\nFounder & CEO, Colorado Wealth Group — Powered by Savvy\n\n…\n\n[Your > Why > World class people, intelligent tools]\n\nWealth Manager — Powered by Savvy\n\n…\n\n[Your > Why > Connected financial ecosystem]\n\nFounder & CEO, Colorado Wealth Group — Powered by Savvy\n\n…\n\n[Your > The]\n\nWealth Manager - Powered by Savvy\n\n…\n\nFounder & CEO, Colorado Wealth Group - Powered by Savvy\n\n…\n\nWealth Manager, Savvy Wealth\n\n…\n\nPrivate Wealth Manager\n\n…\n\nWealth Manager at Savvy\n</passage>\n\n<passage source=\"https://www.savvywealth.com/about\">\n[Make > Meet]\n\nFounder & CEO\n\n…\n\nEric Hurkman\n\n…\n\nChief Business Officer\n\n…\n\n[Make > FAQ]\n\nSavvy Wealth was founded by Ritik Malhotra, who serves as Founder and CEO. Malhotra is a repeat technology entrepreneur and Y Combinator alum who sold two prior companies before Savvy, one to Box in 2014 and one to Brex in 2019, where he went on to build Brex Cash. He started Savvy Wealth in 2021 to pair modern technology with human financial advice.\n\n…\n\nSavvy Wealth is backed by leading venture capital investors, including Thrive Capital, Industry Ventures, Index Ventures, Brewer Lane Ventures, The House Fund, Alumni Ventures, Canvas Prime, and Mark Casady's Vestigo Ventures. The company has raised more than $100M to date, and is privately held and led by founder and CEO Ritik Malhotra.\n</passage>\n\n<passage source=\"http://github.com/ritikm\">\n[ritikm - Overview]\n\n- Overview\n- Repositories\n- Projects\n- Packages\n- Stars\n\n**ritikm**\n\n…\n\n[Ritik Malhotra ritikm > Achievements]\n\nAchievement: Arctic Code Vault Contributor Achievement: Pull Shark Achievement: Starstruck\n\n[Ritik Malhotra ritikm > Organizations]\n\nHackBerkeley\n\n…\n\n[Block or report ritikm > Contribution activity > October 2026]\n\nritikm has no activity yet for this period.\n</passage>\n\n<passage source=\"http://pioneerfund.vc/\">\n[Pioneer Fund]\n\nA fund of 540+ Y Combinator alumni investing in and supporting top startups from Y Combinator, the world's top accelerator.\n\nLearn more\n\n[Pioneer Fund > What People Are Saying]\n\n\"I love Pioneer Fund's approach to investing in YC startups. They do the work the right way: evaluating teams, products, and ideas and making up their own mind, and investing with conviction.\"\n\n[Pioneer Fund > What People Are Saying > Garry Tan]\n\nPresident & CEO of Y Combinator and Pioneer Fund LP\n</passage>\n\n<passage source=\"https://www.wealthmanagement.com/ria-news/savvy-wealth-creates-cto-position-to-build-out-product-engineering-teams\">\n[Savvy Wealth Creates CTO Position to Build Out Product, Engineering Teams]\n\nEric Hurkman, formerly of valuation software firm Carta, has joined Savvy to continue developing products for advisors and hiring more tech talent.\n\n…\n\nSavvy Wealth CTO Eric Hurkman\n\n…\n\nSavvy Wealth, the New York-based tech-driven advisor platform, has created a new chief technology officer role to expand its product and engineering teams and innovate in areas such as integrating artificial intelligence into its advisor tools.\n\nEric Hurkman took the CTO role after a stint as vice president of engineering at Carta, a valuation software startup. He was originally CTO at Carta, where he built its equity management and investor services platforms and engineering teams, then returned for a second run as vice president of engineering.\n\n…\n\nIn his new role, Hurkman will have about 12 to 18 months to lead the expansion of Savvy Wealth’s product development, design, engineering and AI teams. The effort will be partly fueled by a $26.5 million Series A funding round Savvy booked last year.\n\n…\n\nHurkman’s other experience includes a stint as CTO at Say Technologies, a financial services platform acquired by Robinhood; DrChrono, an electronic health records platform for doctors; and vice president of engineering at Maven Clinic, a women’s and family health company.\n\n…\n\nHurkman is Savvy's second C-suite hire to a newly created role in February. Earlier in the month, it announced David Weiner as chief growth officer. Weiner had previously led sales and go-to-market strategies for firms such as Compass Real Estate, David Energy and Tekmetric, an automotive software company.\n</passage>",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "verdict": {
+          "type": "string",
+          "enum": [
+            "supported",
+            "partial",
+            "unsupported",
+            "no_evidence"
+          ]
+        },
+        "best_source_url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "evidence_quote": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "reason": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "verdict",
+        "best_source_url",
+        "evidence_quote",
+        "reason"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "response": "{\"verdict\":\"supported\",\"best_source_url\":\"https://www.wealthmanagement.com/ria-news/savvy-wealth-creates-cto-position-to-build-out-product-engineering-teams\",\"evidence_quote\":\"Savvy Wealth CTO Eric Hurkman\",\"reason\":\"The WealthManagement article states that Eric Hurkman took the newly created CTO role at Savvy Wealth, though the fragmented About page lists his name near 'Chief Business Officer,' so his current title is unclear.\"}"
+}

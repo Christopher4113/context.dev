@@ -1,0 +1,46 @@
+{
+  "request": {
+    "task": "Who is the CEO, CFO and CTO of Savvy Wealth (savvywealth.com)?",
+    "json_format": {
+      "company_name": "",
+      "ceo": {
+        "name": ""
+      },
+      "cfo": {
+        "name": ""
+      },
+      "cto": {
+        "name": ""
+      }
+    },
+    "mode": "fast"
+  },
+  "response": {
+    "json_content": {
+      "company_name": "Savvy Wealth",
+      "ceo": {
+        "name": "Ritik Malhotra"
+      },
+      "cfo": {
+        "name": null
+      },
+      "cto": {
+        "name": "Eric Hurkman"
+      }
+    },
+    "sources": [
+      "https://www.linkedin.com/in/ritikmalhotra",
+      "http://github.com/ritikm",
+      "http://pioneerfund.vc/",
+      "https://savvywealth.com/demo",
+      "https://savvywealth.com/",
+      "https://www.linkedin.com/in/erichurkman",
+      "https://www.savvywealth.com/about"
+    ],
+    "key_metadata": {
+      "credits_consumed": 10,
+      "credits_remaining": 19682
+    },
+    "request_id": "fb598b27-2d27-4ec0-8cfe-1826c6d94fc0"
+  }
+}

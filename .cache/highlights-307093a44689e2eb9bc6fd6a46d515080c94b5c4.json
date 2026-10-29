@@ -1,0 +1,18 @@
+{
+  "request": {
+    "url": "https://www.linkedin.com/company/averolearning",
+    "formats": {
+      "highlights": true
+    },
+    "highlightsParams": {
+      "query": "Vercel was founded by Guillermo Rauch.",
+      "maxCharacters": 2000
+    }
+  },
+  "response": {
+    "url": "https://www.linkedin.com/company/averolearning",
+    "passages": [
+      "[Avero Learning > About us]\n\nIndustry\n\nEducation\n\n…\n\nLondon, Watford\n\n…\n\nSelf-Employed\n\n…\n\n[Avero Learning > Locations]\n\nLondon, Watford, GB"
+    ]
+  }
+}
